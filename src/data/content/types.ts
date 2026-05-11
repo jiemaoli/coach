@@ -13,8 +13,19 @@ export type LessonUnit = {
   decisionChecklist: string[];
   commonTraps: string[];
   sourceNote: string;
+  sourceAnchors?: SourceAnchor[];
   caseIds: string[];
   examIds: string[];
+};
+
+export type SourceAnchor = {
+  id: string;
+  label: string;
+  source: "ninetrans_book.pdf" | "ninetrans_book.txt";
+  location: string;
+  rule: string;
+  pdfQuote?: string;
+  note?: string;
 };
 
 export type Candle = {

@@ -1,4 +1,181 @@
-import type { ChartCase, ExamQuestion, GlossaryEntry, LessonUnit } from "./types";
+import type { ChartCase, ExamQuestion, GlossaryEntry, LessonUnit, SourceAnchor } from "./types";
+
+const sourceAnchors = {
+  signalBarSelection: {
+    id: "SRC-SIGNAL-BAR-SELECTION",
+    label: "Signal bar selection",
+    source: "ninetrans_book.txt",
+    location: "line 246",
+    rule: "Price Action 学习的第一步是先筛选信号 K；顺势、强收盘、少重叠、能定义风险，比单根形状更重要。",
+    pdfQuote: "The very first thing to learn about price action trading is signal bar selection."
+  },
+  a2Definition: {
+    id: "SRC-A2-DEFINITION",
+    label: "A2 definition",
+    source: "ninetrans_book.txt",
+    location: "lines 83-93, 181",
+    rule: "A2 是趋势中回调接近 EMA 后，第二次结束回调/反转尝试失败形成的延续信号。",
+    pdfQuote: "A2 is a 2 legged pullback to the ema."
+  },
+  a2FarFromEma: {
+    id: "SRC-A2-FAR-FROM-EMA",
+    label: "Far from EMA downgrade",
+    source: "ninetrans_book.txt",
+    location: "lines 181, 251",
+    rule: "A2 入场点若离 EMA/趋势线太远，应降级等待；它可能继续发展成第三推或更深的回调。",
+    pdfQuote: "if your A2 entry is very far from the ema, you may get a 3rd push"
+  },
+  a22SecondEntry: {
+    id: "SRC-A22-SECOND-ENTRY",
+    label: "A22 second entry",
+    source: "ninetrans_book.txt",
+    location: "lines 91-93, 394",
+    rule: "A22 是第一 A2 信号弱、重叠、止损过大或未触发后，用新的更清楚信号重新定义风险的第二入场。",
+    pdfQuote: "A second entry for an A2"
+  },
+  h1L1Mirror: {
+    id: "SRC-H1-L1-MIRROR",
+    label: "H1/L1 mirror sequence",
+    source: "ninetrans_book.txt",
+    location: "lines 97-113",
+    rule: "下降趋势中的 H1/fH1/H2 与上升趋势中的 L1/fL1/L2 是镜像序列，做空 A2 必须完整镜像做多流程。",
+    pdfQuote: "L1,fL1,L2 Inverse of H1,fH1,H2 in an up move."
+  },
+  ttrBwSkip: {
+    id: "SRC-TTR-BW-SKIP",
+    label: "TTR/BW skip filter",
+    source: "ninetrans_book.txt",
+    location: "lines 150-151, 434, 2014",
+    rule: "TTR/BW/OL 是方向优势不足的状态，多数内部信号应跳过，优先等待突破失败或成功后的 BP。",
+    pdfQuote: "Most trades in BW/OL are likely to fail."
+  },
+  breakoutPullback: {
+    id: "SRC-BREAKOUT-PULLBACK",
+    label: "Breakout pullback",
+    source: "ninetrans_book.txt",
+    location: "lines 193-195, 289",
+    rule: "区间内部不把小二腿当普通 A2；有效突破后，二腿回调才可能成为 BP A2，并可参考 measured move。",
+    pdfQuote: "A 2 legged pullback after a breakout... is possibly the first A2"
+  },
+  trendTermination: {
+    id: "SRC-TREND-TERMINATION",
+    label: "Trend termination",
+    source: "ninetrans_book.txt",
+    location: "lines 211, 320, 1998-1999, 2080",
+    rule: "双顶/双底、TTR、弱反转后弱 A2、fRev + fA2 都提示趋势可能终结；此处 A2 应降级为退出或停手线索。",
+    pdfQuote: "After this point, there may be no more A2s."
+  },
+  openingFirstTwoLeggedPullback: {
+    id: "SRC-OPENING-FIRST-2L-PB",
+    label: "Opening first 2L pullback",
+    source: "ninetrans_book.txt",
+    location: "lines 256, 279, 320",
+    rule: "开盘、gap、1Rev/1PB 语境复杂；保守学习者可等待第一个清楚的 two-legged pullback，而不是抢开盘信号。",
+    pdfQuote: "a conservative trader may simply wait for the first 2 legged pullback"
+  },
+  marketStructureFilter: {
+    id: "SRC-MARKET-STRUCTURE-FILTER",
+    label: "Market structure filter",
+    source: "ninetrans_book.txt",
+    location: "lines 168, 211, 2309",
+    rule: "市场结构是总过滤器；先判断 normal trend、hard trend、soft trend、channel 或 TR，再决定 A2 标准是否适用。",
+    pdfQuote: "Market structure is your filter and overall guide"
+  },
+  hardSoftTrendExceptions: {
+    id: "SRC-HARD-SOFT-TREND",
+    label: "Hard/soft trend exceptions",
+    source: "ninetrans_book.txt",
+    location: "lines 181, 325-335, 2117",
+    rule: "Hard trend 中 H1/L1 可能有效，soft trend 中 fL2 可能频繁有效；但 PDF 明确建议新手先只做 A2。",
+    pdfQuote: "new traders should just stick to A2"
+  },
+  fa2Failure: {
+    id: "SRC-FA2-FAILURE",
+    label: "Failed A2",
+    source: "ninetrans_book.txt",
+    location: "lines 209, 1998-1999, 2211",
+    rule: "fA2 是趋势延续尝试失败的信息，可能提示趋势终结或新方向两腿，但不等于新手可以立刻报复性反手。",
+    pdfQuote: "Failed Reversal followed by failed A2"
+  },
+  twoStrikes: {
+    id: "SRC-TWO-STRIKES",
+    label: "2/5 discipline",
+    source: "ninetrans_book.txt",
+    location: "line 220",
+    rule: "两笔亏损或总计五笔交易后当日停止，用低频、主要转折和强信号训练一致性。",
+    pdfQuote: "If you lose two trades, you are done for the day."
+  },
+  tradePlanExecution: {
+    id: "SRC-TRADE-PLAN-EXECUTION",
+    label: "Entry/stop/target",
+    source: "ninetrans_book.txt",
+    location: "lines 220, 226, 294, 2270",
+    rule: "A2 交易必须在入场前定义 entry、initial stop、target、first target、breakeven stop 和 swing 管理。",
+    pdfQuote: "your entries, exits and stops are very well defined"
+  },
+  tickExecution: {
+    id: "SRC-TICK-EXECUTION",
+    label: "Tick execution",
+    source: "ninetrans_book.txt",
+    location: "line 226",
+    rule: "做多 entry 在信号 K 高点上方 1 tick，stop 在低点下方 1 tick，target 至少 4 ticks or more；做空镜像。",
+    pdfQuote: "long entry is 1 tick above the signal bar"
+  },
+  orderDiscipline: {
+    id: "SRC-ORDER-DISCIPLINE",
+    label: "No trigger, no trade",
+    source: "ninetrans_book.txt",
+    location: "lines 351, 433-435",
+    rule: "新手应消除 limit entries；强信号 K 若没有触发就放弃，不能把未触发、追价和新信号混成同一笔 A2。",
+    pdfQuote: "If your strong signal bar does not trigger, let it go."
+  },
+  simRule10: {
+    id: "SRC-SIM-RULE-10",
+    label: "SIM and Rule of 10",
+    source: "ninetrans_book.txt",
+    location: "lines 226, 229-237",
+    rule: "先在 SIM 只做 A2，满足 Rule of 10 后再考虑扩展；知识网站只能帮助学习，不替代执行证据。",
+    pdfQuote: "The first thing you do is to trade for a while on a simulator"
+  },
+  exitManagement: {
+    id: "SRC-EXIT-MANAGEMENT",
+    label: "Exit management",
+    source: "ninetrans_book.txt",
+    location: "lines 2186, 2216, 2270",
+    rule: "离场不是随意落袋；first target、breakeven stop、TTR/Doji/climax/trendline break 等趋势终结线索要分开处理。",
+    pdfQuote: "If you see three or more dojis in a pullback, its best to exit"
+  },
+  riskMathMae: {
+    id: "SRC-RISK-MATH-MAE",
+    label: "Risk math and MAE",
+    source: "ninetrans_book.txt",
+    location: "lines 220, 2270-2281, 2312",
+    rule: "stop 不应大于 target；MAE 用来区分触发后立刻走远的高质量 entry 与深回撤的低质量 swing。",
+    pdfQuote: "trades with wider stops should have a very large EV"
+  },
+  channelFilter: {
+    id: "SRC-CHANNEL-FILTER",
+    label: "Channel filter",
+    source: "ninetrans_book.txt",
+    location: "lines 2317-2326, 2239",
+    rule: "Channel 是有方向的重叠漂移；普通 signal-bar breakout 和 fixed stop 会变弱，应切换为等待 breakout 或不再重叠的 pullback。",
+    pdfQuote: "Never make mid-bar decisions, especially in a channel."
+  },
+  barByBarPractice: {
+    id: "SRC-BAR-BY-BAR-PRACTICE",
+    label: "Bar-by-bar practice",
+    source: "ninetrans_book.txt",
+    location: "lines 226, 351, 394",
+    rule: "逐 K 标注要把 setup、entry、stop、target、skip reason 和纪律证据写清楚，避免把临场感觉当成 A2 知识。",
+    pdfQuote: "only trade proven setups such as A2"
+  }
+} satisfies Record<string, SourceAnchor>;
+
+type SourceAnchorKey = keyof typeof sourceAnchors;
+
+function anchors(...ids: SourceAnchorKey[]): SourceAnchor[] {
+  return ids.map((id) => sourceAnchors[id]);
+}
 
 export const chartCases: ChartCase[] = [
   {
@@ -755,6 +932,7 @@ export const lessons: LessonUnit[] = [
       "用市价追入，而不是等高低点外 1 tick 触发。"
     ],
     sourceNote: "来自 Price Action Basics I：bar selection 是第一课，well formed bars 和 context 必须一起看。",
+    sourceAnchors: anchors("signalBarSelection", "ttrBwSkip", "orderDiscipline"),
     caseIds: ["case-doji-overlap", "case-bw-trap"],
     examIds: ["exam-signal-1", "exam-signal-2"]
   },
@@ -788,6 +966,7 @@ export const lessons: LessonUnit[] = [
       "做空 A2 时没有完整镜像规则，只凭感觉反向。"
     ],
     sourceNote: "来自 Glossary 与 Four trades off nine transitions：A2 是 near EMA 的第二次回调结束尝试。",
+    sourceAnchors: anchors("a2Definition", "a2FarFromEma", "tickExecution", "hardSoftTrendExceptions"),
     caseIds: ["case-clean-a2-long", "case-one-leg-not-a2", "case-far-from-ema"],
     examIds: ["exam-a2-1", "exam-a2-2", "exam-a2-3", "exam-execution-1"]
   },
@@ -818,6 +997,7 @@ export const lessons: LessonUnit[] = [
       "连续亏损后仍认为下一次一定突破。"
     ],
     sourceNote: "来自 Setup Chart 与 Trading ranges：TR 内部优先等突破失败或成功后的 BP。",
+    sourceAnchors: anchors("ttrBwSkip", "breakoutPullback", "marketStructureFilter"),
     caseIds: ["case-bw-trap", "case-breakout-pullback"],
     examIds: ["exam-structure-1", "exam-structure-2"]
   },
@@ -849,6 +1029,7 @@ export const lessons: LessonUnit[] = [
       "看到结果上涨后倒推说它一定是好 A2。"
     ],
     sourceNote: "来自 Classic A2、Price Action Basics II 与 continuation signal：A2 要 near EMA；模糊、重叠、Doji 样本通常跳过或等确认。",
+    sourceAnchors: anchors("a2Definition", "a2FarFromEma", "signalBarSelection", "a22SecondEntry", "hardSoftTrendExceptions"),
     caseIds: ["case-classic-a2-trendline-break", "case-doji-overlap", "case-far-from-ema"],
     examIds: ["exam-quality-1", "exam-quality-2", "exam-quality-3"]
   },
@@ -880,6 +1061,7 @@ export const lessons: LessonUnit[] = [
       "第二信号仍然是 Doji，却因为等过一次就降低标准。"
     ],
     sourceNote: "来自 Glossary：A22 是 A2 的第二入场，常用于第一信号止损过大或重叠较多时。",
+    sourceAnchors: anchors("a22SecondEntry", "orderDiscipline", "signalBarSelection"),
     caseIds: ["case-a22-second-entry", "case-doji-overlap"],
     examIds: ["exam-a22-1", "exam-a22-2"]
   },
@@ -911,6 +1093,7 @@ export const lessons: LessonUnit[] = [
       "没有前低空间，还硬设远端 swing 目标。"
     ],
     sourceNote: "来自 A2 定义的镜像规则：上升趋势用 L1/fL1/L2，下降趋势用 H1/fH1/H2。",
+    sourceAnchors: anchors("h1L1Mirror", "a2Definition", "tickExecution", "marketStructureFilter"),
     caseIds: ["case-clean-a2-short"],
     examIds: ["exam-short-1", "exam-short-2"]
   },
@@ -942,6 +1125,7 @@ export const lessons: LessonUnit[] = [
       "用 measured move 目标，却没有有效突破依据。"
     ],
     sourceNote: "来自 Setup Chart 与 breakout pullback A2：区间内部不训练普通 A2，强突破后的二腿回调可按 BP A2 处理。",
+    sourceAnchors: anchors("breakoutPullback", "ttrBwSkip", "marketStructureFilter"),
     caseIds: ["case-breakout-pullback", "case-bw-trap"],
     examIds: ["exam-bp-1", "exam-bp-2"]
   },
@@ -973,6 +1157,7 @@ export const lessons: LessonUnit[] = [
       "忽略双顶/双底和 TTR，只盯着 EMA。"
     ],
     sourceNote: "来自 Setup Chart：double top/bottom、TTR、weak reversal followed by weak A2、fRev + fA2 都是趋势终结/停手线索。",
+    sourceAnchors: anchors("trendTermination", "fa2Failure", "ttrBwSkip", "exitManagement"),
     caseIds: ["case-trend-termination-weak-a2", "case-fa2"],
     examIds: ["exam-termination-1", "exam-termination-2"]
   },
@@ -1004,6 +1189,7 @@ export const lessons: LessonUnit[] = [
       "因为错过第一波，就降低第一个 A2 的质量标准。"
     ],
     sourceNote: "来自开盘章节与 Trading Guide：1Rev/1PB 复杂；保守交易者可等待第一个 two-legged pullback。",
+    sourceAnchors: anchors("openingFirstTwoLeggedPullback", "breakoutPullback", "ttrBwSkip", "signalBarSelection"),
     caseIds: ["case-opening-first-a2", "case-bw-trap"],
     examIds: ["exam-opening-1", "exam-opening-2"]
   },
@@ -1035,6 +1221,7 @@ export const lessons: LessonUnit[] = [
       "把进阶例外提前用于实盘。"
     ],
     sourceNote: "来自 Setup Chart、Market Structure 与 Direction sections：normal trend 找 A2，hard trend 可有 H1/L1，soft trend 有更多 fL2，但新手先只做 A2。",
+    sourceAnchors: anchors("marketStructureFilter", "hardSoftTrendExceptions", "a2Definition", "channelFilter"),
     caseIds: ["case-hard-soft-trend-filter", "case-one-leg-not-a2"],
     examIds: ["exam-mode-1", "exam-mode-2"]
   },
@@ -1067,6 +1254,7 @@ export const lessons: LessonUnit[] = [
       "忘记记录 fA2，复盘时只记得亏损情绪。"
     ],
     sourceNote: "来自 Two strikes 与 fA2 补充：止损后等待，防止 emotionally distressed state。",
+    sourceAnchors: anchors("fa2Failure", "twoStrikes", "orderDiscipline", "trendTermination"),
     caseIds: ["case-fa2", "case-fa2-reversal-boundary"],
     examIds: ["exam-fa2-1", "exam-risk-1", "exam-fa2-2"]
   },
@@ -1101,6 +1289,7 @@ export const lessons: LessonUnit[] = [
       "止损后立刻重进或反手，没有 wait two swings。"
     ],
     sourceNote: "来自 Trading Guide 与 Two Strikes：入场、止损、目标必须预先定义；止损不能大于目标，亏损后要限制继续交易。",
+    sourceAnchors: anchors("tradePlanExecution", "tickExecution", "twoStrikes", "exitManagement"),
     caseIds: ["case-a2-trade-management", "case-fa2"],
     examIds: ["exam-management-1", "exam-management-2", "exam-management-3"]
   },
@@ -1134,6 +1323,7 @@ export const lessons: LessonUnit[] = [
       "把一周盈利当成已掌握，跳过 Rule of 10。"
     ],
     sourceNote: "来自 Trading Guide、Two Strikes 与 Price Action Basics：先只做 A2、单图训练、2/5 限制、Rule of 10 后再扩展。",
+    sourceAnchors: anchors("simRule10", "tickExecution", "twoStrikes", "tradePlanExecution"),
     caseIds: ["case-es-tick-calculation", "case-a2-trade-management"],
     examIds: ["exam-tick-1", "exam-tick-2", "exam-readiness-1"]
   },
@@ -1165,6 +1355,7 @@ export const lessons: LessonUnit[] = [
       "mid-bar 看到突破就提前入场，收盘后发现只是长影线或 Doji。"
     ],
     sourceNote: "来自 Trading Guide 与 overtrading 章节：entry、stop、target 预定义；新手应消除 limit entry；设置订单后等待 setup 结果。",
+    sourceAnchors: anchors("orderDiscipline", "tickExecution", "tradePlanExecution", "channelFilter"),
     caseIds: ["case-order-not-triggered", "case-doji-overlap"],
     examIds: ["exam-order-1", "exam-order-2", "exam-order-3"]
   },
@@ -1196,6 +1387,7 @@ export const lessons: LessonUnit[] = [
       "趋势已经进入 TTR/连续 Doji，还把 swing 当成无条件死拿。"
     ],
     sourceNote: "来自 Patience、exit 与 swing management 段落：交易由 target 或 stop 结束；反向 setup 触发可结束；TTR、Doji、climax 是退出线索。",
+    sourceAnchors: anchors("exitManagement", "trendTermination", "tradePlanExecution"),
     caseIds: ["case-exit-signals", "case-a2-trade-management", "case-trend-termination-weak-a2"],
     examIds: ["exam-exit-1", "exam-exit-2", "exam-exit-3"]
   },
@@ -1227,6 +1419,7 @@ export const lessons: LessonUnit[] = [
       "只统计胜率，不统计平均盈利和平均亏损。"
     ],
     sourceNote: "来自 risk/probability 与 MAE 章节：reward * probability > risk；触发后深回撤会降低 swing 质量。",
+    sourceAnchors: anchors("riskMathMae", "tradePlanExecution", "tickExecution", "signalBarSelection"),
     caseIds: ["case-mae-swing-quality", "case-es-tick-calculation"],
     examIds: ["exam-riskmath-1", "exam-riskmath-2", "exam-mae-1"]
   },
@@ -1258,6 +1451,7 @@ export const lessons: LessonUnit[] = [
       "channel break 前过早预测方向，进入最差位置。"
     ],
     sourceNote: "来自 Market Structure 与 channel 章节：market structure 是过滤器；channels 是高度重叠且漂移的价格行为。",
+    sourceAnchors: anchors("channelFilter", "marketStructureFilter", "ttrBwSkip", "signalBarSelection"),
     caseIds: ["case-channel-vs-a2", "case-hard-soft-trend-filter", "case-bw-trap"],
     examIds: ["exam-channel-1", "exam-channel-2", "exam-channel-3"]
   },
@@ -1289,6 +1483,7 @@ export const lessons: LessonUnit[] = [
       "把结果盈利当成标注正确，忽略 setup 分类。"
     ],
     sourceNote: "来自 Trading Guide 的 SIM 与日志要求：先只做 A2，记录 setup、entry、stop、target、失败与执行纪律。",
+    sourceAnchors: anchors("barByBarPractice", "simRule10", "tradePlanExecution", "a2Definition"),
     caseIds: ["case-clean-a2-long", "case-clean-a2-short", "case-order-not-triggered", "case-channel-vs-a2"],
     examIds: ["exam-marking-1", "exam-marking-2", "exam-marking-3"]
   }

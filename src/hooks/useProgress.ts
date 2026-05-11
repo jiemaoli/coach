@@ -1,46 +1,54 @@
 import { useEffect, useMemo, useState } from "react";
+import { chartCases, examSetupMap, exams, lessons } from "../data/content";
+import { buildContentIndex } from "../domain/contentIndex";
+import { StorageQuotaExceededError, StorageUnavailableError } from "../domain/errors";
+import { computeAllMastery } from "../domain/masteryEngine";
+import { getLatestQuizAnswers, initialProgress, type ProgressState } from "../domain/progressTypes";
+import { loadProgress, saveProgress } from "../domain/progressStore";
 
-export type ProgressState = {
-  completedSections: string[];
+const contentIndex = buildContentIndex({ lessons, exams, chartCases, examSetupMap });
+
+export type ProgressView = ProgressState & {
   quizAnswers: Record<string, boolean>;
-  rule10: boolean[];
 };
 
-const storageKey = "a2-coach-progress";
-
-const initialProgress: ProgressState = {
-  completedSections: [],
-  quizAnswers: {},
-  rule10: [false, false, false, false, false]
-};
+function toProgressView(progress: ProgressState): ProgressView {
+  return {
+    ...progress,
+    quizAnswers: getLatestQuizAnswers(progress)
+  };
+}
 
 function readProgress(): ProgressState {
-  try {
-    const stored = window.localStorage.getItem(storageKey);
-    if (!stored) return initialProgress;
-    const parsed = JSON.parse(stored) as Partial<ProgressState>;
-    return {
-      completedSections: parsed.completedSections ?? [],
-      quizAnswers: parsed.quizAnswers ?? {},
-      rule10: parsed.rule10?.length === 5 ? parsed.rule10 : initialProgress.rule10
-    };
-  } catch {
-    return initialProgress;
-  }
+  return loadProgress(contentIndex).progress;
 }
 
 export function useProgress() {
   const [progress, setProgress] = useState<ProgressState>(() => readProgress());
 
   useEffect(() => {
+    if (progress.recovery.kind === "memory-only" || progress.recovery.kind === "recovered" || progress.recovery.kind === "write-failed") {
+      return;
+    }
+
     try {
-      window.localStorage.setItem(storageKey, JSON.stringify(progress));
-    } catch {
-      // localStorage can be unavailable in strict browser privacy modes.
+      saveProgress(progress);
+    } catch (error) {
+      if (error instanceof StorageUnavailableError || error instanceof StorageQuotaExceededError) {
+        setProgress((current) => ({
+          ...current,
+          recovery: { kind: "write-failed", reason: error.message }
+        }));
+        return;
+      }
+
+      throw error;
     }
   }, [progress]);
 
   const completedSet = useMemo(() => new Set(progress.completedSections), [progress.completedSections]);
+  const progressView = useMemo(() => toProgressView(progress), [progress]);
+  const mastery = useMemo(() => computeAllMastery(progress), [progress]);
 
   function toggleSection(sectionId: string) {
     setProgress((current) => {
@@ -54,10 +62,23 @@ export function useProgress() {
     });
   }
 
-  function recordQuiz(questionId: string, correct: boolean) {
+  function recordQuiz(questionId: string, correct: boolean, selectedAnswer = "") {
     setProgress((current) => ({
       ...current,
-      quizAnswers: { ...current.quizAnswers, [questionId]: correct }
+      answerAttempts: [
+        ...current.answerAttempts,
+        {
+          id: `${questionId}-${Date.now()}-${current.answerAttempts.length}`,
+          questionId,
+          selectedAnswer,
+          correct,
+          timestamp: new Date().toISOString(),
+          questionVersion: contentIndex.questionMetadataById.get(questionId)?.version ?? 1,
+          setupId: contentIndex.questionMetadataById.get(questionId)?.setupId ?? "foundation",
+          bucket: contentIndex.questionMetadataById.get(questionId)?.bucket ?? "concept",
+          hardErrorType: correct ? undefined : contentIndex.questionMetadataById.get(questionId)?.hardErrorTypes[0]
+        }
+      ]
     }));
   }
 
@@ -72,5 +93,9 @@ export function useProgress() {
     setProgress(initialProgress);
   }
 
-  return { progress, completedSet, toggleSection, recordQuiz, toggleRule10, resetProgress };
+  function exportProgress() {
+    return JSON.stringify(progress, null, 2);
+  }
+
+  return { progress: progressView, mastery, completedSet, toggleSection, recordQuiz, toggleRule10, resetProgress, exportProgress };
 }

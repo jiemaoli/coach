@@ -137,6 +137,43 @@ button {
   background: var(--green);
 }
 
+.progress-warning {
+  border: 1px solid rgba(245, 158, 11, 0.6);
+  background: rgba(245, 158, 11, 0.08);
+  color: var(--amber);
+  padding: 8px;
+  font-size: 0.82rem;
+}
+
+.mastery-list {
+  display: grid;
+  gap: 6px;
+  margin: 12px 0;
+}
+
+.mastery-pill {
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 5px 7px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+}
+
+.mastery-pill.passed {
+  color: var(--green);
+  border-color: rgba(34, 197, 94, 0.6);
+}
+
+.mastery-pill.locked {
+  color: var(--quiet);
+}
+
+.mastery-pill.in-progress,
+.mastery-pill.available {
+  color: var(--blue);
+  border-color: rgba(56, 189, 248, 0.55);
+}
+
 .text-button {
   padding-left: 0;
   color: var(--muted);
@@ -207,6 +244,8 @@ small {
 .task-box,
 .verdict-box,
 .source-note,
+.source-anchors,
+.source-anchors article,
 .linked-cases,
 .split-panels section {
   border: 1px solid var(--border);
@@ -345,6 +384,7 @@ small {
 
 .split-panels section,
 .source-note,
+.source-anchors,
 .linked-cases,
 .task-box,
 .verdict-box {
@@ -352,8 +392,48 @@ small {
 }
 
 .source-note,
+.source-anchors,
 .linked-cases {
   margin-top: 14px;
+}
+
+.source-anchors > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.source-anchors article {
+  background: #0f1722;
+  padding: 14px;
+}
+
+.source-anchors header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.source-anchors header span,
+.source-anchors strong {
+  color: var(--green);
+  font-family: var(--font-mono);
+}
+
+.source-anchors header span {
+  font-size: 0.78rem;
+}
+
+.source-anchors p {
+  margin-bottom: 8px;
+}
+
+.source-anchors em {
+  display: block;
+  color: var(--quiet);
+  font-style: normal;
+  line-height: 1.6;
 }
 
 .linked-cases div,
@@ -819,6 +899,7 @@ small {
   .course-layout,
   .case-layout,
   .split-panels,
+  .source-anchors > div,
   .annotation-legend,
   .gate-list,
   .readiness-grid,

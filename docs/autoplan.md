@@ -43,6 +43,7 @@ localStorage progress
 ## Not In Scope
 
 - Real-time market data, broker integration, Telegram bot, trade execution, personalized financial advice, and PDF full-text reproduction.
+- Structured SIM trade journals, broker-like execution tracking, and performance analytics are deferred to a separate tool. The static site should first replicate the book's knowledge points accurately.
 
 ## Review Scores
 
@@ -122,3 +123,12 @@ The practical standard is:
 3. Mark urgency-to-enter signals on the chart and review them at end of day, as the PDF recommends.
 4. Trade only A2 in SIM with 2/5 discipline, no-chase behavior, and wait-two-swings after losses.
 5. Satisfy Rule of 10 before considering live trading, while staying within the PDF's E-mini market scope.
+
+## Static Knowledge Replication Pivot — 2026-05-11
+
+The current product priority is PDF knowledge replication, not a trading journal. A2 is the template module for this standard:
+
+- Every A2 lesson carries structured source anchors back to `ninetrans_book.txt` / `ninetrans_book.pdf`.
+- The app keeps free navigation across Basics, A2, W1P, DP, and fBO; mastery is feedback, not access control.
+- SIM and Rule-of-10 content remains as knowledge from the book, but the site does not try to prove SIM execution or store trade logs.
+- Future setup work should first match the A2 source-anchor pattern before adding more practice mechanics.

@@ -16,6 +16,11 @@ import {
   type LessonUnit,
   type ModuleId
 } from "./data/content";
+import {
+  matchesSetupFilter,
+  type SetupFilter
+} from "./domain/setupAccess";
+import type { SetupId } from "./domain/setup";
 import { useProgress } from "./hooks/useProgress";
 
 const navItems: { id: ModuleId; label: string }[] = [
@@ -37,7 +42,6 @@ const moduleLabels = {
   risk: "Risk"
 } satisfies Record<LessonModule, string>;
 
-type SetupFilter = "all" | "foundation" | "a2" | "w1p" | "dp" | "fbo";
 type DerivedSetup = SetupFilter | "foundation";
 
 const setupTabs: { id: SetupFilter; label: string }[] = [
@@ -52,7 +56,7 @@ const setupTabs: { id: SetupFilter; label: string }[] = [
 const foundationModules = new Set<LessonModule>(["bar", "structure", "risk"]);
 
 const setupDescriptions: Record<SetupFilter, string> = {
-  all: "查看全部 setup 与通用基础内容。",
+  all: "查看全部 setup 与通用基础内容，用于横向浏览和复盘对照。",
   foundation: "通用基础：Signal Bar、趋势/区间结构、风险与纪律。",
   a2: "聚焦 A2：二腿回调、信号质量、趋势延续执行。",
   w1p: "聚焦 W1P：三推回调、first pullback reversal 与确认执行。",
@@ -60,13 +64,28 @@ const setupDescriptions: Record<SetupFilter, string> = {
   fbo: "聚焦 fBO：突破失败、回区间确认与反向执行。"
 };
 
+const setupMasteryLabels: Record<SetupId, string> = {
+  foundation: "Basics",
+  a2: "A2",
+  w1p: "W1P",
+  dp: "DP",
+  fbo: "fBO"
+};
+
+const masteryStatusLabels = {
+  locked: "Ready",
+  available: "Ready",
+  "in-progress": "Training",
+  passed: "Passed",
+  "needs-review": "Review",
+  "not-assessable": "No data"
+} as const;
+
 const examModeLabels: Record<ExamQuestion["mode"], string> = {
   concept: "概念题",
   case: "看图题",
   execution: "执行题"
 };
-
-const lessonSetupById = new Map(lessons.map((lesson) => [lesson.id, getLessonSetup(lesson)]));
 
 function getLessonSetup(lesson: LessonUnit): DerivedSetup {
   if (foundationModules.has(lesson.module)) return "foundation";
@@ -115,16 +134,8 @@ function getGlossarySetup(entry: GlossaryEntry): SetupFilter {
   return "all";
 }
 
-function matchesSetupFilter(itemSetup: SetupFilter, activeSetup: SetupFilter) {
-  if (activeSetup === "all") return true;
-  if (activeSetup === "foundation") return itemSetup === "all";
-  return itemSetup === activeSetup;
-}
-
 function getVisibleLessons(activeSetup: SetupFilter) {
-  if (activeSetup === "all") return lessons;
-  if (activeSetup === "foundation") return lessons.filter((lesson) => getLessonSetup(lesson) === "foundation");
-  return lessons.filter((lesson) => getLessonSetup(lesson) === activeSetup);
+  return lessons.filter((lesson) => matchesSetupFilter(getLessonSetup(lesson), activeSetup));
 }
 
 function getVisibleCases(activeSetup: SetupFilter) {
@@ -140,7 +151,7 @@ export function App() {
   const [activeExamIndex, setActiveExamIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [glossaryQuery, setGlossaryQuery] = useState("");
-  const { progress, completedSet, toggleSection, recordQuiz, toggleRule10, resetProgress } = useProgress();
+  const { progress, mastery, completedSet, toggleSection, recordQuiz, toggleRule10, resetProgress, exportProgress } = useProgress();
 
   const visibleLessons = useMemo(() => getVisibleLessons(activeSetup), [activeSetup]);
 
@@ -204,7 +215,7 @@ export function App() {
   function answerExam(answer: string) {
     if (!activeExam) return;
     setSelectedAnswer(answer);
-    recordQuiz(activeExam.id, answer === activeExam.answer);
+    recordQuiz(activeExam.id, answer === activeExam.answer, answer);
   }
 
   function nextExam() {
@@ -236,6 +247,33 @@ export function App() {
     setActiveModule("exam");
   }
 
+  function exportLearningRecord() {
+    const payload = exportProgress();
+    const blob = new Blob([payload], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `setup-coach-progress-${new Date().toISOString().slice(0, 10)}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function confirmResetProgress() {
+    const shouldReset = window.confirm("这会清除本机学习记录。建议先导出学习记录。确定要继续吗？");
+    if (shouldReset) {
+      resetProgress();
+    }
+  }
+
+  const progressRecoveryMessage =
+    progress.recovery.kind === "memory-only"
+      ? `学习记录暂时只保存在内存中：${progress.recovery.reason}`
+      : progress.recovery.kind === "recovered"
+        ? `学习记录需要恢复：${progress.recovery.reason}`
+        : progress.recovery.kind === "write-failed"
+          ? `学习记录保存失败：${progress.recovery.reason}`
+          : "";
+
   return (
     <div className="app-shell">
       <aside className="sidebar" aria-label="主导航">
@@ -258,7 +296,19 @@ export function App() {
           <strong>{progressPercent}%</strong>
           <div className="progress-track"><div style={{ width: `${progressPercent}%` }} /></div>
           <p>{completedLessons}/{lessons.length} 个知识点已完成</p>
-          <button className="text-button" type="button" onClick={resetProgress}>重置学习记录</button>
+          {progressRecoveryMessage && <p className="progress-warning">{progressRecoveryMessage}</p>}
+          <div className="mastery-list">
+            {(["foundation", "a2", "w1p", "dp", "fbo"] as const).map((setupId) => (
+              <span
+                key={setupId}
+                className={`mastery-pill ${mastery[setupId].status}`}
+              >
+                {setupMasteryLabels[setupId]} · {masteryStatusLabels[mastery[setupId].status]}
+              </span>
+            ))}
+          </div>
+          <button className="text-button" type="button" onClick={exportLearningRecord}>导出学习记录</button>
+          <button className="text-button" type="button" onClick={confirmResetProgress}>重置学习记录</button>
         </div>
       </aside>
 
@@ -297,7 +347,7 @@ export function App() {
             </div>
 
             <div className="dashboard-grid">
-              <Metric label="知识点" value={dashboardLessonCount.toString()} note={activeSetup === "all" ? "全部讲解 + 清单 + 误区" : "当前分类下的课程"} />
+              <Metric label="知识点" value={dashboardLessonCount.toString()} note={activeSetup === "all" ? "全部课程 + 清单 + 误区" : "当前分类下的课程"} />
               <Metric label="图表案例" value={dashboardCaseCount.toString()} note="每例含 OHLC + EMA + 标注" />
               <Metric label="考试题" value={dashboardExamCount.toString()} note="概念、案例、执行三类" />
               <Metric label="训练闸门" value={simTrainingGates.length.toString()} note="从 SIM 到实盘前验证" />
@@ -448,7 +498,13 @@ function SetupTabs({ activeSetup, onChange }: { activeSetup: SetupFilter; onChan
   return (
     <div className="setup-tabs">
       {setupTabs.map((setup) => (
-        <button key={setup.id} className={activeSetup === setup.id ? "active" : ""} type="button" onClick={() => onChange(setup.id)}>
+        <button
+          key={setup.id}
+          className={activeSetup === setup.id ? "active" : ""}
+          type="button"
+          title={setupDescriptions[setup.id]}
+          onClick={() => onChange(setup.id)}
+        >
           {setup.label}
         </button>
       ))}
@@ -535,6 +591,26 @@ function LessonDetail({ lesson, completed, onToggle, onOpenCase, onStartExam }: 
         <strong>原书依据</strong>
         <p>{lesson.sourceNote}</p>
       </section>
+
+      {lesson.sourceAnchors?.length ? (
+        <section className="source-anchors">
+          <h3>PDF 复刻锚点</h3>
+          <div>
+            {lesson.sourceAnchors.map((anchor) => (
+              <article key={anchor.id}>
+                <header>
+                  <span>{anchor.id}</span>
+                  <small>{anchor.source} · {anchor.location}</small>
+                </header>
+                <strong>{anchor.label}</strong>
+                <p>{anchor.rule}</p>
+                {anchor.pdfQuote && <em>PDF: {anchor.pdfQuote}</em>}
+                {anchor.note && <small>{anchor.note}</small>}
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="linked-cases">
         <h3>关联图表案例</h3>
