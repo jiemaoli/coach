@@ -1,0 +1,11 @@
+Late entries in a channel
+https://ninetrans.blogspot.com/2012/04/late-entries-in-channel.html
+Published: 2012-04-02T21:06:00.000-07:00
+Updated: 2012-04-02T21:06:23.198-07:00
+
+I normally avoid late entries since they are usually dangerous. However, if you have a reason to believe an extended channel is setting up, for example due to the spike b7-10 you could look for mid-channel entries.
+First you need to recognize a channel is in effect. In general if prices are moving in the same direction but most bars are overlapped except for a tick or two, you are probably in a channel. Unlike the move from b7 to b10, the move from b16 was clearly a channel.
+A classic mid-channel entry is to fade the 1st breakout of a channel or 1chbo. This occurred possibly at b20. If you missed it, you can always fade opposing trend bars in any channel , the first one is the best. Today, the closest we got to an opposing trend bar was b26.
+A first tail in a channel in the direction of the channel (b21) works very similarly to the first opposing bar. Its represents a pullback in a channel and an opportunity to buy other than the worst price.
+Occasionally, a 1tf (b27) sets up which is usually a high probability trade. Care must be taken not to enter too close to end of expected channel move, such as the measured move of the length of the spike or the third push (b19,26,31).
+Often, a strong channel will continue after a trendline break as a much shallower channel (possibly b37 to b67) so you should exit your positions but never fade a strong channel until the trend breaks. A prolonged horizontal movement such as today, breaks a trend but you could probably already guess around b36 or so when you get a series of dojis that the move was probably over for a while. Even so, SC days are notorious for continuing to keep moving till end of the day on terrible signal bars so caution is to be exercised when trading counter-trend.

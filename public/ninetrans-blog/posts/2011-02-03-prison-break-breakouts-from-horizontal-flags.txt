@@ -1,0 +1,12 @@
+Prison Break: Breakouts from horizontal flags
+https://ninetrans.blogspot.com/2011/02/prison-break-breakouts-from-horizontal.html
+Published: 2011-02-03T20:03:00.000-08:00
+Updated: 2011-09-09T17:34:29.736-07:00
+
+Horizontal flags with alternating up and down bars (like the bars of a prison cell) often produce violent breakouts. Predicting them correctly is quite a challenge. Often there will be multiple breakouts that all fail until one of them breaks suddenly and moves many times the size of the flag.
+Horizontal flags can also act as magnets and the move often retracts back to the horizontal area. So if you get a reversal, you should at least exit if not reverse your position altogether.
+Like all breakouts horizontal breakouts are also best traded as breakout pullbacks. This article represents the yellow boxes in the first and third columns of the center row in the nine transitions.
+Be aware that trying to predict breakouts is extremely risky, and usually you are better off taking a breakout pullback. Sometimes there are no breakout pullbacks, and you just need to let it go.
+For example b6 broke through the flag and although it looked like a poor reversal bar with a large overlap, it failed to breakout of the other side and gave a sharp move down without any pullback to enter with trend.
+Another horizontal flag during lunch hour also showed a similar breakout. The first breakout at b42 broke above the previous swing high of b37 and failed to break below the swing low of b40. This made the DP entry above b54 viable or you could just take the BP at b61.
+Horizontal flags generally break with the prior trend and away from the ema rather than across. Since yesterday's final move was down, todays opening flag should also break down. Similarly the lunch flag should break up.

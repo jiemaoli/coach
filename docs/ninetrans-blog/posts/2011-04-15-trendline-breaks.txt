@@ -1,0 +1,11 @@
+Trendline breaks
+https://ninetrans.blogspot.com/2011/04/trendline-breaks.html
+Published: 2011-04-15T19:31:00.000-07:00
+Updated: 2011-09-09T17:34:28.446-07:00
+
+A hard trendline break has a comparable number of points before and after the break. For example, today the move from b43 down to b72 broke the trendline and there were about 2.5 points on either side of the break.
+Breaks that are merely dips beyond the trendline don't actually break the trendline, rather they only shift the trendline to a shallower angle. What this means is that some of the counter-trend energy is absorbed but the market is able to continue on with the trend.
+However, a hard trendline break terminates the trend. At this point the price will attempt to at least test the previous extreme (b43) and if it can only break out by a nominal amount (say a tick to a point beyond), then the market is likely to form a trading range between the two points. If any one of these points has a strong breakout, a breakout pullback could lead to a trend move.
+If the newly formed trading range (b43 to b76) is large enough, say 3 points or more,  you could take a failed breakout trade to the other side of the range.
+If the breakout is very strong because it was a strong trend bar that closes many ticks beyond the previous high (such as b33 breaking above b8), then the trend is likely to continue, despite the trendline break.
+Sometimes the market is too weak to break beyond the previous extreme and only succeeds in a two or three legged move that comes close to the previous extreme. This should be treated the same as a test of the previous extreme and traded similarly.

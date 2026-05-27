@@ -1,0 +1,9 @@
+Microtrendlines (MTL)
+https://ninetrans.blogspot.com/2012/01/microtrendlines-mtl.html
+Published: 2012-01-26T17:57:00.000-08:00
+Updated: 2012-01-28T18:09:09.828-08:00
+
+Microtrendlines are trendlines that are drawn on adjacent bars rather than adjacent swings as shown from b7-b9. An MTL right after a potential reversal is often found before a very strong trend. To correctly identify a strong trend from an MTL, the bars forming the MTL should have strong closes. Dojis, bars against the trend, etc. greatly reduce the strength of the MTL and could easily turn into a HL.
+A failed violation of an MTL (b10) is an excellent entry. Often this is the few places where you could enter mid-bar on an outside bar (if b10 took out low of b9 for example). However, when it does not, you could still enter below the bar if it has a sufficient sized body and strong close.
+If the MTL signal bar is a doji such as b10, you can opt to wait for the next entry such as the small trend bar b12 after a breakout bar.
+While technically, you could draw an MTL from b13 to b16, these bars are not all made up of trend bars with strong closes so an entry of the MTL violation (below b18) is not a good entry. Neither is the bull MTL from b73 to b76 worth trading purely on being an MTL.

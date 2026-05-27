@@ -1,0 +1,10 @@
+Spike and channel
+https://ninetrans.blogspot.com/2011/04/spike-and-channel.html
+Published: 2011-04-26T19:56:00.000-07:00
+Updated: 2011-09-09T17:34:28.308-07:00
+
+Any relatively large move in a short timeframe is a spike, usually a single bar but sometimes can be multiple bars. In today's example, the move from b11 to b15 can be regarded as a single spike. If the spike closes strong, i.e. near the top as in today's example, the strength will cause with trend traders to buy the close of any small bar and counter-trend traders will trade lightly, causing a channel move.
+Spikes that close strong often (but not always) move to a measured move of a large spike. Spikes that close weak, for example a large bar that closes midway may simply channel to one of its extremes. Sometimes spikes will form in both directions and a channel will move to the extreme of one of the bars.
+Spike and channels usually have three pushes and they will normally pullback to the beginning of the channel as we see at b49 today. At this point it is typical for the S&C to retrace at least half the move as we did upto b70.
+There are many ways to trade spike and channels. You could enter with-trend after the first (b22) and possibly the second (b28) pullback. Normally, this should be done only with a strong close of a large spike. A small spike with a weak close may not move more than a point or two and may not be worth the risk. Aggressive scalpers can simply buy the close of any shaved bar or any pullback bar and exit on every push.
+The second option is to wait until three pushes are complete and if the channel covers 3 points or more, fade it until it goes back to the start of the channel. Once the pullback is complete, you may have an opportunity to trade upto half the new trading range if you get a good signal such as the G2 at b50.

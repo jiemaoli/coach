@@ -1,0 +1,11 @@
+The importance of catching the early move
+https://ninetrans.blogspot.com/2010/12/importance-of-catching-early-move.html
+Published: 2010-12-27T18:49:00.000-08:00
+Updated: 2013-03-10T19:14:35.430-07:00
+
+Often, the first good signal is the only one that is worth taking for a swing. Learning to take the first signal correctly will also start you off in the black, allowing you to pass on anything less than great trades.
+Today was a triangle open. Expanding triangle opens are more common, triangle opens are less so. Today presented exactly one entry that I would take, a second entry long.
+A second entry is any entry that gives an entry at the same price as the previous entry, provided the previous entry is valid and the entry bar closes strong. For example, todays b2 went above a reversal bar (a bullish signal) and closed strong. The bar was a 7t shaved bar and there was a good chance a pullback could be bought for a swing. b5 presented a stronger signal bar compared to b1 (shaved bull bar with 1t tail).
+b1 and b2 made up the opening range and b3 was a failed breakout above it. b5 effectively gave a breakout pullback entry. The weak 1t pullback below b7 and its failure was two attempts to fail the breakout and buying above b8 was a high probability trade regardless of it being a bear bar. The price moved quickly to a measured move (MM) to twice the opening range as expected.
+The rest of the day gave only poor entries and while I could read them, they were not worth the risk:reward ratio. While horizontal TTR usually breaks in the direction of the previous trend, b3 and b12 had already made two pushes up and there was the risk that the push up would fail before it could reach a scalp.
+Rest of the moves came off one or two tick doji bars and are often unreliable. A cautious trader who missed b5 or b8 would probably not take any other trades today. A possible exception is b42 double bottom at the ema and BT of the TTR, but even that should be avoided on a day that does not promise to be a large range day.

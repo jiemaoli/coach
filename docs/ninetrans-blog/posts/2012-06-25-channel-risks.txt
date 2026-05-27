@@ -1,0 +1,16 @@
+Channel risks
+https://ninetrans.blogspot.com/2012/06/channel-risks_25.html
+Published: 2012-06-25T21:29:00.002-07:00
+Updated: 2012-06-25T21:29:51.790-07:00
+
+A large gap up or down often does not result in a steep trend but rather in a shallow sloping channel. Of course, all moves can be contained in a generic parallel trend and trend channel lines and be called a channel but for the purposes of this post, a channel is a specific type of price action that represents a very hard to trade move.
+A channel can be easily distinguished from a trend by the following characteristics:
+In a channel, most with-trend bars overlap each other. In a trend most bars don't.
+Compare the leg from b7 down to b12 vs the leg up from b47 to b50. Notice the almost complete overlap of bars in the former.
+Most bars in a channel have tails on one of both ends.
+A strong trend should be made of trend bars, at least in the trend direction. Notice the strong closes on the up legs b47050 and b68-72.
+Channels are highly likely to take out fixed stops and breakeven stops.
+Shorts below b7 were triggered and unless they had a large stop of at least two points or more, were probably stopped out. Strong signal bars at b14 and b18 had their breakeven stops taken out. Such price action can make it hard to catch a swing using the normal trade management style.
+Channels can reverse on the most unlikely bars.
+This makes channels very dangerous to trade. For example, today the channel reversed on b31, which was a bull doji not unlike b9,16,27 before it.
+The only way to trade channels is to get in early trail behind every new swing point (b14,18,23,28 for b7 shorts). Channels can reverse at anytime and channel in the opposite direction and that makes taking a potential early reversal (say within the first hour or two) potentially a day long swing.

@@ -1,0 +1,9 @@
+Inside bar after breakout bar
+https://ninetrans.blogspot.com/2011/08/inside-bar-after-breakout-bar.html
+Published: 2011-08-02T21:23:00.000-07:00
+Updated: 2011-09-09T17:34:26.416-07:00
+
+After a breakout in a direction, there is usually an attempt by the traders in the opposite direction to make a stand. This could result in a reversal bar, an inside bar or a small bar depending on the strength of the traders trying to fade the breakout.
+A reversal bar after breakout usually implies a failure of the breakout and the failure is a decent with-trend signal by itself but is enhanced by being near a barrier such as ema (b59) or near a trendline (b36) or being a breakout test and so on.
+A trend bar, especially a small trend bar after a breakout (b18) represents success of the breakout and may be entered with-trend if the bar size is small enough to represent moderate risk (around 2 points for normal day).
+An inside bar after a breakout (b39, b51,b74,b76) represents a pullback and a possible failure and can be bracketed to trade either way. If both the breakout bar and the inside bar are bearish, its generally a good idea to take the trade only with-trend. If the inside bar after a bear bar is the bullish, it can be bracketed.

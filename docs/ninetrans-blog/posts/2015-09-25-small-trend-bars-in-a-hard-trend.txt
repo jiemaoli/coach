@@ -1,0 +1,6 @@
+Small trend bars in a hard trend
+https://ninetrans.blogspot.com/2015/09/small-trend-bars-in-hard-trend.html
+Published: 2015-09-25T18:57:00.000-07:00
+Updated: 2015-09-29T18:57:41.015-07:00
+
+When the first two bars have strong closes and very little overlap, it is reasonable to assume a hard trend is in progress. In a hard trend, any small bar can use used as a signal bar, especially if its a trend bar near the TL (b3). In a pullback, you can often enter above any small trend bar (b10).

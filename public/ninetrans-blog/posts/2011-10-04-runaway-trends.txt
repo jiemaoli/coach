@@ -1,0 +1,11 @@
+Runaway trends
+https://ninetrans.blogspot.com/2011/10/runaway-trends.html
+Published: 2011-10-04T20:18:00.000-07:00
+Updated: 2011-10-04T20:18:27.133-07:00
+
+Runaway trends are hard trends with large bars and no pullbacks such as the one from b70 onwards today. Runaway trends are extremely hard to trade but you have a few options:
+Buy above small bars: For example b77 was a relatively small bar in the rally. Small bars present an acceptable risk and may traders are likely to enter with you.
+Buy closes of bars with entry side tails: This is dangerous and should not be attempted unless the bars are small since the risk of pullback is very high and you would need a stop below the bar.
+Buy on limit at micro-trendline: An MTL violation such as b75 is a high probability entry in a strong trend. If the prior bar is small, the stop may be acceptable.
+Switch to smaller timeframe charts or volume charts: The 1m chart provided 2 legged pullbacks around b74. The first two legged pullback on the 1 minute chart in particular, is a high probability entry in a runaway trend.
+No matter where you enter, after your scalp exit, you should swing the remaining position until the trend runs to termination. If the trend begins in the AM, it is likely to break and turn into a shallow sloped channel. A late trend break is likely to run into the close of the day.

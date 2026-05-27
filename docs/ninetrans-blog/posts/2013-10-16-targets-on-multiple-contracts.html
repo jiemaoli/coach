@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Targets on multiple contracts</title>
+    <meta name="source-url" content="https://ninetrans.blogspot.com/2013/10/targets-on-multiple-contracts.html">
+    <meta name="published" content="2013-10-16T20:11:00.000-07:00">
+    <meta name="updated" content="2013-10-17T20:11:24.124-07:00">
+  </head>
+  <body>
+    <article data-source="ninetrans.blogspot.com">
+      <h1>Targets on multiple contracts</h1>
+      <p><a href="https://ninetrans.blogspot.com/2013/10/targets-on-multiple-contracts.html">https://ninetrans.blogspot.com/2013/10/targets-on-multiple-contracts.html</a></p>
+      <div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1U05GCVhyJlZ9qdRoJiJ05nRFs9aaDgEBo3kgF3wqdzgemIdciMFnkrZJFyH3XT-X8z0-GE7ZHTViVY5jm6xRwcGl3KF-MFfczX8o6FTyaRjINbFUWpVdIP9hyphenhypheneaNefeb3TRf4wVU7XA/s1600/2013-10-16.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1U05GCVhyJlZ9qdRoJiJ05nRFs9aaDgEBo3kgF3wqdzgemIdciMFnkrZJFyH3XT-X8z0-GE7ZHTViVY5jm6xRwcGl3KF-MFfczX8o6FTyaRjINbFUWpVdIP9hyphenhypheneaNefeb3TRf4wVU7XA/s1600/2013-10-16.png" /></a></div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJlx4xCSRbHRdUu2I2IcHGRaJqP8sNfk47D4Du50gaCi7LtXL6ng5ybE70Y74nK1YKT8Z7pyFgVpfNb8QQEk65I5-OjQmY7BuuIJHzvvnRoQ7bvuopIWmAg5SMESyBiCu3yOLI6iX2nm8/s1600/2013-10-16_results.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJlx4xCSRbHRdUu2I2IcHGRaJqP8sNfk47D4Du50gaCi7LtXL6ng5ybE70Y74nK1YKT8Z7pyFgVpfNb8QQEk65I5-OjQmY7BuuIJHzvvnRoQ7bvuopIWmAg5SMESyBiCu3yOLI6iX2nm8/s1600/2013-10-16_results.png" /></a></div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+<br />
+I've been experimenting with various exit strategies and my current strategy is the following:<br />
+<br />
+When trading one contract, exit at 2x risk (for CL 10t stop, 20t target)<br />
+<br />
+When trading two contracts, exit one at 2x risk, one at 5x risk (10t stop, 20t, 50t targets)<br />
+<br />
+When trading three contracts, exit two contracts at 2x risk, one at 5x risk (10t stop, 2x 20t, 50t targets)<br />
+<br />
+When trading any other even number of contracts, divide in half and trade like its two contracts.<br />
+<br />
+When trading any other odd number of contracts, exit half + one contract at 2x risk, half - one contract at 5x risk. (i.e. for 5c, exit 3c at 20t, 2t at 50t)<br />
+<br />
+The 5x risk above is a swing target and must be adjusted according to market action. For example, you may need to make the target modest if the day looks like it will be small or let it run if the market looks like it could run all day.<br />
+<br />
+Note that Ninjatrader summary of trades uses the first exit to denote exit time and your swing exit can only be seen if you uncheck "Group Trades by ATM strategy". Therefore to see your swing exit, you need to parse through a longer table as shown below:<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqE3wxTja5msC_am-g0FmoV4jGXARUfVe4FeykrIJCBhsVzdiIL1aO-nW03GrJEK2ROIsyBCprIb-wKAojh8alyiSSvZV2U-vDS-WV6_9m-5SexJxi-xXqw-VSOL6-eQgby3dQvF-3TSo/s1600/2013-10-16_results2.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgqE3wxTja5msC_am-g0FmoV4jGXARUfVe4FeykrIJCBhsVzdiIL1aO-nW03GrJEK2ROIsyBCprIb-wKAojh8alyiSSvZV2U-vDS-WV6_9m-5SexJxi-xXqw-VSOL6-eQgby3dQvF-3TSo/s1600/2013-10-16_results2.png" /></a></div>
+<br />
+    </article>
+  </body>
+</html>

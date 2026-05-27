@@ -1,0 +1,10 @@
+Trading without ema
+https://ninetrans.blogspot.com/2013/08/trading-without-ema.html
+Published: 2013-08-09T19:00:00.000-07:00
+Updated: 2013-08-10T13:49:45.567-07:00
+
+I'm currently experimenting trading without an ema. My initial goal is to verify that my accuracy is no worse than trading without it.
+CL usually reacts at first contact with ema, but my reasons for eliminating ema are foundational to the concept of price action.
+First of all, ema is a computed value, and as such is subject to all the issues of other indicators. Secondly, there are many popular kinds of moving averages at every interval and timeframe. They all would be at a different value and a reaction on contact could simply be a popularity contest.
+A trendline on the other hand is always the same at every timeframe. The trendline could be steeper on a higher timeframe or flatter on a lower time frame but eventually, contact with a trendline is always the same and its value as support has more credibility since you would expect every trendline trader to jump in at the same time, while ema traders are likely to jump in at different times.
+My hypothesis currently under test is that setups that bounce off a trendline are more likely to succeed without a large pullback and pullbacks on such setups indicate early failure.

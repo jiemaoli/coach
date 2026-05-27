@@ -1,0 +1,12 @@
+Large overlaps are trading ranges
+https://ninetrans.blogspot.com/2011/01/large-overlaps-are-trading-ranges.html
+Published: 2011-01-26T20:15:00.000-08:00
+Updated: 2011-09-09T17:34:29.914-07:00
+
+Many days you will find signals made by large overlapping bars. Bars larger than recent bars should be faded, with the notable exception of breakout bars. This is because large bars ultimately overshoot one or many trend channel lines and will result in a pullback or reversal.
+Overlapping bars are similar. They are trading ranges and there's a good chance their breakout will fail. Sometimes you get a breakout pullback but fading them using limit orders is feasible if there is a swing point nearby to place a stop under.
+For example today, b2 was not particularly large but it was an outside bar, which often acts as a trading range. b3,4 provided a large overlapping area and there was a good chance a breakout from this would fail. If the b5 was a green bar, it would have been a clear first reversal. However I passed on this trade since there was a chance of another leg down to ema.
+The breakout bar b8 was a legitimate large bar and if there was a small inside bar after it, it would make an ideal breakout pullback (BP) trade.
+As with the rest of the day, you can see wherever there are large overlapping bars, their breakout was most certainly faded. Often the breakout will test the other extreme of the overlap after failing, which means you can enter a trade if there is at least a scalp distance away from your entry. The overlap at b28,29 for example, allows you to buy a tick or two below the overlap with a stop below b27. If a swing point is too far, you could use 2t above a strong bar thats in the direction of your trade. For example, to fade the breakout of b19, you could place a stop above b18.
+When the distance is large for example with b58,59 you could go with a price action entry above b61. The other option of course is a money stop of 2 points.
+I personally do not trade this way, but I do use this information to avoid entering into traps. Breakouts of overlaps are usually traps and if you are strongly convinced of your trade direction, take a second entry. For example, is b73 a pullback after a double top (DP)? Maybe, but due to the overlap, I would avoid taking this entry and wait for another one such as b77.

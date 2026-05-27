@@ -1,0 +1,10 @@
+Fire and forget
+https://ninetrans.blogspot.com/2011/11/fire-and-forget.html
+Published: 2011-11-10T18:29:00.000-08:00
+Updated: 2011-11-11T06:55:22.738-08:00
+
+One of the reasons traders overtrade is that their sense of market direction is focused on the small movements. A second reason is that they become distressed and doubt their own entries as soon as the market moves against them. They may often reverse their positions with every bar or every other bar.
+The right thing to do is to make a note of the kind of setup and let the market take you out. If your trade fails, it will take you out by hitting your stop and if its successful, it will take you out by reaching your targets. This will give you an accurate measure of what kind of entries you have mastered and what you need to work on.
+If you are a trader who focuses on swing entries only, you have the luxury of having a very small stop (of say -1.5 points on the ES). For example on today's chart, short below b1 required a 7t stop but entires on bars b4 (1PB), b17 (W), b47 (fBO) needed very small stops. These setups are usually the ones that run for a large number of points, so do not be upset if your stop is taken out; it means a larger stop would have probably been taken out in any case. 1Rev and 1PB may need larger stops, but -2 points usually suffice.
+Most trading platforms support OCO orders where you can set stops and targets to cancel each other. Once you set an order forget about it and wait for the next setup. If the next setup is in the opposite direction to the position you are in, close out your position and enter a new order.
+This way, you stop focusing on profit and loss and focus on bars instead.

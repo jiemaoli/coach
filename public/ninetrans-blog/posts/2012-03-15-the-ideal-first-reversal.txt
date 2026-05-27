@@ -1,0 +1,8 @@
+The ideal first reversal
+https://ninetrans.blogspot.com/2012/03/ideal-first-reversal.html
+Published: 2012-03-15T19:00:00.000-07:00
+Updated: 2012-03-17T10:08:40.608-07:00
+
+The simplest to read kind of first reversal is a trend move from open consisting entirely of trend bars that penetrates a support such as HLC of prior day or ema (today was both C of prior and ema) and gives a reversal signal.
+If the reversal signal is weak (for example, it has a large entry side tail or is a bar of the wrong color), it is likely to take out the low and try a second time.
+Such a 1Rev is often the low of the day and will close near its high so its a good candidate for a day long swing. In practice, if you get a very sharp move (b31-35) that looks like an overshoot and gives a decent profit, its a good practice to take some or all off and wait for more price action.

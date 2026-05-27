@@ -1,0 +1,9 @@
+Early and late trend breaks
+https://ninetrans.blogspot.com/2011/09/early-and-late-trend-breaks.html
+Published: 2011-09-20T21:07:00.000-07:00
+Updated: 2011-09-20T21:07:31.816-07:00
+
+Early trend breaks are easier to spot correctly and the probability of them giving a sizeable trend move is high. Late trends are rather hard to predict and they will often go only a small distance or fail. This is why 1PB (b9) is a very vital setup to master. Catching the major portion of the early trend move allows you to relax and ignore the low probability setups during mid-day and optionally jump into any late trend break.
+Late trend breaks are often very hard to spot and you will encounter may false starts such as the possible W at b40 or the second W at b55. The DP b22,46,49 was probably a decent signal, but the spike on b56 took out any swing stops.
+The clearest and simplest entry for any trend break is a BP (b66). Even though it looks like the bottom of the range, a BP often is worth the risk given prior signals such as the failed W and the DP.
+However, reading 1PB and OR are vastly easier than reading a breakout from an extended consolidation. If you cannot trade 1PB consistently, its unlikely you will be able to predict the BO from an extended TR consistently.

@@ -1,0 +1,11 @@
+Weak wedges
+https://ninetrans.blogspot.com/2011/02/weak-wedges.html
+Published: 2011-02-14T20:37:00.000-08:00
+Updated: 2011-09-09T17:34:29.547-07:00
+
+Narrow range days usually have overlapping bars and one or two weak wedges. Some of these wedges are traps and others pull back a few points but may not actually result in a reversal. The reason is that wedges need to be extreme moves and have a clear signal bar for with trend traders to switch sides.
+Today we had a W4,8,11 from the open but we did not actually get a reversal bar. The closest readable entry was the W1P at b14, but even that is a bit risky. The strong overlap at the open would act as a magnet, pulling the price back in so its a scalp at best.
+There was a possible W23,31,35 which gave a inside bar signal that never triggered. This is usually an indication of unwillingness of traders to short and hence, more up. The right thing to do is to buy a 2L PB to ema, possibly on limit at say b44 or so.
+A third W35,67,76 gave a better signal that had a strong entry bar and the W1P at b79 was a good entry and could be taken for a swing if it wasn't at the end of day.
+Weak wedges also occur in pullbacks and they are usually excellent with trend entries. For example, W48,51,57 was possibly a weak W pullback and buying above the next bull bar is acceptable as long as you are okay holding through pullbacks since your signal bar had lots of overlap.
+In summary, the trick to trading wedges is the same as trading every other signal. When the signal is clear and strong, go with it. Otherwise, fade it.

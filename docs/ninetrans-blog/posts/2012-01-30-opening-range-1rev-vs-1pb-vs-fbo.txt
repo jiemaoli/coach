@@ -1,0 +1,15 @@
+Opening range: 1Rev vs 1PB vs fBO
+https://ninetrans.blogspot.com/2012/01/opening-range-1rev-vs-1pb-vs-fbo.html
+Published: 2012-01-30T18:09:00.000-08:00
+Updated: 2012-01-30T18:09:15.869-08:00
+
+It is important to know the definitions of 1PB, 1Rev and fBO to correctly trade the opening range:
+1PB is the first pullback after a strong or successful trend attempt
+1Rev is a strong reversal after a weak or moderate trend attempt
+fBO is a failure to create a trend breakout of the opening range
+If we look at b1 today, its clearly a trading range bar. There is no trend yet. Some traders will buy the low of b1 hoping for an fBO. However, this is dangerous since b2 can be a large trend bar that continues the downward move.
+b2 attempted to break into a bear trend and failed. At this point, we have a fBO. However, its not tradable since the signal bar is weak and we would be forced to buy mid-range. Note that this is not a 1Rev, since only trends can reverse and there are no reversals within a trading range.
+b3 is a trend bar, but since it did not breach the trading range, its not a successful BO. b3 is not a 1PB since there is no trend and its a bar of the wrong color in any case. If b3 was very high and a bear bar, you would be selling near the high of the trading range and you could argue its a 1PB even though b2 was a weak breakout bar.
+b4,5 again is an fBO but the signal bar is a weak overlapped doji and is not worth trading. If a trading range is at least 4 points and the other end is at least 2 points away, often the signal will work for about half of it (1 point in this case), but often its just a distraction because a clearer setup is usually just a couple of bars away.
+b6,7 is an inside bar and a LH after a LH and LL, so a possible trend. However, it would be a very shallow 1 legged pullback after a weak reversal bar b5. You don't really want to sell near the low of a trading range unless its at least a 2L pb.
+b9,10 is a W reversal and since we have a weak down trend, this can be labeled a 1Rev. Since the reversal was not near HLC of prior day, its not an OR; therefore it is labeled XOD (extreme of the day).

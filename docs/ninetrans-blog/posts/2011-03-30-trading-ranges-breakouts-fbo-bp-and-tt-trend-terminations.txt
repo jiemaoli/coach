@@ -1,0 +1,11 @@
+Trading ranges: breakouts, fBO, BP and TT (trend terminations)
+https://ninetrans.blogspot.com/2011/03/trading-ranges-breakouts-fbo-bp-and-tt.html
+Published: 2011-03-30T20:48:00.000-07:00
+Updated: 2011-09-09T17:34:28.849-07:00
+
+Trading range days can be traded well with some price action analysis. If the first few bars are taily and overlapping, there's a good chance you have a trading range day.
+The trick to analyzing trading range action is to look at them as series of failed breakouts and breakout pullbacks. The very first bar was a trading range bar. The second bar ticked below the first bar, then ticked above giving two fBO of b1. b3,7,10 were also failed breakouts. Failed breakouts of a trading range can only be expected to test the other end of the trading range and sometimes they may not reach the other end but give a breakout pullback.
+If the signal bars are well formed, you can trade a second attempt to fail the breakout (b13 is a second attempt to fail the breakout below b4, the recent low of the day), but you should only expect it to go to the other end of the range (b7 high, reached at b19). When the other end of the range is reached, you may get a  breakout pullback. This is a high probability trade and should be expected to go to a measured move of the prior range (b44).
+Trends terminate when you have highs and lows sideways rather than HHs and HLs. So at b62, we have two lows and two highs that are no longer in a trend. Often, this will breakout into a new trend in a breakout pullback pattern again. Often, its in the direction of the prior trend but if the price action has been marginal, it may break down as it did today. Regardless of whether b74 is an A2 or BP, its basically the same trade. The price tried to move twice in one direction and failed, so it tries to test the other end.
+If you already had a low that was close to the prior low(b53 near b40) and you get a two legged move to a LH (B62) or DT, its best to exit since the next move up may not go above this point.
+So to summarize, BP are trend generators, fBO are fades, TT are exit (but not reversal) signals

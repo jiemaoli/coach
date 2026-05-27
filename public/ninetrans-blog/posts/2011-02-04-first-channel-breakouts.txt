@@ -1,0 +1,9 @@
+First Channel breakouts
+https://ninetrans.blogspot.com/2011/02/first-channel-breakouts.html
+Published: 2011-02-04T17:45:00.000-08:00
+Updated: 2011-09-09T17:34:29.714-07:00
+
+First channel breakouts are a high probability entry if you can correctly identify them. I usually end up not taking them, because I'm already in a position due to a prior entry and have just exited my scalp portion a few ticks ago. It does not make sense to re-enter unless the price action has shifted significantly.
+The correct way to enter a first channel breakout long is if the price triggers above the bar that broke the micro-trendline. Therefore for the channel from b34 to b42, since the bar b43 dipped below the prior bar, an entry above it is a high probability entry.
+On the other hand for the channel from b20 to b25, the channel was broken by b27, but a long above it was not triggered. A second bar that dips below the prior bar is more likely to be a 2 or 3 legged pullback or barb wire and you should not be buying above b28.
+The move eventually gave two failed extremely poor sell signals, a doji reversal at b29 and a 1t ii short at b32 both of which failed and turned into an A2 long. Although technically the b32 ii is a possible long signal and would make it an A2, its such a poor signal that very few traders took it. If you did take a poor signal, you need a money stop of 8 ticks (which was not hit).

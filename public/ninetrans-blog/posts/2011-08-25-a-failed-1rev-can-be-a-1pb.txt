@@ -1,0 +1,11 @@
+A failed 1Rev can be a 1PB
+https://ninetrans.blogspot.com/2011/08/failed-1rev-can-be-1pb.html
+Published: 2011-08-25T16:23:00.000-07:00
+Updated: 2011-09-09T17:34:25.952-07:00
+
+A 1Rev or OR needs to be at a place where a reversal would make sense. If not, it is likely to fail. Today, the opening 2 bar reversal probably was the first reversal, but if it wasn't, then b3 is an attempt to give a first reversal.
+The three minute chart on the left shows this much more clearly. 3m b5 attempted to reverse the opening move but since it wasn't near any place where a reversal would make sense such as ema or the extremes of the prior day, it failed.
+Given that it was the first attempt to reverse three bear trend bars with strong closes, this probably was expected but what's more important was that a failure is often a 1PB (3m b6) in the direction of the original move. The risk to taking this of course is that a second attempt and the ema are very close.
+However, when the second attempt to reverse it at the ema (b7) did not trigger, it was a confirmation of the 1PB and traders who were quick could probably sell below b7.
+On hard trend days, the correct entries go far and go quick and there is really no latitude for delays. This is why new traders are better off trading off a single chart and try to focus on the best entries.
+Fortunately, today we did get an A2 (b24), which is comparatively rare in a hard trend. Given the bar sizes, counter-trend trading was permissible after the trendline break (b17-23). On a normal sized day, fBOs should only be taken in the direction of the hard trend, since any counter-move is likely to fail or be otherwise unprofitable.

@@ -1,0 +1,9 @@
+Trendline tests and break
+https://ninetrans.blogspot.com/2012/05/trendline-tests-and-break.html
+Published: 2012-05-04T19:00:00.000-07:00
+Updated: 2012-05-06T11:59:36.642-07:00
+
+When the price dips beyond a trend line and gives a continuation signal right away (within a bar or two), its a test of the trendline and the test has succeeded b18,b33. A successful test invites fresh orders in the direction of the trend. Every tiny dip beyond the trendline that sets up a with trend trade is often a swing trade and can be held until a definitive trendline break.
+When a trendline test fails, such as the move from b39 to b49, the trend is broken and you should no longer be looking for reversals or continuations. The market is now in a trading range and you can only trade fBOs at the extremes of the range.
+A trendline break is a trend termination (TT) and does not automatically imply a reversal, even with a test of the prior extreme (b63 was a test of b39). Only fBOs can be traded and all fBOs should only be expected to give two legs.
+In the event of an fBO trade taking out the other end of the range in one leg, especially with a strong breakout, you could expect a BP setup and a continuation of the trend. If the new breakout is in the opposite direction from the old breakout, it may work like a major trend reversal. If its in the same direction, it works like a trend continuation.

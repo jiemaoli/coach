@@ -1,0 +1,12 @@
+Channel Theory VI - Channels are forever
+https://ninetrans.blogspot.com/2012/10/channel-theory-vi-channels-are-forever.html
+Published: 2012-10-19T13:48:00.000-07:00
+Updated: 2012-10-19T13:48:02.515-07:00
+
+A channel after a strong spike such as today should be expected to last forever. While its true that often channels end up breaking (such as the move from b66-77 today), the fact of the matter is channels last forever because they constantly attempt to reverse and fail.
+The very uncertain nature of channels can trick you into reading all sorts of reversals if you just look at it the right way. For example, is b4-7 a trendline break followed by a test of the low at b11 and a strong reversal bar? Is b30 a 3rd push and TCL OS and therefore a W reversal? is b34-37 a FF and therefore end of the trend? is b66 a DB? Yes, they were all potential reversals and yet the market made new lows well into the close.
+You have to realize that every reversal signal in a channel is a trap. Traders who are used to trading counter-trend at bottom of trading ranges will find themselves buying all the way into the hole on a day like this.
+The trick to trading a channel such as this is to expect every reversal to fail and take the failure in the direction of the channel. So for example, while b13 would be hard to enter due to overlap, b18,26 were acceptable signals. b46 certainly was a 2L pb to ema. b77 was G2 (deep PB after strong move).
+The only time you can actually take a trade opposite to the channel is after a sustained break of the channel and a HL. So if the move down from b77 had given a 2 or 3L HL, you may take it for another leg up. A 1L move should never be taken since it can fail and result in a 2L move very quickly.
+If you missed an entry, you can often enter beyond a small trend bar as long as its not too far from the trendline or ema. For example, b19 and b29, b47, b50 are ok entries.
+But the best way to trade such a channel is to swing a contract from an early entry and hold it till the end of the day or an obvious reversal.

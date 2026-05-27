@@ -1,0 +1,11 @@
+Price Action Basics VI - The first bar
+https://ninetrans.blogspot.com/2011/09/price-action-basics-vi-first-bar.html
+Published: 2011-09-28T20:08:00.000-07:00
+Updated: 2011-10-04T06:31:28.805-07:00
+
+According to Al Brooks, the first bar represents the day in a nutshell on most days. As you can see, today that was not true. My modification is that the first one or two bars represents the AM movement. If the first couple of bars are strong trend bars in the same direction, there is a good chance of a trend move (either with or against the first two bars). If the first bar is a trading range type of bar or the first two bars are opposite colored and overlap (even though they are trend bars), then the market is forming an opening range rather than an opening trend.
+The first bar is special, because it is the only bar thats guaranteed to give both a new HOD and LOD. From this point on, you can trade fBOs and BP of b1 and continue with every new HOD and LOD. A bar with tails such as b1 today should be considered a small trading range. Such an opening often leads to an expanding triangle open, which essentially is a series of fBO of every new high and low until one of them gives a two or three legged LH (such as b30) or HL and begins a trend move.
+Trend bars on open show energy and will often lead to an AM trend. Those trends will often reverse and lead to a prolonged trend that could last all day.
+A reversal bar on open will often give a sharp move that will turn around and take out the other end of b1. This is especially true if the reversal bar is in the wrong place, i.e., mid-range or a bull reversal bar above a small gap, etc.
+Doji b1 can give a small fBO on one end of the bar followed by a prolonged move when the other side of the bar breaks out. But it can also lead to BW open.
+Regardless, the size and form of b1 is only a guide and should not be relied upon religiously. There are various edge cases that are too numerous to list and can only be mastered with experience. The right way to approach b1 is as if its a trading range and trade it as if its a small trading range. That is to say, if there is a strong breakout, enter on a pullback and if there is a weak breakout, fade the breakout. Remember that fBO of small ranges is usually not worth the trouble and that applies to b1 as well.

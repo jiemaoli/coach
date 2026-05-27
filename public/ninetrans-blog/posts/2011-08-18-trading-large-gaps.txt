@@ -1,0 +1,8 @@
+Trading large gaps
+https://ninetrans.blogspot.com/2011/08/trading-large-gaps.html
+Published: 2011-08-18T16:33:00.000-07:00
+Updated: 2011-09-09T17:34:26.117-07:00
+
+Small gaps narrow, large gaps widen. A currently experimental trade is to trade the open betting on the large gap widening with a 6t stop. The idea being the buy at open should not scalp out profitably. Today, this entry was stopped to the tick before the price reversed but overall this is worth the risk:reward since you are often getting the best entry of the day. However, this is still an unproven trade and not advisable for large size.
+A1PB after a trend attempt is generally the safest trade and in the overall scheme of things, far better risk to reward ratio than entering on open. However when the signal bar is poor and news is pending, its often advisable to skip this trade.
+Huge bars are trading ranges and at the close of b8, its pretty obvious that b7,8 form a large trading range and you should only buy in the lower 1/3 and sell in the upper 1/3. The only viable entries for the rest of the day were the DT at b35 and the W at b76. Honorable mention: b54 was possibly a W1P if you consider b41,46,51 a W rather than a channel.

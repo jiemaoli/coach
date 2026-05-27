@@ -1,0 +1,12 @@
+Inside bars
+https://ninetrans.blogspot.com/2011/02/inside-bars.html
+Published: 2011-02-24T19:45:00.000-08:00
+Updated: 2011-09-09T17:34:29.447-07:00
+
+I've often mentioned how outside bars are trading ranges and you should always watch for failures or take second entries of their breakouts. Inside bars form an overlapping region and are therefore like a small trading range. Generally inside bars should only be taken as with trend entries. A counter trend break of an inside bar is likely to fail and trap you as in the short side breakout of b9.
+When the body of a bar is inside the body of the preceding bar as in b4, it often acts as an inside bar even if it pokes slightly (but not a lot) outside the preceding bar.
+Some down/up reversals are effectively inside bars if their sizes are not comparable as in b33. Their breakout can fail as well.
+The chances of success of a trade off an inside bar is stronger if the inside bar is a small trend bar at the end of a large bar. In these cases, you could trade the breakout of the inside bar and not worry about taking an entry off the outside bar as in b25 and b35.
+Inside bars that have both bars of the same color can be treated as a pullback and be entered with trend as in b59. Double bottom at the ema is also another acceptable entry as in b65.
+Inside-inside bars as in b30 have a much higher chance of success than single inside bars, especially with trend. In this case, it works as a breakout pullback trade.
+In summary, inside bars are best entered with trend or to fade large bars. It is simpler to understand when you look at inside bars as basically pullbacks. If you don't believe the trend has reversed, you can restrict your entries to higher probability trades.

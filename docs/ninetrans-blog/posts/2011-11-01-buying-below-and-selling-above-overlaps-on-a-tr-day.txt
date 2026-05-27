@@ -1,0 +1,9 @@
+Buying below and selling above overlaps on a TR day.
+https://ninetrans.blogspot.com/2011/11/buying-below-and-selling-above-overlaps.html
+Published: 2011-11-01T19:05:00.000-07:00
+Updated: 2011-11-02T07:05:19.537-07:00
+
+Trading strong trend days is not necessarily easy but certainly simple. You can basically take every reasonable with-trend entry and chances of success are high unless you are near the end of the trend. On a trading range day, things become much more uncertain and swing entries will be stopped out all the time.
+A simple heuristic to deal with trading range days is to buy below overlaps and sell above them. For our purposes, an overlap is any trading range bar such as the outside bar b7, any bars that overlap such as b54,55 or any horizontal range such as b69-72. The only restriction is that the overlap be large enough for a scalp profit, say 4 points. A trend bar such as b48 should not be faded in this manner since there is a very good chance it could turn into a spike and channel or otherwise turn into a BP.
+Once the overlap is in place, resolve to sell above it and buy below it. On a trading range day, there is a very good chance of a failure of any breakout beyond these overlaps and a very good chance it will at least take out the other end of the overlap.
+Conversely, an overlap whose breakout fails and successfully takes out the other end on a trend day such as the BO above b7 which consequently took out b7 low, transforms the day into a trading range day and you should only trade at the ends of the range.

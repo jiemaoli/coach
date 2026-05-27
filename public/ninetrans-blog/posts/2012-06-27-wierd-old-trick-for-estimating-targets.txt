@@ -1,0 +1,11 @@
+Wierd old trick for estimating targets
+https://ninetrans.blogspot.com/2012/06/wierd-old-trick-for-estimating-targets.html
+Published: 2012-06-27T20:05:00.001-07:00
+Updated: 2012-06-27T20:05:18.487-07:00
+
+One of the most challenging and error-prone tasks a swing trader needs to perform is to estimate his target. Over-estimation forces you to give up a lot of your gains waiting for your magic number to hit. Under-estimation is slightly better since you can always look for a fresh entry.
+For strongly trending days, this is a fairly easy task. On most strong days, you can often swing till the end of the day.
+At the very least, you can swing till you meet a sustained trendline break and then exit near the prior high.
+For example today we had a very strong trend move up from b5. The sustained trendline break b45-57 was obvious even without drawing a trendline. Therefore, the trader should expect to exit near the prior high (b63H).
+Trading range days are harder and your ability to judge the moves are far more important since the trend break is likely to break all the way and take out the other end of the day. One trick is to use the observation that trading range days are usually proportional in range to the first bar of the day. If b1 is 2 points then the daily range could be expected to be around 10 points. Therefore you can simply exit when the range comes close to the expected boundary. For example, today's b1 was 2.25 points. Since the low of the day was at 1317.25, you should expect the high of the day to be around 1317.25 + 2.25*5 = 1328.50, which was indeed the actual high of the day.
+Note that this is a guideline and not some magic formula that is infallible. Very large and very small first bars are obvious exceptions to this rule. Even so, you should always exit a partial position when you have a decent profit and your swing stop is very far.

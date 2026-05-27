@@ -1,0 +1,19 @@
+Creating a trading system VIII - Fading overlaps in chop
+https://ninetrans.blogspot.com/2013/01/creating-trading-system-viii-fading.html
+Published: 2013-01-18T18:08:00.000-08:00
+Updated: 2013-01-19T18:09:26.026-08:00
+
+Fading Overlaps
+As we saw in a recent post , with-trend trades work a lot better than counter-trend trades or trades when there is no trend. If the counter-trend trades and trades in chop are likely to fail, can we just simply fade those trades? Instead of buying a breakout of a bull bar in a down move, can we not just sell its close?
+Such a system would simply fade overlaps as illustrated in today's trading. The win-rate in fading overlaps is usually a lot worse than scalping bars with-trend. The reason is simple. You never know how far exactly the price will move before the overlap pulls back.
+Lets survey the trades we took today and their results:
+Trade 1: b4 is a bull bar in a down move and an overlap. Sell its close (loss -11t due to 1t slippage)
+Trade 2: Sell the high of b1 since a move above it would overlap a range. (-10t)
+Trade 3: Sell the high of the bar (b7) that overlapped the range (+20t)
+Trade 4: Sell the close of b15 since it overlapped a range (and few bars) (+15t)
+Trade 5: Buy the low of b15, the OL (-10t)
+Trade 6: Sell the high of b20, a counter-trend OL (+13t)
+Although we did end the day up, its simply because our wins were larger than our stop. If our targets were smaller than our stops, this would be a negative day. The first lesson is determining stops and targets is that your target should always be larger than your stop for you to be profitable even with a modest win rate.
+The second lesson we learn is that a trend can breakout and foil your fades. A trend development may be subtle enough that you dont notice it. Note that at trade 5, there was no obvious trend down, and once a trend sets in, only with-trend trades are likely to succeed.
+The most important point about fading overlaps is that you need to be an extremely highly skilled trader to consistently extract value from the market. This is because unlike a bar scalp, your expected profit is smaller and your win rate is lower.
+In hindsight, it would seem obvious that you could easily fade every bar from b47 to b55 but in real time, there is no way of telling how long the overlapping pattern would last. The skill needed to correctly infer a fade of b54 but not b56 would take years to master.

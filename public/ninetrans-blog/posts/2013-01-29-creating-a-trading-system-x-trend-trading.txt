@@ -1,0 +1,11 @@
+Creating a trading System X -- Trend trading
+https://ninetrans.blogspot.com/2013/01/creating-trading-system-x-trend-trading.html
+Published: 2013-01-29T21:13:00.000-08:00
+Updated: 2013-01-29T21:32:45.546-08:00
+
+As we have seen in prior posts, the quality of your trades are highly correlated with trend strength . The weaker the trend, the poorer your results. It should be fairly obvious that an average trader can make money in a strong trend by trading with-trend while only an extremely experienced and skilled trader can make money in a trendless or weakly trending market.
+Every trader has his own volatility floor (requirement) below which trading is unprofitable for him personally. An advanced trader will have a lower volatility floor and newer traders will probably lose even in ideal volatility conditions. There is possibly also an upper limit to volatility beyond which trades with reasonable stops will stop being profitable.
+Recognizing when the market is in a trend and only taking with-trend setups on clear signals is a viable trading plan. This requires that the trader needs to recognize trend starts and terminations and only place trades during the trend. Psychologically, he needs to be able to recognize trend terminations and then be able to step away .
+For example, today a trend started with b4 and possibly with b1 itself. The trend broke with a sustained move beyond the trendline and ema down to b46. You would need to ignore both  long and short signals from this point on.
+Every long setup from b1 to b37 on any decent setup bar (b3,b19,b28,b34) was a success. b16 and b32 were dojis and are not setups. Purely from a bar perspective, b7 was a failed long signal. (In the coming posts, we discuss why those are not setups.)
+So what happens if you only take setups with-trend and only when a trend is in force? Is this a sustainable trading plan? Preliminary results seem to suggest so. However, note that data needs to be collected for a full year before any claim is considered proven. Lucky streaks are fairly common and a three week period is usually insufficient. Note that on some of the days below, results contain trades not purely from trends.

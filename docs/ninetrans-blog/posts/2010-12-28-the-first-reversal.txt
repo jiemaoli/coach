@@ -1,0 +1,10 @@
+The first reversal
+https://ninetrans.blogspot.com/2010/12/first-reversal.html
+Published: 2010-12-28T18:59:00.000-08:00
+Updated: 2013-03-10T19:19:27.656-07:00
+
+When there is a large gap (larger than a recent day) and the first bar forms a reversal bar trying to reverse the gap, it can be considered a first reversal. Today was only marginally a first reversal since the gap was relatively small in terms of points and the bar closed just above the high of yesterday. When there is some doubt as to whether a reversal bar is worth taking, it sometimes helps to see the first five bars of a 1 minute chart.
+As you can see from the chart, there was no bull strength during the first five 1 minute bars. No bars went above the previous bar or closed up strong. Such a first bar is worth shorting.
+On 2010-12-21, we had a similar bar but shorts below it ended up in a one tick failure (1tf). Yes, the bar overlapped the previous day just a bit, but that by itself is not a show stopper.
+Zooming into a 1m chart shows us how the bar was different. The first three minutes had strong bull action and bulls simply saw the bear bars as a buying opportunity at a better price.
+Especially on a possibly small range day, its important to get in early on a possible AM move. First reversals are an important part of this trading principle.

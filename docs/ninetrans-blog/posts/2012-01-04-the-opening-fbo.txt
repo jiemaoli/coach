@@ -1,0 +1,9 @@
+The opening fBO
+https://ninetrans.blogspot.com/2012/01/opening-fbo.html
+Published: 2012-01-04T18:22:00.000-08:00
+Updated: 2012-01-11T09:25:50.920-08:00
+
+When the first bar is clearly a trading range bar, such as a doji, a large bar with tails on both ends or even a trend bar followed by a trend bar in the opposing direction, there is a very good chance that the first or second fBO of the opening bar can lead to an opening trend move, even if its a small one.
+This is because a trading range has buyers below it and sellers above it. Today the buyers below b1 were weak and were overwhelmed by sellers above. This is to be expected and led to a large move that ended in a W reversal.
+Many days, when the opening range is small, the market can create multiple fBOs generating an expanding triangle until one of the fBOs fails, resulting in a BP that in turn leads to a trend.
+When the opening range (b1-6) constitutes a weak attempt to close the gap, there is a decent chance that its failure will lead to an attempt to widen the gap. This attempt (b6-14) is usually a tradable trend move.

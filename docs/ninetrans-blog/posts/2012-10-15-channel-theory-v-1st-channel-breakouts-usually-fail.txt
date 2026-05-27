@@ -1,0 +1,8 @@
+Channel Theory V - 1st Channel breakouts usually fail
+https://ninetrans.blogspot.com/2012/10/channel-theory-v-1st-channel-breakouts.html
+Published: 2012-10-15T21:15:00.000-07:00
+Updated: 2012-10-15T21:15:17.939-07:00
+
+Channels with small trend bodies such as b21-25 obviously constitute a larger trend bar in a higher timeframe and you can often buy above any small bar with a strong close with a stop below that bar. Such channels are called Trend channels (TC) and often are the easiest to trade. In particular, a small trend bar with a strong close that touches a trendline or a micro-trendline is likely to give a large trend bar after it and makes an excellent swing entry (b34).
+On the other hand, bars with tails on both ends such as b2-5 and b45-49 should be viewed as sloping barbwire or barb wire channels (BWC). These should be traded just like BW. The first break against the channel is likely to fail and can be taken for a second leg down (b60) unless its against support such as ema or close of prior day (b8).
+A second attempt to break is often successful (b15) and a HL after a successful reversal (b18,b68) are often the safest entries.

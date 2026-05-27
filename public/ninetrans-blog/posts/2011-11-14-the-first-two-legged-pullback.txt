@@ -1,0 +1,11 @@
+The first two legged pullback
+https://ninetrans.blogspot.com/2011/11/first-two-legged-pullback.html
+Published: 2011-11-14T18:56:00.000-08:00
+Updated: 2011-11-14T18:56:50.872-08:00
+
+On many days, the open may constitute an opening range made up of erratic moves (b1-25) that finally break into a trend (b26-b38). Some traders may get repeatedly stopped out on the initial range and their later trades will barely make up for their initial loss.
+The trick to avoiding being chopped up on the opening TR is to wait for a trend attempt and take a clear pullback on a strong signal bar. This is essentially the philosophy of the 1PB trade.
+Determining if a leg is a trend attempt is a bit tricky. Any two or three trend bars are a possible trend attempt. One bar does not usually make a trend (unless its very large). Once a trend is attempted, it will either reverse and a new trend is attempted in the opposite direction or a pullback gives a possible continuation of the orignal leg. A strong reversal attempt is 1Rev. A pullback is 1PB.
+Today, there was a trend attempt from b3 to b5 and a weak reversal attempt on b5. Then possibly a second trend attempt from b6 to b9. Note that this bar is made up of weaker bars and is unlikely to succeed, especially in the absence of prior bull strength.
+b16 represents the first two legged pullback of the day and is a possible 1PB long entry of the long trend attempt. However, the signal bar was a doji and the reversal was fairly weak. However, this is still a viable long entry. When the long entry failed to take out the old high, it turned into a first 2 legged LH, turning into a 1PB short at b20 of the original short trend attempt.
+Another way to read this is that b2 and b9 represent two failed attempts to close the gap leading to a bear trend. Even though many traders may have correctly read b9 as a possible 1PB short, waiting for a strong signal bar (b26) is usually the right thing to do for a profitable entry. This is because shorting below a bull bar is always subject to failure, regardless of the correct read of the market direction, especially on a choppy open.

@@ -1,0 +1,10 @@
+Anticipating DP setups
+https://ninetrans.blogspot.com/2012/03/anticipating-dp-setups.html
+Published: 2012-03-09T17:08:00.002-08:00
+Updated: 2012-03-09T17:32:52.793-08:00
+
+A prolonged horizontal move breaks a trend, but you dont need to wait that long to detect a trend termination. Any poor reversal (b66) followed by a poor A2 (b71) is sufficient criteria. Any cluster of dojis after a pullback starts (b15-b23) is usually also sufficient to declare a trend termination.
+At this point, you are in a trading range and no longer in a trend. Any A2 or other continuation trade is likely to result in failure. Even if you missed reading the termination, entering only on strong signal bars would protect you from poor setups. For example, b26 did not trigger, b32 was a bear doji, b38 had a doji before it, b52 is an iii in BW. None of the buy setups were acceptable, so you wouldn't be buying them.
+Sell signals were pretty poor as well, most triggering off bull bars or had dojis preceding them. The first acceptable sell was b55 inside bar and the next attempt was b63. A simple filter of not selling before a 1 legged close below the ema (b47) would have also kept you out of trouble.
+At some point you would figure out that the trend has ended, regardless of your method of determination. At that point, you are waiting for BP or fBO. A DP is a kind of fBO that results from two failed attempts (b46,55) to break a barrier (b22 high) and a third attempt (b63) that falls short of the prior two attempts.
+So while the DP at b63 is clear, its important to note that b32,38,51 is not a DP long. The reasons is that DPs only fade trading ranges and never extend them. So if the TR is narrow such as the horizontal move today, there's a very good chance that any DP like setup to go long will fail. A DP to go short however is more likely to succeed since the move up simply has brought us to the top of a trading range.

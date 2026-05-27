@@ -1,0 +1,16 @@
+Trading plan: Trend day
+https://ninetrans.blogspot.com/2011/08/trading-plan-trend-day.html
+Published: 2011-08-11T21:08:00.000-07:00
+Updated: 2011-09-25T17:44:21.782-07:00
+
+Trading on trend days is relatively easy and trading only on trend days and sitting on the sidelines on the rest of the days is a viable trading plan. The only issue is that trend days occur infrequently (about 20% of trading days) but on sharp moves on the daily chart, trend days can occur a lot more.
+The first step is to identify a trend day. Overall there are some common attributes but these do not automatically guarantee a trend day.
+A large gap (beyond the range of the prior day) and a large opening bar that widens the gap
+A large gap that fails to close in a 2 or 3 legged move
+A small gap that reverses the high, low or close of prior day
+A small gap that moves to ema and reverses
+First 3 or 4 bars make a trend move
+In all the above, you can simply take the 1st pullback and swing for the rest of the day. The 1st reversal (b5 or b6) and the 1st pullback (b9) are often very poor bars so a conservative trader may simply wait for the first 2 legged pullback. On many days this means missing a large portion of the AM move but a 2L pb is far easier to enter.
+The main thing to watch out for in a 2 legged pullback is the quality of the signal bar. Often the first signal bar is a trap. For example b24 was an outside bar and b33 was a doji. b47 had a tail on the entry side, was away from the ema and was strongly overlapped by prior bars. In such cases, you should simply wait for the next signal. You will know your entry is correct when your signal bar is strong (b37) and after it closes, the breakeven stop at your entry price will not be hit.
+You should always be on the watch for possible trend terminations such as a double top, W (b75), TTR or a trendline break. After this point, there may be no more A2s.
+Once you can trade trend days adding trading range days is easier. On the setup chart  most setups are in trend moves. In trading ranges there are basically only breakouts and failed breakouts and those take a lot more experience to trade profitably. You can be a profitable trader without ever trading trading ranges if you are able to sit out on 80% days.

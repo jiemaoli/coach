@@ -1,0 +1,8 @@
+A simple Trading Range day trading plan
+https://ninetrans.blogspot.com/2011/06/simple-trading-range-day-trading-plan.html
+Published: 2011-06-08T20:54:00.000-07:00
+Updated: 2011-09-09T17:34:27.637-07:00
+
+About 80% of the days are trading range days and its important to be able to trade them profitably. The first order of business is to identify a trading range day. My criteria is this: Wait for two up and two down pushes (b13 today). After this, if the price is very close to the open, there is a very good chance its a trading range day. Strong up and down bars early in the day (b2, b4) increase the chances of larger scalps (+2 to +4) between the moves. Naturally, trading range days can indeed break into trends but in most cases they will simply make two or three legged moves to the day's extremes.
+Once a trading range day is identified, simply fade any two or three legged move to any extreme of the day. If the move is very channel like, you may choose to skip it since it may act as one leg. If a two legged move only reaches mid-range, it could give another push up to form a wedge so you could skip that one and take the wedge or enter on a second attempt (b66).
+Occasionally, a strong signal such as a DT (b44) may develop that can result in a hard trend. If you suspect a hard trend may be developing ( shaved trend bars, no strong CT bars, no tick above prior bars), you can also enter on any small trend bar (b53) since a sharp trend could bring large profits.

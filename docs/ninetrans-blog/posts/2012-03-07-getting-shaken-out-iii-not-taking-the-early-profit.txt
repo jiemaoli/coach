@@ -1,0 +1,10 @@
+Getting shaken out III - Not taking the early profit
+https://ninetrans.blogspot.com/2012/03/getting-shaken-out-iii-not-taking-early.html
+Published: 2012-03-07T21:30:00.000-08:00
+Updated: 2012-03-07T21:30:55.119-08:00
+
+When you are trading only one contract, you should always take an early profit. A reasonable early profit could be your risk or slightly higher. When you are trading multiple contracts, you should sell some at an early profit for at least some of your contracts. For a -1.5 stop, I prefer to take a 2 point early profit. Psychologically, this act allows you to tolerate a pullback far more easily than simply holding it to the final target.
+The early profit ameliorates your stress levels via a couple of pathways. One, it gives you a sense of accomplishment, marks success and gives a boost to your confidence for doing the right thing. Second, it lowers your holding size, reducing the stress you feel when the market pulls back against you.
+For example, assume you bought b52 today and did not sell at +2 near the high of b56. Your reasoning is simple. It was a one legged breakout after a three legged pullback and should give at least one more leg up. However when the price pulls back to below your entry price on b62, and b62 mid-bar looks like a bear bar, the chances you panicking and exit at a flat or one tick loss are far higher than if you sell half your position at +2.
+If you sold at +2, you are more relaxed and could easily place your stop at breakeven. Even if its hit, you wouldn't care too much since your trade is already a winner. If you choose to take a 4t extra risk perhaps you would see your new high. Even if the trade went bad, you would still net +1. This knowledge makes it easier to weather a pullback.
+Holding a winning trade for a choice between a larger winning trade vs a smaller winning trade is far easier than holding a winning trade with a choice between a larger winning trade and a losing trade.

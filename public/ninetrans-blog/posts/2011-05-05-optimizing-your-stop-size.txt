@@ -1,0 +1,11 @@
+Optimizing your stop size
+https://ninetrans.blogspot.com/2011/05/optimizing-your-stop-size.html
+Published: 2011-05-05T18:56:00.000-07:00
+Updated: 2011-09-09T17:34:28.170-07:00
+
+Price action trading uses the signal bar boundaries as entry and stop loss. Bars vary in size and a large signal bar could mean a large risk while a small signal bar could give a stop that gets hit simply because the signal bar is too small to represent real risk management.
+Since larger stops represent larger risk,  you can reduce your overall risk by picking entries that require smaller stops, thus improving your profitability. Suppose your entries consistently give +1 point profit before pulling back no more than 3 or 4 ticks, you should be able to reduce your stop size to 5t thus reducing your risk. Note that you need to be sure that if your stop is hit, there is a low probability of the price moving to your stop target.
+One way to do this is to check the Maximum Adverse Excursion (MAE) if your trading platform supports it. Today for example, my maximum adverse excursion (the pullback after taking me into the trade) was 2t as shown below.
+You should calculate the likely MAE for winning entries for every setup you do trade. If a setup is likely to fail after a MAE greater than a certain number of ticks, that is your best stop. Keeping an eye on MAE allows you to concentrate only on setups that have the smalles MAE and also tune your reading of signal bar quality that allows you to select entries that are likely to have a smaller MAE.
+Once you can consistently tighten your stops, you can trade larger size with the same account size. Also your average win to average loss will improve, enhance your profitability.
+If the price moves to a profit target after taking out your stop more than a rare occasion, you need to refine your entries a bit more or relax your stops a bit more.

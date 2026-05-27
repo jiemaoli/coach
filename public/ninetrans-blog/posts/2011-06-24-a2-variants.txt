@@ -1,0 +1,12 @@
+A2 variants
+https://ninetrans.blogspot.com/2011/06/a2-variants.html
+Published: 2011-06-24T19:13:00.000-07:00
+Updated: 2011-09-09T17:34:27.340-07:00
+
+A strong tend day shows multiple A2s and today we got a great sampler of A2 variants.
+The first and not very obvious is the fH2 at b7. This will act like an A2 and give at least 2 legs down. While today's formation is clear, on a soft trend day, it could manifest as 2 pokes beyond prior bars in a slightly sloping market.
+The second is the classic A2, which is a 2 legged move(b21-28) in the direction counter to the main trend (b1-b21) .
+Normally, its a good practice to count legs counter-trend only, i.e., reset your count on every new trend push. If not, you would be shorting b23 instead of b28. However on two variants, you do not have to reset your count. These are 5tf moves. The entry above b36 was a 5tf, this would allow b38 to be an A2, counting b35 as an L1, regardless of the fact that it was the same low as b33. Another variant is b64 acts as an A2 in spite of b62 having the same low as b57 since the entry below b64 was a second entry at the same price as b60.
+Even better is b74, which is an A2 since the short below b70 was a 5tf.
+Note that you should heed other confirming signs of A2 such as the move being in a trend, closeness to the ema (not too far above or below), decent trend bar PA (not too many dojis or overlaps) and good bar size (bars that are too small or too large must be ignored).
+Correction : Previous version of this post mistakenly mentioned b60 short as a 5tf.

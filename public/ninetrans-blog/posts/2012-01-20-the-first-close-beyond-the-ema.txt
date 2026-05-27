@@ -1,0 +1,9 @@
+The first close beyond the ema
+https://ninetrans.blogspot.com/2012/01/first-close-beyond-ema.html
+Published: 2012-01-20T19:48:00.000-08:00
+Updated: 2012-01-20T19:48:11.443-08:00
+
+The 20 bar ema is the only indicator Brooks Price Action uses but this gives several signals including G, G2 and A2. In addition there is one tiny bit of information that it reveals thats very useful to price action traders. In many respects, ema is a barrier like a trendline, swing point, high and low of the day or prior day and so is subject to fBO and BP trades. In general, an A2 can be seen as a 2 or 3 legged fBO of the ema.
+The ema represents a sort of average price and many traders and algorithms like to enter at a better than average price. So the first time the price touches the ema in a very strong trend, its likely to find support. Many traders (and algorithms) will only make a decision on the close of a bar, which gives us some clues about how the price reacts after closing beyond the ema.
+The first close above the ema (b12) should find sellers. This implies any signal bar here is likely to have some follow through, especially a 2 legged LH such as b13. Often, a close beyond the ema is on a strong breakout bar and will result in a small or weak pullback bar (b31). This is a sign of strength and implies continuation. If the close after the ema breakout bar does not close reverse below the ema, it should be always be taken as a sign of strength.
+Two or more closes beyond the ema should be seen as a sign of strength even if a pullback bar later reverses the BO (b55), the likelihood of the move continuing at least for a while is high. The only caveat is that BW often fails to obey these rules so its most useful when the market was recently trending.

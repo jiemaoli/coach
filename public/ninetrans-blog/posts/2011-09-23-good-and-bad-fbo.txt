@@ -1,0 +1,13 @@
+Good and Bad fBO
+https://ninetrans.blogspot.com/2011/09/good-and-bad-fbo.html
+Published: 2011-09-23T23:08:00.000-07:00
+Updated: 2011-09-24T11:33:14.158-07:00
+
+I've often mentioned that trading with-trend in a trend is the easiest way to trade and fBO are some of the hardest trades to take. The reason is very simple. Market inertia dictates that when in a trend, the market is likely to continue in the trend and the with-trend entry is a high probability setup. A fBO on the other hand could turn into a BP or fail on the first or second attempts and work only on the third attempt (as a mini-W).
+This is why unless the range is large, you shouldn't even bother taking fBO trades. With that caveat, we can still attempt to deduce the best and worst fBO setups.
+The first fBO setup is b2, the failure of the breakout of the large bar b1, which acts as a small TR. Since the entry would be in the lower half of the range, it is likely to fail, esp. since its a first entry. If the entry was very close to the high of b1, this would be worth the risk reward only because the bar is large. If the bar were 4 points or smaller, its best to ignore the fBO of b1.
+The second fBO is b6, an attempt to reverse the close of prior day and three pushes up (b2,4,6). This is a higher probability trade and can be labeled OR.
+The next possible fBO/BP was b16, which was a strong BO and did not give a decent BP signal bar. At this point, we have a higher high and a higher low and we are in a possible bull trend and should not look to trade fBOs. Rather we should look for 2L PB to ema or TL and take with-trend trades or watch for a trend break. This means we would ignore b21 and even b24 if it was well-formed.
+The one-legged move to and close below ema at b29 possibly broke the trend, so we should again switch to looking for fBO and BP. The three push to b45 is an OK setup, but normally, I avoid taking mid-range entries when the market is not in a trend. If we had been in a trend or the move to b23 was a strong trend, I would consider buying b47 as a possible G2.
+The fBO at b55 is the most desirable kind of fBO. The bar that broke above the HOD turned into a reversal bar with out overlaps of any other bar. (A doji is an acceptable fBO signal at extremes of the day). A reversal bar or inside bar after the BO bar would also be excellent signals.
+To summarize, good fBOs are three pushes beyond the trading range or failures immediately after the breakout when you are certain you are not in a trend.

@@ -1,0 +1,7 @@
+A Wedge reversal of a weak trend may generate a strong trend
+https://ninetrans.blogspot.com/2011/07/wedge-reversal-of-weak-trend-may.html
+Published: 2011-07-12T19:57:00.000-07:00
+Updated: 2011-09-09T17:34:26.759-07:00
+
+Often trading range days are weak trends with deep pullbacks. The price continues to make higher highs (b11,b28, b59) and higher lows (b17, b22, b49) etc. When such a trend has a Wedge reversal (W11,28,59), there is a good chance it will reverse the entire wedge. A strong breakout (b55-58) from an essentially horizontal movement on failure will produce a large move down. The reason for this is simple: The horizontal movement acts like BW and the breakout like a BW fBO.
+The most important reason however, is that every new breakout on a trading range day that did not open with a large gap is far more likely to fail than to succeed.

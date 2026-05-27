@@ -1,0 +1,10 @@
+Trading tight trading range days
+https://ninetrans.blogspot.com/2011/04/trading-tight-trading-range-days.html
+Published: 2011-04-21T20:16:00.000-07:00
+Updated: 2011-09-09T17:34:28.348-07:00
+
+For most traders, the best way to trade a tight trading range is to not trade at all. If you do want to trade, the best setups are to fade the breakouts high and low of the day.
+This approach raises the following questions:
+1. how do you know its a tight trading range day?
+2. what if there is a large breakout?
+The answers are simple. When the size of bars falls under 4 ticks for many bars and the range of the day is small, its very likely to be a tight trading range day. Trading mid-range is extremely dangerous, since there is a very high chance of the trade failing even before it reaches the other end of the range for example by forming a higher double bottom. To maximize your chances of success, you should fade weak breakouts of the range or failed breakout patterns such as DP. You should never worry about missing strong breakouts out of a tight trading range. A tight trading range rarely breaks into a trend right away. The bar size may increase to above 4 ticks sustained for a few bars and the price may also break out of both sides of the range forming an expanding triangle breakout.

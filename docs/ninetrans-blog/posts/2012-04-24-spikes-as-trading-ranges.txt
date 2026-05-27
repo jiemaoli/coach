@@ -1,0 +1,8 @@
+Spikes as trading ranges
+https://ninetrans.blogspot.com/2012/04/spikes-as-trading-ranges.html
+Published: 2012-04-24T06:39:00.000-07:00
+Updated: 2012-04-26T21:39:08.507-07:00
+
+Large bars in the first hour such as b7 potentially setup a trend, often a spike and channel in the direction of the bar. If the bar has good follow through, then you can expect potentially a move up thats equal to the measured move of the spike.
+Sometimes, the spike is seen as a fade opportunity and the price will struggle to stay above it. When that happens, a fade of the spike should try and take out the other end of the bar (at b60). A strong reversal at that point could lead to a reversal of the entire down move (completed at b81) if there is sufficient time left in the day.
+So whenever you see a large bar in the early part of the day, remember that its a potential trading range. Its successful breakout could go to a measured move in the direction of the bar and an unsuccessful BO could fade the entire bar. This estimate can be used as a guide for holding swings.

@@ -1,0 +1,22 @@
+Breakeven odds
+https://ninetrans.blogspot.com/2012/07/breakeven-odds.html
+Published: 2012-07-13T21:56:00.006-07:00
+Updated: 2012-07-13T21:58:59.849-07:00
+
+Some of you may have noticed me go from +2 scalps to +2.5. This represents a shift in my risk management strategy that was under extensive testing. Previously, I have posted a risk management system  that could be used by traders to take a moderate fixed profit with a small fixed risk.
+That system works because every win is larger than every loss and a breakeven trader should still accumulate points. However on some days such as today, the price action obviously favors swinging your position.
+Traders who wish to swing should use the following risk management strategy. This strategy is methodology neutral, i.e. it should work with any kind of trading/entry system.
+Initial Stop is -5t for full size.
+1st target is +10t for half size.
+Never loosen or tighten the stop until the first target is filled or stop is taken out. If not, you lose the benefit of the math.   When first target is filled, move stop on balance to your entry price and let it run. The swing portion can be exited at any price above your entry price but you should try to get at least 4 points.
+In the breakeven case:
+50% of trades stop you out without filling first target. (10t loss)
+50% of trades fill first target and pullback to take your breakeven stop. (10t profit)
+This means even if you can never ever swing a trade, the worst you can have is breakeven as long as your win-rate is at least 50%.
+If you can manage to keep your win-rate above 50%, your account should slowly accumulate winnings. You can do the following to keep a better than 50% win rate:
+Trade only after an obvious trend has broken out.
+Trade only deep pullbacks in the trend.
+Never take reversals.
+Extreme caution between b24 and b60.
+Avoid poor signal bars (overlapped, tails, too large, wrong color, etc.)
+If your win rate is less than 50%, just stop trading anything else except an obvious trend and first get above 50%. A win rate under 50% means you are doing something very very wrong.

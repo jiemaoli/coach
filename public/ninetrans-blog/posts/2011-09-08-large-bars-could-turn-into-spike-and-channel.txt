@@ -1,0 +1,10 @@
+Large bars could turn into spike and channel.
+https://ninetrans.blogspot.com/2011/09/large-bars-could-turn-into-spike-and.html
+Published: 2011-09-08T19:22:00.000-07:00
+Updated: 2011-09-09T17:34:25.795-07:00
+
+The bar b49 can be read in many ways. Its possibly an entry bar below b48, which was an A2 short second entry (with b45 as first). Its possibly a failed H2 with b44 as H1. In any case, its a trap bar that results in acceleration of the trend.
+When a disproportionately large bar pops from nowhere as is the case with news related events, there is a very good chance it will turn into a spike and channel type of move. The exception is if it was a trend bar that triggered off a 2-legged pullback and has follow through.
+Once the spike is determined, wait for a pullback and trade only in the direction of the channel. The channel (b58-69) will be in the same direction as the spike (b49) unless the pullback also had a large spike in the opposite direction.
+Channels typically but not always consist of three pushes and will give a W termination (b70) and will test the begin of the channel (b75). They will then go to the mid-range of the channel (b81).
+There is a good chance you missed out on the spike but the pullback and channel often go to a measured move of the spike.

@@ -1,0 +1,12 @@
+Overconfidence
+https://ninetrans.blogspot.com/2011/12/overconfidence.html
+Published: 2011-12-05T22:33:00.000-08:00
+Updated: 2011-12-05T22:33:00.861-08:00
+
+Consistency requires practice and you just need experience with all sorts of price action. When the price action changes by either slowing down to tiny bars or being volatile with huge bars, your consistency will suffer some impairment. This will continue until your trading experience builds sufficient recall that you will be able to react effortlessly.
+For many traders, the start of consistency brings a new enemy: Overconfidence. This will trick the trader into trying new setups, increasing size aggressively, taking larger risk and in general work hard on self-sabotaging and loss of their hard earned consistency.
+For example, a trader making 2 points consistently by trading the first two-legged pullback of the day may become successful enough that he thinks he can add a new setup or perhaps incorporate a new trading style such as trading mid-bar or on limit. Chances are that the new addition negatively impacts his trading results and may flip him back to being a losing trader.
+The devastation and loss of confidence that can follow is possibly severe. A trader may find himself between periods of consistency and inconsistency and lose hope of ever being able to trade consistently for a living.
+Overconfidence is hard to treat because its hard to distinguish it from plain confidence when you have to judge yourself. The way to deal with this is to attempt only one new setup at a time and only try it once or twice a day. New styles such as limit trading and mid-bar entry should never be attempted since they are micro-optimizations. If most of your setups are expected to go 4 points, an additional one point by entering on limit is usually not worth the additional risk. Prove all new setups by trying them on disciplined SIM trading first and tabulate results. Many of them are probably not even worth trying.
+Remember that success lies in taking a few profitable trades and working on increasing the volume. A trader with only one winning setup that is 70% successful is better off than one with a 100 setups that are overall 50% successful.
+You need only one or two good setups. Even a single setup could take years to master so don't try to cram new techniques until you have mastered your current setup.

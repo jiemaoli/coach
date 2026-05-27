@@ -1,0 +1,13 @@
+Correctly reading a breakout test
+https://ninetrans.blogspot.com/2012/06/correctly-reading-breakout-test.html
+Published: 2012-06-12T20:54:00.003-07:00
+Updated: 2012-06-12T20:54:59.115-07:00
+
+Price action can be arbitrarily defined a set of breakouts and breakout failures. There are breakouts beyond bars, swings, high and low of the prior and current day, the trendline and popular indicator values such as emas, collectively called barriers.
+Breakouts in a trend in the direction of the trend are likely to succeed until the trend breaks. Breakouts in a trading range are likely to fail until a trend is birthed. This is true for any barrier, but some are easier to see and more reliable than others.
+For example, the three push pullback (b24-44) after a strong move up (b15-23) gave an attempt to BO into a trend at b45. The market tried to reverse this breakout but found buyers exactly at the old entry price (b57). Such a setup is called a breakout test (BT).
+BT can also occur at the breakout of swing points such as b17 testing the BO above b12. This is possibly also a BT of the ema.
+A breakout test is one of the few places where a doji signal bar should be considered strong as long as its close is near the entry and not overlapped (i.e, it can be treated as a 2BR).
+The way to anticipate a BT is to note any strong BO bar and if necessary mark its breakout points. For the BO bar(s) b15,16 since there was no buy signal bar, there is only one breakout point, the swing high of b12. For the breakout bar b45, both the swing point b40H and signal bar b44H are BT points. Limit traders can simply place a limit order to enter at this price with a 3t or 4t stop. Stop entry traders should enter on the breakout of the bar that touches but does not dip below the breakout point. Missing the breakout point by a tick or two is preferable to a pullback beyond it.
+Once a trend is established, it does not make sense to call every pullback a BT since a trend is expected to continue, its just a regular pullback and not anything special. That is, there is no point in calling b71 a BT since its basically just a 2L pb in a trend.
+Note that a trend can develop without any breakout tests and therefore BT are not a requirement for trending price action.

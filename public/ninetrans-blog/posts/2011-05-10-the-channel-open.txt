@@ -1,0 +1,9 @@
+The channel open
+https://ninetrans.blogspot.com/2011/05/channel-open.html
+Published: 2011-05-10T18:51:00.000-07:00
+Updated: 2011-09-09T17:34:28.103-07:00
+
+When the market opens and right away starts moving with overlapping bars with very small or no pullbacks below the previous bar, its opening into a channel. A channel move is simply a trend bar on a larger timeframe and usually there will be a second leg up if the channel breaks and moves sideways. A channel move should never be faded unless the channel gives an obnoxious overshoot.
+Channels usually terminate into poorly formed double top or double bottom formations or a doji bar or both (b14). If the channel only pulls back part of the way, say 50%, there is a very good chance there will be a comparable move in the original direction later in the day. You should look to enter on a G2 if you get a deep pullback.
+Often the pullback after the channel can go horizontal into a trading range if the channel gave a trend termination sign such as an ii (b13), DT (b14) or doji (also b14). Swing traders should wait for a breakout at this point and today we got a DP (b45), which is a trend generator.
+A DP should be expected to give a BP on the other end of the trading range and can be held for a swing till  the measured move of the trading range is hit or another trend termination signal (b72).

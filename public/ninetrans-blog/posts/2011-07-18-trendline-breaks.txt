@@ -1,0 +1,9 @@
+Trendline breaks
+https://ninetrans.blogspot.com/2011/07/trendline-breaks.html
+Published: 2011-07-18T19:59:00.000-07:00
+Updated: 2011-09-09T17:34:26.673-07:00
+
+Trendline breaks, especially of trends longer than 20 bars or so should be carefully evaluated for continuation, reversal or trading range action.
+A strong trendline break will go many points and many bars beyond the trendline, often closing above the ema in one leg. If this break occurs after a strong overshoot and reversal bar, its a very strong trendline break and reversal is likely. Any 2 legged pullback or any reasonable 1 legged pullback such as 1chbo should be taken.
+A weak trendline break that occurs after a very large trend bar or a taily bar is likely to turn into a trading range. This is especially true if the terrible signal bar is followed by a 2 legged pullback to the ema that comes close to the extreme of the trend and fails to take it out or takes it out only by a few ticks and then reverses.
+In between the two is a moderate break that gives a channel either in the same direction or the opposite direction of the original trend such as the one today. The break came off a 2 legged move (b30-34), after a doji bar and no real overshoot. However, the A2 that followed (b38) did not go far and started to move in a channel. Once you assess its a channel, you should trade it like a weak trend, buying 2 legged pullbacks to the trendline and ema and scalping most entries by exiting at the trend channel line.

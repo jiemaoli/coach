@@ -1,0 +1,11 @@
+Multi-targets
+https://ninetrans.blogspot.com/2013/08/multi-targets.html
+Published: 2013-08-14T21:20:00.002-07:00
+Updated: 2013-08-14T21:20:39.678-07:00
+
+Optimizing exits is something I've been working on for a while and its one of the hardest things to do in trading. There is a conflict between a clean exit and catching a large run.
+For example, in today's first trade, I had a MFE of 1.2 and the second had an MFE of 1.5 for three contracts. Catching the top tick is magical and no sane trader should aspire to do it every time. However, if I had chosen to exit all three contracts on both trades today, my take would be .20*6 = 1.2
+Another potential optimization is to exit on the close or beyond the first bar that does not have a strong close. In today's example, that would net me .90 + 1.8 = 2.7
+Translated to per contract, it would take my winning from just under .30/contract to about .90/contract almost 3x better.
+However, this is a reasonable thing to do only when you expect a trading range type behavior. On days when a trend is obvious -- which is quite hard before it sets up -- it may be better to hold on for the large move.
+In the coming days you will see me move to a hybrid exit instead of fixed exits for 2nd and 3rd contract.

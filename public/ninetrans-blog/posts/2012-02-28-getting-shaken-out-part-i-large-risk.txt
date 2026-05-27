@@ -1,0 +1,10 @@
+Getting shaken out Part I - Large risk.
+https://ninetrans.blogspot.com/2012/02/getting-shaken-out-part-i-large-risk.html
+Published: 2012-02-28T19:00:00.000-08:00
+Updated: 2012-02-29T06:36:29.647-08:00
+
+Large setup bars often have large pullbacks after entry or outright failure. The reason for this is simple. When the risk is large, risk management rules prevent many professional traders from entering on the breakout of that bar. (News related activity is a notable exception). The knowledge that large bars are unlikely to be successful setups also encourages faders to fade a large bar causing large bars to often act as trading ranges.
+Limit traders often buy a pullback after a breakout and often on a smaller timeframe the pullback may be two or three legged. This will often cause a breakout pullback of a large bar to succeed.
+Regardless of the profit potential, if the theoretical risk of a trade is large, a trader is likely to be very distressed if the market begins to pullback right after entry. This is very natural and its your body warning you that this is possibly a poor trade based on prior experiences.
+If you have traded large bars and lost a few times, your body will learn to be alarmed when you place the trade when your greed tells you to do so. This is because risk causes stress and large risk causes large stress. When the pullback nears your physical tolerance but not your wide stop, you may despair and get out because you cannot take it anymore. Often, the market will take you out by a tick or two and turn right around. The lesson from this is that stops larger than what your physiology permit are probably useless and moreover, counter-productive.
+The simple lesson from this is to not take trades where the signal bar is large. Another possible resolution is to use fixed stops for all your trades. If you only use 6t stops, your body will get comfortable with the risk and let your mind focus on high probability setups.

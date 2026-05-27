@@ -1,0 +1,9 @@
+Breakout
+https://ninetrans.blogspot.com/2013/02/breakout-risk.html
+Published: 2013-02-11T20:27:00.002-08:00
+Updated: 2013-02-11T20:30:19.064-08:00
+
+Predicting a significant breakout with high certainty is still an unsolved problem in price action. In today's chart, correctly predicting that the bear breakout from b7 would fail but the breakout from b22 would succeed is very hard to do.
+Until the market breaks into a trend, the market should be considered to be in chop and overlaps should be faded. Of course, this is optional, you can simply wait for a successful trend and only trade the trend.  A trader attempting to fade overlaps would probably sell an obvious OL at b21 but when it appears to give a sustained breakout, he should trade it with the expectation that it may break into a trend.
+A small bar right after a breakout (b23) usually is an acceptable entry to get in a with-trend trade. If you choose to wait for a pullback, you could enter on the first tail (close of b27) or any signal bar with a strong close such as the pullback at b29 or better yet, the strong inside bar at b31.
+In general, a huge bar (b33) is usually a great place to sell, even if you dont believe the move is over. This is because large bars are usually followed by a trend pause or termination event.

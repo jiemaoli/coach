@@ -1,0 +1,10 @@
+The various kinds of reversals
+https://ninetrans.blogspot.com/2011/01/various-kinds-of-reversals.html
+Published: 2011-01-13T18:58:00.000-08:00
+Updated: 2013-03-11T08:47:30.648-07:00
+
+Most traders are familiar with the reversal bar but such well formed reversal bars are found only in strong trend reversals, typically with obnoxious overshoots. Often you get Double top (b26,34) or bottom reversals, which many traders can spot. Occasionally, you get an inside bar reversal. These should only be taken if there is an overshoot and the entry still leaves room for a scalp to the other end of the outside bar. This is because large bars often act as trading ranges and there will be sellers above large bear bars and buyers below large bull bars.
+For example the entry above b58 was exactly six ticks from the outside bar's high, making this a possible reversal bar if there was an overshoot. When there is no overshoot, these bars act as traps and you can sell below a bear setup such as the b62 inside bar. b67 did have an overshoot, but there was insufficient space above it. In fact, you would be buying the very top of the bear bar, which is a terrible entry. Regardless, it went up to become a 5tf. This could also be shorted at the inside bar b69.
+The next and very important kind of reversal is the outside - inside - outside reversal we see at b73-75. When presented along with an overshoot, this is as good as a strong reversal bar. Normally the 3rd bar ticks above the inside bar trapping bulls in, then ticks below it trapping bulls out and bears in and then reverses up again. This kind of double trap results in a sharp move.
+The last kind of overshoot is the inverse of the above, an inside - outside - inside reversal (b8-10). When present with a sharp overshoot as it did today, this also results in a reversal. For a bull reversal bar followed by a bear inside bar, you may want bears to be trapped before buying above it.
+The ability to find high probability reversals allows you to hold your swing longer in addition to avoid getting in and out of low probability scalps.

@@ -1,0 +1,13 @@
+Trading breakouts and tight trading ranges
+https://ninetrans.blogspot.com/2010/12/trading-breakouts-and-tight-trading.html
+Published: 2010-12-17T20:55:00.000-08:00
+Updated: 2013-03-10T19:10:54.850-07:00
+
+For a long time, trading Breakouts (BO) and tight trading ranges (TTR) had eluded me. Trading these requires quite a bit of practice, but when you get it right, you can catch a good run with low risk.
+The trick to trading breakouts is to trade only breakout pullbacks and occasionally, failed break outs (fBO). The safest trades are breakouts that try to reverse twice and fail. These have the added benefit of being a 2 legged pullback after a breakout and are therefore a high probability trade.
+Another thing to note is the context in which the breakout is taking place. Did the market try to sell off a couple of times and fail? In that case, the breakout is likely to succeed.
+Note that almost every breakout today failed. Today opened with a bear trend bar below the ema. Many traders short below this, assuming there is a good chance of a bear trend from first bar, but when yesterday's close is within reach, its unlikely to go down before making at least two attempts to close it. The breakout of b1 failed but could not go above b1 and stop out the b1 traders. Just as b2 was a failed break below b1, b3 was a failed break below b2 and so on.
+b4 was an H1 variant and set up an L1. b7 gave both an H2 and an L2. With two legs down and any b1 traders still in play would have exited with their scalp profit so limit traders may have bought here.
+The breakout attempt at b11 and b13 failed twice and setup a fBO short on an ii setup. The third push down at b16 gave a weak wedge (W) setup and ended up with a weak entry bar and this meant it did not break into a runaway trend.
+There was a breakout attempt above the range at b26, which tried to fail twice on b28 and then on b32. b31 triggered the H1 but b34 did not trigger the H2 since it did not go above b32. b36 set up an H2, a failed L2 and a 2 legged breakout pullback. This was the strongest signal all day. A break above the range often goes up to a measured move(MM) as it did today.
+At the MM of 1241, it tried to break out twice at b58 and b63 and failed giving a fBO entry below b67.

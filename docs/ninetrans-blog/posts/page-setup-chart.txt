@@ -1,0 +1,19 @@
+Setup Chart
+https://ninetrans.blogspot.com/p/setup-chart.html
+Published: 2012-10-20T23:59:00.000-07:00
+Updated: 2012-10-20T23:59:01.528-07:00
+
+Read this first:  Four trades off nine transitions
+UP  FLAT  DOWN
+UP  A2, 1CBO, hH1,G2,BT  TT  W,W1P
+FLAT  BO  fBO  BO
+DOWN  W, W1P  TT  A2, 1CBO, hL1,G2,BT
+BO  TRI  XT  BP
+fBO  WBO  rev bar  DP
+TT  DT/DB  TTR  fRev+fA2
+1pb    1rev
+This chart describes all my setups from the nine transitions. When the trend is up, I'm looking for A2 in a normal trend, 1chbo in a channel move, H1 in a hard trend and G2 in a deep pullback. Im also looking to exit and stay out when the trend ends in a Trend termination (TT) move such as a double top, TTR or weak reversal followed by weak A2. If there is a wedge move and reversal, Im looking for W and W1P entries to reverse. Down trend is very similar except all entries are complementary.
+When the movement is flat or trading range, Im looking for trend breakouts. usually these are triangle breakouts, expanding triangle breakouts and breakout pullbacks.
+If the range is large enough, I may consider fBO trades. These include a reversal bar on breakout, Double bottom pullback and a two or three legged failed breakout (WBO). Often I will not take these trades and simply take one of the breakout on the other side of the range.
+TT is not something to trade but rather a sign to exit your trend positions. A double top or double bottom, a TTR move or a reversal and continuation trade that both do not have follow through are the most common trend termination signals.
+In addition to the above, I also trade the first reversal of the day and the first pullback of the day at the open, but those are complex topics that deserve their own posts.

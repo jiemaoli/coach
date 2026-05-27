@@ -1,0 +1,8 @@
+The obvious first reversal
+https://ninetrans.blogspot.com/2011/03/obvious-first-reversal.html
+Published: 2011-03-08T18:40:00.000-08:00
+Updated: 2011-09-09T17:34:29.266-07:00
+
+Days that have small trend bars that move 3 or more points from the open bar and reverse after a trend channel violation on a reversal bar that has at least a 2t body (regardless of color) are clear and obvious first reversals and should be taken. If the reversal bar is about the same size as the previous bar, it increases the chances of a successful reversal. These can be taken even if they do not have prior strength in the day as long as there is some indication of strength such as a prior attempt up (the gap) or strength from yesterday.
+If on the other hand the first one or two bars is large, its possibly a trading range and you should look for an expanding triangle breakout into trend. When in doubt due to multiple large bars, if the second attempt in a direction fails, you can take a trade in the opposite direction. If nothing is clear wait for a breakout and then take the first pullback.
+A clear first reversal is likely to bring in lots of traders and you can expect a strong trend in the new direction. A weaker first reversal may not go much beyond the first bar before it gives a pullback. So on most days, the first pullback is easier to read and safer to enter and you can avoid the first reversal completely.

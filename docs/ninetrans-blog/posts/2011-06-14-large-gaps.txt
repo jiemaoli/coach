@@ -1,0 +1,8 @@
+Large gaps
+https://ninetrans.blogspot.com/2011/06/large-gaps.html
+Published: 2011-06-14T19:20:00.000-07:00
+Updated: 2011-09-09T17:34:27.531-07:00
+
+Large gaps -- gaps that are the size of an average day, currently about 10 points in ES -- are likely to move away from the gap rather than close it. This usually implies a trend day. A large gap day that tries to close the gap usually ends up moving far beyond the close of the previous day but a gap that tries to extend its self may find resistance and the early price action gives some clues.
+A strong move up early on strong trend bars usually means possibly a large day and a early move of overlapping bars with tails may mean limited movement after the early move. A shallow trendline break (b15-25) may mean a trend termination without a reversal. Often on strong days such as this a strong AM trend and a shallow trendline break is followed by a channel type move. This is because on a higher timeframe this actually is a spike and channel. The channel should never be shorted until it has its own trendline break (b50-55) followed by a test of the extreme.
+In general, large up gaps followed by a trend made up of average or small bars is fairly easy to trade if you take only with trend entries near the ema. A rough rule of thumb is to only trade with-trend near the ema until there is a successful close below the ema (b57) and then exit on the next push up (b67).  Buying second attempts above bull bars only will usually protect you from being stopped out.

@@ -1,0 +1,8 @@
+Small bars
+https://ninetrans.blogspot.com/2011/08/small-bars.html
+Published: 2011-08-01T21:07:00.000-07:00
+Updated: 2011-09-09T17:34:26.435-07:00
+
+Small trend bars are very important signals and you should pay close attention to them. In a strong trend, a small trend bar is a with trend signal. These are often visible right after a breakout bar(b6 after b5 and b62 after b61), and should be always taken since the following bar is often a large bar (b7) or is followed by a large move (b63-67). Such small bars are safe to short at LOD or buy at HOD.
+A small trend entry bar off a strong signal pattern indicate weakness (b10,b41) unless followed by more trend bars in which case its a sign of strength.
+The first counter-trend bar in a channel can be entered with trend on its close if the close is strong (b39 close), since it will be viewed merely as a pullback.

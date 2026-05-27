@@ -1,0 +1,12 @@
+Channel Risks
+https://ninetrans.blogspot.com/2012/06/channel-risks.html
+Published: 2012-06-01T19:00:00.000-07:00
+Updated: 2012-06-03T10:38:46.282-07:00
+
+Shallow sloped, wide channels are very hard to trade, primarily because they don't always obey many price action rules regarding trends. For instance, a bear trend is defined as a move with lower lows and lower highs. This implies that when a counter-trend move takes out a swing point, the trend may have terminated. Shallow sloped trends routinely take out swing points and continue in the direction of the original trend (b33, b61).
+Second attempts can fail (b31) while first attempts succeed (b52,69) and stops need to be larger than 6t (b63). Apparent wedge reversals can fail (b21,58) . The price will often not touch a trendline or ema before making a continuation move (b17,52) causing traders to miss a lot of entries. Stops beyond swing points are routinely stopped out (b33,61) making it very hard to swing even if you do get in at the right price.
+While all this looks like chop, its a very strong trend on a higher timeframe.
+The chart on the left shows the current day's 30m chart. Its obviously a very strong bear channel and the entire day had only one bull bar. What looked like strong bull moves on the 5m chart were only up-tails on the 30m chart.
+A move above a swing point, which would be trend break in a normal chart is only a poke above a prior bar and is effectively a 1CBO type continuation setup.
+The trendline itself has remained true and has never been broken the entire day. A channel remains in effect until a counter-trend move results a sustained trendline break.
+The way to enter trades on days like this are no different from any other day. The best entries are two or three legged moves to the trendline or ema (b34, 63).  Since counter-trend swings are huge, you should simply exit on the second or third push in the direction of your trade (b49 or b55) and wait for a new setup. The single most important rule regarding shallow wide channels is to never trade counter-trend until the shallowest trendline (b1-b9) is broken.

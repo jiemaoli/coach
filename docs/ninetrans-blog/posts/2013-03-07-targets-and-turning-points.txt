@@ -1,0 +1,9 @@
+Targets and turning points
+https://ninetrans.blogspot.com/2013/03/targets-and-turning-points.html
+Published: 2013-03-07T19:03:00.001-08:00
+Updated: 2013-03-07T19:03:05.835-08:00
+
+A large first bar is usually an opening range, especially if it has large tails on both ends. Any breakout beyond it is likely to fail (b2, b5) and test the other end of the trading range. On tight trading days, price could bounce between two ends for the entire trading session but occasionally, a breakout will succeed and such breakouts usually lead to a measured move of the opening range (b14).
+Trading the fBO of the opening range should be attempted with caution since the profit potential, defined by the range size needs to be large enough to justify the risk. A weak bar such as b2 or b7 are not very high probability entries and your chances of a successful trade are lower compared to a strong signal bar for an fBO setup.
+A successful BO that leads to a measured move may turn and retrace most of the breakout (b24) or even most or all of the opening range (b49). Sometimes breakouts continue to trend up for the rest of the session, but a strong prior move (b3-5) suggest a turn at the measured move is likely.
+Therefore targets such as the other end of the range such as b1L for b2 short, b2H for b7 long and MM target of b1 at b14H are potential turning points and you should watch carefully for signal bars. A strong signal(b15) bar may mean good chances of a reversal or retrace.

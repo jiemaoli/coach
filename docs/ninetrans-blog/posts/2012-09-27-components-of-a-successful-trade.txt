@@ -1,0 +1,16 @@
+Components of a successful trade
+https://ninetrans.blogspot.com/2012/09/components-of-successful-trade.html
+Published: 2012-09-27T21:02:00.002-07:00
+Updated: 2012-09-27T21:02:53.168-07:00
+
+A trader needs to determine 4 important attributes for a successful trade:
+Direction
+Probability
+Room for profit
+Stop
+Direction is obvious. If you are on the wrong side of the market, your chances of a scalp trade are smaller and chances of a swing trade are nil. A simple way to determine direction is to draw a trendline and trade only when the price tests the trendline. Trendlines should be drawn from the start of the move. Most days, this would be from the LOD or HOD but some days such as today, the beginning of the move could be a different bar such as b24. Experienced traders can also detect a reversal such as the three push reversal at b9 and trade the reversal of a trend. New traders should skip reversals and take the first reasonable pullback after the successful reversal (b24).
+Probability of success takes slightly more experience to judge. On most days, after determining the market is in a trend, you can take every two legged pullback such as b44 until the trend breaks (a sustained move beyond the trendline). On hard trend days, you can take any pullback and any small signal bar in the direction of the trend as long as the entry side of the signal bar does not have a large tail.
+Room for profit takes quite a bit of experience to judge. In a normal trend, a pullback can be expected to at least take out the prior extreme by one tick and therefore a deep pullback is likely to give sufficient profit. However in hard trends and large gap opens, even a couple of ticks may give a decent profit. High volatility and clean patterns are friends when it comes to profit targets. Barbwire and tiny bars are terrible enemies and greatly interfere with profit target estimation.
+Stop size is possibly the hardest to correctly determine. Signal bar stops often work but could be too large from a risk:reward perspective. A fixed stop is easy to use for clear patterns and strong bars but very hard for channels and overlapped bars. For example, despite correctly reading the low of the day today, my stop was short by 1t resulting in a losing trade and missing out on a great swing setup.
+Taking a fixed stop and continuously keeping track of market direction using the nine transitions means you only look for probability and profit target when entering a trade. Passing up shallow pullbacks means you only need to focus on probability, which boils down to looking for a clear set of patterns and strong signal bars.
+The fewer parameters involved in your decision making, the more confident you will be in your decisions and help you become a successful trader.

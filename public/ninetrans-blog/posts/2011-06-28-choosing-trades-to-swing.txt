@@ -1,0 +1,9 @@
+Choosing trades to swing
+https://ninetrans.blogspot.com/2011/06/choosing-trades-to-swing.html
+Published: 2011-06-28T19:20:00.000-07:00
+Updated: 2011-09-09T17:34:27.293-07:00
+
+On trend days, swinging is far more profitable than scalping. However, you can't just swing every trade. For most entries, there is a very good chance that your swing stop at the entry price will be hit.
+I use a simple heuristic to pick swing entries. If the pullback is 2 legged AND deep, I will add a swing portion to my size. Today these would be the A2 long above b27 and the A2 above b74. Once the price moved 6t above these bars and the scalp was filled on these trades, the stop could be moved to breakeven.
+Long entries above b41 and b52 were 2 legged but not deep enough to warrant a swing entry. These are scalps only and higher risk. Its perfectly acceptable to pass these up and stick only to the deep pullbacks.
+In addition to the A2 trades, the 1PB trade above b6 is always a swing trade and is usually the best swing trade of the day.

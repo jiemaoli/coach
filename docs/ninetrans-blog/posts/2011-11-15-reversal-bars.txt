@@ -1,0 +1,10 @@
+Reversal bars
+https://ninetrans.blogspot.com/2011/11/reversal-bars.html
+Published: 2011-11-15T19:24:00.000-08:00
+Updated: 2011-11-15T19:24:23.534-08:00
+
+Reversal bars often signal reversals, regardless of where they are. A well placed reversal bar (b6) can signal the end of a move (b1-b6) but so can an incorrectly placed reversal bar such as b15 signaling the end of the prior move (b10-b15).
+A reversal bar followed by a reversal bar in the opposite direction (b15,16 and b32,33) is usually a very strong signal, especially if the second reversal bar can be viewed as a 1PB in a new trend move, i.e. its the first pullback after a possible reversal.
+Similarly, reversal bar failures are very strong with-trend signals. Often after a recent possible reversal, the failure of a reversal bar can often be used as an entry. You could enter long on a stop above b32 (for example if you did not already get a buy signal at b33)
+A reversal bar of the wrong color such as b39 are usually traps and if the trend has been strong, may be traded as a continuation signal.
+Small reversal bars (compared to prior bar or recent bars) are subject to failure such as b68 and you should only take second entries. The only exception is when the tail is at least as long as the body and you have additional signs of strength in the direction of the signal.

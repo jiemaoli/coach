@@ -1,0 +1,14 @@
+Discipline
+https://ninetrans.blogspot.com/2011/12/discipline.html
+Published: 2011-12-01T18:11:00.000-08:00
+Updated: 2011-12-01T18:11:00.399-08:00
+
+Discipline is the ability to stick to your long term goals by successfully ignoring short term temptations. You probably already know if you have a modicum of self-discipline. Are you successfully able to stick to a diet or exercise regime? Are you a person who can stick to a decision to make a permanent change to your life such as waking up at 5:00 AM every weekday or to quit smoking cold turkey?
+Most people would stop and wonder here and that means no. Discipline, like muscle strength needs to be trained and built upon and will atrophy when you stop working on it.
+For a trader, discipline is the ability to stick to a plan and execute only that plan. For example, let us take a very simple trading plan: Trade the first two-legged HL or LH of the day with a stop loss and profit target of +2 points each. You could add an additional requirement of the entry side tail being 2 ticks or less.
+If you want to follow this trading plan, you would wait for a two legged HL and buy above any bull bar with a 2 point stop and target. Similarly, you would wait for a two legged LH and sell below any bear bar. If the pattern does not trigger and turns into a HH or LL, you no longer take the trade and do no trade for the rest of the day (unless you have another setup in your plan).
+On the other hand, if it does trigger there are only three ways you get out of the trade:
+You are stopped out
+Your target is filled
+A signal sets up in the opposite direction to your position and is triggered
+Discipline is the precursor to consistency. Discipline does not itself lead to consistency, but it does tell you if any of your setups are worth working on or should be dropped from your list. You still do need to find setups that work and once you find one, you are on the way to consistency. New setups that you want to try can be added one by one and discipline is what helps you weed out setups that are not worth trading.

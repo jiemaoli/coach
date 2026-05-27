@@ -1,0 +1,10 @@
+Trend breakage
+https://ninetrans.blogspot.com/2011/10/trend-breakage.html
+Published: 2011-10-11T19:49:00.000-07:00
+Updated: 2011-10-11T19:49:32.737-07:00
+
+A small dip below the trendline such as b22 does not actually break the trend. A large move such as b34-40 on the other hand breaks the trend and the market becomes range bound. At this point, all with-trend entries are no longer viable. For example, b41, in spite of having a strong close is not an A2.
+Once you notice the trend is broken, only take trades at the extremes of the trading range. Preferably, you should take fBOs of new highs or BP if the breakout is strong. Occasionally, you will be able to take a DT as in b55 today or possibly even a DP (if b69 was a stronger close).
+Many setups in a trading range are actually traps. You tend to see a lot of setups such as b45,46 and b72,73. It may appear that another strong leg is imminent but the move usually fails if its mid-range or a successful break of the range is a requirement for success.
+Even setups at near the end of the range need a strong bar (b55) to expect a reasonable chance of success. The possibility of overlap and pullback is very high, so trading is generally dangerous. Its especially dangerous if the range is small (5 points of less), mid-range and made of taily overlapped bars.
+The patient trader should wait for a trend break and enter on the first pullback, swinging a portion of the total position. If you must trade, fade every two or three legged move.

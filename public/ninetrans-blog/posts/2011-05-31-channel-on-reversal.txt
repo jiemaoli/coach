@@ -1,0 +1,11 @@
+Channel on reversal
+https://ninetrans.blogspot.com/2011/05/channel-on-reversal.html
+Published: 2011-05-31T20:05:00.000-07:00
+Updated: 2011-09-09T17:34:27.775-07:00
+
+In a previous post I have described how channel on open leads to a second leg later. This is also true for a channel move for the first leg of any new trend, including a reversal.
+Channels are typically strong trends on a higher timeframe and therefore a sideways consolidations are shallow pullbacks that typically continue for one more leg as shown in the 30m Globex chart to the left. b32 on this chart corresponds to the first 30 minutes after open and is a large shaved breakout bar. Typically (but not always) a sideways consolidation takes out the high of at least one bar, which on a 5m timescale corresponds to taking out a swing high thats six bars away. Therefore the correct way to trade a sideways consolidation is to wait for at least one swing point to be taken out and then take a trade in the direction of the original channel.
+The second leg typically only needs to take out the extreme of the first leg but unless first leg is weak, there will be at least two more legs in the direction of the channel, giving a W entry.
+Similarly, the channel after reversal is represented by b39 and b40 on the 30m chart to the left and the sideways pullback took out the low of b41 on 30m chart. So the correct way to enter this is to enter after it takes out the low of b56 on the 5m chart.
+Once you understand how this works, you can trade the sideways consolidation following a channel without referring to higher timeframe charts. Just wait for at least one swing point to be taken out and take the next entry in the direction of the original channel.
+Note that sometimes it may not take out a swing point and instead give an ii on the higher timeframe chart. This will work the same way, but is harder to read directly on the 5m chart. However, these are lower probability setups and while they do work, they often give other signals on the 5m chart.

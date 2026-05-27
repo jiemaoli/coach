@@ -1,0 +1,11 @@
+Risks of fBO
+https://ninetrans.blogspot.com/2012/07/risks-of-fbo.html
+Published: 2012-07-19T18:41:00.000-07:00
+Updated: 2012-07-19T18:41:14.406-07:00
+
+An fBO trade requires the highest amount of skill to swing and the least amount of skill to scalp. The reason is that fBOs are expected to give two legs but that's all. There is no expectation of a target. There is no expectation that the other end of the trading range would even be tested.
+Since legs can be fairly complex and contain mini-legs, the end of an fBO move is highly subject to a trader's experience and judgement.
+For example, the fbo trade below b37 today was expected to give two legs down and it did go sharply to b54. At this point, a trader needs to assess if there would be one more leg to the low of the day or a turn right here.
+If the trader correctly guesses the price would turn and buy b54 or the HL at b60, then at b63, the question becomes: will this move end here or was this just a minor pullback in the larger trend down and is likely to result in another move down.
+The complexity can be dealt with by assuming that every second push against the traders position forces an exit. For example, b37 sellers would exit above b54. b54 buyers would exit below b63 and so on. Such a strategy requires the trading range to be wide to be profitable. The trading range needs to be roughly the size of a day's move (8-10 points).
+An opposing strategy is to trade every fBO as a trend and exit when the price takes out a stop beyond a swing point. This means b54 buyers would hold until their stops below b74 are taken out at b79. None of these are easy and fBO trades certainly need a scalp target since the potential for large swings is undefined.

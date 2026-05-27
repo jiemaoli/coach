@@ -1,0 +1,9 @@
+Days with poor bars
+https://ninetrans.blogspot.com/2011/04/days-with-poor-bars.html
+Published: 2011-04-04T19:27:00.000-07:00
+Updated: 2011-09-09T17:34:28.777-07:00
+
+Sometimes for days on end, you can have days with bars that are four ticks or less and many are often dojis. Days such as these are not very productive and every breakout only goes a point or two. There are a few ways to deal with these days.
+The simplest option is to not trade such days or trade very few setups. If you get in early, for example the 1st reversal below b4, you could hold on till you see a clear sign of reversal at say bar 55 and ignore all the poor bar setups.
+The second option is to take modest profits, say 4ticks for every entry. You should trade smaller size say half your normal size, since you are likely to get stopped out. You could add on the other half where your stop would normally be taken out. This way, you have a better chance of exiting with a modest profit.
+The third option is to fade poor setups using limit orders on such days. For example, b13 was a poor setup and it had a poor entry bar. A limit trader could short the close or high of b14 with the plan of adding on some more shorts if it moves against the trade. If you choose to do this, keep the trend direction in mind and take only with trend trades (dont short after the b55 reversal for example.)

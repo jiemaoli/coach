@@ -1,0 +1,9 @@
+The illusion of versatility
+https://ninetrans.blogspot.com/2013/02/the-illusion-of-versatility.html
+Published: 2013-02-12T19:59:00.001-08:00
+Updated: 2013-02-12T19:59:11.403-08:00
+
+Tight days are extremely hard for a trend trader. They are exceptionally great for faders. A trader who could switch between the two based on market action should be able to profitably trade any market.
+However, there are some barriers on the way to this goal: Fading in general is extremely hard. As you can see, four of the five failed trades today were fades. The first reason for this is that there is simply no way to determine a stop, let alone a fixed stop for a fade setup. For example, although the fade of b20,21 OL (#5) was an acceptable idea, there was no way to determine how large the stop should be. You could have a large stop (about half the size of the overlap) or stop by bar count instead of ticks but this is something yet to be investigated.
+The second reason is that there is also no easy way to determine an appropriate target. For example, the fade of b31 (#7) had a MFE of only 8t. You would need to exit on the close of one bar in your favor to keep the odds on your side.
+The third and most important reason perhaps is that its very tough to switch between mindsets during the same trading session. Fading and Chasing are opposite in temperament and switching between them needs much more practice than is apparent at first glance.

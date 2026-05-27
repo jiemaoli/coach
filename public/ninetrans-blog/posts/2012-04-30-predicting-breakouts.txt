@@ -1,0 +1,9 @@
+Predicting breakouts
+https://ninetrans.blogspot.com/2012/04/predicting-breakouts.html
+Published: 2012-04-30T20:45:00.002-07:00
+Updated: 2012-04-30T20:45:51.044-07:00
+
+As repeatedly posted, predicting breakouts is one of the hardest tasks a trader can do. Even when you do predict it, its often better to wait for the breakout to fail or give a breakout pullback and enter after the price action has moved from chop to trending.
+The simplest way to look at chop is to view it as a trading range. Taking a signal only at its very top (b41) or bottom (b63) is the best way to avoid being chopped up. Chops are often ill-formed channels and are often variations of three push Wedges. For example, b41 today was a 3 push wedge (b20, 23,41). However, reading wedges in chop is very hard in real-time and requires a lot of practice.
+A strong trend entry bar confirms your entry was a good read (b42 was a trend bar compared to other entry bars null or bear), however holding through choppy waters is harder since effectively your trade is a fBO trade and it only needs to give two legs.
+When the signal bar is clearly beyond the chop (b63) it is a far better entry and should at least retest the start if the last move (b41 high)

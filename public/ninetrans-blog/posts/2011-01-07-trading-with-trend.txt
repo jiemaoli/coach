@@ -1,0 +1,12 @@
+Trading with trend
+https://ninetrans.blogspot.com/2011/01/trading-with-trend.html
+Published: 2011-01-07T20:38:00.000-08:00
+Updated: 2013-03-12T07:35:17.907-07:00
+
+An unfortunate consequence of focusing on oscillators, pivots and support and resistance levels is that the trader is forced to focus on counter-trend trading, which is usually low probability. The second consequence is that the trader typically focuses on small moves, netting +1 or +2 points when they should be focusing on getting a large slice of the move.
+The third consequence of trading this way is it forces you to use limit orders, which are inherently counter-trend. While consistent traders can use limit orders quite successfully, for most traders, they are counter productive since it forces you to focus on getting the best price rather than focusing on the best probability trades that can be held for the maximum points.
+Until the trader can begin to read trend breakouts and reversals perfectly, its best to let a trend establish itself and then take every continuation trade. For example, today's bar 2 was a possible first reversal and even if you didn't take it, you could easily take the first pullback at b14, which is usually the best swing entry for the day. If you missed it, you could still get in at the first A2 at b35.
+By b46, the trendline is broken after the W at b41, you would no longer be looking at short trades. You could easily take the first A2 at b57.
+In addition to A2, W1P (the first pullback after a W reversal) and the first reversal of the day are very good trades once you can read them correctly.
+Traders who focused on buying the low of what they expected to be a major reversal due to it being a pivot or fibonacci or other proprietary support or resistance zone possibly made a couple of points or lost a couple of points.
+For example in the chart above, traders who bought the pivot mid bar 4 or mid bar 15 lost. The ones who bought S1 on b20 and S2 on b25 did make 2 and 3 points but they are missing the much larger move down if they would have entered with trend instead of focusing on some notion of imminent reversal. They would have completely missed the actual reversal at b41 since they would still be waiting at S3 or worse yet shorting b47 assuming that the price will now move to S3.

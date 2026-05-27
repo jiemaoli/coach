@@ -1,0 +1,10 @@
+Trend terminations and breakouts
+https://ninetrans.blogspot.com/2011/03/trend-terminations-and-breakouts.html
+Published: 2011-03-04T18:07:00.000-08:00
+Updated: 2011-09-09T17:34:29.308-07:00
+
+Today's post addresses the second row of the nine transitions .
+The easiest type of pattern to read in real time is a continuation and the hardest type of pattern to read is the breakout and for a variety of reasons. The most obvious reason is that most continuations succeed and most breakouts fail.  Breakouts can fail multiple times before they eventually succeed as was the case today.
+Before you can read breakouts, you need to be able to detect when a trend has terminated into a trading range. The simplest and the easiest way is to look at the two recent highs and lows. If they are sideways, the trend has ended. Trends terminations (TT) usually have weak reversal signals that not many will take such as the poor oio reversal at b35-37 and give a weak continuation signal such as the bull bar A2 short at b44 that very few took. Trends can also terminate into TTRs or by eventually breaking a trendline. Although the trendline broke at b66, the trader should already expect a trend termination at the poor oio at b37 and confirmation by the weak A2 at b44 and the two legged failed breakout at b57.
+The expanding triangle (XT) breakout is comparatively the easiest to detect and trade. An expanding triangle is simply a series of fBOs, each enlarging the range after trend failure. The trading range after trend termination begins with the reversal or climax pattern itself (b35 high to b37 low) and every move is just an attempt to expand the range. Once both ends of this pattern are taken out, you can take trades and expect them to move to the other end until you get both a HH and HL for a bull breakout or LH and LL for bear breakout into trend. Note that the breakout could be either up or down regardless of the direction of the previous trend. The HL or LH will usually be a two legged move and today the doji bar b70 separated the two legs down.
+This point is the first pullback in the new trend and is the best swing entry for the rest of the trend.

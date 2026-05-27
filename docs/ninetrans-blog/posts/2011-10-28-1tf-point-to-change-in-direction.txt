@@ -1,0 +1,9 @@
+1tf point to change in direction
+https://ninetrans.blogspot.com/2011/10/1tf-point-to-change-in-direction.html
+Published: 2011-10-28T20:49:00.000-07:00
+Updated: 2011-10-28T20:49:09.211-07:00
+
+Failures often make very good signals and 1tf in particular make excellent markers of a turn in the market. 1tfs are also excellent with-trend entries, so you should be careful to distinguish between the two.
+The classic 1tf is a failure caused by trying to take a reversal before a trendline break of sign of counter-trend strength. This is usually a continuation signal. Sellers below b14 (b14,15 inside bar variant requires an entry below b14) were trapped in a 1tf.
+A 1tf can also be a reversal indicator in certain circumstances. For example, b25 was a 1tf above the prior swing high of b21 on an ii flag, which acts as a final flag. Similarly, the ii variant at b39 turned into a 1tf reversal. Final flag variants are often 5tfs such as b25 (went 5t above b24), but they can sometimes be 1tf as illustrated by b41.
+There were another kind of 1tfs today. b6 trapped buyers in by triggering above b5 and took out its low by 1t before turning back up. Such a double trap followed by a 1tf is a kind of micro-wedge (3 pushes on 1m chart) and usually indicative of market direction change.

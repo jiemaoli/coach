@@ -1,0 +1,9 @@
+Traps II - Overlaps
+https://ninetrans.blogspot.com/2011/10/traps-ii-overlaps.html
+Published: 2011-10-07T19:46:00.000-07:00
+Updated: 2011-10-10T20:00:16.985-07:00
+
+While traps made of bars in the wrong place need some experience to recognize, traps caused by overlaps are a bit easier. Basically as long as you remember overlaps are trading ranges and resolve to only buy below and sell above them, you can keep out of trouble.
+For example, b9 is a possible 1PB but since its a mid-range overlap, there is a very good chance of it failing and you should watch out for a sell signal above. A failed breakout at b13 is very likely to at least take the stops out (low of b9) and you should exit any long positions and reverse here.
+While b23 on its own may look like a strong reversal bar, most of it overlaps two bars and is effectively a trading range. Worse is buying above b27 assuming its a second leg or above b29 assuming its a shaved reversal bar. Moreover, b23 is the first attempt to reverse the leg down and is likely to fail, i.e., its low should be taken out (as it did during b31).
+The only time you can take an entry on an overlap is if both bulls and bears are already trapped AND you are entering with-trend. For example, b64 was a possible long entry after bulls above b61 were trapped out and bears trapped below b62.

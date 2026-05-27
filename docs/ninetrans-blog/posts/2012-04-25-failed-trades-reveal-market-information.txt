@@ -1,0 +1,9 @@
+Failed trades reveal market information
+https://ninetrans.blogspot.com/2012/04/failed-trades-reveal-market-information.html
+Published: 2012-04-25T20:35:00.000-07:00
+Updated: 2012-04-26T06:20:27.863-07:00
+
+When a trade fails, it should give you some information that you can use in subsequent trades. If a failure does not give you any information, you should avoid trading it. Most of my setups give certain definite information about market structure when they fail.
+For example, b9 today was a possible 1PB setup. Its a poor bar, being essentially a red bar, the pattern is a 1 legged deep pullback and the location is a double bottom with a strong trend bar. Even though I never usually buy 4 red bars, during 1PB I relax my rules a bit not because the trade is higher probability but if it works, the risk to reward ratio is usually worth it.
+When b9 triggered and took me into a trade, if it works I expect a large bull day and given the recent deep pullback on the daily chart, it could be a 10 point or larger move. However when the gap open is large, there is always the risk of it being too expensive for fresh buyers and the trade could fail. The trade did fail when b13 stopped me out.
+The failure gave me new information: Today would not be a trend day but rather a trading range day bounded by the AM spike (b1-b5). The only acceptable trades now are buys in the lower third of this range (b22, b41) and sells in the upper third until a breakout and BP sets up (b73). A marginal setup such as b50 can be passed up since its not high enough in the range and in barb wire.

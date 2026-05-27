@@ -1,0 +1,18 @@
+The open: Trendlines, Gap and setups
+https://ninetrans.blogspot.com/2015/09/the-open-trendlines-gap-and-setups.html
+Published: 2015-09-14T19:46:00.000-07:00
+Updated: 2015-09-14T19:46:38.600-07:00
+
+Shallowest Trendlines
+The price action of the prior day give rise to two trendlines -- the shallowest bull and the shallowest bear trendlines of the prior day. The shallowest bull trendline is drawn from the lowest point of the day and touches another point such that all the price action past the lowest point is on one side of the line. The trendline should not be concerned about the price action before the low of the prior day. The shallowest bear trendline is similar from the high of the prior day.
+When there are multiple points that are at the same point, as in bar 24,25 lows shown above or when the lows are formed by a double bottom of two separate swing points, simply use the most recent as the low of the day, i.e. do not draw a horizontal line.
+When the next point is very close as in b28 above, the trendline could be shallow and inaccurate when drawn manually.
+The price action of the current day should be expected to react to the trendlines from the prior day and then make a significant move.
+If the last bar of the prior day is the highest bar of the day, there is no shallowest bear trendline. On the other hand, you can draw a shallowest bull TCL. TCLs are less significant than TLs and are only used for reversals when the price opens beyond it.
+Gap
+When the price action of the day opens well beyond the trendlines, the trendlines may not have any significance. When the gap is small (3 to 5 bars distance), a test of the line is likely to occur before any strong trend move. If the price opens between the two lines, there is a good chance of both lines being tested before any significant move.
+If b1 of the current day overlaps with the last bar of the prior day and the prior day ended mid-trend move, then for all practical purposes, the open can be treated as its a continuation of yesterdays trend and the shallowest TL from the prior day be treated as the trendline for support, setups, etc.
+Chances of an early trend
+When b1 of the current day overlaps with the highest and lowest bar of the prior day, or the prior day ended in a large trend leg and b1 of the current day overlaps the last bar of the prior day, chances of an early trend including trend-from-open are high. When the price opens near to the shallowest trendlines from the prior day, it also increase the chances of a significant trend during the open (first 12 bars). On such days, look for 1P setups. You should hold a swing position since this could be a large move.
+1W
+1W is the default open setup. If nothing else happens within the first hour, its likely that the price will give three pushes in one direction and try to reverse up. In general, opposing bars b1 and b2 represent the opening range. Three pushes beyond to b11 represents the first 3 push of the day and should result in an attempt to reverse the W, i.e. take out the other end of the opening range. If the W succeeds in reversing in one leg, then the price should be expected to at least go further to the measured move of the W.

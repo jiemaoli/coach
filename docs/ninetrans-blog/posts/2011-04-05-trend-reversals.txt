@@ -1,0 +1,8 @@
+Trend reversals
+https://ninetrans.blogspot.com/2011/04/trend-reversals.html
+Published: 2011-04-05T19:18:00.000-07:00
+Updated: 2011-09-09T17:34:28.758-07:00
+
+Most trend reversals you see intra-day are likely to be Wedge reversals. Often there is an overshoot and a reversal bar on the third push and this makes the reversal very clear. However, for bullish trends, there may be no overshoot at all. Three pushes up by itself does not make a wedge. You need something else, such as a TCL overshoot, a reversal bar or a final flag (FF) as in b47 at the end of the third push to qualify it as a reversal.
+The three pushes also need to be counted from trend breakout, therefore b5 does not count as a push. Once the FF triggers, you can look to short. If you do not wish to short the BWish FF, you should simply wait for an A2 short entry such as b62.
+The rate of success for shaved or trend signal bars are high and you should taken those rather than dojis. For example, b65 is an ii, but its an L1 and also a doji so you are better off waiting for a bar like b67 which has higher probability.

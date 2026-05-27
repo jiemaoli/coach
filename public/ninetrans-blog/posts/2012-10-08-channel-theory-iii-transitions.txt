@@ -1,0 +1,11 @@
+Channel Theory III - Transitions
+https://ninetrans.blogspot.com/2012/10/channel-theory-iii-transitions.html
+Published: 2012-10-08T20:43:00.001-07:00
+Updated: 2012-10-08T20:43:39.210-07:00
+
+Once we detect price action has entered a channel , we should be able to follow its transitions just like regular price action. Anything you expect to see in a normal price action, you can also see in a channel.
+Channels are often wedges and most channel moves can terminate on 3 pushes. This is not very simple to read since each push could be composed of complex legs and pullbacks. For example, on the chart today, we have a W33,43,72 from b29 where each leg is made of tiny overlapped legs and extended pullbacks such as the one from b43 to b57.
+True channel reversals on the first attempt such as the one at b29 are rare except at a significant support or resistance (LOD in case of b29).
+Channels are often very tiny trends and like their bigger cousins can terminate without real reversal. For example, the sustained move beyond the TL to b33 broke the channel down and the price moved horizontally waiting to breakout. Channels may attempt to breakout into regular trends (b14-15) and often succeed in exiting channel mode.
+Continuation trades in channels are fairly hard and usually not worth the risk:reward. (This is still an area of research at present and we may be able to trade these in the future). Quite a bit of the issue is due to the inability to predict the slope of the channel. A steep slope such as the channel down from b18 may be worth taking the effort but an extremely shallow channel such as the one up from b29 will usually mentally exhaust the trader waiting for profit to be reached.
+A much better option is to attempt to predict breakouts. Correctly predicting a breakout at b67 for example, would allow us to enter precisely for the best results and avoid prior attempts. Some breakouts of channels are large and expand the day's range by more than twice the prior range.

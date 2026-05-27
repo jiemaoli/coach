@@ -1,0 +1,10 @@
+Correctly trading a soft trend
+https://ninetrans.blogspot.com/2011/03/correctly-trading-soft-trend.html
+Published: 2011-03-03T18:55:00.000-08:00
+Updated: 2011-09-09T17:34:29.331-07:00
+
+The first step in trading a soft trend is to correctly identify it. Other than the first pullback, which can be deep, a soft trend's distinguishing feature is that pullbacks go only one or two ticks below a previous bar and usually fail to close below the previous bar. The second distinguishing feature is that counter-trend trades rarely succeed since most pullbacks overall do not go more than 4 or 5 ticks below the low of any bar.
+The big difference between a hard trend and a soft trend is that in a soft trend, both pullbacks and breakouts do not go far for each swing.
+Both hard and soft trends are traded the same way. In the direction of the trend only.
+By bar 24 or so it was obvious that today was a soft trend and the correct way to trade this is  to buy above any bar with at least 2t body (regardless of color) after an L2 (failed L2 or fL2 entry). In the chart above, the red dots represent L1 and the blue dots represent L2. If you correctly enter your trades, none of your breakeven stops should be taken out as illustrated by the dotted lines. Entering above a doji bar or overlap usually means sitting through a pullback as with b47 and should be avoided.
+Since your exits very closely map to your next entry, many folks will simply let it ride till end of day. This is usually takes experience not to get shaken out at the next pullback but its something a trader should try at least with 1 contract.

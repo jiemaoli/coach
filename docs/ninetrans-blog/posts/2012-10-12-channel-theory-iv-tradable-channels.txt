@@ -1,0 +1,10 @@
+Channel Theory IV - Tradable Channels
+https://ninetrans.blogspot.com/2012/10/channel-theory-iv-tradable-channels.html
+Published: 2012-10-12T19:00:00.000-07:00
+Updated: 2012-10-13T12:39:47.130-07:00
+
+One way to characterize channel activity is to define them in terms of volatility. While normal clean trends have high inter-swing volatility and low inter-bar volatility, channels have the reverse. From a visual perspective, this means that every swing in a channel goes only a few ticks further than the prior swing (b36,40) but the pullbacks are deep enough to possibly stop you out. This means that any arbitrary entry in a channel is at a higher risk to take out a fixed stop even if it respects a bar stop.
+The risk of stop out is inversely proportional to the slope of the channel and directly proportional to the bar size and overlap. For example, you are at a higher risk of being stopped out of  a short in the channel down from b33 than in a short in a channel down from b10.
+The probability of profit is higher if there were recent large trend bars. Any large trend bars (b12) that follows a channel activity (b7-11) show energy and interest and the chances of a failure of such a trend bar (b17) or a continuation (b18) leading to a trend breakout are high.
+Channel activity in the absence of large bars is highly susceptible to random drifts and reversals (b27-79) and chances of a break into a large trend are lower.
+In summary, tradable channels are steeper, have recent large trend bars and have smaller bars compared to their swings.

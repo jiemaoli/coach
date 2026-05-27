@@ -1,0 +1,25 @@
+Trading Guide
+https://ninetrans.blogspot.com/p/trading-guide.html
+Published: 2011-09-09T17:34:00.003-07:00
+Updated: 2011-09-17T10:42:23.862-07:00
+
+So you want to be a trader. Here is a list of things you need before you can get going.
+A trading account
+Trading software that allows SIM trading
+A trading style
+Some basic setups
+A trading plan
+Starting Capital
+Once you find a good futures broker, you should be able to open an account and get a trading platform for a small amount of money.
+The first thing you do is to trade for a while on a simulator (SIM). This will allow you to learn how to place orders and move your stops while make all your silly mistakes like buying instead of selling, entering the incorrect quantity and get it over with without losing any money.
+Trading on SIM also allows you to watch the market move and get a feel for price action. Note that the market is like a very complex diamond and you have to trade for a couple of years before you see most of its faces. Even then, you haven't seen them all.
+A trading style is different from how you read the market. Its about how you place your entry orders, take your profits and place your stops. Price action trading is fairly straight forward this way, since your entries, exits and stops are very well defined. Your long entry is 1 tick above the signal bar, stop is 1 tick below and your target is 4 ticks or more above your entry. This predefined ruleset make it easy to follow for beginners.
+I have extensively discussed various setups in my blog.  Al Brooks ' work is very good place to get more information regarding price action.
+A  trading plan  such as mine is very important to have and follow. The most important take away from this is that trading is a mental skill you work on and develop and once you get good at trading SIM  (zero real contracts), you keep increasing the contract size slowly and thus overcome emotional barriers that come naturally when real money is at stake.
+Once you graduate from SIM to real money, always know that you will lose in the beginning. This is normal. You need to be able to be in the game for a while, so you need to allocate some real capital. One way to not bankrupt yourself early is to have daily, weekly and monthly loss limits. Once you hit the loss limit, switch to SIM trading. This allows you to have a yearly budget for trading and keeps you in the game allowing you to improve yourself.
+See Also:
+Trading plan: Trading Range day
+Trading plan: Trend days
+Trading plan: Hard Trends
+Trading plan: Soft Trends
+Trading plan: Spike and Channel days

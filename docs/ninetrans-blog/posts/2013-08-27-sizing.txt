@@ -1,0 +1,11 @@
+Sizing
+https://ninetrans.blogspot.com/2013/08/sizing.html
+Published: 2013-08-27T21:57:00.000-07:00
+Updated: 2013-08-27T21:57:00.788-07:00
+
+A common risk reduction technique is to minimize size on less desirable odds and increase size on desirable odds.
+For instance, if you had nearly 100% certainty that a certain outcome would occur, it makes sense to bet everything you have on it. In fact, you should sell the farm, borrow money and bet it all on the 100% certain bet. On the other hand if you have a 0% certainty that the same outcome would occur, you would do the same, except bet the opposite way, i.e., that the said outcome wouldn't occur.
+From these extremes, it should be obvious that the hardest bet is when the probability is exactly 50%. Its effectively a coin-toss and if you repeat it long enough, you should break even. However, you could have long stretches of wins and losses and therefore you would need to bet smaller amounts. In fact, the right thing to do here is to bet the smallest possible size since your net outcome is the same regardless of the size of the bet but the damage to your account is smaller if you bet the absolute minimum. This makes the bet curve shaped like the letter U with max bets at 0% probability, falling sharply to near zero at 50% and rising sharply at 100% probability.
+Placing trades is similar to the above scenario with certain differences. First of all, you can actually sit out and not bet in the mid-probability, which is most of the time in the market. Secondly, there is a transaction cost for every bet and therefore a you are likely to go underwater rapidly if you trade anywhere except a high probability zone simply from the costs. The new shape is like a strike-through letter  U . Lastly, to bet something would not happen you would need to do something other than what we do here, such as write options.
+Since costs are a significant amount in a high transaction account, simply sitting out low probability trades can push you from a losing account into a winning account.
+When you are not certain whether a trade is high or low probability, it makes sense to trade a smaller size. For example, on this day, I placed full sized trades for #1 and #5 which earned handsome profits and smaller sizes of #2,#3 and #4, which effectively were a wash.

@@ -1,0 +1,9 @@
+Price Action Indicator
+https://ninetrans.blogspot.com/2011/09/price-action-indicator.html
+Published: 2011-09-16T18:11:00.000-07:00
+Updated: 2011-09-16T18:11:51.237-07:00
+
+As many of you have guessed from the dots on the chart, I've been working on a Price Action Indicator for NinjaTrader. Currently, it only highlights reasonable signal bars as described in Al Brooks book and nothing else.
+To mechanically trade the indicator, a scalp and a swing portion can be entered with a 6t stop. At +2 points the scalp portion exits with a profit and the stop moves to breakeven. Ideally, the scalp portion is twice the swing portion to get the best results. The swing portion should be exited at a fixed profit such as +4 or on a second attempt to reverse a trend if the entry is with trend, i.e, long at HL (b25) or short from LH (b10). If its a counter-trend entry, the first sell signal should cause any swing portion to be exited (entry above b18 or below b41)
+On a day with reasonable range such as today this should profit from most trades. For example, today the only losing trade was the short below b57. The short below b34 and the longs above b45 and b69 were first attempts (L1/H1) and would not be traded. One option is to mark the L1/H1 in a different color since eliminating them is not an option since that would eliminate any signals in a hard trend.
+A 2 contract scalp + 1 contract swing would have made +40 on the wins and -3 on the losses. But today was possibly an excellent day for the indicator and not all days are so generous. To collect more data, I would need to automatically trade it and run it over a couple of years worth of data. I expect poor performance on tight trading range days since two point scalps are probably hard on a 5 point day. Large range days would probably be indeterminate, causing stop outs before the profit target is reached but a single swing may compensate for many losses.

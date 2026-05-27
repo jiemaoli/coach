@@ -1,0 +1,11 @@
+Getting Shaken out V - Mid-bar decisions
+https://ninetrans.blogspot.com/2012/03/getting-shaken-out-v-mid-bar-decisions.html
+Published: 2012-03-20T20:07:00.000-07:00
+Updated: 2012-03-20T20:07:16.980-07:00
+
+One of the troubles that plague discretionary traders is that they are impacted by every tick of the market. Whether the bar grows or pulls back, flips green to red, approaches their stops or moves away will drive all kinds of elation and anxiety in them and this often drives them to make rash decisions.
+For example, today if a trader bought b4 and moved his stop below b5 after it closed, he should simply wait to either be filled on his target or be stopped out. A weak trader may see b6 turning red when its  near its bottom and may wonder if it could turn into a 1PB short. He may feel compelled to exit his long position or even reverse mid-b6. He may reverse to long by buying above b7 and get stopped out at b11 and so on.
+This kind of trading consists of second guessing yourself on every tick and changing your decision based on mid-bar appearance. Note that most trading methodology is based on how a bar looks after its close and not how it looks mid-bar. So there should be absolutely no reason to make a decision mid-bar.
+Once you enter a trade and set a stop, it means that you are willing to tolerate a pullback until your stop. If you cannot tolerate a shallower pullback, then you need to find a trading system that allows a smaller pullback.
+The right thing to do is to let the market either fill your target or stop you out if you are wrong. The only time you should exit early is if the market presents a reasonable opposing trade that you may have taken if you were flat. For example, The DT and W at b24 made me exit my swing long earlier and the long near b64 low was no longer viable after the final flag/1tf/W at around b72 and I exited it before my target was filled.
+Being able to accept a loss at your stop will also enable to hold till your target is filled. If your stops are regularly taken out, you can simply drop that setup. If your targets fall short all the time, you can learn to have a bit more modest expectations.

@@ -1,0 +1,10 @@
+Trend respawn
+https://ninetrans.blogspot.com/2010/12/trend-respawn.html
+Published: 2010-12-30T19:00:00.000-08:00
+Updated: 2013-03-10T19:27:07.921-07:00
+
+When the final bars of a day constitute a sharp move, i.e., a sharp trend begins very late in the day and the day closes without breaking a trend line, there is a good chance that the next will show some follow through.
+Additionally, if the next day opens with a little or no gap, you may be able to trade the early bars like a continuation of yesterday's move.
+Seen from this context, the move to b4 was a 2 legged pullback in a bear trend. The ii signal bar at the ema was a very good setup for a short.
+The move from b10 to b15 broke the trend line and we ended up testing the low of the previous move. A trendline break without an overshoot usually ends in a trading range and today the range was between b10 low and b15 high. b29 was also a failed breakout of this range.
+After this, bar 46 gave an A2 long. It was also the second 2 legged higher low after 34. A failed breakout usually tries to breakout of the other side of the range, so a 2 point move was to be expected. The breakout succeeded on the third push up, which reversed as a Wedge.

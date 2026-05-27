@@ -1,0 +1,16 @@
+Your trading edge
+https://ninetrans.blogspot.com/2012/04/your-trading-edge.html
+Published: 2012-04-13T19:00:00.000-07:00
+Updated: 2012-04-14T10:39:01.677-07:00
+
+A trader will pick up a few skills after trading for a while. If those skills are better than the average trader, he gains a small edge over other market participants. These skill sets are common across trading systems:
+Correctly determine market direction
+Roughly estimate how far the market is likely to move
+Find precise entries
+Determine stop size for an entry.
+Hold through the trade and not be shaken out by any minor pullbacks or loosen stops
+Hold a winner for extended duration
+Gain important market information from losing trades and apply to next trade
+Once you have identified your edges, tailor your trading to amplify those edges and insulate yourself from market action where you don't have an edge.
+For example, if you can gauge market direction and estimated move accurately but your entries usually get stopped out, consider trading options instead. For example, if you estimated a 10 point down day in the first few bars but would usually be stopped out if you tried a price action entry (as I was on my b4 short), you could simply buy SPY puts in the AM and hold it till it reaches your target or till end of the day and exit with a profit.
+On the other hand, if your sense of direction is weak and consequently you have no ability to hold a position for too long, but you can enter and exit precisely, you can take multiple small scalps with small fixed profits.

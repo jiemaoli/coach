@@ -1,0 +1,10 @@
+First pullbacks and breakout tests
+https://ninetrans.blogspot.com/2011/01/first-pullbacks-and-breakout-tests.html
+Published: 2011-01-05T20:21:00.000-08:00
+Updated: 2013-03-10T19:25:18.354-07:00
+
+Often buying above the first bar is risky. A weak reversal bar near the ema on a small gap such as today often breaks above and fails. This is especially true if the body is small and the entire bar is within yesterday's range as it was today.
+Since its important to catch a big move early on, its best to pass on the first bar if its weak and wait for a strong breakout and enter on the first pullback. Sometimes the second bar forms an inside bar of the same color as the first bar. This can serve as the first pullback. A doji such as today is acceptable but weaker.
+Cautious traders can pass on b2 and buy above b6. Limit buyers can place a limit order at the original entry once the low of a bar closes above it (b5). This would trigger today at the low of b7. There is some risk associated with buying limit early in the day since a first reversal can be severe. The best entry therefore is the first A2 at b14. Although technically the entry was above b13, practically all traders would have bought above b14 since it was a small bull bar at ema.
+b19 was a breakout test that stopped a tick above the previous signal. When a breakout tests happens to have its low exactly at the ema, its a very good sign to add on a bit more if the bar is not too large.
+Once the move hit +10 points from the low, most traders are looking to get out and all trades are essentially scalps. Hence the quality of trades drop therefore you should skip any questionable trade.

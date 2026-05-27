@@ -1,0 +1,16 @@
+Catching the AM trend
+https://ninetrans.blogspot.com/2011/08/catching-am-trend.html
+Published: 2011-08-22T19:57:00.000-07:00
+Updated: 2011-09-09T17:34:26.032-07:00
+
+Most new traders should not be surprised if their winning percentage is around 55 to 60% with-trend and 40 to 45% counter-trend. Essentially, they are at 50% with a 5 to 10% trend skew. This means that the more trades you take, the higher your chances of losing money and the more your broker loves you.
+Holding for larger swings forces you to take fewer trades and make more points per trade. This also forces you to take quality trades and focus on the bigger picture, rather than be lost in the details of the most recent bar.
+Most days are like the chart above. There is a trend attempt early in the AM and then a trading range. Trading the 20% of the days when the move is continually in the same direction is important, but that is easier since you do get multiple continuation entries.
+On a typical day like today however, its very important to get in the AM trend and ride it till it terminates or reverses. If you missed b1 today, there was no real reasonable with trend setup until possibly b25. On the other hand, the market did give three counter-trend setups at b9, b30 and b38. These are much more modest in their wins than riding down the AM trend. This is why poor 1PB setups (b13) should often be taken and poor or weak 1Rev can be taken at support (b9).
+If you do successfully catch the AM trend, its usually best to trade small or none for the rest of the day once the AM trend terminates and turns into a trading range. Compared to the very clear price action in the AM trend, the lunch and afternoon session are fraught with overlaps, traps and poor signal bars.
+Most beginners are best served by:
+trading the AM trend only by trading the 1Rev and 1PB and nothing else
+adding on A2 only on trend days
+After some consistency, add H1/L1 on hard trends and fL2 on soft trends.
+1Rev and 1PB have various edge cases and are much more complex to read but they provide the best risk to reward ratio of any setup before the AM trend has run too far. Once a trend day is established, A2s are fairly safe with some experience. All other setups require experience to read correctly and should be taken only on small size at first.
+The trick to 1Rev and 1PB is to realize that on some days you will miss them and its fine not to trade on those days. Don't feel anxious to get into the market at any cost and enter on substandard setups.

@@ -1,0 +1,8 @@
+Wedges without overshoots, reversal bars or pullbacks
+https://ninetrans.blogspot.com/2011/03/wedges-without-overshoots-reversal-bars.html
+Published: 2011-03-02T18:19:00.000-08:00
+Updated: 2011-09-09T17:34:29.351-07:00
+
+The ideal wedge has a clear overshoot on the third or fourth push and ends up in a clear reversal bar. The reversal bar's entry bar is a strong trend bar. A weak pullback gives a W1P that gives you an entry into the now reversed trend.
+On trend days you probably will see a reversal like that. But on trading range days, you may have large swings that are best seen as 2 legs in each direction. None of the third pushes today resulted in significant overshoots, did not quite end in reversal bars and surprisingly sold off all the way down without any pullback. On days like this, you can pass up the wedge trades and simply wait for the next setup or if you are an aggressive trader, trade the third push as a W if it is a failed breakout.
+The idea behind the failed breakout is that the breakout traders who buy above the previous swing high should not be able to make a scalp profit. You need a first entry that triggers and fails as in b18,b42,b65 and then a second entry comes into play very close to the previous signal. If the second signal bar has lots of overlap as in b44, you are better off waiting for a pullback above your entry bar and then taking the next signal. A very important requirement for a trade like this is prior strength in the new direction. A strong move in the later half of yesterday or early in the day are needed to enter this way or you may find yourself shorting a series of H1s on a strong day.

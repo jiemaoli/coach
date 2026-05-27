@@ -1,0 +1,9 @@
+Huge first bar
+https://ninetrans.blogspot.com/2011/05/huge-first-bar.html
+Published: 2011-05-06T19:58:00.000-07:00
+Updated: 2011-09-09T17:34:28.149-07:00
+
+The first bar and the next few bars are often special, in that they indicate the possible kind of price action to expect for the rest of the day. A set of small dojis may indicate a tight trading range. A set of average sized bars may indicate a trend day. If the very first bar is a reversal bar off a huge gap, it could indicate a trend from the first bar. A large bar indicates lots of energy and possibly a wide range day.
+A huge first bar is occasionally a spike but almost always a trading range. When its a spike it will channel up slowly to a measured move of the size of the bar. When its a trading range, it generally means traders are likely to buy near its low and sell near its high. This bar needs to be traded just like any other trading range. If the breakout of the bar is strong, enter with trend on a pullback else fade the breakout.
+b2 was a 5tf for buyers above b1 and had a strong close. This itself is a reasonable entry if the entry price is near the top of the bar. You should never take the first failure near the center or low of the bar, since the very next bar could give a breakout pullback and therefore a 1PB with-trend entry. If a two legged entry sets up near one end of the bar (b9), you should take it and hold it till the other extreme of the bar. This is a kind of 1Rev trade.
+Once it takes out the other extreme, you could get a BP continuation of a trend of fBO (b25 or b29) back to the lower extreme. A second attempt to BO is usually successful (b34) and will give a BP (b38) into a new trend.

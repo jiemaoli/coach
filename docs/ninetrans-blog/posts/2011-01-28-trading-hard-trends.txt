@@ -1,0 +1,11 @@
+Trading hard trends
+https://ninetrans.blogspot.com/2011/01/trading-hard-trends.html
+Published: 2011-01-28T19:42:00.000-08:00
+Updated: 2011-09-09T17:34:29.862-07:00
+
+Trading a trend with sharp moves and long bars is very hard since you get very few entries and every entry moves a large number of points. When you see two or three trend bars with very little overlap, you already know its one of these days. Often the best entry is the first pullback, which in the case of a hard trend like this is a special kind of failed H1 (fH1) that usually gives a measured move down. The harder the move before the pullback and the weaker the pullback as today, the greater the chances of meeting or exceeding the measured move. Often after the measured move is met there is a tight trading range, so I exit and wait for more price action. On majority of the days, holding a fH1 till the end of day can pay profitably as it did today.
+But what if you missed the fH1 entry on b10 or exited with a couple of points?
+One option is to short the close of every trend bar or its breakout. I personally find selling closes hard to stomach, since the pullback can be as large as the trend bar itself as with b13. My technique is to enter on any pullback and short below any small bar regardless of color until there is an obnoxious overshoot. Days like this nearly always have a huge bar with an obnoxious overshoot as in b31.
+For example, shorts below b23, b26 were good entries. Aggressive traders would short any H1 expecting it to fail.
+Once the sell climax occurs, the down move is over for a while and you should expect a pullback. This pullback does not have to go near ema but often tests the high of the sell climax bar. Usually this can be shorted at least once to test the low of the climax bar.
+On days like these the best policy is to only trade in the direction of the primary trend since there is a very good chance there could be another huge move late in the day but very low chance of a sharp  reversal. For example although b62 had at least 3 reasons to buy, I would pass it up and only focus on short trades.

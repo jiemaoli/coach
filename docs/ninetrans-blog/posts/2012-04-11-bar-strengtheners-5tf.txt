@@ -1,0 +1,11 @@
+Bar Strengtheners: 5tf
+https://ninetrans.blogspot.com/2012/04/bar-strengtheners-5tf.html
+Published: 2012-04-11T19:00:00.011-07:00
+Updated: 2012-04-11T22:57:37.610-07:00
+
+Ideally, signal bars are well formed and obvious, have a strong close and have a great looking entry bar. In the real world, signal bars are often less than ideal and your ability to read their strength from signs other than their close greatly increases your trading opportunities.
+A very simple to observe sign is a 5 tick failure, which occurs when a breakout goes 5 ticks above an entry and turns down. A 5tf means several traders did not get filled on their exits and are likely to be forced to exit when price fails by taking out the breakout bar.
+Ideally, a 5tf gives a bar that can be construed to be a signal in the opposite direction. A bear inside bar (b14) after a 5t breakout above the prior swing (b3 high) is a very good example. Naturally, this is probably a valid signal even if it was not a 5tf.
+b54 was a 5tf after breaking 5t above the signal bar b52. It was a bull inside bar, and therefore a weaker signal, but the 5tf gives it additional strength and allows for a short setup.
+b5,6 formed a 2bar reversal after a 5tf below b4, which increased the chances of a successful fBO trade. Similarly b32 was a 5tf below b5 and succeeded despite being a poor bar.
+Note that 5tf is not a magic formula that guarantees successful trades. It only gives some additional strength to the signal bar. You should be happy to pass on a trade that otherwise does not meet your criteria. For example, b71 was a possible 5tf below b32 but it made a poor trade since 71 was probably too large and too close to the end of the day. It was also possibly just one leg when at least two were expected off the A2 variant short below b68.

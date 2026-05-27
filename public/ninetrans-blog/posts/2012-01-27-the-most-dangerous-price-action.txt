@@ -1,0 +1,9 @@
+The most dangerous Price action
+https://ninetrans.blogspot.com/2012/01/most-dangerous-price-action.html
+Published: 2012-01-27T18:09:00.000-08:00
+Updated: 2012-01-28T18:20:21.559-08:00
+
+The most dangerous price action bar pattern is barb wire (BW) but the most dangerous larger price action pattern is a wide slightly sloping channel.
+BW is fairly easy to recognize and avoid, for example, not many traders would short b40. A narrow channel such as b60-71 is also simple to trade: You can just buy near the low of the channel. However a wide slightly sloping channel such as b7-b43 tricks traders into thinking that a reversal is just around the corner and will force them to buy every new low. Typically, the counter-trend signals (b9,16,28,34,43) look far better than the with-trend signal bars (b6,13,24,31,40) trapping traders on the wrong side every time.
+There is no easy way to trade such a channel. The simplest trend trading requirement of buying only higher lows and selling only lower highs would have protected you from every poor signal except b8. The first higher low at b43 actually did work if you used a price action or money stop of 2 points.
+A patient with-trend trader would only take a long trade at b60 after the channel trend line was broken at b50 or so.

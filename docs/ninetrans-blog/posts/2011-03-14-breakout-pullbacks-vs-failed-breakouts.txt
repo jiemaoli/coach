@@ -1,0 +1,10 @@
+Breakout pullbacks vs failed Breakouts.
+https://ninetrans.blogspot.com/2011/03/breakout-pullbacks-vs-failed-breakouts.html
+Published: 2011-03-14T19:52:00.000-07:00
+Updated: 2011-09-09T17:34:29.185-07:00
+
+When there is a breakout you need to decide if you want to trade the breakout's failure (fBO) or if you want to trade a breakout pullback (BP), which essentially is a failure of the fBO.
+In general, there are a couple of guidelines to help you make the decision. If the breakout bar was a strong trend bar that is halfway out of the previous range (or TL or ema) such as b13, there is a good chance you will get a breakout pullback entry that will take you to at least a measured move of the previous range. You should always wait for a pullback before entering if the breakout bar is large (say 3+ points). The second hint is the strength of the prevailing trend. If it looks like there is any sort of steep trendline, there is a good chance the breakout will succeed. If the trendline is very shallow, it does not contribute to the success of the breakout.
+If the breakout bar is small (1 to 2 points) with a shaved close, you can enter right at the close or a tick beyond. This is especially true if the breakout is counter to the previous large move and closes beyond the ema.
+If the breakout bar is medium size (2 to 3 points) or has a tail on the close wait for a breakout failure. If two attempts to fail the breakout are unsuccessful, you can enter in the direction of the original breakout.
+Weak breakout bars often result in failed breakouts, especially a second attempt, which worked like an outside bar at b42. Note that to trade in the direction counter to the previous trend, the previous trend should have terminated (via TTR or overshoot or trendline break)

@@ -1,0 +1,11 @@
+Trend termination (TT)
+https://ninetrans.blogspot.com/2011/11/trend-termination-tt.html
+Published: 2011-11-11T18:40:00.000-08:00
+Updated: 2011-11-12T12:06:43.656-08:00
+
+Recognizing a potential trend is generally easy on a day like this: A large gap followed by two or three bars that close in the direction of the gap is a very strong trend attempt and taking the 1PB (b5) and holding it to swing termination or reversal is an easy decision.
+Not all trends reverse and many of them simply terminate into a trading range. Determining the end of a trend requires some experience. There are primarily three ways a trend can terminate and today, we were lucky to have all three.
+The first is a TTR made up of small overlapping bars made of mostly dojis. Given this criteria, we should already know around b22 that the trend has terminated.
+The second is an extended trendline break. A move beyond the trendline for many bars and many points is a trendline break. The more number of bars it stays beyond the trendline, the fewer the points that need to be beyond the trendline to constitute a break. This means that a single bar thats sufficiently large can break the trend or a large horizontal or slightly sloping movement for about 20 bars (b21-39) can break the trendline without dipping too far below it.
+The last is a failed reversal followed by a failed continuation. b22 was a poorly formed W and FF that was followed by a WP at b39 which was unable to take out the reversal bar.
+Once you realize the trend has terminated, you should no longer be looking for with trend trades. Your best option is to wait for a new trend to break and enter on its first pullback. If the trading range following the TT is small, its best not to enter into anymore trades at all.  If the trading range is wide (8+ points), you can consider fading the extremes of the new trading range. Note that in general, you should cannot expect any entry in a trading range to make a large move. In general, you should expect a move that's roughly half the size of the trading range.

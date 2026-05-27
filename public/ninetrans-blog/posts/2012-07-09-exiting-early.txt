@@ -1,0 +1,11 @@
+Exiting early
+https://ninetrans.blogspot.com/2012/07/exiting-early.html
+Published: 2012-07-09T18:22:00.000-07:00
+Updated: 2012-07-09T18:23:19.142-07:00
+
+Although I prefer to swing most of my trades till a trend terminates, sometimes its prudent to exit early. In general when the market is in a trading range, you cannot expect most trades to really break into a very strong trend and you may need to look to exit early.
+A classic application of this rule is an fBO trade.  Since fBO can only be expected to give two legs  and the two legs may or may not take out any target (i.e. recent swing points or H/LOD), its often prudent to take a large open profit.
+For example, today's fBO setup at b31 popped very high for a second leg up at b48. The theoretical swing stop is below the prior swing (b43) and when the price moves close to a potential target (b17H), it makes sense to exit early and re-enter on the expected deep pullback (eventually occurred at b65).
+One option is to exit on strength (inset image) or exit on the next tick against you (eventually below b51).    I prefer to exit on strength w hen a potential FF type setup shows up (inside bar b49 could act like FF).
+Even on trend days, when the market makes a disproportionally strong move, you should expect an extended pullback, which could be either a quick deep pullback or an prolonged shallow pullback. If your swing stop and the price are very far (4+ points) its usually best to take an early profit rather than sit through what could be an prolonged, deep or complex pullback.
+A notable exception to this rule is the late trend, which rarely pulls back.

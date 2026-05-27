@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Creating a trading system VI - Stops, targets and winrate</title>
+    <meta name="source-url" content="https://ninetrans.blogspot.com/2013/01/creating-trading-system-vi-stops.html">
+    <meta name="published" content="2013-01-09T20:43:00.002-08:00">
+    <meta name="updated" content="2013-01-09T20:43:24.424-08:00">
+  </head>
+  <body>
+    <article data-source="ninetrans.blogspot.com">
+      <h1>Creating a trading system VI - Stops, targets and winrate</h1>
+      <p><a href="https://ninetrans.blogspot.com/2013/01/creating-trading-system-vi-stops.html">https://ninetrans.blogspot.com/2013/01/creating-trading-system-vi-stops.html</a></p>
+      <div class="separator" style="clear: both; text-align: center;">
+</div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiROU2GGdzqLm2IpU7FWij1VHuaC-rvdVe_oVy_P8xm__eW2-cL6mdHXrlaE9G9e_oTywvMYPrnuwpW0sdzSqbotVtBAyZTK6c2mCC0E9vMNHUTdqjL_55AWznwKCM3NWi_5e0XswUabxo/s1600/2013-01-09_5m.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiROU2GGdzqLm2IpU7FWij1VHuaC-rvdVe_oVy_P8xm__eW2-cL6mdHXrlaE9G9e_oTywvMYPrnuwpW0sdzSqbotVtBAyZTK6c2mCC0E9vMNHUTdqjL_55AWznwKCM3NWi_5e0XswUabxo/s1600/2013-01-09_5m.png" /></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+Tick Scalping</div>
+<div class="separator" style="clear: both; text-align: center;">
+<br /></div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj2oNiibbpMHk4C1z6fwAoZujNzglhM53Na5OJZC-ALHh98x-wEFkUXc90DM_KJodXRX9zOmyvB40pZMH3-X7qeFq6eP_Q44tS4tzJPYoC7ZylCIW2Wt3E_RQB6DgK42W3hKseIjU2C7hM/s1600/2013-01-09_results.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj2oNiibbpMHk4C1z6fwAoZujNzglhM53Na5OJZC-ALHh98x-wEFkUXc90DM_KJodXRX9zOmyvB40pZMH3-X7qeFq6eP_Q44tS4tzJPYoC7ZylCIW2Wt3E_RQB6DgK42W3hKseIjU2C7hM/s1600/2013-01-09_results.png" /></a></div>
+<br />
+The above shows results of a 10t stop vs 1t profit. Entry is above any bar thats a potential signal bar regardless of color. If the bar triggers very quickly after signal bar closes and before a stop limit entry can be placed, we can place a limit order at the trigger price.<br />
+<br />
+Profit target is +1t, risk is 10t. A 3t move beyond signal bar is sufficient to fill the target unless there is slippage, in which it takes a few more (trade #7; below b13).<br />
+<br />
+Clearly, its very simple to get a high win rate. The larger your stop in comparison to your target, the higher your chances of a successful trade. However, such an approach has a few drawbacks<br />
+<br />
+<br />
+<ol>
+<li>Your theoretical maximum profit is limited to bars per day minus one ticks. Practically speaking, your maximum profit is probably around half the number of bars per day.</li>
+<li>Although your win rate is high, a 1tf or 2tf usually means your 10 prior wins will be wiped out. This gives a very severe drawdown potential, one you may not be able to stomach.</li>
+<li>Results may be inconsistent. You may have a day with 30t profit on a choppy day or a 30t loss.</li>
+<li>A large portion of your winnings go towards commissions.</li>
+<li>This is a very inefficient system to squeeze profit out of the markets. By taking only a tick profit out of a 70t+ move (trade #7), you give up the biggest moves in a chart.</li>
+</ol>
+<div>
+However, this is a great way to experimentally determine the desired stop for large moves in a new instrument. For example, the large move triggered off b17 (trade #7) had a maximum adverse move of 2t. By collecting the adverse move against a large set of trades, you can determine a reasonable stop for large moves, i.e. if 80% of large moves have a MAE of less than 5t, then you could use 5t as a stop size.</div>
+<div>
+<br /></div>
+<div>
+But why can't you simply use 10t since its never been violated today? The reason is simple. Today, we only had 1t target. If we every plan to take a large profit target, our stop may have been hit on at least the first two trades today. A 10t stop would set us back twice the amount of a 5t stop. Until we can accurately pick out the large moves successfully, a smaller stop will protect our account better.&nbsp;</div>
+<div>
+<br /></div>
+<div>
+One day's MAE is insufficient data to determine a reasonable stop. We would need to trade in all kinds of markets, fast and slow, news, large and small bars, choppy and sharp trends and so on. A one year data is probably good enough. However, after 40 samples, the chances of a dramatic result shift are unlikely and we can start using our provisional MAE +1t as a stop.&nbsp;</div>
+<div>
+<br /></div>
+<br />
+<br />
+    </article>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+Pause bars after breakout
+https://ninetrans.blogspot.com/2012/01/pause-bars-after-breakout.html
+Published: 2012-01-18T20:02:00.000-08:00
+Updated: 2012-01-19T08:17:09.862-08:00
+
+In general, the best entry after a breakout (BO) is a breakout pullback (BP). Some traders enter above the breakout bar and this is dangerous since the pullback could be large, potentially stopping you out. Sometimes there is a small trend bar right (b4) after the breakout bar(b3). This bar could be of either color, but best if its a non-inside bar of the same as color as the breakout bar. You can enter on this bar with a stop on its other end.
+The reasoning is that a real strong breakout of a new trend is likely to continue further up before a pullback. Therefore, this is applicable to b4 for example and not b36. Note that the breakout bar preferably has to have a strong close (shaved or 1t). Tails on the breakout bar are likely to cause pullbacks, so you are better off entering on a BP.
+If there is no pause bar or if you are uncertain if the pause bar is a proper trend bar, its best to let the breakout progress and wait for the first pullback. A pullback right after the BO bar can be shallow but acceptable as long as you are entering on a strong signal bar. If the pullback is after an extended move, you need to wait for a deep pullback. In today's trend break that would result in an entry above b29 (since b23 is not a deep pullback).

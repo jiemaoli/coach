@@ -1,0 +1,8 @@
+Very large gap up
+https://ninetrans.blogspot.com/2011/10/very-large-gap-up.html
+Published: 2011-10-27T20:50:00.000-07:00
+Updated: 2011-10-27T20:50:42.000-07:00
+
+A large gap acts as a spike and if the price is very far from the ema, its very likely to pullback close to the ema. A 2 legged pullback to the ema is a very strong signal on a large gap day. The larger the gap, the deeper the initial pullback (b1-b14) and may look like a mini trend.
+Just like a day that opens with a large spike bar, a very large gap day is likely to act like a soft-trend day with very shallow pullbacks. When the first higher low is a fL2 (b19,b22), its a very strong sign of an impending soft-trend day and you should never trade counter-trend.
+On a soft-trend day, you can trade above doji bars (b42,58) as if they were bull bars provided they are close to either the trendline or the ema. When in doubt, you can always trade above a strong bull bar following the doji signal bar (b43,b59)

@@ -1,0 +1,11 @@
+Late swingers
+https://ninetrans.blogspot.com/2011/06/late-swingers.html
+Published: 2011-06-07T20:30:00.000-07:00
+Updated: 2011-09-09T17:34:27.663-07:00
+
+Correctly trading hard trends is ... hard. This is because hard trends are comparatively rare, and when they are running, traders fail to recognize them until its too late. Once they recognize a hard trend, they spend their time looking for pullbacks that never occur. Hard trends do give entries and today's late trend illustrates some of them.
+Trend breaks late in the day (90 minutes before market close) are often hard trends and its a good idea to swing some into the close.
+This is especially important for reversals and large gap fills. After your entry (b60) and scalp exit (b61) wait for at least one attempt to fail the trade (b64). Once this bar closes, you should move your stop above this bar. Every time the price makes a new low, you should move the stop beyond the last counter-trend swing (b67,b70).
+If you exited early or did not enter, there are some places for a late entry or add-on. Sometimes you may be able to detect the trend early and add on below the fH2 (b67) or once you recognize the hard trend due to multiple 1tfs (b67, b70) and lack of any trend bar of the opposing color, you can short below any small bar (b73) or any small counter-trend bar (b74) and move the stop above it.
+Large with trend bars such as b75 are often followed by strong counter-trend action but they almost always collapse before the bar closes in a hard trend.
+When there is a large open profit and your swing stop is 4 points or so beyond as would happen near b76, it can be very hard to hold through  but rest assured, a hard trend that originates late in the day rarely has a sudden reversal. Often the first large bar with a tail (b77) has at least one bar following it, so many traders simply exit on the close of the next big bar (b78).

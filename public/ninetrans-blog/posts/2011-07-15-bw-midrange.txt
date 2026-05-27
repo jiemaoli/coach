@@ -1,0 +1,12 @@
+BW midrange
+https://ninetrans.blogspot.com/2011/07/bw-midrange.html
+Published: 2011-07-15T16:37:00.000-07:00
+Updated: 2011-09-09T17:34:26.693-07:00
+
+A mid-range barb wire (BW) pattern is a very common occurrence on Trading Range days. Most traders get chopped up trying to trade these such as the ones between b22-29 and b41-53 today.
+Facts you need to know about barb wire:
+They almost always break away from the ema rather than thru the ema.
+A strong breakout bar from BW(b31,54), no matter how strong it may appear, is likely to fail and turn around to go through the BW. This is especially true on trading range days since you expect moves to ends of the range to reverse.
+2 failed attempts to break through the ema(b25,27) can be traded as if it were a minor A2 if additional indications are seen (TL touch, 5tf, shaved signal bar b28). This should be done with care since taking the fBO is always the better trade and you dont want to miss it by being on the wrong side.
+A BW fBO late in the day is likely to give a much stronger move than one mid-day.
+Note that hard H1/L1 entries in a hard trend (b74,b78) do not constitute BW. This is because trending dojis are a trend and BW needs to be somewhat horizontal.

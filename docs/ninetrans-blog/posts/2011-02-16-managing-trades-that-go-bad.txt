@@ -1,0 +1,13 @@
+Managing trades that go bad
+https://ninetrans.blogspot.com/2011/02/managing-trades-that-go-bad.html
+Published: 2011-02-16T21:08:00.000-08:00
+Updated: 2011-09-09T17:34:29.520-07:00
+
+Sometimes we read the market incorrectly or in the heat of a big move, place orders before identifying a pattern correctly. Sometimes we get into trades due to bad habits or the trades we enter into just fail. How you manage your trade after you get into it plays very strongly into your trading success.
+The ideal situation is to very rarely get into bad trades. A simple way to do this is to never buy above or sell below overlaps, especially if in BW. Folks who bought above b16, a doji bar or above b26 or sold below b58 lost. The second rule is if your signal bar has a large tail on the entry side, its usually better to wait for a second signal. Also avoid large inside bars since they often act as trading ranges.
+The best and first course is to scratch the trade by exiting at a small profit or breakeven if your entry bar is anything but a trend bar. The next option is to move your stop below your entry bar no matter how crappy it looks and let the market take you out. An alternative is to trail 5t from your entry and let the market take you out.
+If you choose your entries correctly, your entry bar should be a nice long trend bar with small tails. The setups I choose typically have such entry bars and if they end up looking like anything else, I look to bail. For example, b9, b20 and b61. A bar with a single small tail is ok, as long as the close is strong such as b20 and b36.
+Any bar that has larger tails is higher risk of failure such as b27, b70. At the very least, exit most of your position at a smaller target.
+Bars that end up in a doji or whose close is against your position are very likely to be failures, possibly after a bit more move in your direction such as b5, b17, b22, b64 etc. You should exit right away and look to reverse your position.
+My standard trades of A2, W1P, DP and fBO should not need more than 4t or 5t stop and often go to +2. Once your scalp of +1 is filled, you should right away move your stop to breakeven. After that, you can move the stop after every HL or LH. An alternative is to trail it by 5t and let the market take you out.
+If you trade this way, your maximum loss is 4t/trade (or 5t in the first hour). and your expected gain is about 6t average (+1 and +2/+0). This inversion from 4t target and 6t stop to 6t target and 4t stop means your accuracy only needs to be slightly greater than 50% instead of the 70% for breakeven.

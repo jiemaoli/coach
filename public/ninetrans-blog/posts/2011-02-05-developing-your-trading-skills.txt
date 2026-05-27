@@ -1,0 +1,22 @@
+Developing your trading skills
+https://ninetrans.blogspot.com/2011/02/developing-your-trading-skills.html
+Published: 2011-02-05T10:49:00.000-08:00
+Updated: 2011-09-09T17:34:29.690-07:00
+
+Having a trading plan and having a list of best setups does not guarantee trading success. Practically everyone knows common setups such as entering near ema or trendline in a trend or fading breakouts in a trading range. Yet most people lose money trading. The reason is that learning to trade is not like memorizing a phone number, but rather like learning to swim. You can read all you want about various swimming styles and how your arm should cut into the water at the correct angle, but once you jump into the water, you may come close to drowning the first few times.
+Trading the same few setups repeatedly is a far better trainer than doing everything you may have heard of or read about. Even if the best trader in the world tells you his best secret, you will still lose money until you have traded the setup often enough to master it. The setup is irrelevant. Your practice and mastery of it are far more important. Learning to trade is about working on yourself, not about gaining some magical secret that will make you rich.
+Some people are just not cut for trading and will ultimately give up or go broke.  The mindset needed to be a trader can be developed by practice, but for some its part of their very nature. The following characteristics define a good trader:
+An appetite for risk
+A tolerance to loss
+An understanding of probability
+An appetite for risk does not mean you love gambling. Risk means you are able to put something on the line to get something of higher value. When you fly on a plane, you are at a tiny risk of killing yourself. However, the risk even though severe is low enough that it does not bother you and the reward is high enough that you are willing to take it. The first time when you board a plane, it may have caused some excitement and terror but flying repeatedly removes the emotional element of air travel.
+In the trading world, your risk is the distance between your entry and stop. It is smaller, but much more probable. You should be willing to lose that much without undergoing grievous emotional stress. If you are very risk averse, you will ultimately fail in trading.
+You will have periods in your trading life where you have periods of extended successes and extended losses. A tolerance for loss means more than just being able to bear it. It means you have planned for this in your trading plan by perhaps having a second job or sufficient money put away from your good years. You should be able to go back to your notes and read them and maybe switch to to SIM trading for a few weeks until you get your mojo back.
+All setups no matter how good will occasionally fail, and sometimes they will fail repeatedly. You need to understand that the risk you take and the reward you expect will pay off eventually and repeated wins and losses are to be expected. If they are causing you distress, you need to back off and switch to SIM trading. When you are distressed, you are on tilt and are more likely to blow your account.
+The relationship between risk and probability is this:
+reward * probability >  risk
+OR
+reward > risk / probability
+So if your winning percentage is 50%, and you are expecting to make 4 ticks, your risk needs to be less than 2t. Another way to look at this is that if your winning percentage is 50% and your risk is 8 ticks, you need to make at least 16 ticks to just break even.
+This is one reason I stopped taking any entry that is unlikely to give me at least 4 points. As you work on your winning percentage, you can take trades with smaller expected moves.  Once you understand this math, you can trade with confidence knowing that eventually you will be profitable as long as you follow this simple rule.
+To summarize: Trading is a skill you acquire and you practice is key. Start slow and small and work your way to success.

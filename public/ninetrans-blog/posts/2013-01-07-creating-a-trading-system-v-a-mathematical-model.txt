@@ -1,0 +1,18 @@
+Creating a trading system V - A mathematical model
+https://ninetrans.blogspot.com/2013/01/creating-trading-system-v-mathematical.html
+Published: 2013-01-07T20:50:00.002-08:00
+Updated: 2013-01-07T20:51:23.162-08:00
+
+Random walk theory considers all of market action as random movement, bereft of any tradable patterns. All apparent patterns are mere illusions and are unusable.
+Traders over the decades have rejected random walk simply by empirical evidence, since recognizable patterns do show up on every chart and every time frame.
+A set of related patterns that composed of themselves on a smaller scale are called fractals and the individual patterns are called self-affine functions. Fractals are extensively used to model mountains, trees and other entities in nature (for example in animations and video games).
+It is my hypothesis that human behavior, specially crowd behavior causes market effects that are fractal in nature. Each move however, is weighted randomly just like every branch of a tree is of random length (In fact, this is how trees are modeled).
+A trading model therefore consists of three parts.
+A pattern recognition model that recognizes and predicts the next likely set of patterns
+A risk management part that evaluates if the predicted patterns are worth trading.
+Trade management: Exiting at target, scratching or stop out
+For example:
+Pattern recognition : at b29, we had a possible 2L pb to the trendline and ema with a weak signal bar. The possible patterns were a strong continuation of the prior up move or a failure of a second attempt to go up, which would result in a move down. Its important to note that even if the pattern plays out, it may never reach your profit target. i.e. correctly predicting the next pattern is not a guarantee of successful trade, esp when the bars are small.
+Risk management : An inside bar setup with an entry side tail is a weak setup. Chances are the move up will fail and give another push down. However, since the move so far has been strong, we may want to take a reduced size (1 contract) in order to get part of a potential large move up. At b31, we have a weak follow-through and arrest of the move at the bear trendline. The best option is to scratch out and take a reverse position. Risk in general needs to be arrived at before placing the trade. Once the trade is placed, the risk should not be changed. This is important for achieving consistency.
+Trade Management : An immediate profit of 10t and a second profit at 20t lets us place the last contract at breakeven vs possibly getting 100t if the market takes us beyond LOD.
+Today we netted 31t overall with arbitrary entries (not setups). I have extensively detailed patterns on ES. CL is no different. In the coming days, we shall see how to optimize stops and other risk management and also work on trade management. Due to the nature of experimentation, many failed trades are needed to gather sufficient data to arrive at the optimal stop size.

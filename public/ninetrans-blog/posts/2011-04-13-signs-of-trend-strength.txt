@@ -1,0 +1,16 @@
+Signs of trend strength
+https://ninetrans.blogspot.com/2011/04/signs-of-trend-strength.html
+Published: 2011-04-13T21:44:00.000-07:00
+Updated: 2011-09-09T17:34:28.494-07:00
+
+The first leg from b1 to b10 showed various signs of trend strength today:
+Reversal bar with strong close (1t or less tail on entry side)
+Trapped traders (b3)
+1tf (b5)
+No counter trend bars (b5 was not a trend bar)
+All these implied more down, despite the strong pullback from b10 to b16.
+b23 was a double shaved ema breakout bar. Usually, these bars have follow through and can be traded on their own with high probability provided they are small and breakout at least 4t into the other side.
+b26 was a rare range expansion bar. This is when a TCL OS expands the range rather than cause a pullback or reversal. Range expansion bars after a turn usually indicate increasing strength in the direction of the expansion. The width of the channel increased, indicating buyers did not step in where they normally do. (After an extended move, what looks like a range expansion bar is likely to be a climax bar and should not be taken as a sign of strength.)
+Breakout tests are also strong continuation signals and can be taken on a single leg (L1/H1) and on marginal signal bars such as dojis. These may not work if the signal bar is not triggered on the very next bar (b46)
+A HL double bottom(b58) after a possible reversal (b40) indicates at least a comparable leg in the same direction (b59 to b67)
+Signs of strength can be used as a filter to avoid trading in the opposite direction in addition to trading them on their own. For example, a BT at b29 may imply that a b31 long is unlikely to be successful. Similarly, a HL DB at b58 may mean you should not fade the long breakout of the trading range from b43 to b58.

@@ -1,0 +1,8 @@
+Trading Channels
+https://ninetrans.blogspot.com/2011/01/trading-channels.html
+Published: 2011-01-24T20:07:00.000-08:00
+Updated: 2011-09-09T17:34:29.962-07:00
+
+Channels should never be counter-trend traded regardless of what signals you may be reading into them. This is especially true for a channel that has just broken out of a trading range. Every L2 or overshoot is destined to fail if you take a counter-trend trade. This is because a channel is just a trend on a slower timeframe. One option is to trade the slower timeframe. The other option is to enter half a position on every pullback bar. When there is a first break of the channel, you could enter the other half. For example, you could buy the close of bars 13,16,18,23,26, etc. with a stop below the previous bull bar.
+The safest and the correct trade however is to wait for the first channel break and enter with trend after a 2 legged pullback. First channel breaks are fairly safe to enter at the ema with a tight stop. After the channel break, your odds of successful counter trend trades improve.
+The best move of course is to be in the channel before it begins. A 1st pullback entry above b7 or a breakout pullback entry above b13 would let you swing the move until the first channel break and test above it.

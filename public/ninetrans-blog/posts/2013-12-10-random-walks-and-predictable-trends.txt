@@ -1,0 +1,11 @@
+Random walks and predictable trends
+https://ninetrans.blogspot.com/2013/12/random-walks-and-predictable-trends.html
+Published: 2013-12-10T20:11:00.000-08:00
+Updated: 2013-12-10T20:11:16.682-08:00
+
+The random walk hypothesis suggests that market moves are purely random and what appears to be trends are simply accumulation of sporadic random moves that happen to occur in the same direction for a duration of time.
+The idea is that buyers and sellers mostly cancel each other out, and the net difference causes a perturbance in the  price of the underlying.
+The random walk hypothesis is pretty absurd since it assumes that the probabilities of buys and sells stay same with price movement. It should be obvious to even the lay person that a stock at $1 can have twice the buying pressure as a stock at $2.
+Traders know very well about herd mentality, the rush to join a successful move and abandonment of a spent move. Fear and greed are the true drivers of the market, not randomness. This is true at least for trending markets.
+However, when the market is not trending, random movements are perfectly possible. To figure out what movements are random, I ran a simulation where every move went up or down based on probability. When the probability is 50%, the market essentially becomes BW (as in b2-b5). When the probability is slightly imbalanced, we get a sloping channel (b49-59).  In general, if the bodies are sloping, its a slightly imbalanced channel. In either case, they are traded the same way. You wait for a trend to break (b9 was LL-LH-LL) and then take the first pullback (b15 or a better bar at b17) or wait for the breakout to reverse and take the reversal (b24 or the next HL, b30)
+Taking the correct bar with the right stop is tricky and deserves its won post but as you can see on this day, its possible with some practice. Moves from randomness often lead to sharp trend attempts that often reverse or otherwise get arrested, so its important to take profits conservatively.

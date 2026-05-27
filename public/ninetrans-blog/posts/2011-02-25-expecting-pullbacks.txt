@@ -1,0 +1,10 @@
+Expecting pullbacks
+https://ninetrans.blogspot.com/2011/02/expecting-pullbacks.html
+Published: 2011-02-25T13:55:00.000-08:00
+Updated: 2011-09-09T17:34:29.422-07:00
+
+Knowing where to expect pullbacks has two benefits. One is that you may choose to lighten your holdings and take some profit. The second is to be able to add on or enter late if you missed the original entry.
+When the price takes out the high of a bear trend bar or takes out the low of a bull trend bar, it may pullback a bit. The reason for this is simple. Traders who originally entered there are willing to enter again. Another way to look at this is that when the price has turned around from a bear move back upwards, the entire pullback is like a trading range and trend bars are like mini-trading ranges. They are traded in a similar way, you can fail their breakout or enter on a breakout pullback depending on how good or bad the failure signal is.
+For example, with b32, it was a poor 1tick doji signal and effectively an inside bar. Sellers below were trapped and the price moved up. An aggressive trader would buy the low of that bar with a stop 1 or 2t below b31.
+This is especially true for entry bars since traders like to add on at the original price. For example, b75 took out the low of entry bar b56 off a poor short signal and an aggressive trader could buy this with a stop below b44, another entry bar.
+In general, this approach is best for entering with trend as in the first half of today or fading trading range breakouts as showed in the second half.

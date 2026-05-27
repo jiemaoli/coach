@@ -1,0 +1,8 @@
+Trend termination (TT): Failed Reversal followed by failed A2
+https://ninetrans.blogspot.com/2012/01/trend-termination-tt-failed-reversal.html
+Published: 2012-01-31T19:57:00.000-08:00
+Updated: 2012-02-01T08:10:58.656-08:00
+
+There are primarily three kinds of trend terminations that turn strong trends into trading ranges (rather than reverse the trend direction). The first one is a TTR, where the bars gradually become tiny and dojiish. This is rather easy to identify and is usually seen in bull trends. The second is a double top or double bottom that triggers but does not result in a breakout on the other side. The last one is a failed reversal followed by a failed A2. This is usually the case with the termination of a bear trend.
+b22 was an inside bar signal following three pushes down (and a slight TCL overshoot). However, since it wasn't a bull reversal bar, a shaved inside bar near the bottom of b21 or a second entry, its a poor signal and unlikely to attract many bulls. This was followed by two sideways legs and the second attempt to sell off at b27 was off a poor signal bar (a 3t bull doji) in the middle of the range. This is unlikely to attract a lot of bears. This is the earliest indication of a terminated trend.
+The 1t nominal new low (1tf) at b29 is caused by the remaining bears exiting at the low of b21 and confirms the end of the trend. From b30 to the end of the day is a trading range composed of small trend legs like all trading ranges. As expected almost all signal bars were very poor and there were no large moves.

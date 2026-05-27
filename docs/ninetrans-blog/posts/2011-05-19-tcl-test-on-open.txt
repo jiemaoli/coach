@@ -1,0 +1,8 @@
+TCL test on open
+https://ninetrans.blogspot.com/2011/05/tcl-test-on-open.html
+Published: 2011-05-19T20:06:00.000-07:00
+Updated: 2011-09-09T17:34:27.935-07:00
+
+A TCL test on open may indicate the direction of the AM trend. A second failed overshoot of one or more TCLs from yesterday may indicate a reversal or at least a 2L move away from the TCL.
+When the gap is small, this can be simply viewed as a climax bar and a W type reversal on overshooting the TCL. If the gap is large, this often leads to the formation of a reversal bar and a possible trend from the 1st bar.
+Drawing the TCL from the prior day prevents you from taking an entry in the wrong direction and is especially helpful after a strong trend day or two.

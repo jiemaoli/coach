@@ -1,0 +1,9 @@
+Fading two legged moves in a Trading range
+https://ninetrans.blogspot.com/2011/04/fading-two-legged-moves-in-trading.html
+Published: 2011-04-28T20:57:00.000-07:00
+Updated: 2011-09-09T17:34:28.267-07:00
+
+When the day opens within the range of the prior day, especially if there is no gap between the first bar of today and the last bar of the previous day, there is a very good chance the day will turn into a trading range day. That's not really surprising, since most days are indeed trading range days.
+A trend day was still possible at the 1PB at b15 but the deep sell-off from the second leg at b24 is an indication of a trading range day. At this point any 2L PB can be taken in both directions until there is a breakout of the HOD b20 or LOD b1.
+Similarly, a failed breakout also indicates changes to your trading pattern. A double bottom above the LOD (or DT below HOD) is technically the second failure to create a new extreme and is a form of a fBO. A DP is the first pullback after it and usually indicates a move to the other extreme of the range.
+b47 buyers therefore should only trade long until a test of the HOD. A success and pullback is a BP trend generator and a failure is an fBO trade.

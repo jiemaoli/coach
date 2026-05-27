@@ -1,0 +1,9 @@
+Trading range as a series of fBO
+https://ninetrans.blogspot.com/2012/02/trading-range-as-series-of-fbo.html
+Published: 2012-02-03T18:00:00.000-08:00
+Updated: 2012-02-05T13:01:02.385-08:00
+
+If trends can be seen as a series of breakout pullback, then trading ranges are a series of failed breakouts. I normally avoid trading fBO unless the range is wide enough to net an acceptable profit. In general that means if you like a profit of about 2 points, you want the range to be twice as much, i.e. 4 points.
+The reason is that many fBO trades will fail to go to the other end of the range (b33,b40). Thus narrow trading ranges cannot be profitably traded using stop entries with consistency. Even weak wedges such as b40 are usually not worth trading.
+The quality of signal bars is very important in entering any trade as it is directly correlated to success rate. The quality of the bars around the signal bars is equally important. On a chart with mostly well formed bars, you can take any decent signal bar but on a barb wire chart you cannot expect a move large enough to justify a trade.
+But eventually, the market will move out of the tight range and create bars that become tradable (b75-81). If this occurs with sufficient time before the close unlike today, you can look for high probability trades.

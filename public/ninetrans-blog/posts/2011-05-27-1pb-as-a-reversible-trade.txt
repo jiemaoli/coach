@@ -1,0 +1,10 @@
+1PB as a reversible trade
+https://ninetrans.blogspot.com/2011/05/1pb-as-reversible-trade.html
+Published: 2011-05-27T18:47:00.000-07:00
+Updated: 2011-09-09T17:34:27.796-07:00
+
+Some traders reverse their position if they are stopped out. This is usually a bad idea. Most of the time, traders are right about the direction, but wrong about the entry. Its usually better to take second entries for most trades and sit out on failures.
+Some setups however, are inherently likely to make a large move on failure. In my experience, these are 1PB, A2 and W1P. A failed 1PB (long above b5) simply turns into a 1PB in the opposite direction (1PB below b6). This is especially true if the bar that began the pullback (b4) has a body in the new direction.
+A failed A2 long (above b36) becomes an A2 short (short below b39). These need a little bit of experience to trade correctly. Usually, what looks like an A2 is actually a pullback in the new direction after a possible reversal (b23).
+A failed W1P (b57, if W25,32,52) is also an A2 short (below b62) on failure. These are easy to spot since a real W needs to have a strong overshoot and a clear reversal bar pattern. The W1P should also be made of strong bars, since weak bars are show lack of conviction for the reversal.
+Other setups such as BT, G2, 1CBO, etc are not inherently reversible and if you were wrong, its best to wait for more price action before taking the next trade.

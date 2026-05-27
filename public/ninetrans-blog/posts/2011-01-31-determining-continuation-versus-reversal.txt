@@ -1,0 +1,16 @@
+Determining continuation versus reversal
+https://ninetrans.blogspot.com/2011/01/determining-continuation-versus.html
+Published: 2011-01-31T21:42:00.000-08:00
+Updated: 2011-09-09T17:34:29.812-07:00
+
+Often you may ask yourself if the trend has really ended or is this just a pullback. And if its a pullback, is it going to be a one legged, two legged or three legged pullback. Or perhaps its a channel down.
+For example in today's chart is b25 a 2 legged pullback or was b19,b24 a double top that we should sell? The answer is simple. In the absence of a trendline break or trend channel line overshoot, always assume the trend is still on and go with trend. The wide overlaps make it difficult to take a price action entry above b25 or 26 or even b30. One option is to buy above the signal bar (b25 or 26 in this case) and allow one pullback below your entry bar. You could also buy part of the position at the expected pullback, i.e., below the twin bars b27,28.
+On the other hand what about b46? Is that a W1P or just a leg up in a two legged move to the ema (eventually at b51). Whenever you ask yourself if this is a W you should ask if this was in any way an extreme move. The move from b31 to b37 was indeed a sharp move and tagged the trendchannel line but did not otherwise exhibit signs of a W reversal.
+There was no obnoxious overshoot.
+There was no reversal bar
+The entry bar b38 did not actually trigger theoretical entry below b36.
+It was indeed the third push up and there was a micro trend channel line overshoot, so this could still work like a marginal W1P. Often when the signs are ambiguous you may just get a deep pullback or a trend line break as it did today. Its perfectly alright to take a weaker W1P for a scalp or wait for the next entry.
+B56 gave a two legged BP short of the ema. b54 had a lower high and lower close and divided the move into two legs. This is a very strong signal that you should take.
+If for some reason you did buy above b51 assuming its an A2 long, the two legged move to b56 should tell you to exit or reverse.
+Also keep in mind the overall price action context. The horizontal trading range between bars 19-30 could act as a magnet forcing any breakout to be pulled back into the area.
+Pullbacks are just smaller trends in the opposite direction and an overshoot of its trend channel line or trendline break and test is the best way to determine if the pullback has ended. In general one legged pullbacks should only be taken in very strong trends, 2 legged pullbacks can be taken anytime unless the moves shows strength in the pullback direction (such as breakout bar). 2 or 3 legged (W) pullbacks can be taken if they show an overshoot. Most pullbacks that end at trendline or ema without breaking it giving  a good signal bar can be taken.

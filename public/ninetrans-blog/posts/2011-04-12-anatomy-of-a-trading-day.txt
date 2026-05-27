@@ -1,0 +1,18 @@
+Anatomy of a trading day
+https://ninetrans.blogspot.com/2011/04/anatomy-of-trading-day.html
+Published: 2011-04-12T20:59:00.000-07:00
+Updated: 2011-09-09T17:34:28.517-07:00
+
+I generally view the trading day as a series of sections that are comprised of the following:
+The opening bar
+The opening range
+Breakout and possible reversal of the opening range
+The AM trend
+Lunch consolidation
+Breakout from lunch consolidation
+The PM trend
+This breakdown is a guide and not iron-clad law. Some days may look like lunch the entire day and we call those small range days. Some days will start with the first reversal and the AM trend may continue into the close. We call these trend from 1st bar days. You need to adapt your expectations to the price action you see early in the day. For example, a day with large counter-trend bars in the early trend may give a stronger breakout attempt from the lunch consolidation, while weak or no counter trend bars may result a shallower attempt.
+How do you trade these? In general, if the first bar is a trend or reversal bar and has a strong close and is beyond the range of the previous day, you could trade its breakout, especially if its trying to close the gap. Often this is the best entry on such days. On most days however, its best to let the opening rage define itself and either fail its breakout or enter on its breakout pullback. This is your best chance of getting into the AM trend. On many days, if you have a winning day at the end of the AM trend (usually 2 hours after open), you can simply choose to end your trading session and enjoy the rest of the day.
+This is because lunch session is usually full of poorly formed bars and dojis and most traders get trapped and lose some of their earnings. Occasionally, there are trades and breakouts during lunch hour but if you want to trade, note that most trades are at best scalps on most days.
+The market will attempt to breakout of lunch and sometimes it succeeds, but often this move will fail and turn into a PM trend. The PM trend can run till close but occasionally, profit taking will cause a pullback.
+Overall, your best strategy is to get most of the AM trend, sit out the lunch (or scalp if you are good at it) and fade the lunch breakout.

@@ -1,0 +1,7 @@
+Confirming signs after weak signal bar
+https://ninetrans.blogspot.com/2011/08/confirming-signs-after-weak-signal-bar.html
+Published: 2011-08-24T18:17:00.000-07:00
+Updated: 2011-09-09T17:34:25.976-07:00
+
+Sometimes, an otherwise obvious entry may have a poor signal bar such as b24 A2 or b33 W. In such cases, its best to look for a second entry. In the case of b24, a second 2 bar signal at b27 confirmed the entry. Often instead of a second entry, you get two failures in the counter-direction. For b33, there were 2 short entries that turned into 1tf (short below b34 and below b38). This is a very strong confirmation of b33 long. The price taking out b39 high also makes it a fL2, which is a reasonable signal in itself.
+Similarly, the DP above the doji signal bar b62 was confirmed by the 1tf of the short below b64. A signal bar with a strong close should not need any confirmation.

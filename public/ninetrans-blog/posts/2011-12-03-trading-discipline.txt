@@ -1,0 +1,17 @@
+Trading Discipline
+https://ninetrans.blogspot.com/2011/12/trading-discipline.html
+Published: 2011-12-03T18:57:00.000-08:00
+Updated: 2011-12-03T18:57:00.137-08:00
+
+When trading BPA, I try to follow the following rules:
+Clarity : I will not trade unless I read one of my proven setups . I want the setup to be as clear as possible. Any ambiguity probably means the move wont go too far. I want pullbacks to be deep and signal bars to be strong without a lot of overlap. If these characteristics are missing, I will usually wait for a second entry. If the setup is poor, I will often pass it up. I'm OK with not taking any trades on any given trading day.
+Swingable entries : In general, I only prefer to enter setups that will go four points or more . I also want to only enter where I believe the price will not pullback to my entry price after moving away from the signal bar. Often these are second attempts.
+Firm stops :  Stops can only be tightened. Once the price moves a certain distance away from the entry price (say 2 points), I will move the stop to breakeven and lock in gains beyond every new swing point.
+A few good trades : In general, I prefer to take a few good trades rather than many mediocre ones. This is because I can be a winning trader with a modest percentage of successful trades as long as at least some of my winners go 2x to 4x the risk.
+Daily loss limit : Daily stops losses are crucial. Some days, my game is just off possibly due to lack of rest or unexpected price action. I prefer sitting out and keeping my winnings from my prior days over trading every day and losing everything I've made over the last few days.
+Note that the above rules are applicable to any trading system and the important point is to stick to these simple rules since they will help you measure your success and isolate winning setups.
+Rule 1 and 3 helps you measure your success and helps you to isolate winning entries.
+Rule 2 and 3 improve your win/loss ratio.
+Rule 2 and 4 helps you focus on larger moves and not be mesmerized by the current bar or two.
+Rule 5 helps to protect you against outlier days when price action is not favorable to trading.
+You can measure your progress by keeping a score card of each trade to see if you followed the rules you laid down. Soon you will be able to detect what areas you need to work on.

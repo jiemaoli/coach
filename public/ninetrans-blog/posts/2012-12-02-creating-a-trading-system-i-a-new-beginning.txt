@@ -1,0 +1,11 @@
+Creating a trading system I - A new beginning
+https://ninetrans.blogspot.com/2012/12/creating-trading-system-i-new-beginning.html
+Published: 2012-12-02T23:31:00.000-08:00
+Updated: 2012-12-02T23:31:23.044-08:00
+
+From January 2013, I'll go through the steps of creating a new trading system to trade CL contract (oil futures.) My goal is to go through the steps of creating the risk management and trade management system for CL and publicly log all my trades, including experimental trades.
+Initially, I will work on figuring out ideal stop sizes, scalp and swing targets and the system will run on SIM. As the system picks up consistency, I will start trading the system live.
+This will serve as a template or guide for me and my readers to create their own price action trading systems on anything they may wish to trade.
+Why CL?
+From recent experience, I believe there may be a case for accelerated consistent profitability for new traders in CL compared to ES or any other equities contracts. CL also does not usually suffer from the lunchtime lull and traps that ES traders need to be wary of. CL does have its own dangers, namely slippage and whipsaw during news events. These are part of what makes stop size determination a bit harder on CL.
+For the rest of December, I will attempt to describe my overall trading principles and the reason I believe they are universally applicable.

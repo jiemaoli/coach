@@ -1,0 +1,10 @@
+Comparison of alternate charts
+https://ninetrans.blogspot.com/2011/08/comparison-of-alternate-charts.html
+Published: 2011-08-16T17:27:00.000-07:00
+Updated: 2011-09-09T17:34:26.168-07:00
+
+Today had some violent news related price action during lunchtime and unlike normal days when the lunch hour is the tightest, today's lunch hour had 'bars gone wild'. When there is a sudden increase in trading volume in a short span of time, time based bars are unlikely to provide meaningful signal bars.
+A comparison of alternative charts shows how you can still get a decent signal in times of heightened activity:
+1m 3m 4500 tick 20K volume
+Note how the 3m fails to give a tradeable signal. The 1m gives a weak ii doji which may be seen as a final flag. The 4500t is a lot better, its giving a 2 bar reversal. However the volume chart has given the best signal today with a clear shaved reversal bar. The stop at the entry price was not touched only on the volume chart, allowing a risk free swing trade.
+The defects of a time-frame chart can only be addressed by a non-timeframe based chart and thats a necessity when bars are large or otherwise untradeable. I haven't collected a lot of data yet, but in my very limited experience, volume charts provide the best setups in such cases.

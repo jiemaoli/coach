@@ -1,0 +1,9 @@
+Price action Basics III - 1st Reversal or Opening Reversal
+https://ninetrans.blogspot.com/2011/09/price-action-basics-iii-1st-reversal-or.html
+Published: 2011-09-15T19:09:00.000-07:00
+Updated: 2011-09-17T11:48:24.247-07:00
+
+When the day opens, one option is to treat the first bar as a trading range and watch for fBO and BP of b1. If the BO or  fBO looks compelling, it may lead to a trend and you should take a strong signal bar such as b8 or b19. The larger the distance to the other extreme of the day, the higher the chances of a trend developing. Therefore, its perfectly fine to ignore something like b3 and wait for a break above the HOD (b1 at this point) and wait for a failure or BP.
+When the move is possibly a trend move (b8-b19), no matter how small, its reversal is a 1Rev and is likely to lead to the primary move of the day.
+Since 1Revs can fail, conservative traders can take a 1PB if the fBO or BO succeeds. In other words buy only the HL after a bullish reversal and a LH after a bearish reversal. Today's 1PB would be b24, which is not well formed, so its acceptable to skip it and wait for the next setup. You should only take with-primary trend setups until the other extreme of the day is taken out.
+This strategy works for almost any day except tight trading ranges with tiny bars. On those days, very few things work and price action entries have a high failure rate, so its best to skip trading if the range of the first hour or two is very small, especially if there was no gap on open.

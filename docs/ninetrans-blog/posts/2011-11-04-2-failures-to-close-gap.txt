@@ -1,0 +1,10 @@
+2 Failures to close gap
+https://ninetrans.blogspot.com/2011/11/2-failures-to-close-gap.html
+Published: 2011-11-04T22:24:00.000-07:00
+Updated: 2011-11-04T22:24:20.194-07:00
+
+On many days when the market opens with a reasonable sized gap (4+ points), the market will try to close the gap twice. If it fails on both attempts, there is a high probability of a strong trend in the direction of the gap before the market tries to move against the gap.
+The larger the gap, the larger the trend move before any attempted reversal.
+Today opened with a reasonable gap and a doji bar b1 with a close near the low of the bar, which is a poor signal for a long and was likely to fail. The second signal was another doji but with a higher close and was also a failure. The presentation of poor counter-trend signal bars is a strong indication of continuation of the trend.
+Two failures led to the market breaking into a trend and extending the gap all the way to bar 14. On the way, a fH1 at b9 marked a precise exit near the low of b14.
+Video of trade available on youtube

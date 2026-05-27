@@ -1,0 +1,8 @@
+Breakout pullbacks as trend generators
+https://ninetrans.blogspot.com/2011/03/breakout-pullbacks-as-trend-generators.html
+Published: 2011-03-25T20:23:00.000-07:00
+Updated: 2011-09-25T17:43:24.239-07:00
+
+When a move ends in a TTR, the right thing to do is to exit your position, say near bar 20 or so and wait for more price action. Yesterday we had nearly similar price action with a pullback to ema followed by a rally that ended in an up-sloping TTR.
+The TTR broke down to test the low of the channel and whereas yesterday it failed and moved to the top of the channel, today it succeeded as a breakout pullback. There were two clues to read this correctly. Two attempts to fail the breakout did not go anywhere (b44 and b47). This resulted in a breakout pullback trade that should give at least two legs down. The A2 pullback to b70 meant at least two more legs down that ended in bar 78.
+Compare this to the price action yesterday at b42 and b53. The price couldn't even close below the BO point. The follow through on the second attempt was decent enough (no pullback below previous bar for many bars, multiple closes above ema, break above swing high) that the second attempt to fail the breakout was successful enough to warrant a test of the other end of the trading range.

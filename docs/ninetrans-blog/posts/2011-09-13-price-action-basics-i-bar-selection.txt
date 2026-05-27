@@ -1,0 +1,9 @@
+Price Action Basics I - Bar selection
+https://ninetrans.blogspot.com/2011/09/price-action-basics-i-bar-selection.html
+Published: 2011-09-13T17:27:00.000-07:00
+Updated: 2011-09-14T17:27:48.932-07:00
+
+The very first thing to learn about price action trading is signal bar selection. If you do nothing else but trade every well formed bar, you will make money on most days. If you trade well-formed bars only with-trend, you will make money consistently. Enter above a bull signal bar with a stop below it and vice-versa for bear bar. If the bar is too large or too small or has lots of overlap, use a money stop of 8 ticks.
+The indicator above plots a red dot above any reasonable bear bar and a blue dot below any reasonable bull bar. Naturally, this means it misses some of my important setups such as OR/1Rev at b3 and possibly some 1PB setups.
+If you did nothing but trade these bars, most of your trades would be wins. Your losses would only be from b45-47 chop and possibly b74 L1. If you swung any contracts for any of your previous trades, you probably earned money overall.
+Lets add some common sense to the mix and eliminate counter-trend trades and H1/L1 against strong moves. This gives only b45 as a losing trade of the day. Add a second common sense rule and do not take shallow H1/L1 with-trend unless its close to ema or trendline and you already have an all-winner day.

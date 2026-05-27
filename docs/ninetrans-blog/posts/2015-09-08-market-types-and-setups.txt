@@ -1,0 +1,51 @@
+Market types and setups
+https://ninetrans.blogspot.com/2015/09/market-types-and-setups.html
+Published: 2015-09-08T01:06:00.000-07:00
+Updated: 2015-09-09T21:53:22.212-07:00
+
+The price action that defines markets can be divided into several types and each type has setups that typically work for it. Trending markets for example, facilitate with trend trades and usually cause reversal setups to fail with high probability. Trading ranges on the other hand, facilitate fading breakouts with high probability.
+I divide the market price action into the following categories:
+Trend (or elastic trend ): There is an obvious trending in the market. Bars in the direction of the trend are small, close strong and there are multiple bars in any given trend-side push. Bars against the trend are fewer, usually larger and if there is more than a single bar, closes are usually weaker.
+Hard Trend : This is a kind of trend where there are very few bars in the counter-trend direction. With-trend bars can be large or small, pullbacks are usually just a bar or two. This is a very strong trend.
+Soft-trend : Bars are very small both trend-side and counter-trend-side. Very shallow pullbacks and pushes.
+Channels : Channels look like Soft-trends but with one big difference. Unlike the trends above, a pullback in a channel often overlaps into the previous signal bar.
+Trading Range : There is no discernible trend. Erratic movements usually lasting two or three pushes in one direction followed by pushes in the opposing direction. A move in one direction may or may not reach the other side before reversing, therefore hard to gauge profit target.
+Barb Wire : A special kind of Trading range where the price action is confined to a narrow range made of small bars, many of which are dojis
+The Open: Markets that have "Regular Trading Hours" have opens and closes for the day and the open of a given day has often behavior that may look entirely unlike the previous day. When the market opens and the first bar begins to form, the market is not in any of the above states yet and is considered to be in the open state. This lasts for about 10 bars or so.
+The Setups
+Each price action type has its own list of setups. A setup that works very well for hard-trend will fail for a channel and vice-versa. These 30 setups cover every possible large move from any type of price action. If you master these, you can trade any market.
+There is a small number of setups per price action type and you can focus on a much smaller set of patterns. Setups marked beta are sustained observations but I'm unsure if they can be traded profitably in all kinds of markets. I may drop them in the future.
+Setup List
+Setup Name Trade type Price Action Type
+GRb1 Gap reversal b1 X -- Beta Open
+ib2 Inside bar b2 X -- Beta Open
+1Fb1 1st failure of b1 X Open
+2Fb1 2nd failure of b1 X Open
+1P 1st pullback X Open
+1FBO 1st fbo of OR X Open
+2FBO 2nd fbo of OR X Open G Gap
+1W 1st Wedge of day X Open R Reversal
+1TL 1st close at TL X Channel T trend
+1CBO 1st channel BO X Channel b bar
+1ib 1st inside bar X Channel b1 bar 1
+CBP channel BP X Channel P pullback
+CXT channel XT X Channel 1P 1st Pullback
+SD shallow+deep X Channel S small/shallow
+fL2 failed L2 X -- Beta Channel OR Opening Range
+fL2 failed L2 X Soft Trend TL Trend Line
+STb small Trend bar X Hard Trend BO breakout
+Tb1 Trend from b1 X Hard Trend BP breakout+P
+2_1tF 2nd 1TF X Hard Trend P pullback
+2SP 2nd shallow P X Hard Trend XT expanding TRI
+1TAIL 1st Tail X -- Beta Hard Trend TRI Triangle
+WP Wedge pullback X Trend BW Barb Wire
+TLP P at TL X Trend 1TF one tick failure
+W Wedge Reversal X Rev Trend
+Rfx2 Reversal+fx2 X Rev Trend
+W1P W + 1st pullback X Rev Trend
+FBOFx2 FBO + FX2 X fBO Trading Range
+WFBO, DP Wedge FBO X fBO Trading Range
+TRI BP Triangle BP X BO Trading Range
+XT Expanding Triangle X BO Trading Range
+BWBO Breakout from BW X BO BW
+Setups not listed above such 1Rev, A2, BO, etc are obsolete due to various reasons such as being incorporated into the list above, me not using EMA anymore and inconsistent profits.

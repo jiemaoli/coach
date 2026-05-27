@@ -1,0 +1,9 @@
+Trading barb wire
+https://ninetrans.blogspot.com/2011/07/trading-barb-wire.html
+Published: 2011-07-25T21:44:00.000-07:00
+Updated: 2011-09-09T17:34:26.540-07:00
+
+While its normally excellent practice to avoid barb wire, experienced traders can and do trade it profitably. On the occasions I do enter on barb wire, its often because I have missed an earlier entry in a trend and the barbwire is another opportunity for me to enter with the trend. I usually avoid barb wire mid-range.
+For example, today's BW between b24-28 had a trend breakout to the ema and it bounced off and gave an fBO entry that is also a fL2 entry (b27L1, b29L2) for anyone who missed buying above b22. This sort of BP usually produces very short BW lasting 4 to 6 bars. A similar BP occurred at b66. AStrong breakout at b62 was followed by two feeble attempts to reverse the breakout (b63 is a feeble attempt to create a reversal bar).
+b73 was a similar is a barbwire A2 in a trend that should be read as a fH2 and therefore two failed attempts to reverse the trend. (If you expect the bar to trigger, its quite ok to short the close on limit as was done here)
+The last but somewhat rare scenario is that BW can be shorted when it repeatedly fails to run stops as in b45-60. How many attempts equate to repeated? That's yet unknown, but two failed attempts to break out up after at least one successful attempt to break down should suffice.

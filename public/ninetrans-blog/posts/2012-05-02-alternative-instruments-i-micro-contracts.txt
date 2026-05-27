@@ -1,0 +1,9 @@
+Alternative Instruments I - Micro contracts
+https://ninetrans.blogspot.com/2012/05/alternative-instruments-i-micro.html
+Published: 2012-05-02T19:00:00.000-07:00
+Updated: 2012-05-03T22:22:36.489-07:00
+
+A new trader to futures risks losing a significant chunk of his capital in his early trading years. One option is to trade on SIM for a while and get used to price action and correctly handle trade management. But after a certain point, one has to risk real capital to learn to trade.
+To avoid blowing up your account very quickly, you could trade the micro-contracts. Micro-contracts are a tiny fraction of their regular size contracts. The micro version of 6E is M6E pictured above. Every tick is just $1.25 and a 10tick loss will set you back $12.50 plus commissions.
+To make your winnings count, you should trade M6E on larger timeframes. The 30m chart shown above shows sharp movements especially around European and US open that you can hope to catch if you read the market correctly.
+Larger timeframe also forces you to hold for longer and gives fewer better setups. Once you reach some level of consistency, you could switch to the regular contracts.

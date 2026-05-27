@@ -1,0 +1,8 @@
+Large reversal bars are trading ranges
+https://ninetrans.blogspot.com/2011/06/large-reversal-bars-are-trading-ranges.html
+Published: 2011-06-15T20:52:00.000-07:00
+Updated: 2011-09-09T17:34:27.504-07:00
+
+Large reversal bars(b36), especially after a strong bear move(b23-35) are often trading ranges. A strong overshoot with a very large reversal bar (anything over 3 points) will terminate the trend and turn into a trading range. The price action following such a bar is sometimes a breakout pullback into a trend on either side but usually failed breakouts of both sides of the bar and horizontal movement until a new trend breaks out.
+The correct way to trade this bar is to take second failed breakouts (b41, b69) of any side and hold until a test of the other side. The size of the trading range may gradually increase with every failed breakout. Its usually best to skip the failed breakout trade until the range size is 4 points or more.
+The larger the bar, the more confidence you can have that not too many will buy above it simply because the stop would be too large.

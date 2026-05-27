@@ -1,0 +1,9 @@
+The poor first reversal and triangle open
+https://ninetrans.blogspot.com/2011/03/poor-first-reversal-and-triangle-open.html
+Published: 2011-03-09T19:52:00.000-08:00
+Updated: 2011-09-09T17:34:29.245-07:00
+
+When a day opens right in the center of a previous day, the price will oscillate up and down trying to find resistance and often results in a trading range day. On such days taking every reversal is feasible if the swings are large (say 6+ points).
+Usually, the price forms an expanding triangle as it takes out every new extreme. Occasionally such as today, we get a triangle breakout. Two lower highs interleaved with two higher lows form a triangle as we had at the open with b4,5,7,8,9 Triangle breakouts into trend often fail and turn into expanding triangle breakouts as we saw today but can result in a runaway trend if the open is on a large gap up or down from previous day.
+When the first reversal is not clear as in b3 due to bear close, small reversal bar compared to previous bar and no overshoot of TCL, the price often fails after taking out the first bar as we did today at b13.
+Once we got a poor A2 long at b40 that no one took, the trend basically ended and the best thing to do is to wait for a breakout. A late DP breakout at b78 may have started a late break into a down trend that may continue tomorrow.

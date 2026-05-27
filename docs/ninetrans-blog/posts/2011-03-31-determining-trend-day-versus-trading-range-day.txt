@@ -1,0 +1,12 @@
+Determining trend day versus Trading range day
+https://ninetrans.blogspot.com/2011/03/determining-trend-day-versus-trading.html
+Published: 2011-03-31T18:24:00.000-07:00
+Updated: 2011-09-09T17:34:28.825-07:00
+
+Trend days and trading range days require different kinds of trading and being able to recognize them early is essential for successful trading. On a trading range day, the range could be small like today and any swing entries are likely to be taken out.
+The easiest way to differentiate between them is to take a step back and look at the chart after the first few bars. if the price hasn't moved a large distance from the opening bar, you are likely to encounter trading range action. If the price has moved 3 or more points beyond the first bar (even if it has subsequently turned around), its likely to give you some trending action.
+On a trending day, you can enter a swing entry on the first pullback and ride it till the trend terminates. You could also enter on A2 or other continuation setups and most trades are likely to succeed with trend.
+On a trading range day, you are essentially going to encounter a series of failures. Occasionally, a trend will breakout from a trading range but predicting breakouts is hard even for experienced traders and most breakouts fail (every breakout today failed).
+When the price tries to breakout beyond the trading range, you could enter with the second failure. This has a good chance of working if the signal bar has a strong close such as b8 and b26. When signal bars are poor or overlapping such as b52 ii or b58, you should trade lighter and take smaller profits.
+A fBO entry needs to be very strong to qualify for a swing move and while second failures tend to test the other extreme of the range, there is some chance it does not go that far. Most of your targets should be modest. If it does breakout strong and then gives a pullback, its a possible trend generator and you can enter with the new trend.
+To summarize: Trend days give swings and continuations; Trading range days may only give fBOs. fBO are riskier, lower percentage trades that should only be entered on strong setups for smaller targets.

@@ -1,0 +1,9 @@
+Selecting the optimal entry
+https://ninetrans.blogspot.com/2012/05/selecting-optimal-entry.html
+Published: 2012-05-24T18:58:00.001-07:00
+Updated: 2012-05-24T18:58:35.845-07:00
+
+One of the most challenging tasks for any trader including experienced traders is to hold through what looks like chop and take their trade all the way to a swing. Sometimes this is easier when the pullback and congestion is far away from your entry price or you are already in a trend and the price moves away from you favorably right away.
+When a trend terminates, determining which entry will lead to a large move is called "The breakout problem" and is a considerably difficult task. To do this, you need to be able to first determine when the trend has actually terminated.
+A failed reversal followed by a failed A2 (b54,55 and b61,62) is a classic sign of trend termination. Waiting for a trend to terminate before taking a trade saves you from two non-swing entries (b58 and b64).
+Once the trend is terminated, you need to evaluate the chances of a reversal. On a trading range day with bull strength displayed earlier in the day (b6-22) and recently (b55-61). The chances of a move to the other end of the range are decently high. On a strong bear trend day, this would be a lower probability trade.

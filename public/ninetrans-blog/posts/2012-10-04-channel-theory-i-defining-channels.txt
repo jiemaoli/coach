@@ -1,0 +1,16 @@
+Channel Theory I - Defining channels
+https://ninetrans.blogspot.com/2012/10/channel-theory-i-defining-channels.html
+Published: 2012-10-04T21:08:00.003-07:00
+Updated: 2012-10-04T21:10:42.647-07:00
+
+Channels are heavily overlapped regions of price action that drift up or down in a chart. If the region did not drift, it would simply be BW. Channels are important because unlike BW which can only be scalped for a few ticks or a couple of points, channels do trend and can be traded for enough points to justify the risks of entering a trade. The goal is to trade channels with a fixed size stop such that the potential profit is larger than the risk taken with a high probability of success.
+Channels generally have the following characteristics:
+Multi-bar overlap: It is common for a bar to be overlapped by many following bars. For example, on the day on the right, b7 was overlapped by every bar except b1 and b19 until it finally broke out of the channel.
+Tails: You are likely to encounter bars with tails on both sides, regardless of color. These tails look like a trend is just about to break when watched mid-bar and then the bar will close with the opposing color, leading to poor mid-bar decisions. Never make mid-bar decisions, especially in a channel.
+Alternating bar colors: True channels have alternating colored bars with some dojis thrown in. Channels without opposing colored bars are Trend Channels (TC) and are actually simply trends. You can trade with-trend on the close of any small bar in TC but in a true channel you are likely to be stopped out if you use a fixed size stop. True channels that form a leg are leg channels (LC). Sometimes  a channel is so wide that it looks like a sloping trading range. These are trading range channels (TRC).
+Unpredictable behavior: Channels may reverse (b19), break out (b30), may turn into any other type price action and are generally hard to predict.
+The primary goal of trading channels is to determine the following:
+1. Origin: Detect PA turning into a channel and determine direction.
+2. Reversal: Channel may reverse direction while remaining a channel.
+3. Breakout: Channel breaks into a steep trend move. This is the most important.
+While even simple detection of a channel is valuable because it enables you to avoid getting chopped up, detecting breakouts and sharp moves intra-channel allow you to maximize your profits if you wish to trade channels. In the coming days, we shall see how each of these may be achieved.

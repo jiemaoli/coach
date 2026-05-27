@@ -1,0 +1,10 @@
+Spike and Channel day
+https://ninetrans.blogspot.com/2011/07/spike-and-channel-day.html
+Published: 2011-07-01T19:30:00.000-07:00
+Updated: 2011-09-09T17:34:27.222-07:00
+
+.
+Good traders know the rules, while great traders also know the exceptions to these rules. One of the exceptions to trading barbwire is entering on shallow pullbacks in a very strong soft trend.
+Normally, I prefer deep pullbacks because they provide the best opportunity for a swing entry. However on a Spike and Channel (SC) day, its best to hold as long as you can. When the spike is strong (entry bar to 1st pullback, b4-b7) and the pullback is shallow (b8-10, about 1/3 of the large bar), there is a very good chance of a SC day. The stronger the spike and the shallower the pullback, the higher the chances of a channel running to the end of the day.
+If you entered before the spike, it makes perfect sense to take out most of your profits near the top of the spike and optionally keep one runner to the end of the day. If you missed the breakout, you should enter on the first 2 legged pb (b10 or b20)
+SC days are often soft trends and give small bars and very tiny pullbacks. Typically pullbacks are only a tick or two below the previous bars. This is one of the few opportunities to buy the low of any bar that would be L2 on limit. Once your are in, you should hold as long as there is no close below the ema. Note that technically almost every pullback is barbwire in a soft trend and you can buy above every failed L2 (b20,b29,b40) if you are not comfortable buying limit on the L2 breakout.

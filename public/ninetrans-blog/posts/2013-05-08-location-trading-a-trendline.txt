@@ -1,0 +1,10 @@
+Location: Trading a trendline
+https://ninetrans.blogspot.com/2013/05/location-trading-trendline.html
+Published: 2013-05-08T20:35:00.002-07:00
+Updated: 2013-05-08T20:35:51.788-07:00
+
+The primary precondition to trade trendline is an established trend. Two higher highs followed by two higher lows is a bull trend. After the open, we had the first higher high at b6 and the second higher high at b10. b11 was the second higher low. There are some optimizations that try to detect the trend earlier, but 2 HH/HL is a definitive bull trend that anyone can recognize.
+At this point, you can take a long trade and trade it until the trend breaks (by the strong move down from b14 to b21.)
+If the trend break is caused by a reversal such as the three push W and TCL OS to b13, then you should consider taking trades in the new direction. If there was no clear reversal, the trend has simply terminated and you should not take any more trades until a breakout and new trend is established.
+Once you see a reversal you can simply wait for a signal bar to form after poking the trendline. A conservative trader may choose to wait for two LL and two LH (b15,17,21,24) and then take every signal bar that pokes the trendline. Once the signal bar triggers, the trendline shifts a bit to give a shallower trendline.
+If you do nothing else but trade the trendline with discipline, you should find a better than 50% success rate. Note that the steeper the trendline, the better your chances of success. If the trendline is too shallow, your chances of stop-out are high even though the market may ultimately go your way.

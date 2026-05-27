@@ -1,0 +1,10 @@
+Alternative Instruments II - Thin volume contracts
+https://ninetrans.blogspot.com/2012/05/alternative-instruments-ii-thin-volume.html
+Published: 2012-05-03T22:44:00.002-07:00
+Updated: 2012-05-03T22:44:57.340-07:00
+
+Warning : TF trades are experimental at this point. The recommendations in this post may need to be revised in the future.
+Thinly traded instruments are inherently volatile. This is because any disproportionately large order can easily start a stop run that can move the bar several ticks or even points in seconds. This makes it a great option for momentum traders.
+A chart of the Russel contract TF above shows large moves today. The risk of slippage is very high on a stop market order. A stop limit order will usually save you from slippage but very often prevent you from getting into the trade. In my experience, you are better off allowing a 1t slippage on a stop limit and widen your stop by 1t. (Ninjatrader and many other platforms allow you to set a default value for stop limit.) You effectively need about 12t stop to trade TF correctly.
+After the AM session, TF is quite dangerous since bars in chop look like they are ready to breakout into a strong move (b29, b35, b36), whereas in a thicker contract such as ES, those bars would usually look poor. Fading poor setups and other scalp tricks that may work on ES simply will fail spectacularly and your account will die a death from a thousand cuts.
+The simplest way to trade a thin instrument is to take only two trades in the AM. Basically take the second attempt down (b6 short) or the second attempt up (b12 long) depending on the strength of the prior attempt and the strength of the setup bar. If you get stopped out on both, you lose twice. If one of them works, you will usually make a decent profit.

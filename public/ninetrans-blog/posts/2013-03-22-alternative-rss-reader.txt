@@ -1,0 +1,6 @@
+Alternative RSS Reader
+https://ninetrans.blogspot.com/2013/03/alternative-rss-reader.html
+Published: 2013-03-22T07:41:00.003-07:00
+Updated: 2013-03-22T07:41:47.768-07:00
+
+As many of you are aware, google is shutting down its blog reader. An alternative reader similar to Google Reader is Old Reader . You can use it to read this (or any other) blog. You can also export your google reader settings and import it in old reader.

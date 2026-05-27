@@ -1,0 +1,13 @@
+Bar
+https://ninetrans.blogspot.com/2013/04/bar.html
+Published: 2013-04-08T19:00:00.000-07:00
+Updated: 2013-04-27T10:49:01.181-07:00
+
+Tick scalpers cause prices to pop up and down a few ticks and their net impact on the direction of the market is neutral. Generally speaking, tick traders will exit their positions when the market moves in their favor a few ticks. Other tick traders expect this and will fade such moves causing any move to pullback just a bit. These two groups of traders are tick chasers and tick faders respectively.
+When the market activity is dominated by the above kinds of traders, bars tend to have small bodies and have tails on both ends (dojis). When many successive bars are dojis, any trend trading is likely to be lower probability. Occasionally, the move out of this area is strong enough to result in a trend in either direction.
+When traders take positions and stand their ground and tick traders are unable to create tails at the ends of the bars, the likelihood of a strong entry bar and a sustained move are higher. Therefore bars like b12 and b9 are likely to be winning setups, i.e., respect stops and go at least as far as the signal bar before.
+A strong close therefore is a very good indicator of a good with-trend setup given the market is at a good location and has a  tradable pattern .
+Note the exceptions to this rule:
+A large overlap (b22,23) is likely to invite faders. You should treat the OL like a TR and take a BP or fBO of the overlap
+Inside bars, especially large inside bars are also overlaps and their breakout is likely to fail or at least require a large stop. Small inside bars (smaller than your stop) are usually OK. Inside bars that setup a fade of a much larger overlap are often OK (b9, b24)
+When the market enters a channel (b37-66), all signal bars are likely to be poor but the move can be protracted.

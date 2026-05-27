@@ -1,0 +1,18 @@
+Location
+https://ninetrans.blogspot.com/2013/04/location.html
+Published: 2013-04-03T19:00:00.000-07:00
+Updated: 2013-04-04T20:56:06.092-07:00
+
+In an earlier post , I outlined how you could trade both directions as long as you exit on the close of the entry bar. So the question becomes, why would I ever want to only trade with-trend ? Why do I insist on taking only a few good trades and let most trades go by?
+What is the point in taking only a small number of trades? Isn't it better to also add those little trades to pad my profit? Won't all those small trades add up?
+Today's action illustrates why all those little trades do little or nothing to your bottom line for most traders. For example, today I added five counter-trend trades at reasonable setups:
+#2: Multi-leg fBO with strong signal bar
+#7: TCL OS
+#10: Strong signal bar
+#11: small trend entry bar (occasionally these are followed by BO bar)
+#12 possible W
+Even with the express intention of exiting on the entry bar, three of the five trades were losers.
+In contrast, only one with-trend trade, #3 was a loser. This was a news related experimental trade. Trade #9 was a scratch and was an accident.
+The important take away here is that if I only took #1 and #5, my cumulative profit would have been larger.
+A second observation is that the longer you trade on a given day, the worse your performance gets. For example, My peak profit was after trade #6. I gained nothing by trading for an additional hour.
+So what's special about #1 and #5? They were clearly at the trendline. Their superior location is obvious even without drawing an explicit trendline.

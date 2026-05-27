@@ -1,0 +1,9 @@
+Horizontal Tight trading range (TTR) or Dojistan
+https://ninetrans.blogspot.com/2012/02/horizontal-tight-tradig-range-ttr-or.html
+Published: 2012-02-02T19:00:00.000-08:00
+Updated: 2012-02-05T01:10:40.858-08:00
+
+A prolonged horizontal barb wire pattern is nearly impossible to trade and can be labeled dojistan. Attempting to trade dojistan using stop entries will invariably lead to failures.
+Anticipating dojistan is simple. The moment you see bars getting smaller than 1 point and when many of them are dojis, you should be cautious. Bars that are two ticks tall such as b55 are early warnings that indicate possible dojistan. Note that any bar thats 4t or smaller should be treated like a doji while in dojistan and is usually not a setup bar (b59, 62).
+The only possible approach to trading the dojistan is to fade trend bar breakouts. By definition, dojistan is a tight trading range. Since most breakouts of trading ranges fail, you could simply sell the close of a trend breakout bar with a stop 1t beyond it. So for example, you could short b61 close and b74 close on limit.
+The best approach however, is to do nothing. The one or two points you could make in a dojistan are not usually worth the risk and the energy you would need to put into it. Better price action is coming shortly, so just wait for it.

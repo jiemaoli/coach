@@ -1,0 +1,9 @@
+The first reversal
+https://ninetrans.blogspot.com/2011/05/first-reversal.html
+Published: 2011-05-09T20:23:00.000-07:00
+Updated: 2011-09-09T17:34:28.127-07:00
+
+The first reversal (1Rev) is a reversal after the first trend move of the day. This should be distinguished from a simple failed breakout such as a 1tf or 5tf of the first bar of the day. A fBO of the first bar (or even later bars) cannot be expected to make a large move, but a first reversal of a trend move usually does.
+There are many kinds of 1Rev. A reversal after the first successful scalp trade or at least a 6 tick move from the close of the previous bar is a type of 1Rev (b7). A reversal after a trend move however, is usually the best kind of 1Rev and is often the low or high of the day. A reversal bar after a large gap can be considered to be a first reversal since the large gap represents a trend move.
+If the opening gap is small or non-existent, it is best to wait for a trend move away from the first bar and take its reversal. Reading all variations of this is complex, but a simple filter is to take the reversal after the first two legged move of the day (b15). If this reversal gives a small two legged move in the direction of the trade, you should consider the possibility of an A2 setting up and you should exit your position and reverse on the A2, which is a kind of 1PB trade.
+Even if you never trade 1Rev or just scalp it, its useful to keep track of them since the 1st pullback after the first reversal (b27) is usually the best 1PB move of the day.

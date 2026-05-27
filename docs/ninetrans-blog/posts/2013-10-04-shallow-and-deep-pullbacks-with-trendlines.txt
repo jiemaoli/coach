@@ -1,0 +1,12 @@
+Shallow and deep pullbacks with trendlines
+https://ninetrans.blogspot.com/2013/10/shallow-and-deep-pullbacks-with.html
+Published: 2013-10-04T17:42:00.003-07:00
+Updated: 2013-10-04T17:42:44.992-07:00
+
+I have often advised new traders to only trade deep pullbacks or obvious pokes into the trendline. This is usually very good advice on most days. The only exceptions are possibly hard trend days, where you can really take any small bar near or touching the trendline and soft-trend days, when you can take any fL2.
+Trade #1 illustrates a shallow pullback. The price barely pokes beyond the trendline. The signal bar b6 is also a poor bar and in the middle of a BW. However, 2L 1PB when successful can go quite a while, so I often take it despite it being a lower probability trade.
+Trade #2 on the other hand illustrates a deeper pullback. b10 clearly has poked well beyond the TL and therefore is more likely to give an entry bar (b12) that does not take out a stop.
+Trade #3 is an fBO trade. Note the smaller size since its always better to sell the next pullback after the fBO succeeds
+Trade #4 is a reasonably deep pullback since b27 poked many ticks beyond the TL and also gave an entry bar b28 that did not take out any stops.
+Trendlines enable entries and also point out obvious exits. For example, the W down to b13 violated the TCL b2,8 and the the sell from b27 stopped at the trendline from LOD of prior day.
+With discipline, simply entering on every deep poke of the trendline should be a viable trading strategy.

@@ -1,0 +1,10 @@
+Slow down on Soft trend days
+https://ninetrans.blogspot.com/2010/12/slow-down-on-soft-trend-days.html
+Published: 2010-12-10T19:35:00.000-08:00
+Updated: 2013-03-10T19:05:28.565-07:00
+
+Some days, such as 2010-09-09 are hard trend days. Signals are clear and well trades usually succeed with trend or counter-trend. In contrast a soft trend day such as 2010-09-10, operates much slower with lots of overlapping bars, trapping traders in both directions.
+Except the clear A2 at b27, the rest were all terrible looking signals for longs. Nearly every short signal failed and counter-trend traders who shorted all the way to the top lost terribly. Faders do well on days with overlapping bars with lots of tail. Today was possibly a great day to enter on limit on failed L2.
+Another way to get around overlapping days is to slow down and move to a 15m chart. The trading style that would get you chopped up on a day like this would work great on a slower chart.
+Today gave an A2 long at b9 and a failed L2 at b24. As with slower chart, you do have fewer signals, but they do tend to work better. As you can see, there was not a single bar that dipped below its previous bar all the way to bar 21.
+Just as you slow down in a slow market, you should speed up in a fast market. The opening hour is usually fast moving and slowing it down on a 1 minute chart will reveal some interesting trades. The opening bars created a trading range and b27 broke above it and failed, giving a failed Break Out (fBO) signal. This move went to a measured move of the size of the range.

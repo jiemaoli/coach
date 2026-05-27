@@ -1,0 +1,10 @@
+Price Action Basics IX - Scalp and swing entries
+https://ninetrans.blogspot.com/2011/10/price-action-basics-ix-scalp-and-swing.html
+Published: 2011-10-03T21:47:00.000-07:00
+Updated: 2011-10-03T21:47:08.378-07:00
+
+A scalp is a pre-defined amount of profit that the user expects to take, regardless of the parameters of the trade. ES traders often have one point as their scalp size, forex traders have 10 pips and so on. Technically, the smallest possible scalp is 1 tick in futures and 0.01 in stocks. In general a scalp is around the same size as the risk (distance from entry to stop). Traders who enter on stops above signal bars need to adjust their trading to resize their scalp size with changes in signal bar size.
+A swing is a large undetermined move many times the size of the original risk. Swing entries are essential to be a profitable trader since scalp entries are likely to be breakeven at best for the new trader.
+Not all entries are swingable. To be swingable, you should have a reasonable expectation that the next pullback will not take out your breakeven stop. For example, today b23 or even b26 was not a swing setup, only b30 was. Only trend continuation setups (i.e., setups that are likely to continue the trend to a new extreme are swingable. The best swingable setups are: 1PB, A2, W1P. BPs and fBOs in particular are not usually swingable.
+Usually, second attempts, failures (such as the 1tf on b30), the first pullback in a new trend are swingable. You do not need to bother adding a runner to your trade unless you expect the trade to be swingable.
+Entering only on swingable trades highly improves your win rate in addition to your profit per trade. Always try to correctly read if a setup us also a swing setup before placing your trade.

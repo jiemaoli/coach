@@ -1,0 +1,9 @@
+TTRs are trading ranges
+https://ninetrans.blogspot.com/2011/03/ttrs-are-trading-ranges.html
+Published: 2011-03-24T19:34:00.000-07:00
+Updated: 2011-09-09T17:34:28.959-07:00
+
+Trends can terminate into a TTR after a strong move when there is no real overshoot. The TTR could be flat, with trend like today or opposite to the trend. Either way, when a trend terminates in a TTR, you should exit at the next with-trend push and wait for a breakout pattern to emerge.
+When a trend terminates rather than just reversing, it has turned into a trading range and will attempt to breakout of the trading range. A rising trend will test the bottom (b42 and b53) while a falling trend would test the top of the range. A successful break of the trend bottom may give a BP entry in the direction of the breakout. A failure will cause the price to test the other end of the TTR and breakout possibly giving a BP entry (b68)
+If the TTR range is large enough, you can buy near the low of the range and sell near the top until you get a successful breakout.
+Flat TTRs on the other hand almost always breakout in the direction of the previous trend. This is because they are ii or iii flags on larger timeframes. Another reason is a possible absence of counter-trend strength in a horizontal move.

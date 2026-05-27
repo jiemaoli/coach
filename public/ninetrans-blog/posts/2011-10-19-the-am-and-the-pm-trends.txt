@@ -1,0 +1,10 @@
+The AM and the PM trends
+https://ninetrans.blogspot.com/2011/10/am-and-pm-trends.html
+Published: 2011-10-19T21:10:00.000-07:00
+Updated: 2011-10-19T21:10:15.160-07:00
+
+As I've posted before, the trader's best bet is to get on the AM trend and figuring that out should be the first goal of swing trading. On most days 1PB and occasionally, 1Rev turns into the AM trend. This is especially true if the day opens with a large gap from its close and especially if the open is beyond the range of the prior day.
+When the open is near the close of the prior day, the AM trend may not be very strong unless the distance to one of the extremes of the prior day is large. On a day such as today, that sometimes can lead to a large PM trend.
+Note that absence of an AM trend is no guarantee of a PM trend. Often there is no trend the entire day and the day may become a small pause bar or inside bar on the daily chart. However, sometimes trend generation patterns can cause a PM trend to breakout.
+The easiest trend generator to recognize is DP, the double top pullback on b46. This is the bearish analog of the double bottom pullback. A double top pullback is characterized by a double top that is well defined, i.e., several points and bars large and preferably the second low(b33) takes out the first low (b23). A two or three legged pullback (b33-45) that cannot reach the second high (b28) completes the DP. If this forms near the top of the trading range, its a high probability trend generator and should always be swung.
+The possible target is twice the prior range (b7-b13) and often this is a large move. DP should not be taken if its at the wrong end of the TR (i.e., bearish DP near the bottom of the TR) or the range is too tight (4 points or less).
