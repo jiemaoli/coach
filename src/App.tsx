@@ -126,6 +126,9 @@ export function App() {
   const [query, setQuery] = useState("");
   const [loadError, setLoadError] = useState("");
   const [zoomImage, setZoomImage] = useState("");
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [stagePanelCollapsed, setStagePanelCollapsed] = useState(false);
+  const [libraryCollapsed, setLibraryCollapsed] = useState(false);
 
   useEffect(() => {
     fetch(`${archiveBase}/manifest.json`)
@@ -172,8 +175,15 @@ export function App() {
   if (loadError) return <main className="app-error">博客归档加载失败：{loadError}</main>;
   if (!manifest || !activePost) return <main className="app-loading">正在读取 Nine Transitions 本地归档...</main>;
 
+  const shellClass = [
+    "reader-shell",
+    sidebarCollapsed && "sidebar-collapsed",
+    stagePanelCollapsed && "stage-collapsed",
+    libraryCollapsed && "library-collapsed"
+  ].filter(Boolean).join(" ");
+
   return (
-    <div className="reader-shell">
+    <div className={shellClass}>
       <aside className="reader-sidebar">
         <div className="brand-block">
           <span>NT</span>
@@ -181,6 +191,14 @@ export function App() {
             <strong>Nine Transitions Reader</strong>
             <small>{manifest.postCount} posts · {manifest.imageCount} images</small>
           </div>
+          <button
+            className="collapse-btn"
+            type="button"
+            onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+            title="折叠侧边栏"
+          >
+            «
+          </button>
         </div>
 
         <nav className="stage-nav" aria-label="学习路径">
@@ -209,51 +227,57 @@ export function App() {
         </section>
       </aside>
 
-      <main className="reader-main">
-        <section className="top-bar">
-          <div className="path-posts">
-            {pathPosts.map((post) => (
-              <button
-                key={post.id}
-                className={post.id === activePost.id ? "active" : ""}
-                type="button"
-                onClick={() => openPost(post.id)}
-              >
-                <span>{post.published.slice(0, 10)}</span>
-                <strong>{post.title}</strong>
-              </button>
-            ))}
-          </div>
-          <label className="global-search">
-            <span>全局搜索</span>
-            <input
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="A2, 1PB, signal bar, chop..."
-            />
-          </label>
-        </section>
+      {sidebarCollapsed && (
+        <button
+          className="float-expand-btn sidebar-expand"
+          type="button"
+          onClick={() => setSidebarCollapsed(false)}
+          title="展开侧边栏"
+        >
+          »
+        </button>
+      )}
 
+      <main className="reader-main">
         <section className="workspace">
-          <aside className="library-panel">
+          <aside className="stage-panel">
             <div className="panel-title">
-              <h2>{query ? "搜索结果" : "文章库"}</h2>
-              <span>{filteredPosts.length}</span>
+              <h2>{activeStage.title.split("：")[1] || activeStage.title}</h2>
+              <span>{pathPosts.length}</span>
+              <button
+                className="collapse-btn"
+                type="button"
+                onClick={() => setStagePanelCollapsed(!stagePanelCollapsed)}
+                title="折叠阶段文章"
+              >
+                «
+              </button>
             </div>
             <div className="post-list">
-              {filteredPosts.slice(0, 220).map((post) => (
+              {pathPosts.map((post) => (
                 <button
                   key={post.id}
                   className={post.id === activePost.id ? "active" : ""}
                   type="button"
                   onClick={() => openPost(post.id)}
                 >
-                  <span>{post.published.slice(0, 10)} · {post.imageCount} img</span>
+                  <span>{post.published.slice(0, 10)}</span>
                   <strong>{post.title}</strong>
                 </button>
               ))}
             </div>
           </aside>
+
+          {stagePanelCollapsed && (
+            <button
+              className="float-expand-btn stage-expand"
+              type="button"
+              onClick={() => setStagePanelCollapsed(false)}
+              title="展开阶段文章"
+            >
+              »
+            </button>
+          )}
 
           <article className="reader-panel">
             <header className="reader-header">
@@ -263,6 +287,52 @@ export function App() {
             </header>
             <OriginalPost post={activePost} onZoomImage={setZoomImage} />
           </article>
+
+          <aside className="library-panel">
+            <div className="panel-title">
+              <h2>文章库</h2>
+              <span>{filteredPosts.length}</span>
+              <button
+                className="collapse-btn"
+                type="button"
+                onClick={() => setLibraryCollapsed(!libraryCollapsed)}
+                title="折叠文章库"
+              >
+                »
+              </button>
+            </div>
+            <label className="global-search">
+              <input
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder="搜索文章..."
+              />
+            </label>
+            <div className="post-list">
+              {filteredPosts.slice(0, 300).map((post) => (
+                <button
+                  key={post.id}
+                  className={post.id === activePost.id ? "active" : ""}
+                  type="button"
+                  onClick={() => openPost(post.id)}
+                >
+                  <span>{post.published.slice(0, 10)}</span>
+                  <strong>{post.title}</strong>
+                </button>
+              ))}
+            </div>
+          </aside>
+
+          {libraryCollapsed && (
+            <button
+              className="float-expand-btn library-expand"
+              type="button"
+              onClick={() => setLibraryCollapsed(false)}
+              title="展开文章库"
+            >
+              «
+            </button>
+          )}
         </section>
       </main>
 
