@@ -155,6 +155,10 @@ a:hover {
   cursor: pointer;
 }
 
+.stage-nav button {
+  font-size: 0.78rem;
+}
+
 .stage-panel .post-list button {
   padding: 6px 8px;
   font-size: 0.82rem;
@@ -262,7 +266,7 @@ a:hover {
 }
 
 .stage-panel .post-list {
-  overflow: visible;
+  overflow: auto;
 }
 
 .library-panel {
