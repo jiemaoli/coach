@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 type BlogImage = {
   url: string;
@@ -44,20 +44,23 @@ const archiveBase = "/ninetrans-blog";
 const studyPath: StudyStage[] = [
   {
     id: "start",
-    title: "01 起步：Rule of Ten 与 SIM",
-    authorEvidence: "作者写给 rank beginner：first step 是 SIM；并明确说 start with A2 and stick to A2 only. My best trades are A2, W1P, DP and fBO.",
+    title: "Getting Started: Rule of Ten & SIM",
+    authorEvidence: "Written for rank beginner: first step is SIM; explicitly says start with A2 and stick to A2 only. My best trades are A2, W1P, DP and fBO.",
     postIds: [
-      "nt-2011-01-29-the-rule-of-ten-a-trading-plan",
       "nt-2011-01-17-four-trades-off-nine-transitions",
-      "nt-2011-01-25-the-very-best-trades"
+      "nt-2011-01-25-the-very-best-trades",
+      "nt-2011-01-29-the-rule-of-ten-a-trading-plan",
+      "nt-page-setup-chart",
+      "nt-2013-03-23-the-first-few-weeks"
     ],
     tags: ["beginner", "SIM", "Rule of Ten"]
   },
   {
     id: "basics",
-    title: "02 读图基础：Price Action Basics",
-    authorEvidence: "The very first thing to learn about price action trading is signal bar selection. 作者专门写了 10 篇 Price Action Basics 系列。",
+    title: "Price Action Basics",
+    authorEvidence: "The very first thing to learn about price action trading is signal bar selection. Author wrote 10 Price Action Basics series posts.",
     postIds: [
+      "nt-page-stages-of-mastering-price-action",
       "nt-2011-09-13-price-action-basics-i-bar-selection",
       "nt-2011-09-14-price-action-basics-ii-reversals-and-pullbacks-in-trends",
       "nt-2011-09-15-price-action-basics-iii-1st-reversal-or-opening-reversal",
@@ -73,29 +76,29 @@ const studyPath: StudyStage[] = [
   },
   {
     id: "market-state",
-    title: "03 市场状态：趋势与盘整",
-    authorEvidence: "The first principles: 先区分市场什么时候 tradeable，什么时候 not tradeable.",
+    title: "Market State: Trend & Chop",
+    authorEvidence: "The first principles: distinguish when market is tradeable vs not tradeable.",
     postIds: [
+      "nt-2011-04-26-spike-and-channel",
+      "nt-2011-05-17-barb-wire",
+      "nt-2011-07-25-trading-barb-wire",
       "nt-2014-01-23-the-first-principles",
       "nt-2014-02-21-trend-and-chop",
-      "nt-2011-07-25-trading-barb-wire",
-      "nt-2011-05-17-barb-wire",
-      "nt-2011-04-26-spike-and-channel",
       "nt-2015-09-22-trading-a-choppy-day"
     ],
     tags: ["trend", "chop", "barb wire", "spike", "channel"]
   },
   {
     id: "a2",
-    title: "04 A2 专题：新手唯一推荐",
-    authorEvidence: "Rule of Ten: You should start with A2 and stick to A2 only. 作者明确说 A2 is my favorite entry. 新手只做 A2。",
+    title: "A2: Beginner's Only Recommended Setup",
+    authorEvidence: "Rule of Ten: You should start with A2 and stick to A2 only. Author explicitly says A2 is my favorite entry.",
     postIds: [
-      "nt-2011-02-08-the-classic-a2",
       "nt-2011-01-03-a2-as-a-reversible-trade",
-      "nt-2011-06-24-a2-variants",
-      "nt-2011-06-02-failed-a2",
-      "nt-2011-08-23-two-legged-pullbacks-vs-a2-vs-g2",
+      "nt-2011-02-08-the-classic-a2",
       "nt-2011-05-20-the-most-swingable-setups",
+      "nt-2011-06-02-failed-a2",
+      "nt-2011-06-24-a2-variants",
+      "nt-2011-08-23-two-legged-pullbacks-vs-a2-vs-g2",
       "nt-2013-12-02-smaller-stops-larger-gains",
       "nt-2014-01-16-tight-stops-and-other-simplifications"
     ],
@@ -103,110 +106,121 @@ const studyPath: StudyStage[] = [
   },
   {
     id: "w1p",
-    title: "05 W1P 专题：楔形反转后回撤",
-    authorEvidence: "My best trades are A2, W1P, DP and fBO. 掌握 A2 后再学 W1P. W1P is a much better trade than W.",
+    title: "W1P: Wedge 1st Pullback",
+    authorEvidence: "My best trades are A2, W1P, DP and fBO. Master A2 first, then learn W1P. W1P is a much better trade than W.",
     postIds: [
       "nt-2011-02-23-wedge-reversals-and-w1p",
       "nt-2011-04-06-two-legged-w1p",
+      "nt-2011-04-19-failed-wedges",
       "nt-2011-05-16-strong-wedge",
       "nt-2011-05-25-wedge-pullback",
-      "nt-2011-04-19-failed-wedges",
       "nt-2011-07-12-a-wedge-reversal-of-a-weak-trend-may-generate-a-strong-trend"
     ],
     tags: ["W1P", "wedge", "reversal", "overshoot"]
   },
   {
     id: "dp",
-    title: "06 DP 专题：双顶/双底回撤",
+    title: "DP: Double Top/Bottom Pullback",
     authorEvidence: "My best trades are A2, W1P, DP and fBO. DPs are often trend generators and work best in the direction of the previous trend.",
     postIds: [
       "nt-2011-03-17-double-top-and-double-bottoms",
       "nt-2011-07-21-double-bottom-pullbacks",
-      "nt-2012-03-09-anticipating-dp-setups",
-      "nt-2012-02-09-trend-termination-tt-double-top"
+      "nt-2012-02-09-trend-termination-tt-double-top",
+      "nt-2012-03-09-anticipating-dp-setups"
     ],
     tags: ["DP", "double top", "double bottom", "trend generator"]
   },
   {
     id: "fbo",
-    title: "07 fBO 专题：失败突破",
-    authorEvidence: "My best trades are A2, W1P, DP and fBO. Most first attempts to breakout fail. 大多数突破会失败。",
+    title: "fBO: Failed Breakout",
+    authorEvidence: "My best trades are A2, W1P, DP and fBO. Most first attempts to breakout fail.",
     postIds: [
       "nt-2011-01-27-optimal-trading-of-breakouts-and-failed-breakouts",
       "nt-2011-03-10-failed-breakouts",
       "nt-2011-03-14-breakout-pullbacks-vs-failed-breakouts",
-      "nt-2011-09-23-good-and-bad-fbo",
       "nt-2011-05-23-wedge-failed-breakout-wfbo",
-      "nt-2011-09-09-wedge-failed-breakouts"
+      "nt-2011-09-09-wedge-failed-breakouts",
+      "nt-2011-09-23-good-and-bad-fbo"
     ],
     tags: ["fBO", "breakout", "failed breakout", "BP"]
   },
   {
     id: "openers",
-    title: "08 1PB / Openers：开盘交易",
-    authorEvidence: "1PB is usually the best setup for new traders, if they can skip days without a clear 1PB. 开盘交易需要更多经验。",
+    title: "1PB / Openers: Opening Trades",
+    authorEvidence: "1PB is usually the best setup for new traders, if they can skip days without a clear 1PB. Opening trades require more experience.",
     postIds: [
-      "nt-2011-05-11-the-first-pullback",
       "nt-2011-05-09-the-first-reversal",
+      "nt-2011-05-11-the-first-pullback",
       "nt-2011-05-12-the-various-types-of-1pb",
-      "nt-2015-09-17-the-openers-1w-first-wedge-and-1p-the-first-pullback-in-a-trend",
       "nt-2014-02-18-the-openers-1w",
-      "nt-2015-09-16-openers-ib2"
+      "nt-2015-09-16-openers-ib2",
+      "nt-2015-09-17-the-openers-1w-first-wedge-and-1p-the-first-pullback-in-a-trend"
     ],
     tags: ["1PB", "1Rev", "1W", "openers"]
   },
   {
     id: "execution",
-    title: "09 执行与风险：少而好",
-    authorEvidence: "Fewer, better trades: 新手最大错误之一是 overtrading. 新 setup 要先在 disciplined SIM 中验证.",
+    title: "Execution & Risk: Fewer, Better Trades",
+    authorEvidence: "Fewer, better trades: one of beginner's biggest mistakes is overtrading. New setups should be validated in disciplined SIM first.",
     postIds: [
+      "nt-2011-04-12-anatomy-of-a-trading-day",
+      "nt-2011-05-05-optimizing-your-stop-size",
       "nt-2011-11-09-fewer-better-trades",
       "nt-2011-11-13-two-strikes",
-      "nt-2011-12-05-overconfidence",
-      "nt-2011-05-05-optimizing-your-stop-size",
-      "nt-2011-04-12-anatomy-of-a-trading-day"
+      "nt-2011-12-05-overconfidence"
     ],
     tags: ["overtrading", "two strikes", "SIM", "stop"]
   },
   {
     id: "trade-mgmt",
-    title: "10 交易管理：止损、目标、持仓",
-    authorEvidence: "止损和目标是交易系统的核心组成部分。作者专门讨论了 scalp vs swing 的区别。",
+    title: "Trade Management: Stop, Target, Hold",
+    authorEvidence: "Stops and targets are core components of a trading system. Author discusses scalp vs swing differences.",
     postIds: [
       "nt-2011-02-07-exiting-a-swing-position",
       "nt-2011-03-23-the-swing-view",
-      "nt-2011-06-28-choosing-trades-to-swing",
       "nt-2011-06-01-holding-swings",
+      "nt-2011-06-28-choosing-trades-to-swing",
       "nt-2011-11-03-choosing-scalp-and-swing-entries",
-      "nt-2012-06-28-choosing-target-for-w-and-wfbo",
-      "nt-2013-01-09-creating-a-trading-system-vi-stops-targets-and-winrate"
+      "nt-2012-06-28-choosing-target-for-w-and-wfbo"
     ],
     tags: ["stop", "target", "scalp", "swing", "trade management"]
   },
   {
     id: "intraday-patterns",
-    title: "11 日内形态：趋势日与盘整日",
-    authorEvidence: "作者区分了趋势日、盘整日、通道等不同市场形态，需要不同的交易策略。",
+    title: "Intraday Patterns: Trend & Range Days",
+    authorEvidence: "Author distinguishes trend days, range days, channels and other market patterns requiring different trading strategies.",
     postIds: [
-      "nt-2011-03-29-classic-trend-day",
-      "nt-2011-03-31-determining-trend-day-versus-trading-range-day",
-      "nt-2011-03-30-trading-ranges-breakouts-fbo-bp-and-tt-trend-terminations",
-      "nt-2011-12-10-slow-down-on-soft-trend-days",
       "nt-2011-01-10-large-open-bar-is-a-trading-range",
       "nt-2011-01-26-large-overlaps-are-trading-ranges",
-      "nt-2011-08-11-trading-plan-trend-day",
-      "nt-2011-08-12-trading-plan-trading-range-day",
-      "nt-2011-11-02-trading-range-day-as-a-series-of-fbo"
+      "nt-2011-03-29-classic-trend-day",
+      "nt-2011-03-30-trading-ranges-breakouts-fbo-bp-and-tt-trend-terminations",
+      "nt-2011-03-31-determining-trend-day-versus-trading-range-day",
+      "nt-2011-11-02-trading-range-day-as-a-series-of-fbo",
+      "nt-2010-12-10-slow-down-on-soft-trend-days"
     ],
     tags: ["trend day", "trading range day", "soft trend", "hard trend"]
   },
   {
+    id: "trading-plan",
+    title: "Trading Plan",
+    authorEvidence: "Trading plans for different market conditions: trend days, range days, hard trends, soft trends, and spike & channel days.",
+    postIds: [
+      "nt-2011-03-03-correctly-trading-a-soft-trend",
+      "nt-2011-06-08-a-simple-trading-range-day-trading-plan",
+      "nt-2011-07-01-spike-and-channel-day",
+      "nt-2011-07-27-hard-trend-identification-and-trading",
+      "nt-2011-08-11-trading-plan-trend-day",
+      "nt-2011-08-12-trading-plan-trading-range-day",
+      "nt-page-trading-guide"
+    ],
+    tags: ["trading plan", "strategy", "rules"]
+  },
+  {
     id: "channels",
-    title: "12 通道： Spike & Channel",
-    authorEvidence: "作者专门写了 Channel Theory 系列，通道是常见的市场结构。",
+    title: "Channels: Spike & Channel",
+    authorEvidence: "Author wrote Channel Theory series. Channels are common market structures.",
     postIds: [
       "nt-2011-05-24-channels-are-trends",
-      "nt-2011-07-01-spike-and-channel-day",
       "nt-2012-10-04-channel-theory-i-defining-channels",
       "nt-2012-10-05-channel-theory-ii-origin",
       "nt-2012-10-08-channel-theory-iii-transitions",
@@ -218,37 +232,162 @@ const studyPath: StudyStage[] = [
   },
   {
     id: "psychology",
-    title: "13 心理与纪律",
-    authorEvidence: "交易心理是成功的关键因素。作者专门讨论了纪律、耐心、过度交易等问题。",
+    title: "Psychology & Discipline",
+    authorEvidence: "Trading psychology is a key factor for success. Author discusses discipline, patience, overtrading and other issues.",
     postIds: [
       "nt-2011-12-01-discipline",
       "nt-2011-12-03-trading-discipline",
+      "nt-2012-07-20-the-hard-road-to-consistency-i-overtrading",
+      "nt-2012-07-24-the-hard-road-to-consistency-ii-the-off-day",
+      "nt-2012-07-30-the-hard-road-to-consistency-iii-the-heavy-cost-of-education",
+      "nt-2012-08-03-the-hard-road-to-consistency-iv-very-few-low-risk-trades",
+      "nt-2012-08-06-the-hard-road-to-consistency-v-poor-price-action-days",
+      "nt-2012-08-09-the-hard-road-to-consistency-vi-your-equity-curve-as-a-price-chart",
+      "nt-2012-08-13-the-hard-road-to-consistency-vii-no-good-signal-bars",
       "nt-2012-08-24-the-hard-road-to-consistency-viii-the-tyranny-of-psychology",
+      "nt-2012-09-03-the-hard-road-to-consistency-ix-the-need-to-re-learn-lessons-over-and-over",
       "nt-2012-09-05-the-hard-road-to-consistency-x-the-elusiveness-of-discipline",
+      "nt-2012-10-27-the-trader-s-mind-i-the-trading-contradiction",
+      "nt-2012-10-31-the-trader-s-mind-ii-the-rush",
+      "nt-2012-11-08-the-trader-s-mind-iii-eagerness-and-dispair",
+      "nt-2012-11-09-the-trader-s-mind-iv-the-bargain",
+      "nt-2012-11-12-the-trader-s-mind-v-the-anchor",
+      "nt-2012-11-13-the-trader-s-mind-vi-conviction-and-doubt",
+      "nt-2012-11-14-the-trader-s-mind-vii-the-chase",
+      "nt-2012-11-15-the-trader-s-mind-viii-the-basics-of-emotions",
+      "nt-2012-11-16-the-trader-s-mind-ix-the-consistent-trader",
+      "nt-2012-11-18-the-trader-s-mind-x-the-transition-to-success",
       "nt-2013-05-02-trendline-discipline",
       "nt-2015-10-23-patience-and-discipline-as-keys-to-trading"
     ],
     tags: ["psychology", "discipline", "patience", "emotions"]
   },
   {
+    id: "traps",
+    title: "Traps Series",
+    authorEvidence: "Common trading traps: bars in wrong place, overlaps, poor signal bars.",
+    postIds: [
+      "nt-2011-10-06-traps-i-bars-in-the-wrong-place",
+      "nt-2011-10-07-traps-ii-overlaps",
+      "nt-2011-10-10-traps-iii-poor-signal-bars"
+    ],
+    tags: ["traps", "errors", "avoid"]
+  },
+  {
+    id: "shaken-out",
+    title: "Getting Shaken Out",
+    authorEvidence: "Common reasons for getting shaken out of trades and how to avoid them.",
+    postIds: [
+      "nt-2012-02-28-getting-shaken-out-part-i-large-risk",
+      "nt-2012-02-29-getting-shaken-out-ii-poor-setup-bar",
+      "nt-2012-03-07-getting-shaken-out-iii-not-taking-the-early-profit",
+      "nt-2012-03-14-getting-shaken-out-iv-recent-losing-trade",
+      "nt-2012-03-20-getting-shaken-out-v-mid-bar-decisions"
+    ],
+    tags: ["shaken out", "exit", "psychology"]
+  },
+  {
+    id: "unable-to-hold",
+    title: "Unable to Hold",
+    authorEvidence: "Exiting early due to drawn out moves, recency bias, and recent losses.",
+    postIds: [
+      "nt-2012-03-21-unable-to-hold-exiting-early-i-drawn-out-move",
+      "nt-2012-03-23-unable-to-hold-exiting-early-ii-recency-bias",
+      "nt-2012-03-28-unable-to-hold-exiting-early-iii-recent-losses"
+    ],
+    tags: ["exit early", "hold", "psychology"]
+  },
+  {
+    id: "revenge-trading",
+    title: "Revenge Trading",
+    authorEvidence: "The dangers of revenge trading and how to avoid it.",
+    postIds: [
+      "nt-2012-03-30-revenge-trading-i-reversing-where-you-would-be-stopped-out"
+    ],
+    tags: ["revenge", "tilt", "psychology"]
+  },
+  {
+    id: "creating-system",
+    title: "Creating a Trading System",
+    authorEvidence: "Comprehensive guide to building a trading system from scratch.",
+    postIds: [
+      "nt-2012-12-02-creating-a-trading-system-i-a-new-beginning",
+      "nt-2012-12-05-creating-a-trading-system-ii-trading-versus-investing",
+      "nt-2012-12-09-creating-a-trading-system-iii-price-action-trading",
+      "nt-2012-12-12-creating-a-trading-system-iv-the-basics",
+      "nt-2013-01-07-creating-a-trading-system-v-a-mathematical-model",
+      "nt-2013-01-09-creating-a-trading-system-vi-stops-targets-and-winrate",
+      "nt-2013-01-16-creating-a-trading-system-vii-scalping",
+      "nt-2013-01-18-creating-a-trading-system-viii-fading-overlaps-in-chop",
+      "nt-2013-01-25-creating-a-trading-system-ix-the-best-setups",
+      "nt-2013-01-29-creating-a-trading-system-x-trend-trading"
+    ],
+    tags: ["system", "building", "framework"]
+  },
+  {
+    id: "building-blocks",
+    title: "Building Blocks",
+    authorEvidence: "Fundamental concepts: Building blocks, Location, Pattern, Bar.",
+    postIds: [
+      "nt-2013-04-01-building-blocks",
+      "nt-2013-04-03-location",
+      "nt-2013-04-04-pattern",
+      "nt-2013-04-08-bar",
+      "nt-2013-05-08-location-trading-a-trendline",
+      "nt-2013-05-09-the-key-to-confidence"
+    ],
+    tags: ["fundamentals", "building blocks", "location", "pattern", "bar"]
+  },
+  {
     id: "other-setups",
-    title: "14 其他形态：G2、BP、1CBO",
-    authorEvidence: "除了四大核心交易，还有其他形态如 G2（二次缺口）、BP（突破回撤）、1CBO（首次通道突破）。",
+    title: "Other Setups: G2, BP, 1CBO",
+    authorEvidence: "Beyond the four core trades, there are other setups like G2 (2nd gap), BP (breakout pullback), 1CBO (1st channel breakout).",
     postIds: [
       "nt-2011-01-12-first-reversal-vs-first-pullback-vs-first-channel-breakout",
       "nt-2011-02-04-first-channel-breakouts",
       "nt-2012-01-04-the-opening-fbo",
-      "nt-2012-01-30-opening-range-1rev-vs-1pb-vs-fbo"
+      "nt-2012-01-30-opening-range-1rev-vs-1pb-vs-fbo",
+      "nt-2012-05-02-alternative-instruments-i-micro-contracts",
+      "nt-2012-05-03-alternative-instruments-ii-thin-volume-contracts"
     ],
     tags: ["G2", "BP", "1CBO", "WFBO", "other setups"]
   },
   {
+    id: "references",
+    title: "References",
+    authorEvidence: "Static reference pages and announcements.",
+    postIds: [
+      "nt-2013-03-10-late-12-2010-and-01-2011-posts-restored",
+      "nt-2013-03-22-alternative-rss-reader",
+      "nt-2017-06-10-nine-transitions-the-book"
+    ],
+    tags: ["reference", "announcement"]
+  },
+  {
+    id: "vocabulary",
+    title: "Vocabulary",
+    authorEvidence: "Trading vocabulary with search. Auto-parsed from vocabulary.md.",
+    postIds: [
+      "nt-page-glossary",
+      "nt-page-vocabulary"
+    ],
+    tags: ["vocabulary", "terms", "study"]
+  },
+  {
+    id: "crypto",
+    title: "Crypto Trading",
+    authorEvidence: "Author's experience with cryptocurrency trading.",
+    postIds: [
+      "nt-2018-04-09-trading-crypto"
+    ],
+    tags: ["crypto", "bitcoin", "cryptocurrency"]
+  },
+  {
     id: "daily-analysis",
-    title: "15 每日行情分析（349篇）",
-    authorEvidence: "作者对每日市场走势的详细分析和复盘，是学习 price action 的最佳实战素材。按时间排序，从 2010 年 12 月到 2018 年 4 月。",
+    title: "Daily Analysis (289 posts)",
+    authorEvidence: "Author's detailed daily market analysis and review, best practical material for learning price action. Chronological order from Dec 2010 to Apr 2018.",
     postIds: [
       "nt-2010-12-09-a-hard-wedge-reversal",
-      "nt-2010-12-10-slow-down-on-soft-trend-days",
       "nt-2010-12-13-trading-range-day",
       "nt-2010-12-14-fomc-day",
       "nt-2010-12-15-traps",
@@ -293,7 +432,6 @@ const studyPath: StudyStage[] = [
       "nt-2011-02-28-a-weak-move-off-the-first-pullback-may-indicate-first-reversal-ahead",
       "nt-2011-03-01-keep-the-trend-type-in-context-while-trading",
       "nt-2011-03-02-wedges-without-overshoots-reversal-bars-or-pullbacks",
-      "nt-2011-03-03-correctly-trading-a-soft-trend",
       "nt-2011-03-04-trend-terminations-and-breakouts",
       "nt-2011-03-07-oio-reversals-and-failures",
       "nt-2011-03-08-the-obvious-first-reversal",
@@ -337,7 +475,6 @@ const studyPath: StudyStage[] = [
       "nt-2011-06-03-major-reversal-trendline-break-and-test",
       "nt-2011-06-06-1rev-and-1pb-considerations",
       "nt-2011-06-07-late-swingers",
-      "nt-2011-06-08-a-simple-trading-range-day-trading-plan",
       "nt-2011-06-09-reversal-bars-in-a-strong-trend",
       "nt-2011-06-10-failed-h1-l1-in-a-strong-trend",
       "nt-2011-06-13-failed-wedges",
@@ -366,7 +503,6 @@ const studyPath: StudyStage[] = [
       "nt-2011-07-20-micro-channels",
       "nt-2011-07-22-ttrs-break-the-trend",
       "nt-2011-07-26-wedge-pullback",
-      "nt-2011-07-27-hard-trend-identification-and-trading",
       "nt-2011-07-28-channel-after-a-trendline-break",
       "nt-2011-07-30-inside-bars",
       "nt-2011-08-01-small-bars",
@@ -398,9 +534,6 @@ const studyPath: StudyStage[] = [
       "nt-2011-09-20-early-and-late-trend-breaks",
       "nt-2011-09-22-risk-of-pullbacks-and-failures",
       "nt-2011-10-04-runaway-trends",
-      "nt-2011-10-06-traps-i-bars-in-the-wrong-place",
-      "nt-2011-10-07-traps-ii-overlaps",
-      "nt-2011-10-10-traps-iii-poor-signal-bars",
       "nt-2011-10-11-trend-breakage",
       "nt-2011-10-12-inside-bar-reversals",
       "nt-2011-10-13-final-flags",
@@ -464,27 +597,18 @@ const studyPath: StudyStage[] = [
       "nt-2012-02-17-choice-of-trading-instrument-is-thinner-better",
       "nt-2012-02-25-donations",
       "nt-2012-02-27-breaks-of-steep-trends",
-      "nt-2012-02-28-getting-shaken-out-part-i-large-risk",
-      "nt-2012-02-29-getting-shaken-out-ii-poor-setup-bar",
       "nt-2012-03-05-the-first-bar-trend-bar",
       "nt-2012-03-06-3-small-pushes-channels-micro-wedges-and-wedges",
-      "nt-2012-03-07-getting-shaken-out-iii-not-taking-the-early-profit",
       "nt-2012-03-08-preferring-deep-pullbacks",
       "nt-2012-03-12-kryptonite-days",
       "nt-2012-03-13-trading-fomc",
-      "nt-2012-03-14-getting-shaken-out-iv-recent-losing-trade",
       "nt-2012-03-15-the-ideal-first-reversal",
       "nt-2012-03-16-first-bar-doji-tight-days",
       "nt-2012-03-19-simple-1pb",
-      "nt-2012-03-20-getting-shaken-out-v-mid-bar-decisions",
-      "nt-2012-03-21-unable-to-hold-exiting-early-i-drawn-out-move",
       "nt-2012-03-22-the-first-opposing-trend-bar-in-a-channel",
-      "nt-2012-03-23-unable-to-hold-exiting-early-ii-recency-bias",
       "nt-2012-03-26-signs-of-an-extremely-strong-trend",
       "nt-2012-03-27-trading-on-tilt-and-prevention",
-      "nt-2012-03-28-unable-to-hold-exiting-early-iii-recent-losses",
       "nt-2012-03-29-two-swing-trades-a-day",
-      "nt-2012-03-30-revenge-trading-i-reversing-where-you-would-be-stopped-out",
       "nt-2012-04-02-late-entries-in-a-channel",
       "nt-2012-04-03-early-strength-indicates-strength-late-in-the-day",
       "nt-2012-04-04-fading-a-strong-trend-instead-of-trading-with-trend",
@@ -500,8 +624,6 @@ const studyPath: StudyStage[] = [
       "nt-2012-04-25-failed-trades-reveal-market-information",
       "nt-2012-04-30-predicting-breakouts",
       "nt-2012-05-01-climax-top",
-      "nt-2012-05-02-alternative-instruments-i-micro-contracts",
-      "nt-2012-05-03-alternative-instruments-ii-thin-volume-contracts",
       "nt-2012-05-04-trendline-tests-and-break",
       "nt-2012-05-07-types-of-trading-errors",
       "nt-2012-05-08-definitive-signs-of-successful-reversal",
@@ -522,36 +644,9 @@ const studyPath: StudyStage[] = [
       "nt-2012-07-16-stop-and-scalp-size-for-swing-trading",
       "nt-2012-07-17-the-ideal-price-action",
       "nt-2012-07-19-risks-of-fbo",
-      "nt-2012-07-20-the-hard-road-to-consistency-i-overtrading",
-      "nt-2012-07-24-the-hard-road-to-consistency-ii-the-off-day",
-      "nt-2012-07-30-the-hard-road-to-consistency-iii-the-heavy-cost-of-education",
-      "nt-2012-08-03-the-hard-road-to-consistency-iv-very-few-low-risk-trades",
-      "nt-2012-08-06-the-hard-road-to-consistency-v-poor-price-action-days",
-      "nt-2012-08-09-the-hard-road-to-consistency-vi-your-equity-curve-as-a-price-chart",
-      "nt-2012-08-13-the-hard-road-to-consistency-vii-no-good-signal-bars",
-      "nt-2012-09-03-the-hard-road-to-consistency-ix-the-need-to-re-learn-lessons-over-and-over",
       "nt-2012-09-22-the-road-ahead",
       "nt-2012-09-27-components-of-a-successful-trade",
       "nt-2012-10-20-predicting-longer-term-moves",
-      "nt-2012-10-27-the-trader-s-mind-i-the-trading-contradiction",
-      "nt-2012-10-31-the-trader-s-mind-ii-the-rush",
-      "nt-2012-11-08-the-trader-s-mind-iii-eagerness-and-dispair",
-      "nt-2012-11-09-the-trader-s-mind-iv-the-bargain",
-      "nt-2012-11-12-the-trader-s-mind-v-the-anchor",
-      "nt-2012-11-13-the-trader-s-mind-vi-conviction-and-doubt",
-      "nt-2012-11-14-the-trader-s-mind-vii-the-chase",
-      "nt-2012-11-15-the-trader-s-mind-viii-the-basics-of-emotions",
-      "nt-2012-11-16-the-trader-s-mind-ix-the-consistent-trader",
-      "nt-2012-11-18-the-trader-s-mind-x-the-transition-to-success",
-      "nt-2012-12-02-creating-a-trading-system-i-a-new-beginning",
-      "nt-2012-12-05-creating-a-trading-system-ii-trading-versus-investing",
-      "nt-2012-12-09-creating-a-trading-system-iii-price-action-trading",
-      "nt-2012-12-12-creating-a-trading-system-iv-the-basics",
-      "nt-2013-01-07-creating-a-trading-system-v-a-mathematical-model",
-      "nt-2013-01-16-creating-a-trading-system-vii-scalping",
-      "nt-2013-01-18-creating-a-trading-system-viii-fading-overlaps-in-chop",
-      "nt-2013-01-25-creating-a-trading-system-ix-the-best-setups",
-      "nt-2013-01-29-creating-a-trading-system-x-trend-trading",
       "nt-2013-02-04-small-and-large-targets",
       "nt-2013-02-05-trading-narrow-ranges",
       "nt-2013-02-06-trend-acceleration",
@@ -562,15 +657,6 @@ const studyPath: StudyStage[] = [
       "nt-2013-02-15-large-stop-fading",
       "nt-2013-03-04-structure-before-pattern",
       "nt-2013-03-07-targets-and-turning-points",
-      "nt-2013-03-10-late-12-2010-and-01-2011-posts-restored",
-      "nt-2013-03-22-alternative-rss-reader",
-      "nt-2013-03-23-the-first-few-weeks",
-      "nt-2013-04-01-building-blocks",
-      "nt-2013-04-03-location",
-      "nt-2013-04-04-pattern",
-      "nt-2013-04-08-bar",
-      "nt-2013-05-08-location-trading-a-trendline",
-      "nt-2013-05-09-the-key-to-confidence",
       "nt-2013-08-02-patience-and-agility",
       "nt-2013-08-07-single-trade-rule-a-cure-for-overtrading",
       "nt-2013-08-09-trading-without-ema",
@@ -589,15 +675,9 @@ const studyPath: StudyStage[] = [
       "nt-2015-09-22-waiting-for-chop-to-end",
       "nt-2015-09-24-large-inside-bar-on-1w",
       "nt-2015-09-25-small-trend-bars-in-a-hard-trend",
-      "nt-2015-09-29-the-shallowest-trendline-from-the-prior-day",
-      "nt-2017-06-10-nine-transitions-the-book",
-      "nt-2018-04-09-trading-crypto",
-      "nt-page-glossary",
-      "nt-page-setup-chart",
-      "nt-page-stages-of-mastering-price-action",
-      "nt-page-trading-guide"
+      "nt-2015-09-29-the-shallowest-trendline-from-the-prior-day"
     ],
-    tags: ["daily analysis", "case study", "实战"]
+    tags: ["daily analysis", "case study"]
   }
 ];
 
@@ -621,6 +701,8 @@ export function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [stagePanelCollapsed, setStagePanelCollapsed] = useState(false);
   const [libraryCollapsed, setLibraryCollapsed] = useState(false);
+  const [tagFilters, setTagFilters] = useState<Record<string, string>>({});
+  const [showFilters, setShowFilters] = useState(false);
 
   useEffect(() => {
     fetch(`${archiveBase}/manifest.json`)
@@ -646,26 +728,48 @@ export function App() {
 
   const filteredPosts = useMemo(() => {
     const value = query.trim().toLowerCase();
-    if (!value) return posts;
+    const hasFilters = Object.values(tagFilters).some(v => v);
+    
     return posts.filter((post) => {
-      const haystack = [
-        post.title,
-        post.published,
-        post.excerpt,
-        post.searchText,
-        ...(post.setupCandidates ?? []),
-        ...(post.labels ?? [])
-      ].join(" ").toLowerCase();
-      return haystack.includes(value);
+      // Text search filter
+      if (value) {
+        const haystack = [
+          post.title,
+          post.published,
+          post.excerpt,
+          post.searchText,
+          ...(post.setupCandidates ?? []),
+          ...(post.labels ?? [])
+        ].join(" ").toLowerCase();
+        if (!haystack.includes(value)) return false;
+      }
+      
+      // Tag filters
+      if (hasFilters) {
+        const tags = (post as any).normalizedTags;
+        if (!tags) return false;
+        
+        for (const [dim, filterVal] of Object.entries(tagFilters)) {
+          if (!filterVal) continue;
+          const postVal = tags[dim];
+          if (Array.isArray(postVal)) {
+            if (!postVal.includes(filterVal)) return false;
+          } else {
+            if (postVal !== filterVal) return false;
+          }
+        }
+      }
+      
+      return true;
     });
-  }, [posts, query]);
+  }, [posts, query, tagFilters]);
 
   function openPost(postId: string) {
     setActivePostId(postId);
   }
 
-  if (loadError) return <main className="app-error">博客归档加载失败：{loadError}</main>;
-  if (!manifest || !activePost) return <main className="app-loading">正在读取 Nine Transitions 本地归档...</main>;
+  if (loadError) return <main className="app-error">Failed to load blog archive: {loadError}</main>;
+  if (!manifest || !activePost) return <main className="app-loading">Loading Nine Transitions archive...</main>;
 
   const shellClass = [
     "reader-shell",
@@ -680,20 +784,20 @@ export function App() {
         <div className="brand-block">
           <span>NT</span>
           <div>
-            <strong>Nine Transitions Reader</strong>
+            <strong>Nine Transition</strong>
             <small>{manifest.postCount} posts · {manifest.imageCount} images</small>
           </div>
           <button
             className="collapse-btn"
             type="button"
             onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-            title="折叠侧边栏"
+            title="Collapse sidebar"
           >
             «
           </button>
         </div>
 
-        <nav className="stage-nav" aria-label="学习路径">
+        <nav className="stage-nav" aria-label="Learning Path">
           {studyPath.map((stage, index) => (
             <button
               key={stage.id}
@@ -710,13 +814,6 @@ export function App() {
             </button>
           ))}
         </nav>
-
-        <section className="path-context">
-          <p>{activeStage.authorEvidence}</p>
-          <div>
-            {activeStage.tags.map((tag) => <span key={tag}>{tag}</span>)}
-          </div>
-        </section>
       </aside>
 
       {sidebarCollapsed && (
@@ -724,7 +821,7 @@ export function App() {
           className="float-expand-btn sidebar-expand"
           type="button"
           onClick={() => setSidebarCollapsed(false)}
-          title="展开侧边栏"
+            title="Expand sidebar"
         >
           »
         </button>
@@ -740,7 +837,7 @@ export function App() {
                 className="collapse-btn"
                 type="button"
                 onClick={() => setStagePanelCollapsed(!stagePanelCollapsed)}
-                title="折叠阶段文章"
+                title="Collapse stage posts"
               >
                 «
               </button>
@@ -765,30 +862,36 @@ export function App() {
               className="float-expand-btn stage-expand"
               type="button"
               onClick={() => setStagePanelCollapsed(false)}
-              title="展开阶段文章"
+              title="Expand stage posts"
             >
               »
             </button>
           )}
 
           <article className="reader-panel">
-            <header className="reader-header">
-              <span>{activePost.published.slice(0, 10)}</span>
-              <a href={activePost.url} target="_blank" rel="noreferrer">博客原文</a>
-              <a href={publicUrl(activePost.textPath)} target="_blank" rel="noreferrer">TXT</a>
-            </header>
-            <OriginalPost post={activePost} onZoomImage={setZoomImage} />
+            {activePost.id !== "nt-page-vocabulary" && (
+              <header className="reader-header">
+                <span>{activePost.published.slice(0, 10)}</span>
+                <a href={activePost.url} target="_blank" rel="noreferrer">Original Post</a>
+                <a href={publicUrl(activePost.textPath)} target="_blank" rel="noreferrer">TXT</a>
+              </header>
+            )}
+            {activePost.id === "nt-page-vocabulary" ? (
+              <VocabularyViewer markdownUrl="/vocabulary.md" />
+            ) : (
+              <OriginalPost post={activePost} onZoomImage={setZoomImage} />
+            )}
           </article>
 
           <aside className="library-panel">
             <div className="panel-title">
-              <h2>文章库</h2>
+              <h2>Library</h2>
               <span>{filteredPosts.length}</span>
               <button
                 className="collapse-btn"
                 type="button"
                 onClick={() => setLibraryCollapsed(!libraryCollapsed)}
-                title="折叠文章库"
+                title="Collapse library"
               >
                 »
               </button>
@@ -797,7 +900,7 @@ export function App() {
               <input
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
-                placeholder="搜索文章..."
+                placeholder="Search posts..."
               />
             </label>
             <div className="post-list">
@@ -820,7 +923,7 @@ export function App() {
               className="float-expand-btn library-expand"
               type="button"
               onClick={() => setLibraryCollapsed(false)}
-              title="展开文章库"
+              title="Expand library"
             >
               «
             </button>
@@ -829,7 +932,7 @@ export function App() {
       </main>
 
       {zoomImage && (
-        <button className="image-lightbox" type="button" onClick={() => setZoomImage("")} aria-label="关闭图片放大">
+        <button className="image-lightbox" type="button" onClick={() => setZoomImage("")} aria-label="Close image zoom">
           <img src={zoomImage} alt="" />
         </button>
       )}
@@ -857,5 +960,203 @@ function OriginalPost({ post, onZoomImage }: { post: BlogPost; onZoomImage: (src
     <section className="source-frame">
       <iframe ref={iframeRef} title={post.title} src={publicUrl(post.htmlPath)} onLoad={wireImageZoom} />
     </section>
+  );
+}
+
+type VocabEntry = {
+  word: string;
+  type: string;
+  meaning: string;
+  context: string;
+  isCore?: boolean;
+};
+
+function parseVocabularyMarkdown(markdown: string): { sections: { title: string; entries: VocabEntry[] }[] } {
+  const lines = markdown.split("\n");
+  const sections: { title: string; entries: VocabEntry[] }[] = [];
+  let currentSection: { title: string; entries: VocabEntry[] } | null = null;
+  let currentEntry: Partial<VocabEntry> | null = null;
+  let contextBuffer: string[] = [];
+
+  function flushEntry() {
+    if (currentEntry && currentSection) {
+      currentSection.entries.push({
+        word: currentEntry.word || "",
+        type: currentEntry.type || "TERM",
+        meaning: currentEntry.meaning || "",
+        context: contextBuffer.join(" ").trim(),
+        isCore: currentEntry.isCore
+      });
+    }
+    currentEntry = null;
+    contextBuffer = [];
+  }
+
+  function flushSection() {
+    if (currentSection) {
+      flushEntry();
+      if (currentSection.entries.length > 0) {
+        sections.push(currentSection);
+      }
+    }
+    currentSection = null;
+  }
+
+  // Default section if no header found
+  let hasHeader = false;
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+
+    if (trimmed.startsWith("# ") || trimmed.startsWith("## ")) {
+      hasHeader = true;
+      flushSection();
+      const title = trimmed.replace(/^#+\s*/, "");
+      currentSection = { title, entries: [] };
+      continue;
+    }
+
+    if (!trimmed || trimmed.startsWith("---")) continue;
+
+    // Skip header row
+    if (trimmed.startsWith("|") && (trimmed.includes("单词/短语") || trimmed.includes("Word/Phrase"))) {
+      // If no section yet, create default one
+      if (!currentSection) {
+        currentSection = { title: "Vocabulary", entries: [] };
+      }
+      continue;
+    }
+
+    if (trimmed.startsWith("|") && !trimmed.startsWith("|---")) {
+      // If no section yet, create default one
+      if (!currentSection) {
+        currentSection = { title: "Vocabulary", entries: [] };
+      }
+
+      const cells = trimmed.split("|").filter(c => c.trim()).map(c => c.trim());
+
+      if (cells.length >= 3) {
+        flushEntry();
+        const word = cells[0];
+        const meaning = cells[1];
+        const context = cells[2] || "";
+
+        const isCore = ["A2", "W1P", "DP", "fBO", "W", "1CBO"].some(t => word.includes(t));
+
+        let type = "TERM";
+        if (word.includes("SIM") || word.includes("beginner")) type = "CONCEPT";
+        else if (meaning.includes("交易") && !meaning.includes("术语")) type = "SETUP";
+        else if (meaning.includes("心态") || meaning.includes("心理")) type = "PSYCH";
+
+        currentEntry = { word, meaning, type, isCore };
+        contextBuffer = [context];
+      }
+    } else if (currentEntry && trimmed) {
+      contextBuffer.push(trimmed);
+    }
+  }
+
+  flushSection();
+  return { sections };
+}
+
+function VocabularyViewer({ markdownUrl }: { markdownUrl: string }) {
+  const [data, setData] = useState<{ sections: { title: string; entries: VocabEntry[] }[] } | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    fetch(markdownUrl)
+      .then(res => {
+        if (!res.ok) throw new Error(`Failed to load: ${res.status}`);
+        return res.text();
+      })
+      .then(text => {
+        const parsed = parseVocabularyMarkdown(text);
+        setData(parsed);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, [markdownUrl]);
+
+  const filteredData = useMemo(() => {
+    if (!data || !searchQuery.trim()) return data;
+    
+    const q = searchQuery.toLowerCase().trim();
+    const filtered = data.sections.map(section => ({
+      ...section,
+      entries: section.entries.filter(entry =>
+        entry.word.toLowerCase().includes(q) ||
+        entry.meaning.toLowerCase().includes(q) ||
+        entry.context.toLowerCase().includes(q) ||
+        entry.type.toLowerCase().includes(q)
+      )
+    })).filter(section => section.entries.length > 0);
+    
+    return { sections: filtered };
+  }, [data, searchQuery]);
+
+  if (loading) return <div className="vocab-loading">Loading vocabulary...</div>;
+  if (error) return <div className="vocab-error">Error: {error}</div>;
+  if (!data) return null;
+
+  const totalEntries = data.sections.reduce((sum, s) => sum + s.entries.length, 0);
+  const coreCount = data.sections.reduce((sum, s) => sum + s.entries.filter(e => e.isCore).length, 0);
+  const filteredCount = filteredData?.sections.reduce((sum, s) => sum + s.entries.length, 0) ?? totalEntries;
+
+  return (
+    <div className="vocabulary-viewer">
+      <div className="vocab-header">
+        <h1>Trading Vocabulary</h1>
+        <div className="vocab-stats">
+          <span className="stat-item"><span className="number">{totalEntries}</span> terms</span>
+          <span className="stat-item"><span className="number">{coreCount}</span> core</span>
+        </div>
+        <div className="vocab-search">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={e => setSearchQuery(e.target.value)}
+            placeholder="Search..."
+          />
+          {searchQuery && (
+            <span className="search-count">{filteredCount}/{totalEntries}</span>
+          )}
+        </div>
+      </div>
+
+      {filteredData && filteredData.sections.length === 0 && (
+        <div className="vocab-no-results">
+          No results for "{searchQuery}"
+        </div>
+      )}
+
+      {filteredData?.sections.map((section, sIdx) => (
+        <div key={sIdx} className="vocab-section">
+          {section.title !== "Vocabulary" && <h2 className="section-title">{section.title}</h2>}
+          <div className="vocab-grid">
+            {section.entries.map((entry, eIdx) => (
+              <div key={eIdx} className={`vocab-card ${entry.isCore ? "core-setup" : ""}`}>
+                <div className="vocab-term">
+                  <span className="vocab-word">{entry.word}</span>
+                  <span className="vocab-type">{entry.type}</span>
+                  {entry.isCore && <span className="core-badge">CORE</span>}
+                </div>
+                <div className="vocab-meaning">{entry.meaning}</div>
+                {entry.context && (
+                  <div className="vocab-context">
+                    {entry.context}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )      )}
+    </div>
   );
 }

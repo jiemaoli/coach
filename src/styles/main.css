@@ -139,7 +139,8 @@ a:hover {
 
 .stage-nav,
 .post-list {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 6px;
 }
 
@@ -219,7 +220,7 @@ a:hover {
   display: grid;
   grid-template-columns: 240px minmax(0, 1fr) 240px;
   gap: 10px;
-  align-items: start;
+  align-items: stretch;
   transition: grid-template-columns 0.2s ease;
   height: calc(100vh - 28px);
 }
@@ -261,19 +262,28 @@ a:hover {
   display: flex;
   flex-direction: column;
   padding: 8px;
-  height: calc(100vh - 28px);
   overflow: hidden;
 }
 
 .stage-panel .post-list {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
 }
 
 .library-panel {
-  height: calc(100vh - 28px);
   display: flex;
   flex-direction: column;
   padding: 8px;
+  overflow: hidden;
+}
+
+.reader-panel {
+  min-width: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .panel-title {
@@ -285,10 +295,10 @@ a:hover {
 
 .panel-title h2 {
   margin: 0;
-  font-size: 0.95rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 0.82rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .panel-title span {
@@ -312,7 +322,8 @@ a:hover {
 }
 
 .post-list {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   flex: 1;
 }
 
@@ -323,20 +334,23 @@ a:hover {
   border: 1px solid var(--border);
   border-radius: 0;
   margin-bottom: -1px;
+  flex-shrink: 0;
 }
 
 .post-list strong {
   display: block;
   margin-top: 1px;
   font-size: 0.82rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .reader-panel {
   min-width: 0;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .reader-header {
@@ -348,13 +362,14 @@ a:hover {
   border-bottom: 1px solid var(--border);
   margin-bottom: 10px;
   font-size: 0.88rem;
+  flex-shrink: 0;
 }
 
 .source-frame {
-  height: calc(100vh - 80px);
-  min-height: 500px;
+  flex: 1;
   border: 1px solid var(--border);
   background: #fff;
+  overflow: hidden;
 }
 
 .source-frame iframe {
@@ -403,6 +418,231 @@ a:hover {
 
 .float-expand-btn:hover {
   opacity: 1;
+}
+
+/* Vocabulary Viewer Styles */
+.vocabulary-viewer {
+  height: 100%;
+  overflow-y: auto;
+  padding: 16px;
+  background: var(--bg);
+}
+
+.vocab-loading,
+.vocab-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.vocab-error {
+  color: #ff6b6b;
+}
+
+.vocab-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.vocab-header h1 {
+  font-size: 1.1rem;
+  color: var(--green);
+  margin: 0;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.vocab-stats {
+  display: flex;
+  gap: 16px;
+}
+
+.stat-item {
+  color: var(--muted);
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.stat-item .number {
+  color: var(--green);
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.vocab-search {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.vocab-search input {
+  width: 100%;
+  padding: 6px 10px;
+  padding-right: 60px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.vocab-search input:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+.vocab-search input::placeholder {
+  color: var(--quiet);
+}
+
+.search-count {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+}
+
+.vocab-section {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 1rem;
+  color: var(--green);
+  margin: 0 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.vocab-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+  transition: all 0.2s ease;
+}
+
+.vocab-card:hover {
+  background: var(--panel-2);
+  border-color: var(--blue);
+}
+
+.vocab-card.core-setup {
+  border-left: 3px solid var(--green);
+}
+
+.vocab-term {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.vocab-word {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--blue);
+  font-family: var(--font-mono);
+}
+
+.vocab-type {
+  font-size: 0.6rem;
+  color: var(--green);
+  background: rgba(54, 194, 117, 0.15);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.core-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--green), #2ea865);
+  color: #fff;
+  font-size: 0.55rem;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.vocab-meaning {
+  font-size: 0.88rem;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.vocab-context {
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 8px 10px;
+  border-radius: 4px;
+  border-left: 3px solid var(--green);
+  line-height: 1.4;
+}
+
+.vocab-no-results {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .vocabulary-viewer {
+    padding: 12px;
+  }
+  
+  .vocab-header h1 {
+    font-size: 1.4rem;
+  }
+  
+  .vocab-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .vocab-card {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vocab-header {
+    padding: 16px 0;
+    margin-bottom: 16px;
+  }
+  
+  .vocab-header h1 {
+    font-size: 1.2rem;
+  }
+  
+  .section-title {
+    font-size: 1.1rem;
+    margin: 0 0 12px;
+  }
+  
+  .vocab-word {
+    font-size: 0.95rem;
+  }
 }
 
 .sidebar-expand {
@@ -482,5 +722,171 @@ a:hover {
   .source-frame {
     height: 70vh;
     min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reader-sidebar {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .brand-block strong {
+    font-size: 0.8rem;
+  }
+
+  .stage-nav button {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+
+  .path-context {
+    padding: 8px;
+  }
+
+  .path-context p {
+    font-size: 0.78rem;
+  }
+
+  .workspace {
+    gap: 8px;
+  }
+
+  .stage-panel,
+  .library-panel {
+    max-height: 250px;
+    padding: 6px;
+  }
+
+  .panel-title h2 {
+    font-size: 0.85rem;
+  }
+
+  .post-list button {
+    padding: 5px 6px;
+    font-size: 0.78rem;
+  }
+
+  .post-list strong {
+    font-size: 0.78rem;
+  }
+
+  .reader-panel {
+    padding: 8px;
+  }
+
+  .reader-header {
+    font-size: 0.82rem;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+  }
+
+  .source-frame {
+    height: 60vh;
+    min-height: 300px;
+  }
+
+  .global-search input {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reader-sidebar {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .brand-block > span {
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+
+  .brand-block strong {
+    font-size: 0.75rem;
+  }
+
+  .brand-block small {
+    font-size: 0.7rem;
+  }
+
+  .stage-nav button {
+    font-size: 0.72rem;
+    padding: 4px 6px;
+  }
+
+  .stage-nav button span {
+    font-size: 0.72rem;
+  }
+
+  .path-context p {
+    font-size: 0.72rem;
+  }
+
+  .path-context span {
+    font-size: 0.7rem;
+    padding: 1px 4px;
+  }
+
+  .stage-panel,
+  .library-panel {
+    max-height: 200px;
+    padding: 4px;
+  }
+
+  .panel-title h2 {
+    font-size: 0.8rem;
+  }
+
+  .panel-title span {
+    font-size: 0.72rem;
+  }
+
+  .post-list button {
+    padding: 4px 5px;
+    font-size: 0.72rem;
+  }
+
+  .post-list span {
+    font-size: 0.7rem;
+  }
+
+  .post-list strong {
+    font-size: 0.72rem;
+  }
+
+  .reader-panel {
+    padding: 6px;
+  }
+
+  .reader-header {
+    font-size: 0.78rem;
+    gap: 8px;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+  }
+
+  .source-frame {
+    height: 55vh;
+    min-height: 250px;
+  }
+
+  .global-search input {
+    font-size: 0.75rem;
+    padding: 5px;
+  }
+
+  .collapse-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 0.65rem;
+  }
+
+  .float-expand-btn {
+    width: 14px;
+    height: 24px;
+    font-size: 0.6rem;
   }
 }

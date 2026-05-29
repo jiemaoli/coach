@@ -1,7 +1,7 @@
 {
   "source": "https://ninetrans.blogspot.com",
   "generatedAt": "2026-05-27T09:23:48Z",
-  "postCount": 436,
+  "postCount": 437,
   "imageCount": 488,
   "posts": [
     {
@@ -12392,6 +12392,26 @@
       ],
       "excerpt": "So you want to be a trader. Here is a list of things you need before you can get going. A trading account Trading software that allows SIM trading A trading style Some basic setups A trading plan Starting Capital Once you find a good futures broker, you should be able to open an account and get a trading platform for a small amount of money. The first thing you do is to trade for a while on a simulator (SIM). This will allow you to learn how to place orders and move your stops while make all your silly mistakes like buying instead of selling, entering the incorrect quantity and get it over with without losing any money. Trading on SIM also allows you to watch the market move and get a feel f",
       "searchText": "So you want to be a trader. Here is a list of things you need before you can get going. A trading account Trading software that allows SIM trading A trading style Some basic setups A trading plan Starting Capital Once you find a good futures broker, you should be able to open an account and get a trading platform for a small amount of money. The first thing you do is to trade for a while on a simulator (SIM). This will allow you to learn how to place orders and move your stops while make all your silly mistakes like buying instead of selling, entering the incorrect quantity and get it over with without losing any money. Trading on SIM also allows you to watch the market move and get a feel for price action. Note that the market is like a very complex diamond and you have to trade for a couple of years before you see most of its faces. Even then, you haven't seen them all. A trading style is different from how you read the market. Its about how you place your entry orders, take your profits and place your stops. Price action trading is fairly straight forward this way, since your entries, exits and stops are very well defined. Your long entry is 1 tick above the signal bar, stop is 1 tick below and your target is 4 ticks or more above your entry. This predefined ruleset make it easy to follow for beginners. I have extensively discussed various setups in my blog. Al Brooks ' work is very good place to get more information regarding price action. A trading plan such as mine is very important to have and follow. The most important take away from this is that trading is a mental skill you work on and develop and once you get good at trading SIM (zero real contracts), you keep increasing the contract size slowly and thus overcome emotional barriers that come naturally when real money is at stake. Once you graduate from SIM to real money, always know that you will lose in the beginning. This is normal. You need to be able to be in the game for a while, so you need to allocate some real capital. One way to not bankrupt yourself early is to have daily, weekly and monthly loss limits. Once you hit the loss limit, switch to SIM trading. This allows you to have a yearly budget for trading and keeps you in the game allowing you to improve yourself. See Also: Trading plan: Trading Range day Trading plan: Trend days Trading plan: Hard Trends Trading plan: Soft Trends Trading plan: Spike and Channel days",
+      "imageCount": 0,
+      "images": []
+    },
+    {
+      "id": "nt-page-vocabulary",
+      "title": "Trading Vocabulary",
+      "published": "2026-05-29T00:00:00.000Z",
+      "updated": "2026-05-29T00:00:00.000Z",
+      "url": "",
+      "htmlPath": "docs/ninetrans-blog/posts/page-vocabulary.html",
+      "textPath": "docs/ninetrans-blog/posts/page-vocabulary.txt",
+      "labels": [
+        "static-page",
+        "vocabulary"
+      ],
+      "setupCandidates": [
+        "foundation"
+      ],
+      "excerpt": "Price Action 交易术语表。包含四大核心交易（A2/W1P/DP/fBO）、市场结构术语（transition/overshoot/TCL/overlap）、交易动作（fade/flatten）、描述性术语（consistent/extreme behavior/impending/slightly/imply）以及学习概念（SIM/rank beginner/eagerness/unicycle）。",
+      "searchText": "A2 2 Legged move to Average 2腿回撤到均线 W1P Wedge 1st Pullback 楔形反转后首次回撤 DP Double top/bottom and Pullback 双顶/双底回撤 fBO Failed Breakout 失败突破 transition 市场状态转换 overshoot 突破超越趋势通道线 TCL Trend Channel Line 趋势通道线 overlap 重叠K线价格区域 fade 反向交易 flatten out flatten 走平平仓 consistent 稳定的持续的 extreme behavior 极端行为 impending 即将到来的迫在眉睫的 slightly 略微稍微 imply 暗示意味着 exhaustive 详尽的全面的彻底的 SIM 模拟交易 rank beginner 彻头彻尾的初学者 eagerness 急切急于交易 unicycle 独轮车",
       "imageCount": 0,
       "images": []
     }
