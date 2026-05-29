@@ -7,7 +7,7 @@ It separates direct author evidence from provisional organization work.
 
 - Source: https://ninetrans.blogspot.com
 - Generated at: 2026-05-27T07:39:48Z
-- Posts archived: 432
+- Posts archived: 437
 - Images indexed: 488
 
 ## Direct Author Signals

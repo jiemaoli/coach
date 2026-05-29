@@ -113,15 +113,15 @@ a:hover {
 
 .collapse-btn {
   margin-left: auto;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   display: grid;
   place-items: center;
   border: 1px solid var(--border);
   background: var(--panel-2);
   color: var(--muted);
   cursor: pointer;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   flex-shrink: 0;
 }
 
@@ -404,14 +404,14 @@ a:hover {
 .float-expand-btn {
   position: fixed;
   z-index: 15;
-  width: 18px;
-  height: 28px;
+  width: 22px;
+  height: 32px;
   display: grid;
   place-items: center;
   border: 1px solid var(--border);
   background: var(--panel-2);
   cursor: pointer;
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   opacity: 0.6;
   transition: opacity 0.15s;
 }
@@ -604,6 +604,119 @@ a:hover {
   padding: 32px 16px;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+/* ── Filter UI ── */
+
+.filter-toggle-btn {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  padding: 1px 8px;
+  font-size: 0.72rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.filter-toggle-btn:hover,
+.filter-toggle-btn.active {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: var(--panel-2);
+}
+
+.filter-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+}
+
+.filter-dimension {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.filter-dim-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+  min-width: 48px;
+  flex-shrink: 0;
+}
+
+.filter-dim-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.filter-chip {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  padding: 1px 6px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.filter-chip:hover {
+  border-color: var(--blue);
+  color: var(--text);
+}
+
+.filter-chip.active {
+  border-color: var(--green);
+  background: rgba(54, 194, 117, 0.12);
+  color: var(--green);
+}
+
+.filter-clear-btn {
+  align-self: flex-end;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.7rem;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 2px;
+}
+
+.filter-clear-btn:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.active-filter-chip {
+  border: 1px solid var(--green);
+  background: rgba(54, 194, 117, 0.1);
+  color: var(--green);
+  padding: 0 6px;
+  font-size: 0.68rem;
+  cursor: pointer;
+  line-height: 1.6;
+}
+
+.active-filter-chip:hover {
+  background: rgba(54, 194, 117, 0.2);
+}
+
+.post-tags {
+  display: block;
+  color: var(--quiet);
+  font-size: 0.68rem;
+  margin-top: 1px;
 }
 
 @media (max-width: 768px) {
@@ -857,6 +970,25 @@ a:hover {
     font-size: 0.72rem;
   }
 
+  .filter-panel {
+    padding: 5px;
+    gap: 4px;
+  }
+
+  .filter-dim-label {
+    font-size: 0.65rem;
+    min-width: 38px;
+  }
+
+  .filter-chip {
+    font-size: 0.62rem;
+    padding: 0 4px;
+  }
+
+  .post-tags {
+    font-size: 0.6rem;
+  }
+
   .reader-panel {
     padding: 6px;
   }
@@ -879,14 +1011,14 @@ a:hover {
   }
 
   .collapse-btn {
-    width: 20px;
-    height: 20px;
-    font-size: 0.65rem;
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
   }
 
   .float-expand-btn {
-    width: 14px;
-    height: 24px;
-    font-size: 0.6rem;
+    width: 18px;
+    height: 28px;
+    font-size: 0.7rem;
   }
 }

@@ -7,6 +7,14 @@ type BlogImage = {
   filename: string;
 };
 
+type NormalizedTags = {
+  content_type: string;
+  market: string[];
+  setup: string[];
+  topic: string[];
+  level: string;
+};
+
 type BlogPost = {
   id: string;
   title: string;
@@ -21,6 +29,7 @@ type BlogPost = {
   imageCount: number;
   images: BlogImage[];
   searchText?: string;
+  normalizedTags?: NormalizedTags;
 };
 
 type BlogManifest = {
@@ -38,6 +47,14 @@ type StudyStage = {
   postIds: string[];
   tags: string[];
 };
+
+const TAG_DIMENSIONS = [
+  { key: "content_type", label: "Type", single: true, values: ["daily", "theory", "reference"] },
+  { key: "market", label: "Market", single: false, values: ["trend", "range", "chop", "channel", "general"] },
+  { key: "setup", label: "Setup", single: false, values: ["A2", "W1P", "DP", "fBO", "1PB", "1Rev", "G2", "BP", "1CBO", "general"] },
+  { key: "topic", label: "Topic", single: false, values: ["execution", "trade_mgmt", "psychology", "risk", "openers", "general"] },
+  { key: "level", label: "Level", single: true, values: ["beginner", "intermediate", "advanced"] },
+] as const;
 
 const archiveBase = "/ninetrans-blog";
 
@@ -701,7 +718,7 @@ export function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [stagePanelCollapsed, setStagePanelCollapsed] = useState(false);
   const [libraryCollapsed, setLibraryCollapsed] = useState(false);
-  const [tagFilters, setTagFilters] = useState<Record<string, string>>({});
+  const [tagFilters, setTagFilters] = useState<Record<string, string[]>>({});
   const [showFilters, setShowFilters] = useState(false);
 
   useEffect(() => {
@@ -728,10 +745,9 @@ export function App() {
 
   const filteredPosts = useMemo(() => {
     const value = query.trim().toLowerCase();
-    const hasFilters = Object.values(tagFilters).some(v => v);
-    
+    const hasFilters = Object.values(tagFilters).some(v => v.length > 0);
+
     return posts.filter((post) => {
-      // Text search filter
       if (value) {
         const haystack = [
           post.title,
@@ -743,23 +759,22 @@ export function App() {
         ].join(" ").toLowerCase();
         if (!haystack.includes(value)) return false;
       }
-      
-      // Tag filters
+
       if (hasFilters) {
-        const tags = (post as any).normalizedTags;
+        const tags = post.normalizedTags;
         if (!tags) return false;
-        
-        for (const [dim, filterVal] of Object.entries(tagFilters)) {
-          if (!filterVal) continue;
-          const postVal = tags[dim];
+
+        for (const [dim, filterVals] of Object.entries(tagFilters)) {
+          if (!filterVals.length) continue;
+          const postVal = tags[dim as keyof NormalizedTags];
           if (Array.isArray(postVal)) {
-            if (!postVal.includes(filterVal)) return false;
+            if (!filterVals.some((fv) => postVal.includes(fv))) return false;
           } else {
-            if (postVal !== filterVal) return false;
+            if (!filterVals.includes(postVal)) return false;
           }
         }
       }
-      
+
       return true;
     });
   }, [posts, query, tagFilters]);
@@ -767,6 +782,31 @@ export function App() {
   function openPost(postId: string) {
     setActivePostId(postId);
   }
+
+  function toggleFilter(dim: string, value: string) {
+    setTagFilters((prev) => {
+      const current = prev[dim] ?? [];
+      const next = current.includes(value)
+        ? current.filter((v) => v !== value)
+        : [...current, value];
+      return { ...prev, [dim]: next };
+    });
+  }
+
+  function clearFilters() {
+    setTagFilters({});
+  }
+
+  const activeFilterEntries = useMemo(() => {
+    const entries: { dim: string; label: string; value: string }[] = [];
+    for (const [dim, vals] of Object.entries(tagFilters)) {
+      const dimCfg = TAG_DIMENSIONS.find((d) => d.key === dim);
+      for (const v of vals) {
+        entries.push({ dim, label: dimCfg?.label ?? dim, value: v });
+      }
+    }
+    return entries;
+  }, [tagFilters]);
 
   if (loadError) return <main className="app-error">Failed to load blog archive: {loadError}</main>;
   if (!manifest || !activePost) return <main className="app-loading">Loading Nine Transitions archive...</main>;
@@ -888,6 +928,14 @@ export function App() {
               <h2>Library</h2>
               <span>{filteredPosts.length}</span>
               <button
+                className={`filter-toggle-btn${showFilters ? " active" : ""}`}
+                type="button"
+                onClick={() => setShowFilters(!showFilters)}
+                title="Toggle filters"
+              >
+                Filter
+              </button>
+              <button
                 className="collapse-btn"
                 type="button"
                 onClick={() => setLibraryCollapsed(!libraryCollapsed)}
@@ -903,6 +951,53 @@ export function App() {
                 placeholder="Search posts..."
               />
             </label>
+
+            {showFilters && (
+              <div className="filter-panel">
+                {TAG_DIMENSIONS.map((dim) => (
+                  <div className="filter-dimension" key={dim.key}>
+                    <span className="filter-dim-label">{dim.label}</span>
+                    <div className="filter-dim-options">
+                      {dim.values.map((val) => {
+                        const active = (tagFilters[dim.key] ?? []).includes(val);
+                        return (
+                          <button
+                            key={val}
+                            className={`filter-chip${active ? " active" : ""}`}
+                            type="button"
+                            onClick={() => toggleFilter(dim.key, val)}
+                          >
+                            {val}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
+                {activeFilterEntries.length > 0 && (
+                  <button className="filter-clear-btn" type="button" onClick={clearFilters}>
+                    Clear all
+                  </button>
+                )}
+              </div>
+            )}
+
+            {activeFilterEntries.length > 0 && (
+              <div className="active-filters">
+                {activeFilterEntries.map(({ dim, label, value }) => (
+                  <button
+                    key={`${dim}-${value}`}
+                    className="active-filter-chip"
+                    type="button"
+                    onClick={() => toggleFilter(dim, value)}
+                    title={`Remove ${value} filter`}
+                  >
+                    {value} ×
+                  </button>
+                ))}
+              </div>
+            )}
+
             <div className="post-list">
               {filteredPosts.slice(0, 300).map((post) => (
                 <button
@@ -913,6 +1008,13 @@ export function App() {
                 >
                   <span>{post.published.slice(0, 10)}</span>
                   <strong>{post.title}</strong>
+                  {post.normalizedTags && (
+                    <span className="post-tags">
+                      {post.normalizedTags.content_type}
+                      {post.normalizedTags.level !== "intermediate" && ` · ${post.normalizedTags.level}`}
+                      {post.normalizedTags.setup.length > 0 && post.normalizedTags.setup[0] !== "general" && ` · ${post.normalizedTags.setup.join(",")}`}
+                    </span>
+                  )}
                 </button>
               ))}
             </div>

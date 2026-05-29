@@ -168,6 +168,89 @@ for (const [setup, count] of Object.entries(setupCounts).sort((a, b) => b[1] - a
 }
 console.log();
 
+// 9. Check normalizedTags coverage
+console.log(`9. normalizedTags Coverage:`);
+let withoutTags = 0;
+for (const post of manifest.posts) {
+  if (!post.normalizedTags) {
+    withoutTags++;
+    console.log(`   ❌ Missing: ${post.id}`);
+  }
+}
+if (withoutTags === 0) {
+  console.log(`   ✓ All ${manifest.posts.length} posts have normalizedTags`);
+} else {
+  console.log(`   ❌ ${withoutTags} posts missing normalizedTags`);
+}
+console.log();
+
+// 10. Check source-analysis.md consistency
+let saIssues = 0;
+try {
+  const saContent = readFileSync('public/ninetrans-blog/source-analysis.md', 'utf-8');
+  const saMatch = saContent.match(/Posts archived:\s*(\d+)/);
+  if (saMatch) {
+    const saCount = parseInt(saMatch[1]);
+    if (saCount !== manifest.posts.length) {
+      console.log(`10. source-analysis.md (public): ❌ says ${saCount}, actual ${manifest.posts.length}`);
+      saIssues++;
+    } else {
+      console.log(`10. source-analysis.md (public): ✓ ${saCount} matches manifest`);
+    }
+  }
+} catch (e) {
+  console.log(`10. source-analysis.md (public): ❌ could not read`);
+  saIssues++;
+}
+
+try {
+  const saDocs = readFileSync('docs/ninetrans-blog/source-analysis.md', 'utf-8');
+  const saDocsMatch = saDocs.match(/Posts archived:\s*(\d+)/);
+  if (saDocsMatch) {
+    const saDocsCount = parseInt(saDocsMatch[1]);
+    if (saDocsCount !== manifest.posts.length) {
+      console.log(`    source-analysis.md (docs):   ❌ says ${saDocsCount}, actual ${manifest.posts.length}`);
+      saIssues++;
+    } else {
+      console.log(`    source-analysis.md (docs):   ✓ ${saDocsCount} matches manifest`);
+    }
+  }
+} catch (e) {
+  console.log(`    source-analysis.md (docs):   ❌ could not read`);
+  saIssues++;
+}
+console.log();
+
+// 11. Check docs manifest consistency
+console.log(`11. Docs Manifest Sync:`);
+let docsIssues = 0;
+try {
+  const docsManifest = JSON.parse(readFileSync('docs/ninetrans-blog/manifest.json', 'utf-8'));
+  if (docsManifest.postCount !== manifest.postCount) {
+    console.log(`   ❌ postCount mismatch: public=${manifest.postCount}, docs=${docsManifest.postCount}`);
+    docsIssues++;
+  } else {
+    console.log(`   ✓ postCount: ${docsManifest.postCount} matches`);
+  }
+  if (docsManifest.posts.length !== manifest.posts.length) {
+    console.log(`   ❌ actual posts mismatch: public=${manifest.posts.length}, docs=${docsManifest.posts.length}`);
+    docsIssues++;
+  } else {
+    console.log(`   ✓ posts array: ${docsManifest.posts.length} matches`);
+  }
+  const docsNoTag = docsManifest.posts.filter(p => !p.normalizedTags).length;
+  if (docsNoTag > 0) {
+    console.log(`   ❌ ${docsNoTag} docs posts missing normalizedTags`);
+    docsIssues++;
+  } else {
+    console.log(`   ✓ All docs posts have normalizedTags`);
+  }
+} catch (e) {
+  console.log(`   ❌ could not read docs manifest`);
+  docsIssues++;
+}
+console.log();
+
 // Summary
 console.log('=== Summary ===');
 const issues = [
@@ -176,6 +259,9 @@ const issues = [
   badRefs > 0 ? `${badRefs} bad references` : null,
   duplicates > 0 ? `${duplicates} duplicates` : null,
   dateIssues > 0 ? `${dateIssues} date issues` : null,
+  withoutTags > 0 ? `${withoutTags} posts missing normalizedTags` : null,
+  saIssues > 0 ? `${saIssues} source-analysis.md issue(s)` : null,
+  docsIssues > 0 ? `${docsIssues} docs manifest issue(s)` : null,
 ].filter(Boolean);
 
 if (issues.length === 0) {
