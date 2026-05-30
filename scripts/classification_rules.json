@@ -1,0 +1,95 @@
+{
+  "defaults": {
+    "content_type": "meta",
+    "market": "general",
+    "setup": "general",
+    "topic": "general",
+    "level": "intermediate"
+  },
+  "contentType": {
+    "seriesKeywords": [
+      "creating a trading system",
+      "the hard road",
+      "trader's mind",
+      "price action basics",
+      "channel theory",
+      "building blocks"
+    ]
+  },
+  "setupCandidates": {
+    "a2": ["a2", "a 2", "two legged", "2 legged", "2-legged", "two-legged"],
+    "w1p": ["w1p", "1pb", "first pullback", "wedge pullback"],
+    "dp": ["dp", "double top", "double bottom", "double test", "dt", "db"],
+    "fbo": ["fbo", "failed breakout", "breakout failure", "final flag"],
+    "foundation": [
+      "signal bar",
+      "ema",
+      "barb wire",
+      "spike and channel",
+      "trend from the open",
+      "trend resumption",
+      "breakout test",
+      "trend reversal",
+      "trend termination",
+      "reversal bar"
+    ],
+    "1rev": ["1rev", "first reversal", "opening reversal"]
+  },
+  "normalizedTags": {
+    "market": {
+      "trend": ["trend day", "hard trend", "strong trend", "soft trend", "trending"],
+      "range": ["trading range", "range day", "ttr", "tight trading range"],
+      "chop": ["chop", "barb wire", "barbwire", "choppy"],
+      "channel": ["channel", "spike and channel", "channel theory"]
+    },
+    "setup": {
+      "A2": {
+        "candidates": ["a2"],
+        "needles": [" a2 ", "a2 short", "a2 long", "two legged pullback", "2 legged pullback"]
+      },
+      "W1P": {
+        "candidates": ["w1p"],
+        "needles": ["w1p", "wedge pullback", "first pullback after wedge"]
+      },
+      "DP": {
+        "candidates": ["dp"],
+        "needles": ["double top", "double bottom", "double test", "dp pullback"]
+      },
+      "fBO": {
+        "candidates": ["fbo"],
+        "needles": ["failed breakout", "fbo", "breakout failure", "wfbo"]
+      },
+      "1PB": {
+        "candidates": [],
+        "needles": ["1pb", "first pullback", "first pullback after the open"]
+      },
+      "1Rev": {
+        "candidates": ["1rev"],
+        "needles": ["1rev", "first reversal", "opening reversal", "1st reversal"]
+      },
+      "G2": {
+        "candidates": [],
+        "needles": [" g2 ", "g2 after", "g2 entry", "gap 2", "gap two"]
+      },
+      "BP": {
+        "candidates": [],
+        "needles": ["breakout pullback", " bp ", " bp short", "bp long", "break out pullback"]
+      },
+      "1CBO": {
+        "candidates": [],
+        "needles": ["1cbo", "channel breakout", "first channel breakout"]
+      }
+    },
+    "topic": {
+      "execution": ["execution", "entry", "entering", "entry bar", "entry setup"],
+      "trade_mgmt": ["trade management", "stop", "target", "exit", "take profit", "stop loss", "scalp", "swing", "holding"],
+      "psychology": ["psychology", "discipline", "emotion", "fear", "greed", "patience", "tilt", "revenge"],
+      "risk": ["risk", "loss", "drawdown", "risk management", "account"],
+      "openers": ["open", "opener", "1pb", "1rev", "opening range", "opening reversal", "gap open", "openers"]
+    },
+    "level": {
+      "beginner": ["beginner", "rank beginner", "rule of ten", "getting started", "start out", "new trader", "first few weeks", "first time"],
+      "advanced": ["advanced", "expert", "master", "proficient", "experienced trader"]
+    }
+  }
+}

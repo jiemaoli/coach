@@ -45,8 +45,51 @@ type StudyStage = {
   title: string;
   authorEvidence: string;
   postIds: string[];
+  resources?: StudyResource[];
   tags: string[];
 };
+
+type StudyResource = {
+  id: string;
+  title: string;
+  kind: "markdown";
+  markdownUrl: string;
+  label?: string;
+};
+
+type StageEntry =
+  | {
+      id: string;
+      title: string;
+      label: string;
+      kind: "post";
+      post: BlogPost;
+    }
+  | {
+      id: string;
+      title: string;
+      label: string;
+      kind: "resource";
+      resource: StudyResource;
+    };
+
+function flattenNormalizedTags(tags: NormalizedTags | undefined) {
+  if (!tags) return [];
+
+  const values = [
+    tags.content_type,
+    tags.level,
+    ...tags.market,
+    ...tags.setup,
+    ...tags.topic
+  ];
+
+  return values.flatMap((value) => {
+    const normalized = value.toLowerCase();
+    const spaced = normalized.replace(/_/g, " ");
+    return spaced === normalized ? [normalized] : [normalized, spaced];
+  });
+}
 
 const TAG_DIMENSIONS = [
   { key: "content_type", label: "Type", single: true, values: ["daily", "theory", "reference"] },
@@ -385,8 +428,16 @@ const studyPath: StudyStage[] = [
     title: "Vocabulary",
     authorEvidence: "Trading vocabulary with search. Auto-parsed from vocabulary.md.",
     postIds: [
-      "nt-page-glossary",
-      "nt-page-vocabulary"
+      "nt-page-glossary"
+    ],
+    resources: [
+      {
+        id: "resource-vocabulary",
+        title: "Personal Vocabulary Notes",
+        kind: "markdown",
+        markdownUrl: "/vocabulary.md",
+        label: "Study"
+      }
     ],
     tags: ["vocabulary", "terms", "study"]
   },
@@ -708,10 +759,33 @@ function publicUrl(path: string | null | undefined) {
   return normalized ? `${archiveBase}/${normalized}` : "";
 }
 
+function buildStageEntries(stage: StudyStage, postById: Map<string, BlogPost>) {
+  const postEntries: StageEntry[] = stage.postIds
+    .map((id) => postById.get(id))
+    .filter((post): post is BlogPost => Boolean(post))
+    .map((post) => ({
+      id: post.id,
+      title: post.title,
+      label: post.published.slice(0, 10),
+      kind: "post" as const,
+      post
+    }));
+
+  const resourceEntries: StageEntry[] = (stage.resources ?? []).map((resource) => ({
+    id: resource.id,
+    title: resource.title,
+    label: resource.label ?? "Resource",
+    kind: "resource" as const,
+    resource
+  }));
+
+  return [...postEntries, ...resourceEntries];
+}
+
 export function App() {
   const [manifest, setManifest] = useState<BlogManifest | null>(null);
   const [activeStageId, setActiveStageId] = useState(studyPath[0].id);
-  const [activePostId, setActivePostId] = useState("");
+  const [activeItemId, setActiveItemId] = useState("");
   const [query, setQuery] = useState("");
   const [loadError, setLoadError] = useState("");
   const [zoomImage, setZoomImage] = useState("");
@@ -729,19 +803,45 @@ export function App() {
       })
       .then((data) => {
         setManifest(data);
-        const firstPathPost = studyPath.flatMap((stage) => stage.postIds)
-          .map((id) => data.posts.find((post) => post.id === id))
+        const postById = new Map(data.posts.map((post) => [post.id, post]));
+        const firstPathEntry = studyPath
+          .flatMap((stage) => buildStageEntries(stage, postById))
           .find(Boolean);
-        setActivePostId(firstPathPost?.id ?? data.posts[0]?.id ?? "");
+        setActiveItemId(firstPathEntry?.id ?? data.posts[0]?.id ?? "");
       })
       .catch((error: Error) => setLoadError(error.message));
   }, []);
 
   const posts = manifest?.posts ?? [];
   const postById = useMemo(() => new Map(posts.map((post) => [post.id, post])), [posts]);
+  const resourceById = useMemo(
+    () => new Map(studyPath.flatMap((stage) => (stage.resources ?? []).map((resource) => [resource.id, resource] as const))),
+    []
+  );
   const activeStage = studyPath.find((stage) => stage.id === activeStageId) ?? studyPath[0];
-  const activePost = postById.get(activePostId) ?? posts[0];
-  const pathPosts = activeStage.postIds.map((id) => postById.get(id)).filter((post): post is BlogPost => Boolean(post));
+  const stageEntries = useMemo(() => buildStageEntries(activeStage, postById), [activeStage, postById]);
+  const activePost = postById.get(activeItemId) ?? null;
+  const activeResource = resourceById.get(activeItemId) ?? null;
+  const activeEntry = stageEntries.find((entry) => entry.id === activeItemId)
+    ?? (activePost
+      ? {
+          id: activePost.id,
+          title: activePost.title,
+          label: activePost.published.slice(0, 10),
+          kind: "post" as const,
+          post: activePost
+        }
+      : activeResource
+        ? {
+            id: activeResource.id,
+            title: activeResource.title,
+            label: activeResource.label ?? "Resource",
+            kind: "resource" as const,
+            resource: activeResource
+          }
+        : null)
+    ?? stageEntries[0]
+    ?? null;
 
   const filteredPosts = useMemo(() => {
     const value = query.trim().toLowerCase();
@@ -755,7 +855,8 @@ export function App() {
           post.excerpt,
           post.searchText,
           ...(post.setupCandidates ?? []),
-          ...(post.labels ?? [])
+          ...(post.labels ?? []),
+          ...flattenNormalizedTags(post.normalizedTags)
         ].join(" ").toLowerCase();
         if (!haystack.includes(value)) return false;
       }
@@ -779,8 +880,8 @@ export function App() {
     });
   }, [posts, query, tagFilters]);
 
-  function openPost(postId: string) {
-    setActivePostId(postId);
+  function openEntry(entryId: string) {
+    setActiveItemId(entryId);
   }
 
   function toggleFilter(dim: string, value: string) {
@@ -809,7 +910,7 @@ export function App() {
   }, [tagFilters]);
 
   if (loadError) return <main className="app-error">Failed to load blog archive: {loadError}</main>;
-  if (!manifest || !activePost) return <main className="app-loading">Loading Nine Transitions archive...</main>;
+  if (!manifest || !activeEntry) return <main className="app-loading">Loading Nine Transitions archive...</main>;
 
   const shellClass = [
     "reader-shell",
@@ -845,8 +946,8 @@ export function App() {
               type="button"
               onClick={() => {
                 setActiveStageId(stage.id);
-                const first = stage.postIds.map((id) => postById.get(id)).find(Boolean);
-                if (first) openPost(first.id);
+                const first = buildStageEntries(stage, postById)[0];
+                if (first) openEntry(first.id);
               }}
             >
               <span>{String(index + 1).padStart(2, "0")}</span>{" "}
@@ -872,7 +973,7 @@ export function App() {
           <aside className="stage-panel">
             <div className="panel-title">
               <h2>{activeStage.title.split("：")[1] || activeStage.title}</h2>
-              <span>{pathPosts.length}</span>
+              <span>{stageEntries.length}</span>
               <button
                 className="collapse-btn"
                 type="button"
@@ -883,15 +984,15 @@ export function App() {
               </button>
             </div>
             <div className="post-list">
-              {pathPosts.map((post) => (
+              {stageEntries.map((entry) => (
                 <button
-                  key={post.id}
-                  className={post.id === activePost.id ? "active" : ""}
+                  key={entry.id}
+                  className={entry.id === activeEntry.id ? "active" : ""}
                   type="button"
-                  onClick={() => openPost(post.id)}
+                  onClick={() => openEntry(entry.id)}
                 >
-                  <span>{post.published.slice(0, 10)}</span>
-                  <strong>{post.title}</strong>
+                  <span>{entry.label}</span>
+                  <strong>{entry.title}</strong>
                 </button>
               ))}
             </div>
@@ -909,17 +1010,17 @@ export function App() {
           )}
 
           <article className="reader-panel">
-            {activePost.id !== "nt-page-vocabulary" && (
+            {activeEntry.kind === "post" && (
               <header className="reader-header">
-                <span>{activePost.published.slice(0, 10)}</span>
-                <a href={activePost.url} target="_blank" rel="noreferrer">Original Post</a>
-                <a href={publicUrl(activePost.textPath)} target="_blank" rel="noreferrer">TXT</a>
+                <span>{activeEntry.post.published.slice(0, 10)}</span>
+                <a href={activeEntry.post.url} target="_blank" rel="noreferrer">Original Post</a>
+                <a href={publicUrl(activeEntry.post.textPath)} target="_blank" rel="noreferrer">TXT</a>
               </header>
             )}
-            {activePost.id === "nt-page-vocabulary" ? (
-              <VocabularyViewer markdownUrl="/vocabulary.md" />
+            {activeEntry.kind === "resource" ? (
+              <VocabularyViewer markdownUrl={activeEntry.resource.markdownUrl} />
             ) : (
-              <OriginalPost post={activePost} onZoomImage={setZoomImage} />
+              <OriginalPost post={activeEntry.post} onZoomImage={setZoomImage} />
             )}
           </article>
 
@@ -1002,9 +1103,9 @@ export function App() {
               {filteredPosts.slice(0, 300).map((post) => (
                 <button
                   key={post.id}
-                  className={post.id === activePost.id ? "active" : ""}
+                  className={post.id === activeEntry.id ? "active" : ""}
                   type="button"
-                  onClick={() => openPost(post.id)}
+                  onClick={() => openEntry(post.id)}
                 >
                   <span>{post.published.slice(0, 10)}</span>
                   <strong>{post.title}</strong>

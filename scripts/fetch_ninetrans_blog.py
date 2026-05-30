@@ -11,6 +11,8 @@ import urllib.request
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
+from classification_rules import infer_setup_candidates
+
 
 BLOG_FEED = "https://ninetrans.blogspot.com/feeds/posts/default"
 USER_AGENT = "Mozilla/5.0 (compatible; setup-coach-source-fetcher/1.0)"
@@ -19,15 +21,6 @@ STATIC_PAGES = [
     "https://ninetrans.blogspot.com/p/glossary.html",
     "https://ninetrans.blogspot.com/p/stages-of-mastering-price-action.html",
 ]
-SETUP_KEYWORDS = {
-    "a2": ["a2", "a 2", "two legged", "two-legged", "2 legged", "2-legged", "second entry"],
-    "w1p": ["w1p", "1pb", "first pullback", "wedge pullback", "wedge"],
-    "dp": ["dp", "double top", "double bottom", "double test", "dt", "db"],
-    "fbo": ["fbo", "failed breakout", "breakout failure", "failure of breakout"],
-    "foundation": ["signal bar", "ema", "trend", "trading range", "barb wire", "overlap"],
-}
-
-
 @dataclass
 class BlogImage:
     url: str
@@ -153,16 +146,6 @@ def download_image(url: str, output_dir: Path, public_root: Path, stem: str, ind
     )
 
 
-def setup_candidates(title: str, content: str) -> list[str]:
-    haystack = f"{title} {strip_tags(content)}".lower()
-    found = [
-        setup_id
-        for setup_id, keywords in SETUP_KEYWORDS.items()
-        if any(keyword in haystack for keyword in keywords)
-    ]
-    return found or ["uncategorized"]
-
-
 def write_post_backup(post_dir: Path, stem: str, title: str, url: str, published: str, updated: str, content: str) -> tuple[str, str, str]:
     post_dir.mkdir(parents=True, exist_ok=True)
     html_path = post_dir / f"{stem}.html"
@@ -222,7 +205,7 @@ def parse_entry(entry: dict, download_images: bool, output_dir: Path, public_roo
         htmlPath=html_path,
         textPath=text_path,
         labels=labels,
-        setupCandidates=setup_candidates(title, content),
+        setupCandidates=infer_setup_candidates(f"{title} {strip_tags(content)}"),
         excerpt=strip_tags(content)[:700],
         searchText=text_content[:12000],
         imageCount=len(images),
@@ -260,7 +243,7 @@ def parse_static_page(url: str, download_images: bool, output_dir: Path, public_
         htmlPath=html_path,
         textPath=text_path,
         labels=["static-page"],
-        setupCandidates=setup_candidates(title, content),
+        setupCandidates=infer_setup_candidates(f"{title} {strip_tags(content)}"),
         excerpt=strip_tags(content)[:700],
         searchText=text_content[:12000],
         imageCount=len(images),

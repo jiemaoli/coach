@@ -7,6 +7,8 @@ from collections import Counter, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 
+from classification_rules import CLASSIFICATION_RULES
+
 
 LEARNING_SIGNAL_PATTERNS = {
     "beginner": [
@@ -37,15 +39,30 @@ LEARNING_SIGNAL_PATTERNS = {
     ],
 }
 
+# Derived from classification_rules.json: topic = setup + market + topic dimensions flattened
+_flat_setup = set()
+for _k, _v in CLASSIFICATION_RULES["setupCandidates"].items():
+    _flat_setup.update(_v)
+for _k, _v in CLASSIFICATION_RULES["normalizedTags"]["setup"].items():
+    _flat_setup.update(_v.get("needles", []))
+
+_flat_market = set()
+for _k, _v in CLASSIFICATION_RULES["normalizedTags"]["market"].items():
+    _flat_market.update(_v)
+
+_flat_topic = set()
+for _k, _v in CLASSIFICATION_RULES["normalizedTags"]["topic"].items():
+    _flat_topic.update(_v)
+
 TOPIC_KEYWORDS = {
     "signal_bar": ["signal bar", "trend bar", "doji", "tail", "overlap", "inside bar", "outside bar"],
-    "market_state": ["trend", "chop", "trading range", "barb wire", "channel", "hard trend", "soft trend", "overlap"],
-    "beginner_rules": ["beginner", "new trader", "stick to", "avoid", "overtrading", "rule of 10", "simulator"],
-    "openers": ["openers", "opening", "open", "gap", "1w", "1p", "1pb", "ib2", "opening range"],
-    "setups": ["a2", "w1p", "1pb", "dp", "fbo", "failed breakout", "breakout pullback", "double top", "double bottom"],
+    "market_state": sorted(_flat_market, key=len, reverse=True),
+    "beginner_rules": sorted(CLASSIFICATION_RULES["normalizedTags"]["level"]["beginner"] + ["simulator", "overtrading", "avoid"], key=len, reverse=True),
+    "openers": ["openers", "opening", "open", "gap", "1w", "1p", "1pb", "ib2", "opening range", "opener"],
+    "setups": sorted(_flat_setup, key=len, reverse=True),
     "execution_risk": ["entry", "stop", "target", "mae", "tight stop", "scalp", "swing", "risk", "reward"],
     "advanced_context": ["trend termination", "failed", "multi", "timeframe", "breakout", "trapped", "reversal"],
-    "psychology_training": ["psychology", "discipline", "overtrading", "emotion", "sim", "rule of 10"],
+    "psychology_training": sorted(list(CLASSIFICATION_RULES["normalizedTags"]["topic"]["psychology"]) + list(_flat_topic), key=len, reverse=True),
 }
 
 KEY_ARTICLE_HINTS = [
@@ -257,3 +274,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

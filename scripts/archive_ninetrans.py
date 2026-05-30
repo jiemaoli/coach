@@ -13,6 +13,8 @@ import xml.etree.ElementTree as ET
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
+from classification_rules import infer_setup_candidates
+
 
 BASE = "https://ninetrans.blogspot.com"
 USER_AGENT = "Mozilla/5.0 (compatible; ninetrans-reader-archiver/1.0)"
@@ -127,19 +129,6 @@ def image_extension(url: str, content_type: str | None = None) -> str:
     if content_type and "gif" in content_type:
         return ".gif"
     return ".jpg"
-
-
-def setup_candidates(text: str) -> list[str]:
-    lower = text.lower()
-    mapping = {
-        "a2": ["a2", "a 2", "two legged", "2 legged"],
-        "w1p": ["w1p", "1pb", "first pullback", "wedge"],
-        "dp": ["dp", "double top", "double bottom", "double test"],
-        "fbo": ["fbo", "failed breakout"],
-        "foundation": ["signal bar", "trend", "ema", "chop", "trading range", "barb wire"],
-    }
-    found = [setup for setup, needles in mapping.items() if any(needle in lower for needle in needles)]
-    return found or ["uncategorized"]
 
 
 def title_from_html(raw: str, fallback: str) -> str:
@@ -280,7 +269,7 @@ def write_source(source: dict, out_dir: Path, public_root: Path, refresh: bool) 
         htmlPath=html_path.as_posix(),
         textPath=text_path.as_posix(),
         labels=source.get("labels", []) or (["static-page"] if "/p/" in url else []),
-        setupCandidates=setup_candidates(f"{title} {body}"),
+        setupCandidates=infer_setup_candidates(f"{title} {body}"),
         excerpt=strip_tags(body)[:700],
         searchText=strip_tags(body)[:12000],
         imageCount=len(images),
