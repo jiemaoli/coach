@@ -437,6 +437,13 @@ const studyPath: StudyStage[] = [
         kind: "markdown",
         markdownUrl: "/vocabulary.md",
         label: "Study"
+      },
+      {
+        id: "resource-glossary-zh",
+        title: "Author Glossary",
+        kind: "markdown",
+        markdownUrl: "/ninetrans-glossary-zh.md",
+        label: "Study"
       }
     ],
     tags: ["vocabulary", "terms", "study"]
@@ -1018,7 +1025,7 @@ export function App() {
               </header>
             )}
             {activeEntry.kind === "resource" ? (
-              <VocabularyViewer markdownUrl={activeEntry.resource.markdownUrl} />
+              <VocabularyViewer key={activeEntry.resource.markdownUrl} markdownUrl={activeEntry.resource.markdownUrl} />
             ) : (
               <OriginalPost post={activeEntry.post} onZoomImage={setZoomImage} />
             )}
@@ -1150,14 +1157,124 @@ function OriginalPost({ post, onZoomImage }: { post: BlogPost; onZoomImage: (src
     const doc = iframeRef.current?.contentDocument;
     if (!doc) return;
 
-    doc.querySelectorAll("img").forEach((image) => {
-      image.style.cursor = "zoom-in";
-      image.addEventListener("click", () => {
-        const src = image.getAttribute("src");
-        if (src) onZoomImage(new URL(src, window.location.origin).href);
-      });
+    if (doc.querySelector("style[data-img-toggle]")) return;
+
+    const style = doc.createElement("style");
+    style.setAttribute("data-img-toggle", "");
+    style.textContent = `
+      .image-toggle-wrapper {
+        display: block;
+        margin: 6px 0;
+      }
+      .image-toggle-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        color: #555;
+        font-family: "Segoe UI", sans-serif;
+        font-size: 12px;
+        cursor: pointer;
+        transition: all 0.15s ease;
+      }
+      .image-toggle-btn:hover {
+        background: #f5f5f5;
+        border-color: #bbb;
+        color: #333;
+      }
+      .image-toggle-btn .arrow {
+        font-size: 10px;
+        transition: transform 0.15s ease;
+      }
+      .image-toggle-btn.expanded .arrow {
+        transform: rotate(90deg);
+      }
+      .image-content {
+        display: none;
+        margin-top: 10px;
+      }
+      .image-content.expanded {
+        display: block;
+      }
+      .image-content img {
+        cursor: zoom-in;
+        max-width: 100%;
+        height: auto;
+      }
+    `;
+    doc.head.appendChild(style);
+
+    (doc.querySelectorAll("img:not(.image-processed)") as NodeListOf<HTMLImageElement>).forEach((image) => {
+      if (image.closest(".image-toggle-wrapper")) return;
+
+      image.classList.add("image-processed");
+
+      const wrapper = doc.createElement("div");
+      wrapper.className = "image-toggle-wrapper";
+
+      const toggleBtn = doc.createElement("button");
+      toggleBtn.className = "image-toggle-btn";
+      toggleBtn.innerHTML = `<span class="arrow">▶</span> 展开图片`;
+
+      const contentDiv = doc.createElement("div");
+      contentDiv.className = "image-content";
+
+      const parentLink = image.closest("a");
+      const insertTarget = parentLink || image;
+      const parent = insertTarget.parentElement;
+      if (parent) {
+        parent.insertBefore(wrapper, insertTarget);
+        wrapper.appendChild(toggleBtn);
+        wrapper.appendChild(contentDiv);
+        contentDiv.appendChild(insertTarget);
+
+        if (parentLink) {
+          parentLink.addEventListener("click", (e) => {
+            e.preventDefault();
+          });
+        }
+
+        toggleBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const isExpanded = contentDiv.classList.contains("expanded");
+          if (isExpanded) {
+            contentDiv.classList.remove("expanded");
+            toggleBtn.classList.remove("expanded");
+            toggleBtn.innerHTML = `<span class="arrow">▶</span> 展开图片`;
+          } else {
+            contentDiv.classList.add("expanded");
+            toggleBtn.classList.add("expanded");
+            toggleBtn.innerHTML = `<span class="arrow">▶</span> 隐藏图片`;
+          }
+        });
+
+        image.style.cursor = "zoom-in";
+        image.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const src = image.getAttribute("src");
+          if (src) onZoomImage(new URL(src, window.location.origin).href);
+        });
+      }
     });
   }
+
+  useEffect(() => {
+    const iframe = iframeRef.current;
+    if (!iframe) return;
+    try {
+      const doc = iframe.contentDocument || iframe.contentWindow?.document;
+      if (doc && doc.readyState === "complete") {
+        wireImageZoom();
+      }
+    } catch {
+      // same-origin only; ignore cross-origin errors
+    }
+  }, [post.htmlPath]);
 
   return (
     <section className="source-frame">
@@ -1240,7 +1357,7 @@ function parseVocabularyMarkdown(markdown: string): { sections: { title: string;
 
       if (cells.length >= 3) {
         flushEntry();
-        const word = cells[0];
+        const word = cells[0].replace(/\*\*/g, "");
         const meaning = cells[1];
         const context = cells[2] || "";
 
