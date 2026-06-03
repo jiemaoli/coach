@@ -20,6 +20,7 @@
 | deficiencies | 不足、缺陷 | 出自《Stages of Mastering Price Action》。作者说 pick one or two specific deficiencies and correct them one after another — 只选一两个具体的不足，逐个击破，不要试图一次改掉所有问题。specific deficiencies = 具体的短板，如 bar reading 不好、不会识别 bar sequences、market structure 判断不清等 |
 | W1P | Wedge 1st Pullback 楔形反转后首次回撤 | 四大核心交易之一（A2/W1P/DP/fBO）；比直接交易W更安全；目标通常可回撤整个楔形；失败则变A2空头。如：W1P is a much better trade than W；W1Ps often retrace the entire wedge；A failed W1P is also an A2 short on failure |
 | A2 | 2 Legged move to Average 2腿回撤到均线 | 四大核心交易之首；新手唯一推荐交易。趋势中2腿回撤接近EMA入场；失败可反手。如：start with A2 and stick to A2 only；A2 is my favorite entry；A failed A2 long becomes an A2 short；The first A2 of the day is very likely to be successful |
+| reversible (in "reversible trade") | 可反手的 | 注意 NOT "反转的"。指特定交易设置（A2、1PB、W1P）在失败时自动产生反向入场信号，可以立即反手。如：A failed A2 long becomes an A2 short on failure = 失败的A2多单反手即是A2空单；Some setups are not inherently reversible = 有些设置不具备反手特性，失败了就等下一信号 |
 | imply | 暗示、意味着 | 交易语境中表示间接暗示。如：imply more down = 暗示更多下跌；imply reversal = 暗示反转；do not imply reversal = 不意味着反转；imply a trend move = 暗示趋势移动。注意区分：imply（间接暗示）≠ mean（直接意味着） |
 | extreme behavior | 极端行为 | 判断反转是否可靠的核心概念。True wedges represent extreme behaviors = 真正的楔形代表极端行为，几乎不会失败；W are extreme behaviors；通道中小幅突破 hardly a new push or extreme behavior = 不算极端行为；没有extreme behavior的反转不可靠，应等W1P |
 | impending | 即将到来的、迫在眉睫的 | 描述市场已出现早期信号，某个重大变化马上发生。impending news = 即将公布的新闻；impending reversal = 即将到来的反转；impending crash = 即将到来的崩盘；impending breakouts = 即将发生的突破 |
@@ -40,3 +41,7 @@
 | four trades off nine transitions | 从九种转换中推断出的四种交易 | 标题用语。off = derived from（从…中推断/衍生）。市场 3 种方向（up/down/flat）两两组合共 9 种转换，浓缩为 4 种交易：reversals、continuations、breakouts、failed breakouts |
 | trending day | 趋势日 | 与 trading range day（震荡日）相对。有明确方向趋势的交易日，特点是可持续入场回调（A2等延续信号）并持有到趋势结束。判断标准：开盘几根K线后价格已脱离开盘价3个点以上 |
 | given day | 某个特定交易日 | 非术语，普通短语。如：on a given day = 在某个交易日；the longer you trade on a given day = 你在同一个交易日里交易越久 |
+| regarding | 关于 | 介词，引出主题。等同 about / concerning。如：Today's post is regarding continuation in a trend = 今天的博文是关于趋势中的延续交易 |
+| spike (in spike and channel) | 爆发性K线/急拉段 | spike and channel（S&C）是价格行为核心形态之一。spike = 短时间内的大幅移动（通常1-3根大K线），代表强势动能，如推动行情脱离交易区间的"推力"；紧随其后的 channel（通道）则是动量减弱后的缓慢爬升/下降，通常由3波推动组成。spike 的作用：1) 决定方向 2) 提供 measured move 目标 3) 越强越容易形成 long channel。如：Any relatively large move in a short timeframe is a spike；A small spike with a weak close may not move more than a point or two |
+| hard trend | 硬趋势（强趋势） | 与 soft trend 并列的两种极端强趋势之一。特征是：价格移动迅猛，K线实体长、重叠极少；回调极浅（通常沦为 doji 或 inside bar）；每波移动点数大；逆势交易几乎必然失败——"there are no counter-trend trades"。策略：只做顺势（short below 任何 shaved/1t tail bar、H1、fH1），持至收盘或进入 TTR。通常开盘前2-3根K线即可识别。极少反转，先进入交易区间才可能反转 |
+| soft trend | 软趋势（缓趋势） | 与 hard trend 并列的极端强趋势之一。特征是：缓慢爬升（通常为多头），K线重叠多，回调仅低于前一根K线1-2个tick；每一波回调与突破都不远；逆势交易几乎不可能获利。交易策略：只做顺势，fL2 是核心入场——buy above any bar with at least 2t body after an L2。SC（spike and channel）日常表现为 soft trend。与 hard trend 的核心区别：soft trend 的每一波回调与突破幅度都较小，而 hard trend 每波移动点数大 |

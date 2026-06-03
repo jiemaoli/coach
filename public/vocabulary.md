@@ -40,3 +40,6 @@
 | four trades off nine transitions | 从九种转换中推断出的四种交易 | 标题用语。off = derived from（从…中推断/衍生）。市场 3 种方向（up/down/flat）两两组合共 9 种转换，浓缩为 4 种交易：reversals、continuations、breakouts、failed breakouts |
 | trending day | 趋势日 | 与 trading range day（震荡日）相对。有明确方向趋势的交易日，特点是可持续入场回调（A2等延续信号）并持有到趋势结束。判断标准：开盘几根K线后价格已脱离开盘价3个点以上 |
 | given day | 某个特定交易日 | 非术语，普通短语。如：on a given day = 在某个交易日；the longer you trade on a given day = 你在同一个交易日里交易越久 |
+| regarding | 关于 | 介词，引出主题。等同 about / concerning。如：Today's post is regarding continuation in a trend = 今天的博文是关于趋势中的延续交易 |
+| hard trend | 硬趋势（强趋势） | 与 soft trend 并列的两种极端强趋势之一。特征是：价格移动迅猛，K线实体长、重叠极少；回调极浅（通常沦为 doji 或 inside bar）；每波移动点数大；逆势交易几乎必然失败——"there are no counter-trend trades"。策略：只做顺势（short below 任何 shaved/1t tail bar、H1、fH1），持至收盘或进入 TTR。通常开盘前2-3根K线即可识别。极少反转，先进入交易区间才可能反转 |
+| soft trend | 软趋势（缓趋势） | 与 hard trend 并列的极端强趋势之一。特征是：缓慢爬升（通常为多头），K线重叠多，回调仅低于前一根K线1-2个tick；每一波回调与突破都不远；逆势交易几乎不可能获利。交易策略：只做顺势，fL2 是核心入场——buy above any bar with at least 2t body after an L2。SC（spike and channel）日常表现为 soft trend。与 hard trend 的核心区别：soft trend 的每一波回调与突破幅度都较小，而 hard trend 每波移动点数大 |
