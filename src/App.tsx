@@ -1270,7 +1270,7 @@ function OriginalPost({ post, onZoomImage }: { post: BlogPost; onZoomImage: (src
           e.preventDefault();
           e.stopPropagation();
           const src = image.getAttribute("src");
-          if (src) onZoomImage(new URL(src, window.location.origin).href);
+          if (src) onZoomImage(new URL(src, doc.URL).href);
         });
       }
     });

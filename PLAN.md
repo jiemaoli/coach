@@ -33,11 +33,19 @@ manifest.json 已包含每张图的映射关系：
 - `http://www.vintagemovieposters.co.uk/...jpg` — 某篇文章的老海报
 - `http://ia.media-imdb.com/...jpg` — IMDB 的图
 
-## 实施脚本（待写）
+## 实施状态
 
-一次性 Python/Node.js 脚本：
-1. 读取 manifest.json 构建 URL→localPath 映射（含归一化备选）
-2. 遍历所有 HTML 文件
-3. 对每个 `<img src>` 执行映射替换
-4. 清理空锚点
-5. 无本地副本的图标记或删除
+**已完成** — 见 `scripts/replace-images.cjs`
+
+一次性 Node.js 脚本：
+1. 读取 manifest.json 构建 URL→localPath 映射（含归一化备选）✅
+2. 遍历所有 HTML 文件 ✅
+3. 对每个 `<img src>` 执行映射替换 ✅（`images/` → `../images/`）
+4. 清理空锚点及 `imageanchor="1"` 外层标签 ✅
+5. 无本地副本的图标记或删除 ✅
+
+处理结果：
+- `public/ninetrans-blog/posts/` 和 `docs/ninetrans-blog/posts/` 各 436 个 HTML 文件
+- 484 张图片从远程 Blogger URL 替换为本地 `../images/` 路径
+- 0 张远程图片残留
+- 4 张断图（无本地文件）：3 个 `<div class="separator">` 已删除，1 个替换为 `[图片不可用]`
