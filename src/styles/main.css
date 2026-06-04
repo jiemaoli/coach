@@ -1022,3 +1022,41 @@ a:hover {
     font-size: 0.7rem;
   }
 }
+
+/* Reference Notes Styles */
+.reference-notes {
+  height: 100%;
+  overflow-y: auto;
+  padding: 16px;
+  background: var(--bg);
+}
+
+.note-block {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.note-title {
+  margin: 0 0 8px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.note-summary {
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.note-detail {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+  white-space: pre-wrap;
+}

@@ -421,6 +421,15 @@ const studyPath: StudyStage[] = [
       "nt-2013-03-22-alternative-rss-reader",
       "nt-2017-06-10-nine-transitions-the-book"
     ],
+    resources: [
+      {
+        id: "resource-reference-notes",
+        title: "Personal Reference Notes",
+        kind: "markdown",
+        markdownUrl: "/reference-notes.md",
+        label: "Notes"
+      }
+    ],
     tags: ["reference", "announcement"]
   },
   {
@@ -1025,7 +1034,11 @@ export function App() {
               </header>
             )}
             {activeEntry.kind === "resource" ? (
-              <VocabularyViewer key={activeEntry.resource.markdownUrl} markdownUrl={activeEntry.resource.markdownUrl} />
+              activeEntry.resource.markdownUrl === "/reference-notes.md" ? (
+                <ReferenceNotesViewer key={activeEntry.resource.markdownUrl} markdownUrl={activeEntry.resource.markdownUrl} />
+              ) : (
+                <VocabularyViewer key={activeEntry.resource.markdownUrl} markdownUrl={activeEntry.resource.markdownUrl} />
+              )
             ) : (
               <OriginalPost post={activeEntry.post} onZoomImage={setZoomImage} />
             )}
@@ -1266,14 +1279,22 @@ function OriginalPost({ post, onZoomImage }: { post: BlogPost; onZoomImage: (src
   useEffect(() => {
     const iframe = iframeRef.current;
     if (!iframe) return;
-    try {
-      const doc = iframe.contentDocument || iframe.contentWindow?.document;
-      if (doc && doc.readyState === "complete") {
+
+    const tick = () => {
+      try {
+        const doc = iframe.contentDocument ?? iframe.contentWindow?.document;
+        if (!doc || doc.URL === "about:blank") return;
         wireImageZoom();
+        clearInterval(id);
+        clearTimeout(fallback);
+      } catch {
+        /* same-origin only */
       }
-    } catch {
-      // same-origin only; ignore cross-origin errors
-    }
+    };
+
+    const id = setInterval(tick, 100);
+    const fallback = setTimeout(() => clearInterval(id), 5000);
+    return () => { clearInterval(id); clearTimeout(fallback); };
   }, [post.htmlPath]);
 
   return (
@@ -1477,6 +1498,46 @@ function VocabularyViewer({ markdownUrl }: { markdownUrl: string }) {
           </div>
         </div>
       )      )}
+    </div>
+  );
+}
+
+function ReferenceNotesViewer({ markdownUrl }: { markdownUrl: string }) {
+  const [notes, setNotes] = useState<string[][]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(markdownUrl)
+      .then(res => res.text())
+      .then(text => {
+        const rows: string[][] = [];
+        const lines = text.split("\n");
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (!trimmed || trimmed.startsWith("|---") || trimmed.startsWith("#") || trimmed.startsWith("| 主题")) continue;
+          if (trimmed.startsWith("|")) {
+            const cells = trimmed.split("|").filter(c => c.trim()).map(c => c.trim());
+            if (cells.length >= 3) {
+              rows.push(cells.slice(0, 3));
+            }
+          }
+        }
+        setNotes(rows);
+        setLoading(false);
+      });
+  }, [markdownUrl]);
+
+  if (loading) return <div className="vocab-loading">Loading...</div>;
+
+  return (
+    <div className="reference-notes">
+      {notes.map((row, i) => (
+        <div key={i} className="note-block">
+          <h3 className="note-title">{row[0]}</h3>
+          <p className="note-summary">{row[1]}</p>
+          <p className="note-detail">{row[2]}</p>
+        </div>
+      ))}
     </div>
   );
 }
