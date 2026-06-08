@@ -157,23 +157,23 @@ a:hover {
 }
 
 .stage-nav button {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
 }
 
 .stage-panel .post-list button {
   padding: 6px 8px;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
 }
 
 .stage-panel .post-list span {
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: 0.82rem;
 }
 
 .stage-nav button span {
   color: var(--green);
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.85rem;
 }
 
 .stage-nav button:hover,

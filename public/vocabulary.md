@@ -67,4 +67,9 @@
 | averse (risk averse) | 厌恶的/反感的 | risk averse = 风险厌恶的。原文：If you are very risk averse, you will ultimately fail in trading。在 Brooks 语境中，适度的 risk appetite 是交易者的必备心理素质，极度 risk averse 的人不适合交易 |
 | put away | 存起来/储备 | 原文：sufficient money put away from your good years（在好年份存够钱）。put away money = 储蓄/留出一笔钱。在交易语境中指：趁盈利好的时候把一部分利润存起来，为未来可能的持续亏损做准备 |
 | mojo | 状态/手感/魔力 | 非正式用语，原文：switch to SIM trading for a few weeks until you get your mojo back（切换到模拟交易几周，直到找回状态）。get your mojo back = 找回那种"一切都在掌控中"的交易感觉 |
+| compelling | 有说服力的、让人信服的（信号质量） | 交易语境中指 BO/fBO 信号质量高到值得入场。特征：signal bar strong（趋势bar、幅度大、收盘强）、形态清晰、有足够利润空间。反面：weak / marginal /勉强凑数的信号。如：If the BO or fBO looks compelling, it may lead to a trend — 如果突破/假突破信号有说服力，就可能发展成趋势 |
+| conservative | 保守的/稳健的（交易风格） | 非政治含义。在 Brooks 体系中特指：1）等更多确认再入场（如 1Rev 失败后才做 1PB，而非直接做 1Rev）；2）跳过低质量信号，宁可错过不可做错；3）接受更少交易机会换取更高胜率。与 aggressive（激进的）相对。如：Since 1Revs can fail, conservative traders can take a 1PB if the fBO or BO succeeds = 稳健的交易者会等 1Rev 确认失败后再做 1PB；be liberal with your stop and conservative with your target = 止损放宽、目标保守 |
+| HL | Higher Low 更高低点 | 趋势确认信号。牛市（uptrend）的特征是 HH（Higher High）和 HL（Higher Highs and Higher Lows）。在反转语境中：看涨反转信号出现后，价格回踩没有跌破之前的低点 → 这个回踩低点就是 HL，确认反转有效。与 HH（Higher High）成对使用判断趋势方向 |
+| LH | Lower High 更低高点 | 趋势确认信号。熊市（downtrend）的特征是 LH 和 LL（Lower Highs and Lower Lows）。在反转语境中：看跌反转信号出现后，价格反弹没有突破之前的高点 → 这个反弹高点就是 LH，确认反转有效。与 LL（Lower Low）成对使用判断趋势方向 |
+| strong close | 强势收盘 | 核心量化标准：1）entry side tail ≤ 1 tick（做多=收盘离最高≤1t，做空=收盘离最低≤1t）；2）实体至少占整根 bar 的一半（body ≥ 50% of bar range）；3）实体至少 2 ticks。注意：strong close 仅要求 entry side 影线小，另一侧影线大不影响。意义（2011-09-26）：strong close beyond breakout point = 对手方在该价位没有足够反向挂单，突破是真突破。局限（2013-01-25）：strong close does not guarantee a large move—还需好位置和好形态 |
 | extended (losses/successes) | 持续的/长时间的 | 原文：periods of extended successes and extended losses（持续盈利期和持续亏损期）。extended 在这里不是"延伸的"，而是"长时间持续的"。注意 Brooks 用 extended 描述连续成功和连续失败——交易中两种极端状态都会持续相当长时间，心理上都要有准备 |
