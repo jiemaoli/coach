@@ -829,12 +829,6 @@ export function App() {
   const activeItemIdRef = useRef(activeItemId);
 
   useEffect(() => {
-    if (currentPath !== "/nt") {
-      window.history.replaceState({}, "", "/nt");
-    }
-  }, [currentPath]);
-
-  useEffect(() => {
     document.title = "Nine Transitions";
   }, []);
 
@@ -1016,7 +1010,7 @@ export function App() {
       <main className="app-error">
         <div>
           <p>Failed to load blog archive: {loadError}</p>
-          <a href="/nt">Open Nine Transitions</a>
+          <a href="/">Open Nine Transitions</a>
         </div>
       </main>
     );

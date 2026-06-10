@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <title>构建交易系统（六）—— 止损、目标与胜率</title>
+    <meta name="source-url" content="https://ninetrans.blogspot.com/2013/01/creating-trading-system-vi-stops.html">
+    <meta name="published" content="2013-01-09T20:43:00.002-08:00">
+    <meta name="updated" content="2013-01-09T20:43:24.424-08:00">
+  </head>
+  <body>
+    <article data-source="ninetrans.blogspot.com">
+      <h1>构建交易系统（六）—— 止损、目标与胜率</h1>
+      <p><a href="https://ninetrans.blogspot.com/2013/01/creating-trading-system-vi-stops.html">https://ninetrans.blogspot.com/2013/01/creating-trading-system-vi-stops.html</a></p>
+      
+<div class="separator" style="clear: both; text-align: center;">
+<a href="../images/2013-01-09-creating-a-trading-system-vi-stops-targets-and-winrate-01-41479e69e6.png" target="_blank"><img border="0" src="../images/2013-01-09-creating-trading-system-vi-stops-targets-and-winrate-01-41479e69e6.png" /></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+Tick级剥头皮</div>
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href="../images/2013-01-09-creating-a-trading-system-vi-stops-targets-and-winrate-02-8203d4650c.png" target="_blank"><img border="0" src="../images/2013-01-09-creating-a-trading-system-vi-stops-targets-and-winrate-02-8203d4650c.png" /></a></div>
+<br />
+上图展示了10个tick止损对比1个tick盈利的结果。入场点在任何可能是信号K的K线上方，不论其颜色。如果K线在信号K收盘后很快触发，且来不及下限价单入场，我们可以直接在触发价下限价单。<br />
+<br />
+盈利目标是+1个tick，风险是10个tick。只要价格超出信号K 3个tick就能达成目标，除非有滑点（如交易#7；在b13下方）。<br />
+<br />
+很明显，获得高胜率非常简单。止损与目标的比值越大，交易成功的概率就越高。然而，这种方法有几个缺点：<br />
+<br />
+<br />
+<ol>
+<li>理论上最大利润受限于每日K线数减一个tick。实际上，你的最大利润大概只有每日K线数的一半。</li>
+<li>虽然胜率很高，但1个tick的失败或2个tick的失败通常会抹掉之前10次胜利的利润。这会产生极大的回撤，可能是你无法承受的。</li>
+<li>结果可能不一致。你可能在震荡日赚30个tick，也可能亏30个tick。</li>
+<li>很大一部分利润被手续费吞噬。</li>
+<li>这是一个从市场中榨取利润效率极低的系统。在70+个tick的大行情中只取1个tick利润（交易#7），你放弃了图表中最大的行情。</li>
+</ol>
+<div>
+不过，这是实验性地确定新品种大行情所需止损的绝佳方法。例如，b17触发的大行情（交易#7）最大不利波动仅为2个tick。通过收集大量交易的不利波动数据，你可以确定大行情的合理止损——如果80%的大行情MAE（最大不利波动）小于5个tick，那么你可以用5个tick作为止损。</div>
+<div>
+<br /></div>
+<div>
+但为什么不能直接用10个tick，因为今天从未被触及？原因很简单。今天我们只有1个tick的目标。如果我们计划拿大利润，今天至少前两笔交易的止损就会被触发。10个tick止损的损失是5个tick止损的两倍。在我们能够准确筛选出大行情之前，较小的止损能更好地保护账户。</div>
+<div>
+<br /></div>
+<div>
+一天的MAE数据不足以确定合理止损。我们需要在各种市场环境中交易——快市和慢市、新闻行情、大K线和小K线、震荡和强劲趋势等。一年的数据可能足够了。不过，在40个样本之后，结果出现大幅变化的可能性不大，我们可以开始使用临时MAE+1个tick作为止损。</div>
+<div>
+<br /></div>
+<br />
+<br />
+    </article>
+  </body>
+</html>
