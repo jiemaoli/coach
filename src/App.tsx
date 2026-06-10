@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { VocabularyViewer } from "./components/VocabularyViewer";
 
 type BlogImage = {
   url: string;
@@ -23,6 +24,7 @@ type BlogPost = {
   url: string;
   htmlPath: string;
   textPath: string;
+  zhHtmlPath?: string;
   labels: string[];
   setupCandidates: string[];
   excerpt: string;
@@ -435,7 +437,7 @@ const studyPath: StudyStage[] = [
   {
     id: "vocabulary",
     title: "Vocabulary",
-    authorEvidence: "Trading vocabulary with search. Auto-parsed from vocabulary.md.",
+    authorEvidence: "Trading vocabulary with search. Auto-parsed from Nine Transitions vocabulary notes.",
     postIds: [
       "nt-page-glossary"
     ],
@@ -444,7 +446,7 @@ const studyPath: StudyStage[] = [
         id: "resource-vocabulary",
         title: "Personal Vocabulary Notes",
         kind: "markdown",
-        markdownUrl: "/vocabulary.md",
+        markdownUrl: "/ninetrans-blog/vocabulary.md",
         label: "Study"
       },
       {
@@ -798,18 +800,47 @@ function buildStageEntries(stage: StudyStage, postById: Map<string, BlogPost>) {
   return [...postEntries, ...resourceEntries];
 }
 
+function normalizeAppPath(pathname: string) {
+  const trimmed = pathname.replace(/\/+$/, "");
+  return trimmed || "/";
+}
+
+function looksLikeNinetransPostHtml(html: string) {
+  return /<article\b[^>]*data-source=["']ninetrans\.blogspot\.com["']/i.test(html);
+}
+
 export function App() {
   const [manifest, setManifest] = useState<BlogManifest | null>(null);
   const [activeStageId, setActiveStageId] = useState(studyPath[0].id);
   const [activeItemId, setActiveItemId] = useState("");
   const [query, setQuery] = useState("");
   const [loadError, setLoadError] = useState("");
+  const [showChinese, setShowChinese] = useState(false);
+  const [checkingChinesePostId, setCheckingChinesePostId] = useState("");
+  const [missingChinesePostId, setMissingChinesePostId] = useState("");
+  const [chineseAvailability, setChineseAvailability] = useState<Record<string, boolean>>({});
   const [zoomImage, setZoomImage] = useState("");
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [stagePanelCollapsed, setStagePanelCollapsed] = useState(false);
   const [libraryCollapsed, setLibraryCollapsed] = useState(false);
   const [tagFilters, setTagFilters] = useState<Record<string, string[]>>({});
   const [showFilters, setShowFilters] = useState(false);
+  const currentPath = normalizeAppPath(window.location.pathname);
+  const activeItemIdRef = useRef(activeItemId);
+
+  useEffect(() => {
+    if (currentPath !== "/nt") {
+      window.history.replaceState({}, "", "/nt");
+    }
+  }, [currentPath]);
+
+  useEffect(() => {
+    document.title = "Nine Transitions";
+  }, []);
+
+  useEffect(() => {
+    activeItemIdRef.current = activeItemId;
+  }, [activeItemId]);
 
   useEffect(() => {
     fetch(`${archiveBase}/manifest.json`)
@@ -818,8 +849,12 @@ export function App() {
         return response.json() as Promise<BlogManifest>;
       })
       .then((data) => {
-        setManifest(data);
-        const postById = new Map(data.posts.map((post) => [post.id, post]));
+        const posts = data.posts.map((post) => ({
+          ...post,
+          zhHtmlPath: post.htmlPath.replace(/\.html$/, "-zh.html")
+        }));
+        setManifest({ ...data, posts });
+        const postById = new Map(posts.map((post) => [post.id, post]));
         const firstPathEntry = studyPath
           .flatMap((stage) => buildStageEntries(stage, postById))
           .find(Boolean);
@@ -898,6 +933,57 @@ export function App() {
 
   function openEntry(entryId: string) {
     setActiveItemId(entryId);
+    setShowChinese(false);
+    setMissingChinesePostId("");
+  }
+
+  async function toggleChinesePost(post: BlogPost) {
+    if (showChinese || missingChinesePostId === post.id) {
+      setShowChinese(false);
+      setMissingChinesePostId("");
+      return;
+    }
+
+    const knownAvailability = chineseAvailability[post.id];
+    if (knownAvailability === true) {
+      setShowChinese(true);
+      setMissingChinesePostId("");
+      return;
+    }
+
+    if (!post.zhHtmlPath) {
+      setShowChinese(false);
+      setMissingChinesePostId(post.id);
+      return;
+    }
+
+    setCheckingChinesePostId(post.id);
+    setMissingChinesePostId("");
+
+    try {
+      const response = await fetch(publicUrl(post.zhHtmlPath), { cache: "no-store" });
+      const html = response.ok ? await response.text() : "";
+      const available = response.ok && looksLikeNinetransPostHtml(html);
+
+      if (available) {
+        setChineseAvailability((prev) => ({ ...prev, [post.id]: true }));
+      }
+      if (activeItemIdRef.current !== post.id) return;
+
+      if (available) {
+        setShowChinese(true);
+      } else {
+        setShowChinese(false);
+        setMissingChinesePostId(post.id);
+      }
+    } catch {
+      if (activeItemIdRef.current !== post.id) return;
+
+      setShowChinese(false);
+      setMissingChinesePostId(post.id);
+    } finally {
+      setCheckingChinesePostId((current) => current === post.id ? "" : current);
+    }
   }
 
   function toggleFilter(dim: string, value: string) {
@@ -925,8 +1011,21 @@ export function App() {
     return entries;
   }, [tagFilters]);
 
-  if (loadError) return <main className="app-error">Failed to load blog archive: {loadError}</main>;
+  if (loadError) {
+    return (
+      <main className="app-error">
+        <div>
+          <p>Failed to load blog archive: {loadError}</p>
+          <a href="/nt">Open Nine Transitions</a>
+        </div>
+      </main>
+    );
+  }
   if (!manifest || !activeEntry) return <main className="app-loading">Loading Nine Transitions archive...</main>;
+
+  const isMissingChinesePost = activeEntry.kind === "post" && missingChinesePostId === activeEntry.post.id;
+  const isCheckingChinesePost = activeEntry.kind === "post" && checkingChinesePostId === activeEntry.post.id;
+  const isChineseView = showChinese || isMissingChinesePost;
 
   const shellClass = [
     "reader-shell",
@@ -1031,14 +1130,33 @@ export function App() {
                 <span>{activeEntry.post.published.slice(0, 10)}</span>
                 <a href={activeEntry.post.url} target="_blank" rel="noreferrer">Original Post</a>
                 <a href={publicUrl(activeEntry.post.textPath)} target="_blank" rel="noreferrer">TXT</a>
+                {activeEntry.post.zhHtmlPath && (
+                  <button
+                    className={`lang-btn${isChineseView ? " active" : ""}`}
+                    type="button"
+                    onClick={() => void toggleChinesePost(activeEntry.post)}
+                    title={isChineseView ? "显示英文原文" : "显示中文翻译"}
+                    disabled={isCheckingChinesePost}
+                  >
+                    {isChineseView ? "EN" : "ZH"}
+                  </button>
+                )}
               </header>
             )}
             {activeEntry.kind === "resource" ? (
               activeEntry.resource.markdownUrl === "/reference-notes.md" ? (
                 <ReferenceNotesViewer key={activeEntry.resource.markdownUrl} markdownUrl={activeEntry.resource.markdownUrl} />
               ) : (
-                <VocabularyViewer key={activeEntry.resource.markdownUrl} markdownUrl={activeEntry.resource.markdownUrl} />
+                <VocabularyViewer key={activeEntry.resource.markdownUrl} markdownUrl={activeEntry.resource.markdownUrl} title={activeEntry.resource.title} />
               )
+            ) : isMissingChinesePost ? (
+              <div className="reader-message" role="status">还没有中文版本</div>
+            ) : showChinese && activeEntry.post.zhHtmlPath ? (
+              <OriginalPost
+                key={"zh-" + activeEntry.post.id}
+                post={{ ...activeEntry.post, htmlPath: activeEntry.post.zhHtmlPath! }}
+                onZoomImage={setZoomImage}
+              />
             ) : (
               <OriginalPost post={activeEntry.post} onZoomImage={setZoomImage} />
             )}
@@ -1301,204 +1419,6 @@ function OriginalPost({ post, onZoomImage }: { post: BlogPost; onZoomImage: (src
     <section className="source-frame">
       <iframe ref={iframeRef} title={post.title} src={publicUrl(post.htmlPath)} onLoad={wireImageZoom} />
     </section>
-  );
-}
-
-type VocabEntry = {
-  word: string;
-  type: string;
-  meaning: string;
-  context: string;
-  isCore?: boolean;
-};
-
-function parseVocabularyMarkdown(markdown: string): { sections: { title: string; entries: VocabEntry[] }[] } {
-  const lines = markdown.split("\n");
-  const sections: { title: string; entries: VocabEntry[] }[] = [];
-  let currentSection: { title: string; entries: VocabEntry[] } | null = null;
-  let currentEntry: Partial<VocabEntry> | null = null;
-  let contextBuffer: string[] = [];
-
-  function flushEntry() {
-    if (currentEntry && currentSection) {
-      currentSection.entries.push({
-        word: currentEntry.word || "",
-        type: currentEntry.type || "TERM",
-        meaning: currentEntry.meaning || "",
-        context: contextBuffer.join(" ").trim(),
-        isCore: currentEntry.isCore
-      });
-    }
-    currentEntry = null;
-    contextBuffer = [];
-  }
-
-  function flushSection() {
-    if (currentSection) {
-      flushEntry();
-      if (currentSection.entries.length > 0) {
-        sections.push(currentSection);
-      }
-    }
-    currentSection = null;
-  }
-
-  // Default section if no header found
-  let hasHeader = false;
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-
-    if (trimmed.startsWith("# ") || trimmed.startsWith("## ")) {
-      hasHeader = true;
-      flushSection();
-      const title = trimmed.replace(/^#+\s*/, "");
-      currentSection = { title, entries: [] };
-      continue;
-    }
-
-    if (!trimmed || trimmed.startsWith("---")) continue;
-
-    // Skip header row
-    if (trimmed.startsWith("|") && (trimmed.includes("单词/短语") || trimmed.includes("Word/Phrase"))) {
-      // If no section yet, create default one
-      if (!currentSection) {
-        currentSection = { title: "Vocabulary", entries: [] };
-      }
-      continue;
-    }
-
-    if (trimmed.startsWith("|") && !trimmed.startsWith("|---")) {
-      // If no section yet, create default one
-      if (!currentSection) {
-        currentSection = { title: "Vocabulary", entries: [] };
-      }
-
-      const cells = trimmed.split("|").filter(c => c.trim()).map(c => c.trim());
-
-      if (cells.length >= 3) {
-        flushEntry();
-        const word = cells[0].replace(/\*\*/g, "");
-        const meaning = cells[1];
-        const context = cells[2] || "";
-
-        const isCore = ["A2", "W1P", "DP", "fBO", "W", "1CBO"].some(t => word.includes(t));
-
-        let type = "TERM";
-        if (word.includes("SIM") || word.includes("beginner")) type = "CONCEPT";
-        else if (meaning.includes("交易") && !meaning.includes("术语")) type = "SETUP";
-        else if (meaning.includes("心态") || meaning.includes("心理")) type = "PSYCH";
-
-        currentEntry = { word, meaning, type, isCore };
-        contextBuffer = [context];
-      }
-    } else if (currentEntry && trimmed) {
-      contextBuffer.push(trimmed);
-    }
-  }
-
-  flushSection();
-  return { sections };
-}
-
-function VocabularyViewer({ markdownUrl }: { markdownUrl: string }) {
-  const [data, setData] = useState<{ sections: { title: string; entries: VocabEntry[] }[] } | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
-
-  useEffect(() => {
-    fetch(markdownUrl)
-      .then(res => {
-        if (!res.ok) throw new Error(`Failed to load: ${res.status}`);
-        return res.text();
-      })
-      .then(text => {
-        const parsed = parseVocabularyMarkdown(text);
-        setData(parsed);
-        setLoading(false);
-      })
-      .catch(err => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, [markdownUrl]);
-
-  const filteredData = useMemo(() => {
-    if (!data || !searchQuery.trim()) return data;
-    
-    const q = searchQuery.toLowerCase().trim();
-    const filtered = data.sections.map(section => ({
-      ...section,
-      entries: section.entries.filter(entry =>
-        entry.word.toLowerCase().includes(q) ||
-        entry.meaning.toLowerCase().includes(q) ||
-        entry.context.toLowerCase().includes(q) ||
-        entry.type.toLowerCase().includes(q)
-      )
-    })).filter(section => section.entries.length > 0);
-    
-    return { sections: filtered };
-  }, [data, searchQuery]);
-
-  if (loading) return <div className="vocab-loading">Loading vocabulary...</div>;
-  if (error) return <div className="vocab-error">Error: {error}</div>;
-  if (!data) return null;
-
-  const totalEntries = data.sections.reduce((sum, s) => sum + s.entries.length, 0);
-  const coreCount = data.sections.reduce((sum, s) => sum + s.entries.filter(e => e.isCore).length, 0);
-  const filteredCount = filteredData?.sections.reduce((sum, s) => sum + s.entries.length, 0) ?? totalEntries;
-
-  return (
-    <div className="vocabulary-viewer">
-      <div className="vocab-header">
-        <h1>Trading Vocabulary</h1>
-        <div className="vocab-stats">
-          <span className="stat-item"><span className="number">{totalEntries}</span> terms</span>
-          <span className="stat-item"><span className="number">{coreCount}</span> core</span>
-        </div>
-        <div className="vocab-search">
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
-            placeholder="Search..."
-          />
-          {searchQuery && (
-            <span className="search-count">{filteredCount}/{totalEntries}</span>
-          )}
-        </div>
-      </div>
-
-      {filteredData && filteredData.sections.length === 0 && (
-        <div className="vocab-no-results">
-          No results for "{searchQuery}"
-        </div>
-      )}
-
-      {filteredData?.sections.map((section, sIdx) => (
-        <div key={sIdx} className="vocab-section">
-          {section.title !== "Vocabulary" && <h2 className="section-title">{section.title}</h2>}
-          <div className="vocab-grid">
-            {section.entries.map((entry, eIdx) => (
-              <div key={eIdx} className={`vocab-card ${entry.isCore ? "core-setup" : ""}`}>
-                <div className="vocab-term">
-                  <span className="vocab-word">{entry.word}</span>
-                  <span className="vocab-type">{entry.type}</span>
-                  {entry.isCore && <span className="core-badge">CORE</span>}
-                </div>
-                <div className="vocab-meaning">{entry.meaning}</div>
-                {entry.context && (
-                  <div className="vocab-context">
-                    {entry.context}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      )      )}
-    </div>
   );
 }
 

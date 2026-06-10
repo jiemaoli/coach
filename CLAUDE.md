@@ -2,7 +2,7 @@
 
 ## 英文单词本工作流
 
-当用户询问英文单词或短语的中文意思时，完成翻译后必须将该词条追加到 `vocabulary.md` 文件中。
+当用户询问英文单词或短语的中文意思时，完成翻译后必须将该词条追加到 `docs/ninetrans-blog/vocabulary.md` 文件中。
 
 格式：`| 单词/短语 | 中文意思 | 备注 |`
 
@@ -12,7 +12,7 @@
 
 **关键规则**：用户请求翻译的单词/短语出自九变博客的博文。必须先在 `public/ninetrans-blog/posts/` 中搜索该词所在的博文原文，理解原文语境后再翻译。不可脱离博文内容做泛泛的字典解释。
 
-**同步规则**：`vocabulary.md` 是所有词条的源文件。应用加载的是 `public/vocabulary.md`（`src/App.tsx:438` 中 `markdownUrl: "/vocabulary.md"` 映射到此文件）。每次更新 `vocabulary.md` 后，必须同步修改 `public/vocabulary.md`，确保两文件内容一致。
+**同步规则**：`docs/ninetrans-blog/vocabulary.md` 是 Nine Transitions 词条的源文件。应用加载的是 `public/ninetrans-blog/vocabulary.md`（`src/App.tsx` 中 `markdownUrl: "/ninetrans-blog/vocabulary.md"` 映射到此文件）。每次更新源文件后，必须同步修改 `public/ninetrans-blog/vocabulary.md`，确保两文件内容一致。
 
 ## 个人学习笔记本
 
