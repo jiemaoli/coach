@@ -1,0 +1,2372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>交易手法固化练习系统</title>
+<style>
+/* ===== CSS Variables & Reset ===== */
+:root {
+  --bg: #0f1117; --surface: #1a1d27; --surface2: #242836;
+  --border: #2a2e3a; --text: #e1e4eb; --text2: #8b90a0;
+  --green: #00c853; --red: #ff1744; --blue: #448aff;
+  --yellow: #ffd740; --orange: #ff9100; --be: #9e9e9e;
+  --radius: 8px; --radius-sm: 4px; --shadow: 0 2px 8px rgba(0,0,0,0.3);
+  --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Cascadia Code', 'Consolas', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); min-height: 100vh; }
+button { cursor: pointer; font-family: var(--font); }
+input, textarea, select { font-family: var(--font); }
+
+/* ===== Discipline Banner ===== */
+#discipline-banner {
+  background: linear-gradient(135deg, #1a1a0a 0%, #2a2a10 100%);
+  border-bottom: 2px solid #4a4a20;
+  padding: 8px 16px;
+  display: flex; align-items: center; gap: 12px;
+  flex-wrap: wrap;
+}
+#discipline-banner .banner-line {
+  color: var(--yellow); font-size: 13px; font-weight: 600;
+  padding: 2px 8px; border-radius: var(--radius-sm);
+  border: 1px solid transparent; min-width: 100px; outline: none;
+}
+#discipline-banner .banner-line:hover { border-color: #4a4a20; }
+#discipline-banner .banner-line:focus { border-color: var(--yellow); background: #1a1a0a; }
+#save-banner-btn {
+  background: none; border: 1px solid #4a4a20; color: var(--yellow);
+  padding: 2px 8px; border-radius: var(--radius-sm); font-size: 12px;
+}
+#save-banner-btn:hover { background: #3a3a1a; }
+
+/* ===== Header ===== */
+#app-header {
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  padding: 12px 20px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+#app-header h1 { font-size: 18px; white-space: nowrap; }
+#setup-selector { display: flex; align-items: center; gap: 8px; }
+#setup-selector select {
+  background: var(--surface2); color: var(--text); border: 1px solid var(--border);
+  padding: 6px 12px; border-radius: var(--radius-sm); font-size: 14px; min-width: 160px;
+}
+#setup-selector button {
+  background: var(--blue); color: #fff; border: none;
+  padding: 6px 12px; border-radius: var(--radius-sm); font-size: 13px;
+}
+#phase-indicator { display: flex; align-items: center; gap: 6px; margin-left: auto; }
+.phase-dot {
+  width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; background: var(--surface2); color: var(--text2);
+  border: 2px solid var(--border); transition: all 0.3s;
+}
+.phase-dot.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+.phase-dot.done { background: var(--green); color: #fff; border-color: var(--green); }
+.phase-arrow { color: var(--text2); font-size: 12px; }
+#phase-label { font-size: 12px; color: var(--text2); margin-left: 4px; }
+
+/* ===== Tab Navigation ===== */
+#tab-nav {
+  display: flex; background: var(--surface); border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+}
+#tab-nav button {
+  background: none; border: none; color: var(--text2); padding: 10px 16px;
+  font-size: 13px; border-bottom: 2px solid transparent; white-space: nowrap;
+  transition: all 0.2s;
+}
+#tab-nav button:hover { color: var(--text); background: var(--surface2); }
+#tab-nav button.active { color: var(--blue); border-bottom-color: var(--blue); }
+
+/* ===== Main Content ===== */
+#tab-content { padding: 20px; max-width: 1400px; margin: 0 auto; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ===== Cards ===== */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow);
+}
+.card-header { font-size: 13px; color: var(--text2); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+.card-value { font-size: 28px; font-weight: 700; font-family: var(--font-mono); }
+.card-value.green { color: var(--green); }
+.card-value.red { color: var(--red); }
+.card-sub { font-size: 12px; color: var(--text2); margin-top: 4px; }
+.metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px; }
+
+/* ===== Forms ===== */
+.form-group { margin-bottom: 12px; }
+.form-group label { display: block; font-size: 13px; color: var(--text2); margin-bottom: 4px; }
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%; background: var(--surface2); color: var(--text); border: 1px solid var(--border);
+  padding: 8px 12px; border-radius: var(--radius-sm); font-size: 14px; outline: none;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--blue); }
+.form-group textarea { resize: vertical; min-height: 60px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.toggle-group { display: flex; gap: 4px; }
+.toggle-group button {
+  flex: 1; padding: 8px; border: 1px solid var(--border); background: var(--surface2);
+  color: var(--text2); font-size: 13px; border-radius: var(--radius-sm); transition: all 0.2s;
+}
+.toggle-group button.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+.btn { padding: 8px 20px; border: none; border-radius: var(--radius-sm); font-size: 14px; font-weight: 600; transition: all 0.2s; }
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { opacity: 0.85; }
+.btn-danger { background: var(--red); color: #fff; }
+.btn-danger:hover { opacity: 0.85; }
+.btn-outline { background: none; border: 1px solid var(--border); color: var(--text); }
+.btn-outline:hover { background: var(--surface2); }
+.btn-sm { padding: 4px 10px; font-size: 12px; }
+
+/* ===== Tables ===== */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: var(--surface2); color: var(--text2); padding: 8px 10px; text-align: left; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid var(--border); white-space: nowrap; }
+td { padding: 8px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+.clickable { cursor: pointer; color: var(--blue); }
+.clickable:hover { text-decoration: underline; }
+.sort-arrow { font-size: 10px; margin-left: 2px; }
+
+/* ===== Modal ===== */
+#modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+}
+#modal-overlay.modal-hidden { display: none; }
+#modal-box {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+#modal-box h3 { margin-bottom: 16px; font-size: 16px; }
+.modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 16px; }
+
+/* ===== Toast ===== */
+#toast-container { position: fixed; top: 16px; right: 16px; z-index: 2000; display: flex; flex-direction: column; gap: 8px; }
+.toast {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 12px 20px; box-shadow: var(--shadow); font-size: 13px;
+  animation: slideIn 0.3s ease; max-width: 400px;
+}
+.toast.success { border-left: 3px solid var(--green); }
+.toast.warning { border-left: 3px solid var(--orange); }
+.toast.error { border-left: 3px solid var(--red); }
+.toast.info { border-left: 3px solid var(--blue); }
+@keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+
+/* ===== Phase D/E Special ===== */
+.progress-bar {
+  height: 8px; background: var(--surface2); border-radius: 4px; overflow: hidden; margin-top: 8px;
+}
+.progress-bar-fill {
+  height: 100%; background: var(--blue); border-radius: 4px; transition: width 0.5s;
+}
+.progress-bar-fill.green { background: var(--green); }
+.score-stars { font-size: 20px; letter-spacing: 2px; }
+
+/* ===== Quick Reference Table ===== */
+.quick-ref-table { border-collapse: collapse; width: 100%; }
+.quick-ref-table th, .quick-ref-table td {
+  border: 1px solid var(--border); padding: 8px; min-width: 120px; text-align: center;
+}
+.quick-ref-table th { background: var(--surface2); }
+.quick-ref-table td { background: var(--bg); cursor: pointer; }
+.quick-ref-table td:hover { background: var(--surface2); }
+.quick-ref-table td:focus { background: var(--surface2); outline: 2px solid var(--blue); }
+
+/* Compact trade history */
+.compact-trades { max-height: 300px; overflow-y: auto; }
+
+/* Sub tabs inside statistics */
+.sub-tabs { display: flex; gap: 4px; margin-bottom: 16px; }
+.sub-tabs button {
+  padding: 6px 14px; border: 1px solid var(--border); background: var(--surface2);
+  color: var(--text2); font-size: 12px; border-radius: var(--radius-sm);
+}
+.sub-tabs button.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+/* ===== Section Headers ===== */
+.section-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.empty-state { text-align: center; padding: 40px; color: var(--text2); }
+.empty-state .icon { font-size: 48px; margin-bottom: 12px; }
+
+/* ===== Lock indicator ===== */
+.lock-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600;
+}
+.lock-badge.locked { background: rgba(255,23,68,0.15); color: var(--red); }
+.lock-badge.unlocked { background: rgba(0,200,83,0.15); color: var(--green); }
+
+/* Detail checklist in trade form */
+.detail-checklist { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.detail-checklist label {
+  display: flex; align-items: center; gap: 8px; padding: 6px 10px;
+  background: var(--surface2); border-radius: var(--radius-sm); font-size: 13px; cursor: pointer;
+}
+.detail-checklist label:hover { background: #2a3040; }
+.detail-checklist input[type="checkbox"] { width: 16px; height: 16px; cursor: pointer; }
+
+/* ===== PnL preview in trade form ===== */
+.pnl-preview {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px; padding: 14px; background: var(--surface2); border-radius: var(--radius); margin-bottom: 12px;
+}
+.pnl-preview-item { text-align: center; }
+.pnl-preview-item .label { font-size: 11px; color: var(--text2); }
+.pnl-preview-item .value { font-size: 18px; font-weight: 700; font-family: var(--font-mono); }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .form-row, .form-row-3 { grid-template-columns: 1fr; }
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  .detail-checklist { grid-template-columns: 1fr; }
+  #app-header { flex-direction: column; align-items: flex-start; }
+  #phase-indicator { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- Discipline Banner -->
+<div id="discipline-banner">
+  <span style="color:var(--orange);font-size:14px;">⚠️</span>
+  <div class="banner-line" contenteditable="true" id="banner-line1">若判断错误，只需等待，除非可反向操作</div>
+  <span style="color:var(--text2);">|</span>
+  <div class="banner-line" contenteditable="true" id="banner-line2">接受亏损，然后继续</div>
+  <button id="save-banner-btn" title="保存横幅文字">💾 保存</button>
+</div>
+
+<!-- Header -->
+<header id="app-header">
+  <h1>📊 交易手法固化练习系统</h1>
+  <div id="setup-selector">
+    <select id="setup-select"><option value="">-- 请创建 Setup --</option></select>
+    <button id="btn-new-setup" title="新建 Setup">＋ 新建</button>
+  </div>
+  <div id="phase-indicator">
+    <span style="font-size:11px;color:var(--text2);margin-right:4px;">阶段</span>
+    <div class="phase-dot" data-phase="A">A</div><span class="phase-arrow">→</span>
+    <div class="phase-dot" data-phase="B">B</div><span class="phase-arrow">→</span>
+    <div class="phase-dot" data-phase="C">C</div><span class="phase-arrow">→</span>
+    <div class="phase-dot" data-phase="D">D</div><span class="phase-arrow">→</span>
+    <div class="phase-dot" data-phase="E">E</div>
+    <span id="phase-label"></span>
+  </div>
+</header>
+
+<!-- Tab Navigation -->
+<nav id="tab-nav">
+  <button data-tab="dashboard" class="active">📊 仪表盘</button>
+  <button data-tab="trade-entry">📝 录入交易</button>
+  <button data-tab="detail-table">📋 细节表</button>
+  <button data-tab="entry-reasons">🏷️ 入场原因</button>
+  <button data-tab="statistics">📈 统计分析</button>
+  <button data-tab="quick-ref">📐 速查表</button>
+  <button data-tab="data-mgmt">💾 数据管理</button>
+  <button data-tab="settings">⚙️ 设置</button>
+</nav>
+
+<!-- Tab Content -->
+<main id="tab-content">
+  <!-- Dashboard -->
+  <div class="tab-panel active" id="panel-dashboard">
+    <div class="metrics-grid" id="dashboard-metrics"></div>
+    <div id="dashboard-solidification" style="display:none;"></div>
+    <div class="card" style="margin-top:16px;">
+      <div class="card-header">📋 最近 10 笔交易</div>
+      <div class="table-wrap compact-trades" id="dashboard-recent-trades"></div>
+    </div>
+  </div>
+
+  <!-- Trade Entry -->
+  <div class="tab-panel" id="panel-trade-entry">
+    <div class="section-title">📝 录入 / 编辑交易</div>
+    <form id="trade-form" autocomplete="off">
+      <div class="form-row-3">
+        <div class="form-group"><label>日期</label><input type="date" id="trade-date"></div>
+        <div class="form-group"><label>方向</label><div class="toggle-group" id="tg-direction"></div></div>
+        <div class="form-group"><label>入场原因</label><select id="trade-entry-reason"><option value="">-- 请选择 --</option></select></div>
+      </div>
+      <div class="form-row-3">
+        <div class="form-group"><label>入场价格</label><input type="number" id="trade-entry-price" step="any" placeholder="0.00"></div>
+        <div class="form-group"><label>数量（总张数）</label><input type="number" id="trade-quantity" step="any" placeholder="0"></div>
+        <div class="form-group"><label>开仓手续费</label><div class="toggle-group" id="tg-entry-fee"></div></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>入场理由</label><textarea id="trade-entry-rationale" rows="2" placeholder="为什么开仓..."></textarea></div>
+        <div class="form-group"><label>类型</label><input type="text" id="trade-type" placeholder="如：趋势跟踪 / 反转 / 突破..."></div>
+      </div>
+
+      <div style="border-top:1px solid var(--border);margin:16px 0;padding-top:12px;">
+        <strong style="font-size:14px;">📤 分批平仓</strong>
+      </div>
+      <div class="form-row">
+        <div style="border:1px solid var(--border);border-radius:var(--radius);padding:12px;">
+          <div style="font-size:12px;color:var(--text2);margin-bottom:8px;">离场段 1（必填）</div>
+          <div class="form-row-3">
+            <div class="form-group"><label>离场价格 1</label><input type="number" id="trade-exit-price1" step="any" placeholder="0.00"></div>
+            <div class="form-group"><label>平仓数量 1</label><input type="number" id="trade-exit-qty1" step="any" placeholder="0"></div>
+            <div class="form-group"><label>手续费类型</label><div class="toggle-group" id="tg-exit-fee1"></div></div>
+          </div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:var(--radius);padding:12px;">
+          <div style="font-size:12px;color:var(--text2);margin-bottom:8px;">离场段 2（可选，留空不启用）</div>
+          <div class="form-row-3">
+            <div class="form-group"><label>离场价格 2</label><input type="number" id="trade-exit-price2" step="any" placeholder="留空"></div>
+            <div class="form-group"><label>平仓数量 2</label><input type="number" id="trade-exit-qty2" step="any" placeholder="留空"></div>
+            <div class="form-group"><label>手续费类型</label><div class="toggle-group" id="tg-exit-fee2"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pnl-preview" id="pnl-preview">
+        <div class="pnl-preview-item"><div class="label">毛盈亏</div><div class="value" id="preview-gross">--</div></div>
+        <div class="pnl-preview-item"><div class="label">开仓手续费</div><div class="value" id="preview-entry-fee">--</div></div>
+        <div class="pnl-preview-item"><div class="label">平仓费 1</div><div class="value" id="preview-exit-fee1">--</div></div>
+        <div class="pnl-preview-item"><div class="label">平仓费 2</div><div class="value" id="preview-exit-fee2">--</div></div>
+        <div class="pnl-preview-item"><div class="label">总手续费</div><div class="value" id="preview-total-fee">--</div></div>
+        <div class="pnl-preview-item"><div class="label">净盈亏</div><div class="value" id="preview-net-pnl">--</div></div>
+        <div class="pnl-preview-item"><div class="label">状态</div><div class="value" id="preview-status">--</div></div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group"><label>是否符合规则</label><div class="toggle-group" id="tg-compliant"></div></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>离场理由 / 方式</label><textarea id="trade-exit-rationale" rows="2" placeholder="为什么平仓..."></textarea></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>备注</label><textarea id="trade-notes" rows="2" placeholder="交易备注..."></textarea></div>
+        <div class="form-group"><label>补充说明</label><textarea id="trade-supp-notes" rows="2" placeholder="补充说明..."></textarea></div>
+      </div>
+
+      <div id="detail-checklist-container" style="margin:12px 0;">
+        <div style="font-size:13px;color:var(--text2);margin-bottom:8px;">📋 细节要点勾选（对照《开平细节表》）</div>
+        <div class="detail-checklist" id="detail-checklist"></div>
+      </div>
+
+      <input type="hidden" id="trade-edit-id">
+      <button type="submit" class="btn btn-primary" style="width:100%;padding:12px;">💾 保存交易</button>
+      <button type="button" class="btn btn-outline" id="btn-cancel-edit" style="width:100%;margin-top:8px;display:none;">取消编辑</button>
+    </form>
+
+    <div class="section-title" style="margin-top:24px;">📋 交易历史</div>
+    <div class="table-wrap" id="trade-history-table"></div>
+  </div>
+
+  <!-- Detail Table -->
+  <div class="tab-panel" id="panel-detail-table">
+    <div class="section-title">📋 开平细节表管理</div>
+    <div id="detail-lock-status" style="margin-bottom:12px;"></div>
+    <div id="detail-table-content"></div>
+  </div>
+
+  <!-- Entry Reasons -->
+  <div class="tab-panel" id="panel-entry-reasons">
+    <div class="section-title">🏷️ 入场原因清单</div>
+    <div style="display:flex;gap:8px;margin-bottom:16px;">
+      <input type="text" id="new-reason-input" placeholder="输入新的入场原因..." style="flex:1;background:var(--surface2);color:var(--text);border:1px solid var(--border);padding:8px 12px;border-radius:var(--radius-sm);font-size:14px;">
+      <button class="btn btn-primary" id="btn-add-reason">＋ 添加</button>
+    </div>
+    <div id="entry-reasons-list"></div>
+  </div>
+
+  <!-- Statistics -->
+  <div class="tab-panel" id="panel-statistics">
+    <div class="sub-tabs">
+      <button class="active" data-subtab="by-reason">🏷️ 按入场原因统计</button>
+      <button data-subtab="by-detail">📋 按细节要点统计</button>
+      <button data-subtab="charts">📈 图表</button>
+      <button data-subtab="evaluation">📋 评估报告</button>
+    </div>
+    <div id="stats-content"></div>
+  </div>
+
+  <!-- Quick Reference -->
+  <div class="tab-panel" id="panel-quick-ref">
+    <div class="section-title">📐 参考速查表：市场状态 × 方向</div>
+    <p style="color:var(--text2);font-size:13px;margin-bottom:12px;">点击单元格编辑内容，失焦自动保存。</p>
+    <div id="quick-ref-table"></div>
+  </div>
+
+  <!-- Data Management -->
+  <div class="tab-panel" id="panel-data-mgmt">
+    <div class="section-title">💾 数据管理</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;">
+      <button class="btn btn-primary" id="btn-export-json">📥 导出全部数据 (JSON)</button>
+      <button class="btn btn-outline" id="btn-export-csv">📥 导出交易记录 (CSV)</button>
+      <button class="btn btn-outline" id="btn-import">📤 导入数据 (JSON)</button>
+      <input type="file" id="import-file-input" accept=".json" style="display:none;">
+    </div>
+    <div class="card" style="border-color:var(--red);">
+      <div class="card-header" style="color:var(--red);">⚠️ 危险操作</div>
+      <button class="btn btn-danger" id="btn-reset-all">🗑️ 重置所有数据</button>
+    </div>
+  </div>
+
+  <!-- Settings -->
+  <div class="tab-panel" id="panel-settings">
+    <div class="section-title">⚙️ 设置</div>
+    <form id="settings-form" autocomplete="off">
+      <div class="form-row">
+        <div class="form-group"><label>Maker 手续费率 (%)</label><input type="number" id="set-maker-rate" step="any" placeholder="0.018"></div>
+        <div class="form-group"><label>Taker 手续费率 (%)</label><input type="number" id="set-taker-rate" step="any" placeholder="0.045"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>评估区间起始笔数</label><input type="number" id="set-eval-start" step="1" placeholder="1"></div>
+        <div class="form-group"><label>评估区间结束笔数</label><input type="number" id="set-eval-end" step="1" placeholder="500"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>纪律横幅第 1 行</label><input type="text" id="set-banner1"></div>
+        <div class="form-group"><label>纪律横幅第 2 行</label><input type="text" id="set-banner2"></div>
+      </div>
+      <button type="submit" class="btn btn-primary">💾 保存设置</button>
+      <button type="button" class="btn btn-outline" id="btn-reset-settings" style="margin-left:8px;">恢复默认设置</button>
+    </form>
+  </div>
+</main>
+
+<!-- Modal Overlay -->
+<div id="modal-overlay" class="modal-hidden">
+  <div id="modal-box"></div>
+</div>
+
+<!-- Toast Container -->
+<div id="toast-container"></div>
+
+<script>
+// =============================================================================
+// §1 常量与配置
+// =============================================================================
+const DB_NAME = 'TradingPracticeDB';
+const DB_VERSION = 1;
+
+const CATEGORIES = [
+  { key: 'entry', label: '进场条件', icon: '🟢' },
+  { key: 'exit', label: '出场条件', icon: '🔴' },
+  { key: 'stop_loss', label: '止损', icon: '🛑' },
+  { key: 'take_profit', label: '止盈', icon: '🎯' }
+];
+
+const PHASE_DEFS = {
+  A: { label: '建表', range: '0 笔', color: '#9e9e9e' },
+  B: { label: '探索期', range: '1~100 笔', color: '#448aff' },
+  C: { label: '巩固期', range: '101~400 笔', color: '#ff9100' },
+  D: { label: '评估', range: '401~500 笔', color: '#ffd740' },
+  E: { label: '固化期', range: '501+ 笔', color: '#00c853' }
+};
+
+const QUICK_REF_ROWS = ['上涨', '横盘', '下跌', '突破', '假突破', '趋势转换'];
+const QUICK_REF_COLS = ['做多', '横盘', '做空'];
+
+const DEFAULT_ENTRY_REASONS = ['不知道为什么开仓'];
+
+const DEFAULT_SETTINGS = {
+  makerFeeRate: 0.00018,
+  takerFeeRate: 0.00045,
+  evalStart: 1,
+  evalEnd: 500,
+  bannerLine1: '若判断错误，只需等待，除非可反向操作',
+  bannerLine2: '接受亏损，然后继续'
+};
+
+// =============================================================================
+// §2 IndexedDB 数据层
+// =============================================================================
+function openDB() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open(DB_NAME, DB_VERSION);
+    request.onupgradeneeded = (e) => {
+      const db = e.target.result;
+      // setups
+      const setups = db.createObjectStore('setups', { keyPath: 'id', autoIncrement: true });
+      setups.createIndex('name', 'name', { unique: true });
+      // details
+      const details = db.createObjectStore('details', { keyPath: 'id', autoIncrement: true });
+      details.createIndex('setupId', 'setupId');
+      // entryReasons
+      const reasons = db.createObjectStore('entryReasons', { keyPath: 'id', autoIncrement: true });
+      reasons.createIndex('sortOrder', 'sortOrder');
+      // trades
+      const trades = db.createObjectStore('trades', { keyPath: 'id', autoIncrement: true });
+      trades.createIndex('setupId', 'setupId');
+      trades.createIndex('setupId_tradeNumber', ['setupId', 'tradeNumber']);
+      trades.createIndex('entryReasonId', 'entryReasonId');
+      // solidification
+      const solid = db.createObjectStore('solidification', { keyPath: 'id', autoIncrement: true });
+      solid.createIndex('setupId', 'setupId');
+      // quickReference
+      db.createObjectStore('quickReference', { keyPath: 'id', autoIncrement: true });
+      // settings
+      db.createObjectStore('settings', { keyPath: 'key' });
+    };
+    request.onsuccess = (e) => resolve(e.target.result);
+    request.onerror = (e) => reject(e.target.error);
+  });
+}
+
+// Generic CRUD helpers
+function dbPut(storeName, obj) {
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(storeName, 'readwrite');
+    const store = tx.objectStore(storeName);
+    // Remove undefined id to avoid IndexedDB errors
+    const cleanObj = { ...obj };
+    if (cleanObj.id === undefined || cleanObj.id === null) {
+      delete cleanObj.id;
+    }
+    const req = cleanObj.id ? store.put(cleanObj) : store.add(cleanObj);
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+
+function dbGetAll(storeName) {
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(storeName);
+    const store = tx.objectStore(storeName);
+    const req = store.getAll();
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+
+function dbGet(storeName, id) {
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(storeName);
+    const store = tx.objectStore(storeName);
+    const req = store.get(id);
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+
+function dbDelete(storeName, id) {
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(storeName, 'readwrite');
+    const store = tx.objectStore(storeName);
+    const req = store.delete(id);
+    req.onsuccess = () => resolve();
+    req.onerror = () => reject(req.error);
+  });
+}
+
+function dbClear(storeName) {
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(storeName, 'readwrite');
+    const store = tx.objectStore(storeName);
+    const req = store.clear();
+    req.onsuccess = () => resolve();
+    req.onerror = () => reject(req.error);
+  });
+}
+
+function dbGetAllByIndex(storeName, indexName, value) {
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(storeName);
+    const store = tx.objectStore(storeName);
+    const index = store.index(indexName);
+    const req = index.getAll(value);
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+
+function dbGetByIndex(storeName, indexName, value) {
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(storeName);
+    const store = tx.objectStore(storeName);
+    const index = store.index(indexName);
+    const req = index.get(value);
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+
+// =============================================================================
+// §3 业务逻辑
+// =============================================================================
+
+// --- 手续费 ---
+function getFeeRate(feeType, makerRate, takerRate) {
+  return feeType === 'maker' ? makerRate : takerRate;
+}
+
+function calcLegFee(price, qty, feeType, makerRate, takerRate) {
+  if (!price || !qty) return 0;
+  return price * qty * getFeeRate(feeType, makerRate, takerRate);
+}
+
+// --- 盈亏计算 ---
+function calcGrossPnLLeg(direction, entryPrice, exitPrice, qty) {
+  if (!entryPrice || !exitPrice || !qty) return 0;
+  return direction === 'long'
+    ? (exitPrice - entryPrice) * qty
+    : (entryPrice - exitPrice) * qty;
+}
+
+function calcFullTrade(direction, entryPrice, totalQty, isEntryMaker,
+                        exitPrice1, exitQty1, exitFeeType1,
+                        exitPrice2, exitQty2, exitFeeType2,
+                        makerRate, takerRate) {
+  const entryFee = calcLegFee(entryPrice, totalQty, isEntryMaker ? 'maker' : 'taker', makerRate, takerRate);
+  const gross1 = calcGrossPnLLeg(direction, entryPrice, exitPrice1, exitQty1);
+  const exitFee1 = calcLegFee(exitPrice1, exitQty1, exitFeeType1, makerRate, takerRate);
+  const gross2 = exitPrice2 && exitQty2 ? calcGrossPnLLeg(direction, entryPrice, exitPrice2, exitQty2) : 0;
+  const exitFee2 = (exitPrice2 && exitQty2) ? calcLegFee(exitPrice2, exitQty2, exitFeeType2 || 'taker', makerRate, takerRate) : 0;
+  const grossPnL = gross1 + gross2;
+  const totalFee = entryFee + exitFee1 + exitFee2;
+  const netPnL = grossPnL - totalFee;
+  let pnlStatus = 'be';
+  if (netPnL > 0.0001) pnlStatus = 'win';
+  else if (netPnL < -0.0001) pnlStatus = 'loss';
+  return { grossPnL, entryFee, exitFee1, exitFee2, totalFee, netPnL, pnlStatus };
+}
+
+// --- 阶段判定 ---
+function getPhase(tradeCount) {
+  if (tradeCount === 0) return 'A';
+  if (tradeCount <= 100) return 'B';
+  if (tradeCount <= 400) return 'C';
+  if (tradeCount <= 500) return 'D';
+  return 'E';
+}
+
+function isDetailTableLocked(phase) {
+  return ['C', 'D', 'E'].includes(phase);
+}
+
+// --- 统计计算 ---
+function calcStatistics(trades, details) {
+  if (!trades || trades.length === 0) return null;
+  const sorted = [...trades].sort((a, b) => a.tradeNumber - b.tradeNumber);
+  const totalCount = sorted.length;
+  const winTrades = sorted.filter(t => t.pnlStatus === 'win' || (t.pnlStatus === undefined && t.netPnL > 0));
+  const lossTrades = sorted.filter(t => t.pnlStatus === 'loss' || (t.pnlStatus === undefined && t.netPnL < 0));
+  const beTrades = sorted.filter(t => t.pnlStatus === 'be' || (t.pnlStatus === undefined && Math.abs(t.netPnL) < 0.0001));
+
+  // Ensure pnlStatus consistency: netPnL > 0 => win, < 0 => loss, == 0 => be
+  const ensure = (t) => {
+    if (!t.pnlStatus) {
+      if (t.netPnL > 0.0001) t.pnlStatus = 'win';
+      else if (t.netPnL < -0.0001) t.pnlStatus = 'loss';
+      else t.pnlStatus = 'be';
+    }
+    return t;
+  };
+  sorted.forEach(ensure);
+
+  const winCount = sorted.filter(t => t.pnlStatus === 'win').length;
+  const lossCount = sorted.filter(t => t.pnlStatus === 'loss').length;
+  const winRate = winCount / totalCount;
+  const lossRate = lossCount / totalCount;
+
+  const winNetPnLs = sorted.filter(t => t.pnlStatus === 'win').map(t => t.netPnL);
+  const lossNetPnLs = sorted.filter(t => t.pnlStatus === 'loss').map(t => t.netPnL);
+  const avgWin = winCount > 0 ? winNetPnLs.reduce((s, v) => s + v, 0) / winCount : 0;
+  const avgLoss = lossCount > 0 ? lossNetPnLs.reduce((s, v) => s + Math.abs(v), 0) / lossCount : 0;
+  const profitFactor = avgLoss > 0 ? avgWin / avgLoss : (avgWin > 0 ? Infinity : 0);
+  const expectedValue = winRate * avgWin - lossRate * avgLoss;
+  const traderEqSatisfied = expectedValue > 0;
+
+  let cum = 0;
+  const cumulativePnL = sorted.map(t => { cum += t.netPnL; return { tradeNumber: t.tradeNumber, netPnL: t.netPnL, cumulative: cum }; });
+
+  let wins = 0;
+  const winRateByTrade = sorted.map((t, i) => {
+    if (t.pnlStatus === 'win') wins++;
+    return { tradeNumber: t.tradeNumber, winRate: wins / (i + 1) };
+  });
+
+  // 要点成功率
+  const pointStats = (details || []).map(d => {
+    const usedTrades = sorted.filter(t => t.checkedDetailIds && t.checkedDetailIds.includes(d.id));
+    const totalUses = usedTrades.length;
+    const successCount = usedTrades.filter(t => t.pnlStatus === 'win').length;
+    const successRate = totalUses > 0 ? successCount / totalUses : 0;
+    return { detailId: d.id, detailText: d.text, category: d.category, totalUses, successCount, successRate };
+  }).sort((a, b) => b.successRate - a.successRate);
+
+  const totalNetPnL = sorted.reduce((s, t) => s + t.netPnL, 0);
+
+  return { totalCount, winCount, lossCount, beCount: sorted.filter(t => t.pnlStatus === 'be').length,
+           winRate, lossRate, avgWin, avgLoss, profitFactor, expectedValue, traderEqSatisfied,
+           totalNetPnL, cumulativePnL, winRateByTrade, pointStats };
+}
+
+// --- 入场原因统计 ---
+function calcEntryReasonStats(trades, reasons, setupId) {
+  let filtered = trades;
+  if (setupId) {
+    filtered = trades.filter(t => t.setupId === setupId);
+  }
+  if (!filtered.length) return [];
+
+  // Ensure pnlStatus
+  filtered.forEach(t => {
+    if (!t.pnlStatus) {
+      if (t.netPnL > 0.0001) t.pnlStatus = 'win';
+      else if (t.netPnL < -0.0001) t.pnlStatus = 'loss';
+      else t.pnlStatus = 'be';
+    }
+  });
+
+  const reasonMap = {};
+  for (const r of reasons) {
+    reasonMap[r.id] = { reasonId: r.id, reasonText: r.text, totalUses: 0, winCount: 0, lossCount: 0, beCount: 0, totalPnL: 0 };
+  }
+
+  for (const t of filtered) {
+    const rid = t.entryReasonId;
+    if (rid && reasonMap[rid]) {
+      reasonMap[rid].totalUses++;
+      reasonMap[rid].totalPnL += t.netPnL;
+      if (t.pnlStatus === 'win') reasonMap[rid].winCount++;
+      else if (t.pnlStatus === 'loss') reasonMap[rid].lossCount++;
+      else reasonMap[rid].beCount++;
+    }
+  }
+
+  return Object.values(reasonMap)
+    .filter(r => r.totalUses > 0)
+    .map(r => ({
+      ...r,
+      winRate: r.totalUses > 0 ? r.winCount / r.totalUses : 0,
+      avgWin: r.winCount > 0 ? filtered.filter(t => t.entryReasonId === r.reasonId && t.pnlStatus === 'win').reduce((s, t) => s + t.netPnL, 0) / r.winCount : 0,
+      avgLoss: r.lossCount > 0 ? filtered.filter(t => t.entryReasonId === r.reasonId && t.pnlStatus === 'loss').reduce((s, t) => s + Math.abs(t.netPnL), 0) / r.lossCount : 0,
+      profitFactor: 0,
+      expectedValue: 0
+    }))
+    .map(r => ({
+      ...r,
+      profitFactor: r.avgLoss > 0 ? r.avgWin / r.avgLoss : (r.avgWin > 0 ? Infinity : 0),
+      expectedValue: (r.winRate * r.avgWin) - ((r.lossCount / r.totalUses) * r.avgLoss)
+    }));
+}
+
+// --- 固化进度 ---
+function calcSolidificationProgress(trades, solidRecords) {
+  const phaseETrades = trades.filter(t => t.tradeNumber >= 501).sort((a, b) => a.tradeNumber - b.tradeNumber);
+  if (phaseETrades.length === 0) return { currentGroup: 0, currentStreak: 0, totalScore: 0, groups: [] };
+
+  const records = [...(solidRecords || [])].sort((a, b) => a.groupNumber - b.groupNumber);
+  const completedGroups = records.filter(r => r.isComplete && r.scoreAwarded);
+  const totalScore = completedGroups.length;
+
+  // Find current active group
+  const activeRecord = records.find(r => !r.isComplete);
+  let currentGroup, currentStreak;
+
+  if (activeRecord) {
+    currentGroup = activeRecord.groupNumber;
+    currentStreak = activeRecord.currentStreak || 0;
+  } else {
+    // All existing records are complete, start new group
+    currentGroup = completedGroups.length + 1;
+    currentStreak = 0;
+    // Count compliant trades since last completed group
+    const lastCompletedTradeNum = completedGroups.length > 0
+      ? completedGroups.length * 50 + 500  // rough estimate
+      : 500;
+    const newGroupTrades = phaseETrades.filter(t => t.tradeNumber > lastCompletedTradeNum);
+    for (const t of newGroupTrades) {
+      if (t.isCompliant) currentStreak++;
+      else { currentStreak = 0; /* new group would start */ }
+    }
+  }
+
+  return {
+    currentGroup,
+    currentStreak: Math.min(currentStreak, 50),
+    totalScore: Math.min(totalScore, 10),
+    groups: records,
+    isFullySolidified: totalScore >= 10
+  };
+}
+
+// =============================================================================
+// §4 UI 工具
+// =============================================================================
+function showToast(msg, type = 'info') {
+  const container = document.getElementById('toast-container');
+  const toast = document.createElement('div');
+  toast.className = `toast ${type}`;
+  toast.textContent = msg;
+  container.appendChild(toast);
+  setTimeout(() => { toast.style.opacity = '0'; toast.style.transition = 'opacity 0.3s';
+    setTimeout(() => toast.remove(), 300); }, 3000);
+}
+
+function showModal(title, contentHtml, onConfirm, confirmText = '确认', danger = false) {
+  const overlay = document.getElementById('modal-overlay');
+  const box = document.getElementById('modal-box');
+  box.innerHTML = `
+    <h3>${title}</h3>
+    <div>${contentHtml}</div>
+    <div class="modal-actions">
+      <button class="btn btn-outline" id="modal-cancel">取消</button>
+      <button class="btn ${danger ? 'btn-danger' : 'btn-primary'}" id="modal-confirm">${confirmText}</button>
+    </div>`;
+  overlay.classList.remove('modal-hidden');
+  document.getElementById('modal-cancel').onclick = hideModal;
+  document.getElementById('modal-confirm').onclick = () => { hideModal(); if (onConfirm) onConfirm(); };
+}
+
+function hideModal() {
+  document.getElementById('modal-overlay').classList.add('modal-hidden');
+}
+
+// =============================================================================
+// §5 全局状态
+// =============================================================================
+let currentSetupId = null;
+let currentSetup = null;
+let currentTab = 'dashboard';
+let currentSubTab = 'by-reason';
+let entryReasonSortBy = 'winRate';
+let entryReasonSortDir = 'desc';
+let entryReasonFilterSetup = 'all';
+
+// =============================================================================
+// §6 数据加载辅助
+// =============================================================================
+async function getSettings() {
+  const all = await dbGetAll('settings');
+  const settings = { ...DEFAULT_SETTINGS };
+  for (const s of all) { settings[s.key] = s.value; }
+  return settings;
+}
+
+async function getSetups() {
+  return await dbGetAll('setups');
+}
+
+async function getDetails(setupId) {
+  return await dbGetAllByIndex('details', 'setupId', setupId);
+}
+
+async function getTrades(setupId) {
+  return await dbGetAllByIndex('trades', 'setupId', setupId);
+}
+
+async function getEntryReasons() {
+  return await dbGetAll('entryReasons');
+}
+
+async function getSolidification(setupId) {
+  return await dbGetAllByIndex('solidification', 'setupId', setupId);
+}
+
+async function getQuickReference() {
+  return await dbGetAll('quickReference');
+}
+
+// =============================================================================
+// §7 Setup 管理
+// =============================================================================
+async function loadSetupSelector() {
+  const select = document.getElementById('setup-select');
+  const setups = await getSetups();
+  select.innerHTML = setups.length === 0
+    ? '<option value="">-- 请创建 Setup --</option>'
+    : setups.map(s => `<option value="${s.id}">${s.name}</option>`).join('');
+
+  if (currentSetupId && setups.find(s => s.id === currentSetupId)) {
+    select.value = currentSetupId;
+  } else if (setups.length > 0) {
+    currentSetupId = setups[0].id;
+    select.value = currentSetupId;
+  } else {
+    currentSetupId = null;
+  }
+  await onSetupChange();
+}
+
+async function onSetupChange() {
+  const setups = await getSetups();
+  currentSetup = setups.find(s => s.id === currentSetupId) || null;
+  updatePhaseIndicator();
+  await refreshCurrentTab();
+}
+
+async function updatePhaseIndicator() {
+  const dots = document.querySelectorAll('.phase-dot');
+  const label = document.getElementById('phase-label');
+  dots.forEach(d => { d.classList.remove('active', 'done'); });
+
+  if (!currentSetup) {
+    label.textContent = '';
+    return;
+  }
+
+  const trades = await getTrades(currentSetupId);
+  const count = trades.length;
+  const phase = getPhase(count);
+  const phaseOrder = ['A', 'B', 'C', 'D', 'E'];
+
+  phaseOrder.forEach(p => {
+    const dot = document.querySelector(`.phase-dot[data-phase="${p}"]`);
+    if (p === phase) dot.classList.add('active');
+    else if (phaseOrder.indexOf(p) < phaseOrder.indexOf(phase)) dot.classList.add('done');
+  });
+
+  label.textContent = `第 ${count} 笔 · ${PHASE_DEFS[phase].label}`;
+}
+
+// =============================================================================
+// §8 细节表管理
+// =============================================================================
+async function renderDetailTable() {
+  const container = document.getElementById('detail-table-content');
+  const lockStatus = document.getElementById('detail-lock-status');
+  if (!currentSetup) {
+    container.innerHTML = '<div class="empty-state"><div class="icon">📋</div>请先创建 Setup</div>';
+    lockStatus.innerHTML = '';
+    return;
+  }
+
+  const trades = await getTrades(currentSetupId);
+  const phase = getPhase(trades.length);
+  const locked = isDetailTableLocked(phase);
+
+  lockStatus.innerHTML = `<span class="lock-badge ${locked ? 'locked' : 'unlocked'}">${locked ? '🔒 已锁定' : '🔓 可编辑'}</span>
+    ${locked ? '<span style="font-size:12px;color:var(--red);margin-left:8px;">修改细节表将重置固化进度</span>' : ''}`;
+
+  const details = await getDetails(currentSetupId);
+
+  let html = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">';
+  for (const cat of CATEGORIES) {
+    const catDetails = details.filter(d => d.category === cat.key).sort((a, b) => a.sortOrder - b.sortOrder);
+    html += `<div class="card">
+      <div class="card-header">${cat.icon} ${cat.label} (${catDetails.length} 条)</div>`;
+    if (!locked) {
+      html += `<div style="display:flex;gap:4px;margin-bottom:8px;">
+        <input type="text" id="detail-input-${cat.key}" placeholder="添加${cat.label}..." style="flex:1;background:var(--bg);color:var(--text);border:1px solid var(--border);padding:6px 10px;border-radius:var(--radius-sm);font-size:13px;">
+        <button class="btn btn-primary btn-sm" onclick="addDetail('${cat.key}')">＋</button>
+      </div>`;
+    }
+    html += '<div>';
+    for (const d of catDetails) {
+      html += `<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 8px;margin:2px 0;background:var(--bg);border-radius:var(--radius-sm);">
+        <span style="font-size:13px;">${d.text}</span>`;
+      if (!locked) {
+        html += `<div>
+          <button class="btn btn-outline btn-sm" onclick="editDetail(${d.id},'${cat.key}')" style="margin-right:4px;">✏️</button>
+          <button class="btn btn-outline btn-sm" onclick="deleteDetail(${d.id})" style="color:var(--red);">✕</button>
+        </div>`;
+      }
+      html += '</div>';
+    }
+    html += '</div></div>';
+  }
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+async function addDetail(category) {
+  if (!currentSetup) return;
+  const input = document.getElementById(`detail-input-${category}`);
+  const text = input.value.trim();
+  if (!text) return;
+
+  const details = await getDetails(currentSetupId);
+  const maxOrder = details.filter(d => d.category === category).reduce((m, d) => Math.max(m, d.sortOrder), 0);
+
+  const trades = await getTrades(currentSetupId);
+  const phase = getPhase(trades.length);
+
+  if (isDetailTableLocked(phase)) {
+    showModal('⚠️ 细节表已锁定',
+      '<p>当前处于' + PHASE_DEFS[phase].label + '阶段，细节表已锁定。</p><p style="color:var(--red);">修改后将<strong>清零固化进度</strong>，确定要继续吗？</p>',
+      async () => {
+        await dbClear('solidification');
+        await dbPut('details', { setupId: currentSetupId, category, text, sortOrder: maxOrder + 1, createdAt: Date.now() });
+        input.value = '';
+        renderDetailTable();
+        showToast('已添加并重置固化进度', 'warning');
+      }, '确认修改并重置', true);
+    return;
+  }
+
+  await dbPut('details', { setupId: currentSetupId, category, text, sortOrder: maxOrder + 1, createdAt: Date.now() });
+  input.value = '';
+  renderDetailTable();
+  showToast('已添加', 'success');
+}
+
+async function editDetail(id, category) {
+  const detail = await dbGet('details', id);
+  if (!detail) return;
+  const newText = prompt('编辑条目：', detail.text);
+  if (newText && newText.trim()) {
+    detail.text = newText.trim();
+    await dbPut('details', detail);
+    renderDetailTable();
+  }
+}
+
+async function deleteDetail(id) {
+  const detail = await dbGet('details', id);
+  if (!detail) return;
+  const trades = await getTrades(currentSetupId);
+  const phase = getPhase(trades.length);
+
+  if (isDetailTableLocked(phase)) {
+    showModal('⚠️ 确认删除',
+      '<p>细节表已锁定，删除后将<strong>清零固化进度</strong>，确定？</p>',
+      async () => {
+        await dbClear('solidification');
+        await dbDelete('details', id);
+        renderDetailTable();
+        showToast('已删除并重置固化进度', 'warning');
+      }, '确认删除并重置', true);
+    return;
+  }
+  await dbDelete('details', id);
+  renderDetailTable();
+  showToast('已删除', 'success');
+}
+
+// =============================================================================
+// §9 入场原因管理
+// =============================================================================
+async function renderEntryReasons() {
+  const reasons = await getEntryReasons();
+  reasons.sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0));
+  const trades = await dbGetAll('trades');
+
+  let html = '';
+  for (const r of reasons) {
+    const useCount = trades.filter(t => t.entryReasonId === r.id).length;
+    const isDefault = r.text === '不知道为什么开仓';
+    html += `<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin:4px 0;background:var(--surface2);border-radius:var(--radius);">
+      <div>
+        <span style="font-size:14px;">${r.text}</span>
+        <span style="font-size:12px;color:var(--text2);margin-left:12px;">使用 ${useCount} 次</span>
+        ${isDefault ? '<span style="font-size:11px;color:var(--orange);margin-left:8px;">（默认项，不可删除）</span>' : ''}
+      </div>
+      <div>
+        <button class="btn btn-outline btn-sm" onclick="editReason(${r.id})">✏️</button>
+        ${!isDefault ? `<button class="btn btn-outline btn-sm" onclick="deleteReason(${r.id})" style="color:var(--red);margin-left:4px;">✕</button>` : ''}
+      </div>
+    </div>`;
+  }
+  document.getElementById('entry-reasons-list').innerHTML = html || '<div class="empty-state">暂无入场原因</div>';
+}
+
+async function addReason() {
+  const input = document.getElementById('new-reason-input');
+  const text = input.value.trim();
+  if (!text) return;
+  const reasons = await getEntryReasons();
+  const maxOrder = reasons.reduce((m, r) => Math.max(m, r.sortOrder || 0), 0);
+  await dbPut('entryReasons', { text, sortOrder: maxOrder + 1, createdAt: Date.now() });
+  input.value = '';
+  await renderEntryReasons();
+  showToast('入场原因已添加', 'success');
+}
+
+async function editReason(id) {
+  const r = await dbGet('entryReasons', id);
+  if (!r) return;
+  const newText = prompt('编辑入场原因：', r.text);
+  if (newText && newText.trim()) {
+    r.text = newText.trim();
+    await dbPut('entryReasons', r);
+    await renderEntryReasons();
+    await refreshCurrentTab();
+  }
+}
+
+async function deleteReason(id) {
+  const r = await dbGet('entryReasons', id);
+  if (!r || r.text === '不知道为什么开仓') return;
+  const trades = await dbGetAll('trades');
+  const used = trades.filter(t => t.entryReasonId === id).length;
+  if (used > 0) {
+    showModal('⚠️ 确认删除', `<p>该入场原因被 <strong>${used}</strong> 笔交易引用。删除后这些交易的入场原因将变为空。</p><p>确定要删除吗？</p>`,
+      async () => { await dbDelete('entryReasons', id); await renderEntryReasons(); }, '确认删除', true);
+  } else {
+    await dbDelete('entryReasons', id);
+    await renderEntryReasons();
+    showToast('已删除', 'success');
+  }
+}
+
+// =============================================================================
+// §10 交易录入
+// =============================================================================
+function initToggleGroups() {
+  const groups = [
+    { id: 'tg-direction', options: [{ v: 'long', l: '📈 做多' }, { v: 'short', l: '📉 做空' }], default: 'long' },
+    { id: 'tg-entry-fee', options: [{ v: 'maker', l: '挂单 Maker' }, { v: 'taker', l: '吃单 Taker' }], default: 'taker' },
+    { id: 'tg-exit-fee1', options: [{ v: 'maker', l: '挂单 Maker' }, { v: 'taker', l: '吃单 Taker' }], default: 'taker' },
+    { id: 'tg-exit-fee2', options: [{ v: 'maker', l: '挂单 Maker' }, { v: 'taker', l: '吃单 Taker' }], default: 'taker' },
+    { id: 'tg-compliant', options: [{ v: 'true', l: '✅ 合规' }, { v: 'false', l: '❌ 不合规' }], default: 'true' }
+  ];
+
+  for (const g of groups) {
+    const container = document.getElementById(g.id);
+    if (!container) continue;
+    container.innerHTML = g.options.map(o =>
+      `<button type="button" data-value="${o.v}" class="${o.v === g.default ? 'active' : ''}">${o.l}</button>`
+    ).join('');
+    container.onclick = (e) => {
+      if (e.target.tagName === 'BUTTON') {
+        container.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        updatePnlPreview();
+      }
+    };
+  }
+}
+
+function getToggleValue(groupId) {
+  const container = document.getElementById(groupId);
+  const active = container.querySelector('button.active');
+  return active ? active.dataset.value : null;
+}
+
+async function loadEntryReasonsForForm() {
+  const reasons = await getEntryReasons();
+  reasons.sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0));
+  const select = document.getElementById('trade-entry-reason');
+  select.innerHTML = '<option value="">-- 请选择 --</option>' + reasons.map(r => `<option value="${r.id}">${r.text}</option>`).join('');
+}
+
+async function loadDetailChecklist() {
+  if (!currentSetup) return;
+  const details = await getDetails(currentSetupId);
+  const checklist = document.getElementById('detail-checklist');
+  if (details.length === 0) {
+    checklist.innerHTML = '<span style="font-size:12px;color:var(--text2);">暂无细节要点，请先在「细节表」页签中添加</span>';
+    return;
+  }
+  checklist.innerHTML = CATEGORIES.map(cat => {
+    const catDetails = details.filter(d => d.category === cat.key).sort((a, b) => a.sortOrder - b.sortOrder);
+    if (catDetails.length === 0) return '';
+    return `<div style="grid-column:1/-1;font-size:12px;color:var(--text2);margin-top:4px;">${cat.icon} ${cat.label}</div>` +
+      catDetails.map(d => `<label><input type="checkbox" value="${d.id}" onchange="updatePnlPreview()"> ${d.text}</label>`).join('');
+  }).join('');
+}
+
+function getCheckedDetailIds() {
+  const checks = document.querySelectorAll('#detail-checklist input[type="checkbox"]:checked');
+  return Array.from(checks).map(c => parseInt(c.value));
+}
+
+function getFormData() {
+  const dir = getToggleValue('tg-direction');
+  const entryPrice = parseFloat(document.getElementById('trade-entry-price').value) || 0;
+  const totalQty = parseFloat(document.getElementById('trade-quantity').value) || 0;
+  const isEntryMaker = getToggleValue('tg-entry-fee') === 'maker';
+  const exitPrice1 = parseFloat(document.getElementById('trade-exit-price1').value) || 0;
+  const exitQty1 = parseFloat(document.getElementById('trade-exit-qty1').value) || 0;
+  const exitFeeType1 = getToggleValue('tg-exit-fee1');
+  const exitPrice2 = parseFloat(document.getElementById('trade-exit-price2').value) || null;
+  const exitQty2 = parseFloat(document.getElementById('trade-exit-qty2').value) || null;
+  const exitFeeType2 = exitPrice2 && exitQty2 ? getToggleValue('tg-exit-fee2') : null;
+  const isCompliant = getToggleValue('tg-compliant') === 'true';
+  const entryReasonId = document.getElementById('trade-entry-reason').value;
+  const entryReasonSelect = document.getElementById('trade-entry-reason');
+  const entryReasonText = entryReasonSelect.options[entryReasonSelect.selectedIndex]?.text || '';
+  const entryRationale = document.getElementById('trade-entry-rationale').value.trim();
+  const tradeType = document.getElementById('trade-type').value.trim();
+  const exitRationale = document.getElementById('trade-exit-rationale').value.trim();
+  const notes = document.getElementById('trade-notes').value.trim();
+  const suppNotes = document.getElementById('trade-supp-notes').value.trim();
+  const date = document.getElementById('trade-date').value || new Date().toISOString().split('T')[0];
+
+  return { dir, entryPrice, totalQty, isEntryMaker, exitPrice1, exitQty1, exitFeeType1,
+           exitPrice2, exitQty2, exitFeeType2, isCompliant,
+           entryReasonId: entryReasonId ? parseInt(entryReasonId) : null, entryReasonText,
+           entryRationale, tradeType, exitRationale, notes, suppNotes, date };
+}
+
+async function updatePnlPreview() {
+  const settings = await getSettings();
+  const data = getFormData();
+  const result = calcFullTrade(data.dir, data.entryPrice, data.totalQty, data.isEntryMaker,
+    data.exitPrice1, data.exitQty1, data.exitFeeType1,
+    data.exitPrice2, data.exitQty2, data.exitFeeType2,
+    settings.makerFeeRate, settings.takerFeeRate);
+
+  document.getElementById('preview-gross').textContent = result.grossPnL.toFixed(2);
+  document.getElementById('preview-gross').style.color = result.grossPnL >= 0 ? 'var(--green)' : 'var(--red)';
+  document.getElementById('preview-entry-fee').textContent = result.entryFee.toFixed(4);
+  document.getElementById('preview-exit-fee1').textContent = result.exitFee1.toFixed(4);
+  document.getElementById('preview-exit-fee2').textContent = result.exitFee2.toFixed(4);
+  document.getElementById('preview-total-fee').textContent = result.totalFee.toFixed(4);
+  document.getElementById('preview-net-pnl').textContent = result.netPnL.toFixed(4);
+  document.getElementById('preview-net-pnl').style.color = result.netPnL >= 0 ? 'var(--green)' : 'var(--red)';
+  const statusMap = { win: '🟢 盈利', loss: '🔴 亏损', be: '⚪ 保本(BE)' };
+  document.getElementById('preview-status').textContent = statusMap[result.pnlStatus];
+}
+
+// Debounce for real-time preview
+let pnlPreviewTimer = null;
+function debouncedUpdatePnlPreview() {
+  clearTimeout(pnlPreviewTimer);
+  pnlPreviewTimer = setTimeout(updatePnlPreview, 200);
+}
+
+async function saveTrade(e) {
+  e.preventDefault();
+  if (!currentSetup) { showToast('请先创建 Setup', 'error'); return; }
+
+  const data = getFormData();
+  const settings = await getSettings();
+
+  if (!data.entryPrice || !data.totalQty || !data.exitPrice1 || !data.exitQty1) {
+    showToast('请填写入场价格、数量、离场价格 1、平仓数量 1', 'error'); return;
+  }
+
+  const result = calcFullTrade(data.dir, data.entryPrice, data.totalQty, data.isEntryMaker,
+    data.exitPrice1, data.exitQty1, data.exitFeeType1,
+    data.exitPrice2, data.exitQty2, data.exitFeeType2,
+    settings.makerFeeRate, settings.takerFeeRate);
+
+  const editId = document.getElementById('trade-edit-id').value;
+  const trades = await getTrades(currentSetupId);
+
+  let tradeNumber;
+  if (editId) {
+    const existing = trades.find(t => t.id === parseInt(editId));
+    tradeNumber = existing ? existing.tradeNumber : trades.length + 1;
+  } else {
+    tradeNumber = trades.length + 1;
+  }
+
+  const phase = getPhase(editId ? trades.length : trades.length + 1);
+
+  const tradeObj = {
+    id: editId ? parseInt(editId) : undefined,
+    setupId: currentSetupId,
+    tradeNumber,
+    date: data.date,
+    direction: data.dir,
+    entryPrice: data.entryPrice,
+    quantity: data.totalQty,
+    exitPrice1: data.exitPrice1,
+    exitQty1: data.exitQty1,
+    exitFeeType1: data.exitFeeType1,
+    exitPrice2: data.exitPrice2,
+    exitQty2: data.exitQty2,
+    exitFeeType2: data.exitFeeType2,
+    grossPnL: result.grossPnL,
+    entryFee: result.entryFee,
+    exitFee1: result.exitFee1,
+    exitFee2: result.exitFee2,
+    totalFee: result.totalFee,
+    netPnL: result.netPnL,
+    pnlStatus: result.pnlStatus,
+    entryReasonId: data.entryReasonId,
+    entryReasonText: data.entryReasonText,
+    entryRationale: data.entryRationale,
+    tradeType: data.tradeType,
+    exitRationale: data.exitRationale,
+    notes: data.notes,
+    supplementaryNotes: data.suppNotes,
+    checkedDetailIds: getCheckedDetailIds(),
+    isCompliant: data.isCompliant,
+    timestamp: Date.now(),
+    phaseAtTime: phase
+  };
+
+  await dbPut('trades', tradeObj);
+
+  // Update solidification if in Phase E
+  if (getPhase(trades.length + (editId ? 0 : 1)) === 'E') {
+    await updateSolidification();
+  }
+
+  resetTradeForm();
+  await renderTradeHistory();
+  await updatePhaseIndicator();
+  await refreshAll();
+  showToast(editId ? '交易已更新' : '交易已保存', 'success');
+}
+
+function resetTradeForm() {
+  document.getElementById('trade-form').reset();
+  document.getElementById('trade-edit-id').value = '';
+  document.getElementById('trade-date').value = new Date().toISOString().split('T')[0];
+  document.getElementById('btn-cancel-edit').style.display = 'none';
+  // Reset toggles
+  document.querySelectorAll('.toggle-group').forEach(g => {
+    const first = g.querySelector('button');
+    if (first) {
+      g.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      first.classList.add('active');
+    }
+    // Set compliant to true
+    if (g.id === 'tg-compliant') {
+      g.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      g.querySelector('button[data-value="true"]').classList.add('active');
+    }
+    // Set fee types to taker
+    if (g.id === 'tg-entry-fee' || g.id === 'tg-exit-fee1' || g.id === 'tg-exit-fee2') {
+      g.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      g.querySelector('button[data-value="taker"]').classList.add('active');
+    }
+  });
+  document.getElementById('preview-gross').textContent = '--';
+  document.getElementById('preview-entry-fee').textContent = '--';
+  document.getElementById('preview-exit-fee1').textContent = '--';
+  document.getElementById('preview-exit-fee2').textContent = '--';
+  document.getElementById('preview-total-fee').textContent = '--';
+  document.getElementById('preview-net-pnl').textContent = '--';
+  document.getElementById('preview-status').textContent = '--';
+  loadDetailChecklist();
+}
+
+async function renderTradeHistory() {
+  if (!currentSetup) {
+    document.getElementById('trade-history-table').innerHTML = '';
+    return;
+  }
+  const trades = await getTrades(currentSetupId);
+  trades.sort((a, b) => b.tradeNumber - a.tradeNumber);
+
+  if (trades.length === 0) {
+    document.getElementById('trade-history-table').innerHTML = '<div class="empty-state">暂无交易记录</div>';
+    return;
+  }
+
+  let html = `<table><thead><tr>
+    <th>日期</th><th>笔数</th><th>方向</th><th>入场价</th><th>离场1</th><th>量1</th><th>离场2</th><th>量2</th>
+    <th>入场原因</th><th>净盈亏</th><th>状态</th><th>合规</th><th>操作</th></tr></thead><tbody>`;
+
+  for (const t of trades) {
+    const dirLabel = t.direction === 'long' ? '📈 多' : '📉 空';
+    const pnlColor = t.netPnL >= 0 ? 'var(--green)' : 'var(--red)';
+    const statusLabel = t.pnlStatus === 'win' ? '🟢盈' : t.pnlStatus === 'loss' ? '🔴亏' : '⚪BE';
+    const compliantLabel = t.isCompliant ? '✅' : '❌';
+    html += `<tr>
+      <td>${t.date || ''}</td>
+      <td>#${t.tradeNumber}</td>
+      <td>${dirLabel}</td>
+      <td>${t.entryPrice}</td>
+      <td>${t.exitPrice1 || ''}</td>
+      <td>${t.exitQty1 || ''}</td>
+      <td>${t.exitPrice2 || ''}</td>
+      <td>${t.exitQty2 || ''}</td>
+      <td style="max-width:120px;overflow:hidden;text-overflow:ellipsis;" title="${t.entryReasonText || ''}">${t.entryReasonText || ''}</td>
+      <td style="color:${pnlColor};font-family:var(--font-mono);">${t.netPnL.toFixed(4)}</td>
+      <td>${statusLabel}</td>
+      <td>${compliantLabel}</td>
+      <td>
+        <button class="btn btn-outline btn-sm" onclick="editTrade(${t.id})">✏️</button>
+        <button class="btn btn-outline btn-sm" onclick="deleteTrade(${t.id})" style="color:var(--red);">✕</button>
+      </td></tr>`;
+  }
+  html += '</tbody></table>';
+  document.getElementById('trade-history-table').innerHTML = html;
+}
+
+async function editTrade(id) {
+  const trade = await dbGet('trades', id);
+  if (!trade) return;
+
+  document.getElementById('trade-edit-id').value = trade.id;
+  document.getElementById('trade-date').value = trade.date || '';
+  document.getElementById('trade-entry-price').value = trade.entryPrice || '';
+  document.getElementById('trade-quantity').value = trade.quantity || '';
+  document.getElementById('trade-exit-price1').value = trade.exitPrice1 || '';
+  document.getElementById('trade-exit-qty1').value = trade.exitQty1 || '';
+  document.getElementById('trade-exit-price2').value = trade.exitPrice2 || '';
+  document.getElementById('trade-exit-qty2').value = trade.exitQty2 || '';
+  document.getElementById('trade-entry-rationale').value = trade.entryRationale || '';
+  document.getElementById('trade-type').value = trade.tradeType || '';
+  document.getElementById('trade-exit-rationale').value = trade.exitRationale || '';
+  document.getElementById('trade-notes').value = trade.notes || '';
+  document.getElementById('trade-supp-notes').value = trade.supplementaryNotes || '';
+
+  // Set toggle groups
+  setToggleValue('tg-direction', trade.direction || 'long');
+  setToggleValue('tg-entry-fee', 'taker');
+  setToggleValue('tg-exit-fee1', trade.exitFeeType1 || 'taker');
+  setToggleValue('tg-exit-fee2', trade.exitFeeType2 || 'taker');
+  setToggleValue('tg-compliant', trade.isCompliant ? 'true' : 'false');
+
+  // Set entry reason
+  if (trade.entryReasonId) {
+    document.getElementById('trade-entry-reason').value = trade.entryReasonId;
+  }
+
+  // Set detail checkboxes
+  await loadDetailChecklist();
+  if (trade.checkedDetailIds) {
+    for (const did of trade.checkedDetailIds) {
+      const cb = document.querySelector(`#detail-checklist input[value="${did}"]`);
+      if (cb) cb.checked = true;
+    }
+  }
+
+  document.getElementById('btn-cancel-edit').style.display = 'block';
+  document.querySelector('#panel-trade-entry').scrollIntoView({ behavior: 'smooth' });
+  updatePnlPreview();
+}
+
+function setToggleValue(groupId, value) {
+  const container = document.getElementById(groupId);
+  if (!container) return;
+  container.querySelectorAll('button').forEach(b => {
+    b.classList.remove('active');
+    if (b.dataset.value === value) b.classList.add('active');
+  });
+}
+
+async function deleteTrade(id) {
+  showModal('确认删除', '<p>删除后无法恢复。确定要删除这笔交易吗？</p>',
+    async () => {
+      await dbDelete('trades', id);
+      // Renumber remaining trades
+      const trades = await getTrades(currentSetupId);
+      trades.sort((a, b) => a.tradeNumber - b.tradeNumber);
+      for (let i = 0; i < trades.length; i++) {
+        if (trades[i].tradeNumber !== i + 1) {
+          trades[i].tradeNumber = i + 1;
+          await dbPut('trades', trades[i]);
+        }
+      }
+      resetTradeForm();
+      await renderTradeHistory();
+      await updatePhaseIndicator();
+      await refreshAll();
+      showToast('交易已删除', 'success');
+    }, '确认删除', true);
+}
+
+// =============================================================================
+// §11 固化引擎
+// =============================================================================
+async function updateSolidification() {
+  if (!currentSetup) return;
+  const trades = await getTrades(currentSetupId);
+  const existingRecords = await getSolidification(currentSetupId);
+  const phaseETrades = trades.filter(t => t.tradeNumber >= 501).sort((a, b) => a.tradeNumber - b.tradeNumber);
+  if (phaseETrades.length === 0) return;
+
+  let records = existingRecords.sort((a, b) => a.groupNumber - b.groupNumber);
+  const completedGroups = records.filter(r => r.isComplete && r.scoreAwarded);
+  let currentRecord = records.find(r => !r.isComplete);
+
+  if (!currentRecord && completedGroups.length >= 10) return; // Already fully solidified
+
+  if (!currentRecord) {
+    // Start new group
+    currentRecord = {
+      setupId: currentSetupId,
+      groupNumber: completedGroups.length + 1,
+      currentStreak: 0,
+      isComplete: false,
+      scoreAwarded: false,
+      startedAt: Date.now(),
+      completedAt: null
+    };
+    const newId = await dbPut('solidification', currentRecord);
+    currentRecord.id = typeof newId === 'number' ? newId : currentRecord.id;
+  }
+
+  // Find the first trade in the current group
+  const groupStartTradeNum = 501 + completedGroups.length * 50;
+  const groupTrades = phaseETrades.filter(t => t.tradeNumber > groupStartTradeNum - 50 && t.tradeNumber <= groupStartTradeNum + 50);
+
+  // Recalculate streak from the beginning of current group
+  let streak = 0;
+  let groupVoided = false;
+  const startIdx = groupTrades.findIndex(t => t.tradeNumber > groupStartTradeNum - 50);
+  const relevantTrades = startIdx >= 0 ? groupTrades.slice(startIdx) : [];
+
+  for (const t of relevantTrades) {
+    if (t.isCompliant) {
+      streak++;
+      if (streak >= 50) {
+        // Group complete!
+        currentRecord.isComplete = true;
+        currentRecord.scoreAwarded = true;
+        currentRecord.completedAt = Date.now();
+        currentRecord.currentStreak = 50;
+        await dbPut('solidification', currentRecord);
+        const totalScore = completedGroups.length + 1;
+        showToast(`🎉 第 ${currentRecord.groupNumber} 组完成！累计得分: ${totalScore}/10`, 'success');
+        if (totalScore >= 10) {
+          setTimeout(() => showToast('🏆 恭喜！该 Setup 已完全固化，可以实盘！', 'success'), 1500);
+        } else {
+          setTimeout(() => showToast('建议复盘本组交易后再开始下一组', 'info'), 1500);
+        }
+        return;
+      }
+    } else {
+      // Non-compliant trade found - current group voided
+      streak = 0;
+      groupVoided = true;
+    }
+  }
+
+  // Check if we need to void the current group and start a new one
+  if (groupVoided) {
+    // Mark current as voided (not complete, no score)
+    currentRecord.currentStreak = 0;
+    currentRecord.isComplete = false;
+    currentRecord.scoreAwarded = false;
+    await dbPut('solidification', currentRecord);
+    showToast('⚠️ 当前组出现不合规交易，本组作废，从下一笔重新开始', 'warning');
+  } else {
+    currentRecord.currentStreak = streak;
+    await dbPut('solidification', currentRecord);
+  }
+}
+
+// =============================================================================
+// §12 仪表盘
+// =============================================================================
+async function renderDashboard() {
+  if (!currentSetup) {
+    document.getElementById('dashboard-metrics').innerHTML = '<div class="empty-state"><div class="icon">📊</div>请先创建 Setup</div>';
+    document.getElementById('dashboard-recent-trades').innerHTML = '';
+    document.getElementById('dashboard-solidification').style.display = 'none';
+    return;
+  }
+
+  const trades = await getTrades(currentSetupId);
+  const details = await getDetails(currentSetupId);
+  const stats = calcStatistics(trades, details);
+  const count = trades.length;
+  const phase = getPhase(count);
+
+  let metricsHtml = '';
+  if (stats) {
+    const eqColor = stats.traderEqSatisfied ? 'var(--green)' : 'var(--red)';
+    const eqLabel = stats.traderEqSatisfied ? '✅ 满足' : '❌ 不满足';
+    metricsHtml = `
+      <div class="card"><div class="card-header">总笔数</div><div class="card-value">${stats.totalCount}</div></div>
+      <div class="card"><div class="card-header">胜率</div><div class="card-value">${(stats.winRate * 100).toFixed(1)}%</div><div class="card-sub">盈利 ${stats.winCount} / 亏损 ${stats.lossCount} / BE ${stats.beCount}</div></div>
+      <div class="card"><div class="card-header">盈亏比</div><div class="card-value">${isFinite(stats.profitFactor) ? stats.profitFactor.toFixed(2) : '--'}</div></div>
+      <div class="card"><div class="card-header">每笔期望</div><div class="card-value ${stats.expectedValue >= 0 ? 'green' : 'red'}">${stats.expectedValue.toFixed(4)}</div></div>
+      <div class="card"><div class="card-header">平均盈利</div><div class="card-value green">+${stats.avgWin.toFixed(4)}</div></div>
+      <div class="card"><div class="card-header">平均亏损</div><div class="card-value red">−${stats.avgLoss.toFixed(4)}</div></div>
+      <div class="card"><div class="card-header">总净盈亏</div><div class="card-value ${stats.totalNetPnL >= 0 ? 'green' : 'red'}">${stats.totalNetPnL >= 0 ? '+' : ''}${stats.totalNetPnL.toFixed(4)}</div></div>
+      <div class="card"><div class="card-header">交易者方程</div><div class="card-value" style="color:${eqColor};font-size:18px;">${eqLabel}</div><div class="card-sub">胜率×均盈 ${(stats.winRate * stats.avgWin).toFixed(4)} vs 败率×均亏 ${(stats.lossRate * stats.avgLoss).toFixed(4)}</div></div>`;
+  } else {
+    metricsHtml = '<div class="card" style="grid-column:1/-1;"><div class="card-header">暂无数据</div><div class="card-value" style="font-size:16px;">请先录入交易</div></div>';
+  }
+  document.getElementById('dashboard-metrics').innerHTML = metricsHtml;
+
+  // Solidification progress (Phase E)
+  const solidDiv = document.getElementById('dashboard-solidification');
+  if (phase === 'E') {
+    const solidRecords = await getSolidification(currentSetupId);
+    const prog = calcSolidificationProgress(trades, solidRecords);
+    solidDiv.style.display = 'block';
+    solidDiv.innerHTML = `
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
+        <div class="card">
+          <div class="card-header">🎯 当前组连续合规笔数</div>
+          <div class="card-value">${prog.currentStreak} <span style="font-size:16px;color:var(--text2);">/ 50</span></div>
+          <div class="progress-bar"><div class="progress-bar-fill" style="width:${(prog.currentStreak/50)*100}%;"></div></div>
+        </div>
+        <div class="card">
+          <div class="card-header">⭐ 累计固化得分</div>
+          <div class="card-value">${prog.totalScore} <span style="font-size:16px;color:var(--text2);">/ 10</span></div>
+          <div class="score-stars">${'⭐'.repeat(prog.totalScore)}${'☆'.repeat(10 - prog.totalScore)}</div>
+          ${prog.isFullySolidified ? '<div style="color:var(--green);font-weight:700;margin-top:8px;">🏆 已完全固化，可以实盘！</div>' : ''}
+        </div>
+      </div>`;
+  } else if (phase === 'D') {
+    solidDiv.style.display = 'block';
+    solidDiv.innerHTML = `<div class="card" style="border-color:var(--yellow);margin-bottom:16px;">
+      <div style="font-size:14px;font-weight:700;color:var(--yellow);">📋 Phase D — 评估期</div>
+      <div style="font-size:13px;color:var(--text2);margin-top:4px;">已练习 ${count} 笔，满 500 笔后查看评估报告。当前可前往「统计分析 → 评估报告」查看。</div>
+    </div>`;
+  } else {
+    solidDiv.style.display = 'none';
+  }
+
+  // Recent trades
+  const recentTrades = trades.sort((a, b) => b.tradeNumber - a.tradeNumber).slice(0, 10);
+  if (recentTrades.length > 0) {
+    let html = '<table><thead><tr><th>笔数</th><th>日期</th><th>方向</th><th>入场原因</th><th>净盈亏</th><th>状态</th><th>合规</th></tr></thead><tbody>';
+    for (const t of recentTrades) {
+      const pnlColor = t.netPnL >= 0 ? 'var(--green)' : 'var(--red)';
+      html += `<tr>
+        <td>#${t.tradeNumber}</td><td>${t.date || ''}</td>
+        <td>${t.direction === 'long' ? '📈多' : '📉空'}</td>
+        <td style="max-width:100px;overflow:hidden;text-overflow:ellipsis;">${t.entryReasonText || ''}</td>
+        <td style="color:${pnlColor};font-family:var(--font-mono);">${t.netPnL >= 0 ? '+' : ''}${t.netPnL.toFixed(4)}</td>
+        <td>${t.pnlStatus === 'win' ? '🟢' : t.pnlStatus === 'loss' ? '🔴' : '⚪'}</td>
+        <td>${t.isCompliant ? '✅' : '❌'}</td></tr>`;
+    }
+    html += '</tbody></table>';
+    document.getElementById('dashboard-recent-trades').innerHTML = html;
+  } else {
+    document.getElementById('dashboard-recent-trades').innerHTML = '<div class="empty-state">暂无交易记录</div>';
+  }
+}
+
+// =============================================================================
+// §13 统计分析
+// =============================================================================
+async function renderStatistics() {
+  const container = document.getElementById('stats-content');
+  const allTrades = await dbGetAll('trades');
+  const reasons = await getEntryReasons();
+
+  if (currentSubTab === 'by-reason') {
+    // Entry reason statistics
+    const filterSetup = entryReasonFilterSetup === 'all' ? null : parseInt(entryReasonFilterSetup);
+    const stats = calcEntryReasonStats(allTrades, reasons, filterSetup);
+
+    if (stats.length === 0) {
+      container.innerHTML = '<div class="empty-state">暂无数据。请先录入交易并选择入场原因。</div>';
+      return;
+    }
+
+    // Sort
+    stats.sort((a, b) => {
+      if (entryReasonSortDir === 'desc') {
+        return b[entryReasonSortBy] - a[entryReasonSortBy];
+      } else {
+        return a[entryReasonSortBy] - b[entryReasonSortBy];
+      }
+    });
+
+    const setups = await getSetups();
+    const setupOptions = '<option value="all">全部 Setup</option>' + setups.map(s => `<option value="${s.id}">${s.name}</option>`).join('');
+
+    let html = `
+      <div style="display:flex;gap:12px;align-items:center;margin-bottom:16px;flex-wrap:wrap;">
+        <div class="form-group" style="margin:0;"><label>Setup 筛选</label><select id="stats-setup-filter" onchange="changeEntryReasonFilter()">${setupOptions}</select></div>
+        <div class="form-group" style="margin:0;"><label>排序依据</label><select id="stats-sort-by" onchange="changeEntryReasonSort()">
+          <option value="winRate" ${entryReasonSortBy === 'winRate' ? 'selected' : ''}>胜率</option>
+          <option value="profitFactor" ${entryReasonSortBy === 'profitFactor' ? 'selected' : ''}>盈亏比</option>
+          <option value="totalUses" ${entryReasonSortBy === 'totalUses' ? 'selected' : ''}>使用次数</option>
+          <option value="totalPnL" ${entryReasonSortBy === 'totalPnL' ? 'selected' : ''}>累计盈亏</option>
+          <option value="expectedValue" ${entryReasonSortBy === 'expectedValue' ? 'selected' : ''}>每笔期望</option>
+        </select></div>
+      </div>
+      <div class="table-wrap">
+      <table><thead><tr>
+        <th>入场原因</th><th class="clickable" onclick="setEntryReasonSort('totalUses')">使用次数 ${entryReasonSortBy==='totalUses'?'▲':''}</th>
+        <th class="clickable" onclick="setEntryReasonSort('winRate')">胜率 ${entryReasonSortBy==='winRate'?'▲':''}</th>
+        <th class="clickable" onclick="setEntryReasonSort('profitFactor')">盈亏比 ${entryReasonSortBy==='profitFactor'?'▲':''}</th>
+        <th>平均盈利</th><th>平均亏损</th>
+        <th class="clickable" onclick="setEntryReasonSort('totalPnL')">累计盈亏 ${entryReasonSortBy==='totalPnL'?'▲':''}</th>
+        <th class="clickable" onclick="setEntryReasonSort('expectedValue')">每笔期望 ${entryReasonSortBy==='expectedValue'?'▲':''}</th>
+      </tr></thead><tbody>`;
+
+    for (const s of stats) {
+      html += `<tr>
+        <td><strong>${s.reasonText}</strong></td>
+        <td>${s.totalUses}</td>
+        <td style="color:${s.winRate>=0.5?'var(--green)':'var(--red)'};">${(s.winRate*100).toFixed(1)}%</td>
+        <td>${isFinite(s.profitFactor)?s.profitFactor.toFixed(2):'--'}</td>
+        <td style="color:var(--green);">+${s.avgWin.toFixed(4)}</td>
+        <td style="color:var(--red);">−${s.avgLoss.toFixed(4)}</td>
+        <td style="color:${s.totalPnL>=0?'var(--green)':'var(--red)'};font-family:var(--font-mono);">${s.totalPnL>=0?'+':''}${s.totalPnL.toFixed(4)}</td>
+        <td style="color:${s.expectedValue>=0?'var(--green)':'var(--red)'};">${s.expectedValue.toFixed(4)}</td>
+      </tr>`;
+    }
+    html += '</tbody></table></div>';
+    container.innerHTML = html;
+  } else if (currentSubTab === 'by-detail') {
+    if (!currentSetup) { container.innerHTML = '<div class="empty-state">请先选择 Setup</div>'; return; }
+    const trades = await getTrades(currentSetupId);
+    const details = await getDetails(currentSetupId);
+    const stats = calcStatistics(trades, details);
+    if (!stats || stats.pointStats.length === 0) {
+      container.innerHTML = '<div class="empty-state">暂无细节要点数据</div>'; return;
+    }
+    let html = '<div class="table-wrap"><table><thead><tr><th>分类</th><th>细节要点</th><th>使用次数</th><th>成功次数</th><th>成功率</th></tr></thead><tbody>';
+    for (const p of stats.pointStats) {
+      const cat = CATEGORIES.find(c => c.key === p.category);
+      html += `<tr>
+        <td>${cat ? cat.icon + ' ' + cat.label : ''}</td>
+        <td>${p.detailText}</td><td>${p.totalUses}</td><td>${p.successCount}</td>
+        <td style="color:${p.successRate>=0.5?'var(--green)':'var(--red)'};">${(p.successRate*100).toFixed(1)}%</td></tr>`;
+    }
+    html += '</tbody></table></div>';
+    container.innerHTML = html;
+  } else if (currentSubTab === 'charts') {
+    if (!currentSetup) { container.innerHTML = '<div class="empty-state">请先选择 Setup</div>'; return; }
+    const trades = await getTrades(currentSetupId);
+    const details = await getDetails(currentSetupId);
+    const stats = calcStatistics(trades, details);
+    if (!stats) { container.innerHTML = '<div class="empty-state">暂无数据</div>'; return; }
+
+    container.innerHTML = `
+      <div class="card" style="margin-bottom:16px;"><div class="card-header">📈 胜率走势</div>
+        <canvas id="chart-winrate" style="width:100%;height:300px;"></canvas></div>
+      <div class="card" style="margin-bottom:16px;"><div class="card-header">💰 累计净盈亏曲线</div>
+        <canvas id="chart-cumpnl" style="width:100%;height:300px;"></canvas></div>
+      ${stats.pointStats.length > 0 ? `
+      <div class="card"><div class="card-header">🎯 要点成功率排行</div>
+        <canvas id="chart-points" style="width:100%;height:${Math.max(200, stats.pointStats.length * 30)}px;"></canvas></div>` : ''}`;
+
+    // Draw charts after DOM update
+    setTimeout(() => {
+      if (stats.winRateByTrade.length > 0) drawWinRateChart(stats.winRateByTrade);
+      if (stats.cumulativePnL.length > 0) drawCumPnLChart(stats.cumulativePnL);
+      if (stats.pointStats.length > 0) drawPointsChart(stats.pointStats);
+    }, 50);
+  } else if (currentSubTab === 'evaluation') {
+    renderEvaluation();
+  }
+}
+
+function setEntryReasonSort(field) {
+  if (entryReasonSortBy === field) {
+    entryReasonSortDir = entryReasonSortDir === 'desc' ? 'asc' : 'desc';
+  } else {
+    entryReasonSortBy = field;
+    entryReasonSortDir = 'desc';
+  }
+  renderStatistics();
+}
+
+function changeEntryReasonFilter() {
+  entryReasonFilterSetup = document.getElementById('stats-setup-filter')?.value || 'all';
+  renderStatistics();
+}
+
+function changeEntryReasonSort() {
+  entryReasonSortBy = document.getElementById('stats-sort-by')?.value || 'winRate';
+  renderStatistics();
+}
+
+// --- Phase D Evaluation ---
+async function renderEvaluation() {
+  const container = document.getElementById('stats-content');
+  if (!currentSetup) { container.innerHTML = '<div class="empty-state">请先选择 Setup</div>'; return; }
+  const settings = await getSettings();
+  const trades = await getTrades(currentSetupId);
+  const details = await getDetails(currentSetupId);
+
+  const evalTrades = trades.filter(t => t.tradeNumber >= settings.evalStart && t.tradeNumber <= settings.evalEnd);
+  if (evalTrades.length === 0) {
+    container.innerHTML = `<div class="empty-state">评估区间（${settings.evalStart}~${settings.evalEnd}笔）内暂无交易数据</div>`;
+    return;
+  }
+
+  const stats = calcStatistics(evalTrades, details);
+  if (!stats) { container.innerHTML = '<div class="empty-state">暂无数据</div>'; return; }
+
+  const conclusionColor = stats.traderEqSatisfied ? 'var(--green)' : 'var(--red)';
+  const conclusionText = stats.traderEqSatisfied
+    ? '✅ 该手法在评估区间内有正期望，可以进入固化期'
+    : '❌ 该手法期望为负，建议先优化规则再进入固化期';
+
+  container.innerHTML = `
+    <div class="card" style="margin-bottom:16px;border-color:${conclusionColor};">
+      <h3 style="color:${conclusionColor};">📋 Phase D 评估报告</h3>
+      <p style="color:var(--text2);margin:8px 0;">评估区间：第 ${settings.evalStart} ~ ${settings.evalEnd} 笔（共 ${evalTrades.length} 笔）</p>
+      <p style="font-size:16px;font-weight:700;margin-top:12px;">${conclusionText}</p>
+    </div>
+    <div class="metrics-grid">
+      <div class="card"><div class="card-header">总笔数</div><div class="card-value">${stats.totalCount}</div></div>
+      <div class="card"><div class="card-header">胜率</div><div class="card-value">${(stats.winRate*100).toFixed(1)}%</div></div>
+      <div class="card"><div class="card-header">盈亏比</div><div class="card-value">${isFinite(stats.profitFactor)?stats.profitFactor.toFixed(2):'--'}</div></div>
+      <div class="card"><div class="card-header">每笔期望</div><div class="card-value ${stats.expectedValue>=0?'green':'red'}">${stats.expectedValue.toFixed(4)}</div></div>
+      <div class="card"><div class="card-header">平均盈利</div><div class="card-value green">+${stats.avgWin.toFixed(4)}</div></div>
+      <div class="card"><div class="card-header">平均亏损</div><div class="card-value red">−${stats.avgLoss.toFixed(4)}</div></div>
+      <div class="card"><div class="card-header">总净盈亏</div><div class="card-value ${stats.totalNetPnL>=0?'green':'red'}">${stats.totalNetPnL>=0?'+':''}${stats.totalNetPnL.toFixed(4)}</div></div>
+      <div class="card"><div class="card-header">交易者方程</div><div class="card-value" style="color:${conclusionColor};font-size:16px;">${stats.traderEqSatisfied?'✅ 满足':'❌ 不满足'}</div></div>
+    </div>`;
+}
+
+// =============================================================================
+// §14 Canvas 图表
+// =============================================================================
+function getCanvasCtx(id) {
+  const canvas = document.getElementById(id);
+  if (!canvas) return null;
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+  return { ctx, w: rect.width, h: rect.height };
+}
+
+function drawWinRateChart(data) {
+  const result = getCanvasCtx('chart-winrate');
+  if (!result) return;
+  const { ctx, w, h } = result;
+  const pad = { top: 20, right: 20, bottom: 40, left: 55 };
+  const pw = w - pad.left - pad.right;
+  const ph = h - pad.top - pad.bottom;
+
+  ctx.clearRect(0, 0, w, h);
+
+  // Background
+  ctx.fillStyle = '#1a1d27';
+  ctx.fillRect(0, 0, w, h);
+
+  // Grid lines
+  ctx.strokeStyle = '#2a2e3a';
+  ctx.lineWidth = 1;
+  for (let i = 0; i <= 5; i++) {
+    const y = pad.top + (ph / 5) * i;
+    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(w - pad.right, y); ctx.stroke();
+  }
+
+  // 50% reference line
+  ctx.strokeStyle = '#ff1744';
+  ctx.lineWidth = 1;
+  ctx.setLineDash([5, 5]);
+  const y50 = pad.top + ph * 0.5;
+  ctx.beginPath(); ctx.moveTo(pad.left, y50); ctx.lineTo(w - pad.right, y50); ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Axes labels
+  ctx.fillStyle = '#8b90a0';
+  ctx.font = '11px system-ui';
+  ctx.textAlign = 'center';
+  for (let i = 0; i <= 5; i++) {
+    const pct = 100 - i * 20;
+    ctx.fillText(pct + '%', pad.left - 8, pad.top + (ph / 5) * i + 4);
+  }
+
+  // X labels (every N trades)
+  ctx.textAlign = 'center';
+  const step = Math.max(1, Math.floor(data.length / 10));
+  for (let i = 0; i < data.length; i += step) {
+    const x = pad.left + (pw / (data.length - 1 || 1)) * i;
+    ctx.fillText('#' + data[i].tradeNumber, x, h - pad.bottom + 16);
+  }
+
+  // Data line
+  ctx.strokeStyle = '#448aff';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  for (let i = 0; i < data.length; i++) {
+    const x = pad.left + (pw / (data.length - 1 || 1)) * i;
+    const y = pad.top + ph * (1 - data[i].winRate);
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+
+  // Area fill
+  ctx.globalAlpha = 0.15;
+  ctx.fillStyle = '#448aff';
+  ctx.lineTo(pad.left + pw, pad.top + ph);
+  ctx.lineTo(pad.left, pad.top + ph);
+  ctx.fill();
+  ctx.globalAlpha = 1;
+}
+
+function drawCumPnLChart(data) {
+  const result = getCanvasCtx('chart-cumpnl');
+  if (!result) return;
+  const { ctx, w, h } = result;
+  const pad = { top: 20, right: 20, bottom: 40, left: 65 };
+  const pw = w - pad.left - pad.right;
+  const ph = h - pad.top - pad.bottom;
+
+  ctx.clearRect(0, 0, w, h);
+  ctx.fillStyle = '#1a1d27';
+  ctx.fillRect(0, 0, w, h);
+
+  const vals = data.map(d => d.cumulative);
+  const maxVal = Math.max(...vals, 0);
+  const minVal = Math.min(...vals, 0);
+  const range = Math.max(maxVal - minVal, 1);
+  const y0 = pad.top + ph * (maxVal / range);
+
+  // Grid
+  ctx.strokeStyle = '#2a2e3a';
+  ctx.lineWidth = 1;
+  for (let i = 0; i <= 5; i++) {
+    const y = pad.top + (ph / 5) * i;
+    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(w - pad.right, y); ctx.stroke();
+  }
+
+  // Zero line
+  ctx.strokeStyle = '#8b90a0';
+  ctx.setLineDash([5, 5]);
+  ctx.beginPath(); ctx.moveTo(pad.left, y0); ctx.lineTo(w - pad.right, y0); ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Area
+  ctx.beginPath();
+  for (let i = 0; i < data.length; i++) {
+    const x = pad.left + (pw / (data.length - 1 || 1)) * i;
+    const y = pad.top + ph * ((maxVal - data[i].cumulative) / range);
+    if (i === 0) ctx.moveTo(x, y0); else ctx.lineTo(x, y);
+    if (i === data.length - 1) { ctx.lineTo(x, y0); ctx.closePath(); }
+  }
+  const isPositive = data[data.length - 1].cumulative >= 0;
+  ctx.fillStyle = isPositive ? 'rgba(0,200,83,0.2)' : 'rgba(255,23,68,0.2)';
+  ctx.fill();
+
+  // Line
+  ctx.strokeStyle = isPositive ? '#00c853' : '#ff1744';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  for (let i = 0; i < data.length; i++) {
+    const x = pad.left + (pw / (data.length - 1 || 1)) * i;
+    const y = pad.top + ph * ((maxVal - data[i].cumulative) / range);
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+
+  // Labels
+  ctx.fillStyle = '#8b90a0';
+  ctx.font = '11px system-ui';
+  ctx.textAlign = 'right';
+  for (let i = 0; i <= 5; i++) {
+    const val = maxVal - (range / 5) * i;
+    ctx.fillText(val.toFixed(2), pad.left - 8, pad.top + (ph / 5) * i + 4);
+  }
+}
+
+function drawPointsChart(data) {
+  const result = getCanvasCtx('chart-points');
+  if (!result) return;
+  const { ctx, w, h } = result;
+  const barH = 26;
+  const pad = { top: 10, right: 20, bottom: 10, left: 4 };
+  const totalH = data.length * barH;
+  const canvas = document.getElementById('chart-points');
+  if (canvas) { canvas.style.height = totalH + 40 + 'px'; canvas.height = (totalH + 40) * (window.devicePixelRatio || 1); }
+
+  // Rerender after resize
+  const result2 = getCanvasCtx('chart-points');
+  if (!result2) return;
+  const { ctx: ctx2, w: w2, h: h2 } = result2;
+
+  ctx2.clearRect(0, 0, w2, h2);
+  ctx2.fillStyle = '#1a1d27';
+  ctx2.fillRect(0, 0, w2, h2);
+
+  const maxW = w2 - pad.left - pad.right - 120;
+  const catColors = { entry: '#448aff', exit: '#ff1744', stop_loss: '#ff9100', take_profit: '#00c853' };
+
+  data.slice(0, 20).forEach((d, i) => {
+    const y = pad.top + i * barH;
+    const barW = maxW * d.successRate;
+
+    // Background bar
+    ctx2.fillStyle = '#2a2e3a';
+    ctx2.fillRect(pad.left + 120, y + 2, maxW, barH - 4);
+
+    // Fill bar
+    ctx2.fillStyle = catColors[d.category] || '#448aff';
+    ctx2.fillRect(pad.left + 120, y + 2, barW, barH - 4);
+
+    // Label
+    ctx2.fillStyle = '#e1e4eb';
+    ctx2.font = '12px system-ui';
+    ctx2.textAlign = 'right';
+    ctx2.fillText(d.detailText.length > 12 ? d.detailText.slice(0,12)+'...' : d.detailText, pad.left + 116, y + barH - 9);
+
+    // Percentage
+    ctx2.fillStyle = '#8b90a0';
+    ctx2.font = '11px system-ui';
+    ctx2.textAlign = 'left';
+    ctx2.fillText(`${(d.successRate*100).toFixed(0)}% (${d.successCount}/${d.totalUses})`, pad.left + 124 + barW, y + barH - 9);
+  });
+}
+
+// =============================================================================
+// §15 参考速查表
+// =============================================================================
+async function renderQuickRef() {
+  const refs = await getQuickReference();
+  let refMap = {};
+  for (const r of refs) { refMap[`${r.rowLabel}|||${r.colLabel}`] = r; }
+
+  let html = '<table class="quick-ref-table"><thead><tr><th></th>';
+  for (const col of QUICK_REF_COLS) { html += `<th>${col}</th>`; }
+  html += '</tr></thead><tbody>';
+
+  for (const row of QUICK_REF_ROWS) {
+    html += `<tr><th>${row}</th>`;
+    for (const col of QUICK_REF_COLS) {
+      const key = `${row}|||${col}`;
+      const ref = refMap[key];
+      html += `<td contenteditable="true" data-row="${row}" data-col="${col}" onblur="saveQuickRefCell(this)">${ref ? ref.cellValue || '' : ''}</td>`;
+    }
+    html += '</tr>';
+  }
+  html += '</tbody></table>';
+  document.getElementById('quick-ref-table').innerHTML = html;
+}
+
+async function saveQuickRefCell(td) {
+  const rowLabel = td.dataset.row;
+  const colLabel = td.dataset.col;
+  const cellValue = td.textContent.trim();
+  const refs = await getQuickReference();
+  const existing = refs.find(r => r.rowLabel === rowLabel && r.colLabel === colLabel);
+  if (existing) {
+    existing.cellValue = cellValue;
+    await dbPut('quickReference', existing);
+  } else {
+    await dbPut('quickReference', { rowLabel, colLabel, cellValue });
+  }
+}
+
+// =============================================================================
+// §16 数据管理
+// =============================================================================
+async function exportJSON() {
+  const data = {
+    version: 1,
+    exportDate: new Date().toISOString(),
+    setups: await dbGetAll('setups'),
+    details: await dbGetAll('details'),
+    entryReasons: await dbGetAll('entryReasons'),
+    trades: await dbGetAll('trades'),
+    solidification: await dbGetAll('solidification'),
+    quickReference: await dbGetAll('quickReference'),
+    settings: await dbGetAll('settings')
+  };
+  const json = JSON.stringify(data, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `trading-backup-${new Date().toISOString().split('T')[0]}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('数据已导出', 'success');
+}
+
+async function exportCSV() {
+  if (!currentSetup) { showToast('请先选择 Setup', 'error'); return; }
+  const trades = await getTrades(currentSetupId);
+  trades.sort((a, b) => a.tradeNumber - b.tradeNumber);
+  const headers = ['笔数','日期','方向','入场价','数量','离场价1','平仓量1','离场价2','平仓量2','入场原因','入场理由','类型','离场理由','净盈亏','盈亏状态','合规','备注','补充说明'];
+  const rows = trades.map(t => [
+    t.tradeNumber, t.date, t.direction === 'long' ? '多' : '空',
+    t.entryPrice, t.quantity,
+    t.exitPrice1 || '', t.exitQty1 || '',
+    t.exitPrice2 || '', t.exitQty2 || '',
+    t.entryReasonText || '', t.entryRationale || '', t.tradeType || '',
+    t.exitRationale || '', t.netPnL.toFixed(4),
+    t.pnlStatus === 'win' ? '盈' : t.pnlStatus === 'loss' ? '亏' : 'BE',
+    t.isCompliant ? '是' : '否', t.notes || '', t.supplementaryNotes || ''
+  ]);
+  const csv = '﻿' + headers.join(',') + '\n' + rows.map(r => r.map(c => '"' + String(c).replace(/"/g,'""') + '"').join(',')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `trades-${currentSetup.name || 'export'}-${new Date().toISOString().split('T')[0]}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('CSV 已导出', 'success');
+}
+
+async function importData(file) {
+  try {
+    const text = await file.text();
+    const data = JSON.parse(text);
+    if (!data.setups || !data.trades) throw new Error('数据格式不正确');
+
+    const summary = `
+      <p>即将导入：</p>
+      <ul style="text-align:left;">
+        <li>Setup: ${data.setups.length} 个</li>
+        <li>细节表: ${(data.details||[]).length} 条</li>
+        <li>入场原因: ${(data.entryReasons||[]).length} 条</li>
+        <li>交易记录: ${data.trades.length} 笔</li>
+        <li>固化记录: ${(data.solidification||[]).length} 条</li>
+        <li>速查表: ${(data.quickReference||[]).length} 格</li>
+      </ul>
+      <p style="color:var(--red);">⚠️ 当前数据将被完全覆盖！</p>`;
+
+    showModal('确认导入数据', summary, async () => {
+      // Clear all stores
+      for (const store of ['setups','details','entryReasons','trades','solidification','quickReference','settings']) {
+        await dbClear(store);
+      }
+      // Import
+      for (const store of ['setups','details','entryReasons','trades','solidification','quickReference','settings']) {
+        if (data[store]) {
+          for (const item of data[store]) {
+            const { id, ...rest } = item;
+            await dbPut(store, item);
+          }
+        }
+      }
+      currentSetupId = null;
+      await loadSetupSelector();
+      await refreshAll();
+      showToast('数据导入成功！', 'success');
+    }, '确认导入', true);
+  } catch (err) {
+    showToast('导入失败：' + err.message, 'error');
+  }
+}
+
+async function resetAllData() {
+  showModal('⚠️ 重置所有数据',
+    '<p style="color:var(--red);">此操作将<strong>永久删除所有数据</strong>，包括 Setup、交易记录、统计等。</p><p>请输入 <strong>确认重置</strong> 以继续：</p><p><input type="text" id="reset-confirm-input" placeholder="输入：确认重置" style="width:100%;background:var(--bg);color:var(--text);border:1px solid var(--border);padding:8px;border-radius:var(--radius-sm);"></p>',
+    () => {
+      const input = document.getElementById('reset-confirm-input');
+      if (input && input.value === '确认重置') {
+        (async () => {
+          for (const store of ['setups','details','entryReasons','trades','solidification','quickReference','settings']) {
+            await dbClear(store);
+          }
+          currentSetupId = null;
+          await initDefaults();
+          await loadSetupSelector();
+          await refreshAll();
+          showToast('所有数据已重置', 'success');
+        })();
+      } else {
+        showToast('输入不正确，操作取消', 'error');
+      }
+    }, '确认重置', true);
+}
+
+// =============================================================================
+// §17 设置
+// =============================================================================
+async function loadSettingsToForm() {
+  const s = await getSettings();
+  document.getElementById('set-maker-rate').value = (s.makerFeeRate * 100).toFixed(4);
+  document.getElementById('set-taker-rate').value = (s.takerFeeRate * 100).toFixed(4);
+  document.getElementById('set-eval-start').value = s.evalStart;
+  document.getElementById('set-eval-end').value = s.evalEnd;
+  document.getElementById('set-banner1').value = s.bannerLine1;
+  document.getElementById('set-banner2').value = s.bannerLine2;
+}
+
+async function saveSettings(e) {
+  e.preventDefault();
+  const makerRate = parseFloat(document.getElementById('set-maker-rate').value) / 100 || 0.00018;
+  const takerRate = parseFloat(document.getElementById('set-taker-rate').value) / 100 || 0.00045;
+  const evalStart = parseInt(document.getElementById('set-eval-start').value) || 1;
+  const evalEnd = parseInt(document.getElementById('set-eval-end').value) || 500;
+  const banner1 = document.getElementById('set-banner1').value.trim() || DEFAULT_SETTINGS.bannerLine1;
+  const banner2 = document.getElementById('set-banner2').value.trim() || DEFAULT_SETTINGS.bannerLine2;
+
+  await dbPut('settings', { key: 'makerFeeRate', value: makerRate });
+  await dbPut('settings', { key: 'takerFeeRate', value: takerRate });
+  await dbPut('settings', { key: 'evalStart', value: evalStart });
+  await dbPut('settings', { key: 'evalEnd', value: evalEnd });
+  await dbPut('settings', { key: 'bannerLine1', value: banner1 });
+  await dbPut('settings', { key: 'bannerLine2', value: banner2 });
+
+  document.getElementById('banner-line1').textContent = banner1;
+  document.getElementById('banner-line2').textContent = banner2;
+  showToast('设置已保存', 'success');
+}
+
+async function resetSettings() {
+  for (const [key, value] of Object.entries(DEFAULT_SETTINGS)) {
+    await dbPut('settings', { key, value });
+  }
+  await loadSettingsToForm();
+  showToast('设置已恢复默认', 'success');
+}
+
+// =============================================================================
+// §18 Tab 导航
+// =============================================================================
+function switchTab(tabName) {
+  currentTab = tabName;
+  document.querySelectorAll('#tab-nav button').forEach(b => b.classList.remove('active'));
+  document.querySelector(`#tab-nav button[data-tab="${tabName}"]`)?.classList.add('active');
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById(`panel-${tabName}`)?.classList.add('active');
+  refreshCurrentTab();
+}
+
+async function refreshCurrentTab() {
+  switch (currentTab) {
+    case 'dashboard': await renderDashboard(); break;
+    case 'trade-entry':
+      await loadEntryReasonsForForm();
+      await loadDetailChecklist();
+      await renderTradeHistory();
+      break;
+    case 'detail-table': await renderDetailTable(); break;
+    case 'entry-reasons': await renderEntryReasons(); break;
+    case 'statistics': await renderStatistics(); break;
+    case 'quick-ref': await renderQuickRef(); break;
+    case 'settings': await loadSettingsToForm(); break;
+  }
+}
+
+async function refreshAll() {
+  await renderDashboard();
+  if (currentTab === 'trade-entry') {
+    await loadEntryReasonsForForm();
+    await loadDetailChecklist();
+    await renderTradeHistory();
+  }
+  if (currentTab === 'statistics') await renderStatistics();
+  if (currentTab === 'detail-table') await renderDetailTable();
+  if (currentTab === 'entry-reasons') await renderEntryReasons();
+  if (currentTab === 'quick-ref') await renderQuickRef();
+}
+
+// =============================================================================
+// §19 初始化默认数据
+// =============================================================================
+async function initDefaults() {
+  // Settings defaults
+  const existingSettings = await dbGetAll('settings');
+  for (const [key, value] of Object.entries(DEFAULT_SETTINGS)) {
+    if (!existingSettings.find(s => s.key === key)) {
+      await dbPut('settings', { key, value });
+    }
+  }
+
+  // Entry reasons defaults
+  const existingReasons = await dbGetAll('entryReasons');
+  if (existingReasons.length === 0) {
+    for (let i = 0; i < DEFAULT_ENTRY_REASONS.length; i++) {
+      await dbPut('entryReasons', { text: DEFAULT_ENTRY_REASONS[i], sortOrder: i, createdAt: Date.now() });
+    }
+  }
+
+  // Quick reference defaults
+  const existingRefs = await dbGetAll('quickReference');
+  if (existingRefs.length === 0) {
+    for (const row of QUICK_REF_ROWS) {
+      for (const col of QUICK_REF_COLS) {
+        await dbPut('quickReference', { rowLabel: row, colLabel: col, cellValue: '' });
+      }
+    }
+  }
+}
+
+// =============================================================================
+// §20 App 初始化
+// =============================================================================
+async function initApp() {
+  try {
+    db = await openDB();
+    await initDefaults();
+
+    // Load banner text
+    const settings = await getSettings();
+    document.getElementById('banner-line1').textContent = settings.bannerLine1;
+    document.getElementById('banner-line2').textContent = settings.bannerLine2;
+
+    // Init toggle groups
+    initToggleGroups();
+
+    // Set default date
+    document.getElementById('trade-date').value = new Date().toISOString().split('T')[0];
+
+    // Load setups
+    await loadSetupSelector();
+
+    // Event listeners
+    document.getElementById('setup-select').onchange = async () => {
+      currentSetupId = document.getElementById('setup-select').value ? parseInt(document.getElementById('setup-select').value) : null;
+      await onSetupChange();
+    };
+
+    document.getElementById('btn-new-setup').onclick = () => {
+      showModal('新建 Setup',
+        '<div class="form-group"><label>Setup 名称</label><input type="text" id="new-setup-name" placeholder="如：EMA20回踩"></div><div class="form-group"><label>描述（选填）</label><textarea id="new-setup-desc" rows="2"></textarea></div>',
+        async () => {
+          const name = document.getElementById('new-setup-name').value.trim();
+          const desc = document.getElementById('new-setup-desc').value.trim();
+          if (!name) { showToast('请输入名称', 'error'); return; }
+          const existing = await dbGetByIndex('setups', 'name', name);
+          if (existing) { showToast('Setup 名称已存在', 'error'); return; }
+          const id = await dbPut('setups', { name, description: desc, createdAt: Date.now(), detailTableLocked: false, detailTableVersion: 1 });
+          currentSetupId = typeof id === 'number' ? id : currentSetupId;
+          await loadSetupSelector();
+          showToast('Setup 已创建', 'success');
+        });
+    };
+
+    // Tab navigation
+    document.querySelectorAll('#tab-nav button').forEach(btn => {
+      btn.onclick = () => switchTab(btn.dataset.tab);
+    });
+
+    // Sub-tab navigation (statistics)
+    document.querySelectorAll('.sub-tabs button').forEach(btn => {
+      btn.onclick = () => {
+        currentSubTab = btn.dataset.subtab;
+        document.querySelectorAll('.sub-tabs button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderStatistics();
+      };
+    });
+
+    // Trade form submit
+    document.getElementById('trade-form').onsubmit = saveTrade;
+    document.getElementById('btn-cancel-edit').onclick = () => { resetTradeForm(); };
+
+    // Real-time PnL preview
+    const pnlInputs = ['trade-entry-price', 'trade-quantity', 'trade-exit-price1', 'trade-exit-qty1',
+                       'trade-exit-price2', 'trade-exit-qty2'];
+    pnlInputs.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.oninput = debouncedUpdatePnlPreview;
+    });
+    // Also update on toggle changes (handled in toggle group onclick)
+
+    // Entry reasons
+    document.getElementById('btn-add-reason').onclick = addReason;
+    document.getElementById('new-reason-input').onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); addReason(); } };
+
+    // Settings
+    document.getElementById('settings-form').onsubmit = saveSettings;
+    document.getElementById('btn-reset-settings').onclick = resetSettings;
+
+    // Save banner
+    document.getElementById('save-banner-btn').onclick = async () => {
+      const line1 = document.getElementById('banner-line1').textContent.trim();
+      const line2 = document.getElementById('banner-line2').textContent.trim();
+      await dbPut('settings', { key: 'bannerLine1', value: line1 || DEFAULT_SETTINGS.bannerLine1 });
+      await dbPut('settings', { key: 'bannerLine2', value: line2 || DEFAULT_SETTINGS.bannerLine2 });
+      showToast('横幅文字已保存', 'success');
+    };
+
+    // Data management
+    document.getElementById('btn-export-json').onclick = exportJSON;
+    document.getElementById('btn-export-csv').onclick = exportCSV;
+    document.getElementById('btn-import').onclick = () => document.getElementById('import-file-input').click();
+    document.getElementById('import-file-input').onchange = (e) => {
+      if (e.target.files[0]) importData(e.target.files[0]);
+      e.target.value = '';
+    };
+    document.getElementById('btn-reset-all').onclick = resetAllData;
+
+    // Window resize → redraw charts
+    let resizeTimer;
+    window.onresize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => { if (currentTab === 'statistics' && currentSubTab === 'charts') renderStatistics(); }, 300);
+    };
+
+    // Initial render
+    document.getElementById('trade-date').value = new Date().toISOString().split('T')[0];
+    await refreshAll();
+
+    console.log('✅ 交易手法固化练习系统初始化完成');
+  } catch (err) {
+    console.error('初始化失败:', err);
+    showToast('初始化失败：' + err.message, 'error');
+  }
+}
+
+// Boot
+document.addEventListener('DOMContentLoaded', initApp);
+</script>
+
+</body>
+</html>

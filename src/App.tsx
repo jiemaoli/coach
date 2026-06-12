@@ -155,14 +155,14 @@ const studyPath: StudyStage[] = [
     title: "A2: Beginner's Only Recommended Setup",
     authorEvidence: "Rule of Ten: You should start with A2 and stick to A2 only. Author explicitly says A2 is my favorite entry.",
     postIds: [
-      "nt-2011-01-03-a2-as-a-reversible-trade",
       "nt-2011-02-08-the-classic-a2",
+      "nt-2011-01-03-a2-as-a-reversible-trade",
       "nt-2011-05-20-the-most-swingable-setups",
       "nt-2011-06-02-failed-a2",
-      "nt-2011-06-24-a2-variants",
-      "nt-2011-08-23-two-legged-pullbacks-vs-a2-vs-g2",
       "nt-2013-12-02-smaller-stops-larger-gains",
-      "nt-2014-01-16-tight-stops-and-other-simplifications"
+      "nt-2014-01-16-tight-stops-and-other-simplifications",
+      "nt-2011-06-24-a2-variants",
+      "nt-2011-08-23-two-legged-pullbacks-vs-a2-vs-g2"
     ],
     tags: ["A2", "pullback", "entry", "swing", "2-legged"]
   },
@@ -428,7 +428,7 @@ const studyPath: StudyStage[] = [
         id: "resource-reference-notes",
         title: "Personal Reference Notes",
         kind: "markdown",
-        markdownUrl: "/reference-notes.md",
+        markdownUrl: "/ninetrans-blog/reference-notes.md",
         label: "Notes"
       }
     ],
@@ -453,7 +453,7 @@ const studyPath: StudyStage[] = [
         id: "resource-glossary-zh",
         title: "Author Glossary",
         kind: "markdown",
-        markdownUrl: "/ninetrans-glossary-zh.md",
+        markdownUrl: "/ninetrans-blog/ninetrans-glossary-zh.md",
         label: "Study"
       }
     ],
@@ -810,6 +810,36 @@ function looksLikeNinetransPostHtml(html: string) {
 }
 
 export function App() {
+  const currentPath = normalizeAppPath(window.location.pathname);
+
+  if (currentPath.startsWith("/pat")) {
+    return <BookViewer bookPath="/books/price-action-trends/index.html" />;
+  }
+
+  if (currentPath.startsWith("/par")) {
+    return <BookViewer bookPath="/books/price-action-range/index.html" />;
+  }
+
+  if (currentPath.startsWith("/tracker")) {
+    return <BookViewer bookPath="/tracker/index.html" />;
+  }
+
+  return <NineTransitionsApp />;
+}
+
+function BookViewer({ bookPath }: { bookPath: string }) {
+  return (
+    <div style={{ width: "100vw", height: "100vh" }}>
+      <iframe
+        src={bookPath}
+        style={{ width: "100%", height: "100%", border: "none" }}
+        title="Book Viewer"
+      />
+    </div>
+  );
+}
+
+function NineTransitionsApp() {
   const [manifest, setManifest] = useState<BlogManifest | null>(null);
   const [activeStageId, setActiveStageId] = useState(studyPath[0].id);
   const [activeItemId, setActiveItemId] = useState("");
@@ -825,7 +855,6 @@ export function App() {
   const [libraryCollapsed, setLibraryCollapsed] = useState(false);
   const [tagFilters, setTagFilters] = useState<Record<string, string[]>>({});
   const [showFilters, setShowFilters] = useState(false);
-  const currentPath = normalizeAppPath(window.location.pathname);
   const activeItemIdRef = useRef(activeItemId);
 
   useEffect(() => {
@@ -1138,7 +1167,7 @@ export function App() {
               </header>
             )}
             {activeEntry.kind === "resource" ? (
-              activeEntry.resource.markdownUrl === "/reference-notes.md" ? (
+              activeEntry.resource.markdownUrl === "/ninetrans-blog/reference-notes.md" ? (
                 <ReferenceNotesViewer key={activeEntry.resource.markdownUrl} markdownUrl={activeEntry.resource.markdownUrl} />
               ) : (
                 <VocabularyViewer key={activeEntry.resource.markdownUrl} markdownUrl={activeEntry.resource.markdownUrl} title={activeEntry.resource.title} />
