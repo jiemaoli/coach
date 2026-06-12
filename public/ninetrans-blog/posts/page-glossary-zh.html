@@ -32,11 +32,11 @@
 
 <tr>       <td class="td1" valign="middle"><br />
 <div class="p2">1PB</div></td>       <td class="td2" valign="middle"><br />
-<div class="p2">当天的第一次回撤（上升趋势中为回调，下降趋势中为反弹），或1Rev之后的第一次回撤</div></td>     </tr>
+<div class="p2">当天的第一次回撤（上升趋势中为回调，下降趋势中为反弹），或趋势突破/反转后的第一次回调。方向由最近一次反转决定。失败的1PB可反转为反方向1PB。</div></td>     </tr>
 
 <tr>       <td class="td1" valign="middle"><br />
 <div class="p2">1Rev</div></td>       <td class="td2" valign="middle"><br />
-<div class="p2">当天的第一次反转。另见OR</div></td>     </tr>
+<div class="p2">当天第一段趋势行情之后的反转。不同于简单的fBO（如1tf/5tf），1Rev通常有较大幅度。主要类型包括：开盘区间fBO、对前日HLC的反转（即OR）、从跳空到EMA的回调反转、趋势走势的猛烈反转。</div></td>     </tr>
 
 <tr>       <td class="td1" valign="middle"><br />
 <div class="p2">OR</div></td>       <td class="td2" valign="middle"><br />
@@ -48,7 +48,7 @@
 
 <tr>       <td class="td1" valign="middle"><br />
 <div class="p2">A2</div></td>       <td class="td2" valign="middle"><br />
-<div class="p2">在EMA附近对回调运动的第二次反转尝试。第二次反转趋势失败，因此是延续信号。如果离EMA太远，可能不符合A2条件</div></td>     </tr>
+<div class="p2">EMA附近的两腿回调。第二次尝试结束回调失败，因此是顺势延续信号。如果离EMA太远，可能不符合A2条件</div></td>     </tr>
 
 <tr>       <td class="td1" valign="middle"><div class="p2">A22</div></td>       <td class="td2" valign="middle"><br />
 <div class="p2">A2的第二次入场，可能因为第一个信号需要较大止损或有较大重叠。</div></td>     </tr>
@@ -83,7 +83,7 @@
 
 <tr>       <td class="td1" valign="middle"><br />
 <div class="p2">BP</div></td>       <td class="td2" valign="middle"><br />
-<div class="p2">突破回拉。价格回拉，通常回到被突破的价格行为阻力内部。</div></td>     </tr>
+<div class="p2">突破回踩（Breakout Pullback）。价格回踩，通常回到被突破的价格行为阻力内部。BP本质上是fBO的失败，当突破K线是强势趋势K线且已突破出前一区间一半以上时，BP概率较高。</div></td>     </tr>
 
 <tr>       <td class="td1" valign="middle"><br />
 <div class="p2">fBO</div></td>       <td class="td2" valign="middle"><br />
@@ -95,7 +95,7 @@
 
 <tr>       <td class="td1" valign="middle"><br />
 <div class="p2">WP</div></td>       <td class="td2" valign="middle"><br />
-<div class="p2">三腿回撤。类似于A2</div></td>     </tr>
+<div class="p2">楔形回调（Wedge Pullback）。由三次低动能推动构成的回调形态，类似于A2，常出现在午间时段。这是顺势延续信号。注意：WP不同于W1P（楔形反转后的首次回撤）。</div></td>     </tr>
 
 <tr>       <td class="td1" valign="middle"><br />
 <div class="p2">TL</div></td>       <td class="td2" valign="middle"><br />
@@ -107,11 +107,11 @@
 
 <tr>       <td class="td1" valign="middle"><br />
 <div class="p2">G</div></td>       <td class="td2" valign="middle"><br />
-<div class="p2">缺口K线（Good bar）。下跌运动中第一根高点低于EMA的K线，或上涨运动中第一根低点高于EMA的K线。如果在熊市运动中此K线为阳线，则是买入信号，反之亦然。</div></td>     </tr>
+<div class="p2">远离EMA的K线（Gap away from EMA）。下跌运动中第一根高点低于EMA的K线，或上涨运动中第一根低点高于EMA的K线。如果在熊市运动中此K线为阳线，则是买入信号，反之亦然。</div></td>     </tr>
 
 <tr>       <td class="td1" valign="middle"><br />
 <div class="p2">G2</div></td>       <td class="td2" valign="middle"><br />
-<div class="p2">如果G回补尝试失败，第二根缺口K线即为G2。这是更高概率的交易。</div></td>     </tr>
+<div class="p2">如果G回归EMA的尝试失败，第二根远离EMA的K线即为G2。这是更高概率的交易。</div></td>     </tr>
 
 <tr>       <td class="td1" valign="middle"><br />
 <div class="p2">i, o</div></td>       <td class="td2" valign="middle"><br />
@@ -151,9 +151,34 @@
 
 <tr>       <td class="td1" valign="middle"><br />
 <div class="p2">W1P</div></td>       <td class="td2" valign="middle"><br />
-<div class="p2">W反转后允许顺势入场的第一次回撤（上升趋势中为回调，下降趋势中为反弹）</div></td>     </tr>
+<div class="p2">W反转后允许顺势入场的第一次回撤（上升趋势中为回调，下降趋势中为反弹）。注意：W1P不同于WP（楔形回调形态）。</div></td>     </tr>
 
-</tbody> </table></article></body></html>
+<tr>       <td class="td3" valign="middle"><br />
+<div class="p2">TT</div></td>       <td class="td4" valign="middle"><br />
+<div class="p2">趋势终结（Trend Termination）。趋势结束进入交易区间，而非反转。主要方式：TTR、延伸的趋势线突破、双顶/双底、失败的反转后接失败的A2。TT不是交易信号，而是退出趋势仓位的信号。</div></td>     </tr>
+
+<tr>       <td class="td3" valign="middle"><br />
+<div class="p2">EMA</div></td>       <td class="td4" valign="middle"><br />
+<div class="p2">指数移动平均线（Exponential Moving Average）。Brooks系统使用20根K线EMA作为唯一技术指标，用于识别趋势方向、提供支撑/阻力、以及作为A2等信号的入场参考。</div></td>     </tr>
+
+<tr>       <td class="td3" valign="middle"><br />
+<div class="p2">FF</div></td>       <td class="td4" valign="middle"><br />
+<div class="p2">末端旗形（Final Flag）。趋势末期出现的横向整理形态，通常预示趋势即将结束。末端旗形的突破往往失败，是退出趋势仓位的信号。</div></td>     </tr>
+
+</tbody> </table>
+
+<br /><br />
+<div class="p2"><b>九种转变矩阵（Nine Transitions）</b></div><br />
+<div class="p2">九种转变是Brooks交易系统的核心框架，将市场状态分为3×3矩阵：</div><br />
+<div class="p2">行（当前趋势方向）：UP（上涨）、FLAT（横盘）、DOWN（下跌）</div><br />
+<div class="p2">列（市场状态）：UP、FLAT、DOWN</div><br /><br />
+<div class="p2">对应的交易设置：</div><br />
+<div class="p2">• 趋势延续（UP-UP/DOWN-DOWN）：A2、1chbo、H1/L1、G2、BT</div><br />
+<div class="p2">• 趋势终结（UP-FLAT/DOWN-FLAT）：TT（退出观望）</div><br />
+<div class="p2">• 趋势反转（UP-DOWN/DOWN-UP）：W、W1P</div><br />
+<div class="p2">• 区间突破（FLAT-UP/FLAT-DOWN）：BO（突破）</div><br />
+<div class="p2">• 区间内（FLAT-FLAT）：fBO（失败突破）</div><br />
+<div class="p2">• 区间延续（BO后）：BP（突破回踩）</div><br /><br /></article></body></html>
 
 
 
